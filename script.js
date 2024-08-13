@@ -161,25 +161,25 @@ oldisgoldSelect.addEventListener('change', () => {
                 arrayDiv.innerHTML = '';
                 songs.forEach((song, index) => {
                     const itemDiv = document.createElement('div');
-                    itemDiv.className = 'item flex justify-between items-center bg-gray-700 rounded-xl p-2 mx-4 hover:bg-gray-600 duration-300 cursor-pointer';
+                    itemDiv.className = 'item flex justify-between items-center bg-gray-700 rounded-xl p-2 max-md:p-1 mx-4 max-md:mx-2 max-md: hover:bg-gray-600 duration-300 cursor-pointer';
                     itemDiv.dataset.index = index;
                     itemDiv.innerHTML = 
-                        `<div class="text-white flex items-center gap-x-4">
-                            <img src="${song.image}" class="h-20 object-cover rounded-lg w-36 object-top" alt="${song.title}">
+                        `<div class="text-white flex items-center gap-x-4 max-md:gap-x-2">
+                            <img src="${song.image}" class="max-md:max-md:h-12 max-md:w-20 w-36 h-20 object-cover rounded-lg object-top" alt="${song.title}">
                             <div class="text">
-                                <h2 class="song-title font-semibold text-xl">${song.title}</h2>
-                                <p class="song-artist text-gray-300">${song.artist}</p>
+                                <h2 class="max-md:text-base song-title font-semibold text-xl max-[500px]:text-[13.5px]">${song.title}</h2>
+                                <p class="song-artist max-md:text-sm text-gray-300 max-[500px]:text-[12px]">${song.artist}</p>
                             </div>
                         </div>
-                        <div class="song-play flex items-center gap-x-4 mr-3">
+                        <div class="song-play flex items-center gap-x-4 mr-3 max-md:mr-2 max-md:gap-x-1">
                             <div class="visualizer hidden">
-                                <div class="bar bar1"></div>
-                                <div class="bar bar2"></div>
-                                <div class="bar bar3"></div>
-                                <div class="bar bar4"></div>
-                                <div class="bar bar5"></div>
+                                <div class="bar max-md:w-[2px] bar1"></div>
+                                <div class="bar max-md:w-[2px] bar2"></div>
+                                <div class="bar max-md:w-[2px] bar3"></div>
+                                <div class="bar max-md:w-[2px] bar4"></div>
+                                <div class="bar max-md:w-[2px] bar5"></div>
                             </div>
-                            <p class="text-5xl play-from-start text-[#2b8bff] cursor-pointer hover:text-[#29ecfe]"><i class='bx bx-play'></i></p>
+                            <p class="text-5xl play-from-start text-[#2b8bff] cursor-pointer hover:text-[#29ecfe] max-md:text-2xl "><i class='bx bx-play'></i></p>
                         </div>`
                     ;
                     itemDiv.addEventListener('click', () => playSong(index));
@@ -250,25 +250,25 @@ oldisgoldSelect.addEventListener('change', () => {
                 arrayDiv.innerHTML = '';
                 songs.forEach((song, index) => {
                     const itemDiv = document.createElement('div');
-                    itemDiv.className = 'item flex justify-between items-center bg-gray-700 rounded-xl p-2 mx-4 hover:bg-gray-600 duration-300 cursor-pointer';
+                    itemDiv.className = 'item flex justify-between items-center bg-gray-700 rounded-xl p-2 max-md:p-1 mx-4 max-md:mx-2 max-md: hover:bg-gray-600 duration-300 cursor-pointer';
                     itemDiv.dataset.index = index;
                     itemDiv.innerHTML = 
-                        `<div class="text-white flex items-center gap-x-4">
-                            <img src="${song.image}" class="h-20 object-cover rounded-lg w-36 object-top" alt="${song.title}">
+                        `<div class="text-white flex items-center gap-x-4 max-md:gap-x-2">
+                            <img src="${song.image}" class="max-md:max-md:h-12 max-md:w-20 w-36 h-20 object-cover rounded-lg object-top" alt="${song.title}">
                             <div class="text">
-                                <h2 class="song-title font-semibold text-xl">${song.title}</h2>
-                                <p class="song-artist text-gray-300">${song.artist}</p>
+                                <h2 class="max-md:text-base song-title font-semibold text-xl max-[500px]:text-[13.5px]">${song.title}</h2>
+                                <p class="song-artist max-md:text-sm text-gray-300 max-[500px]:text-[12px]">${song.artist}</p>
                             </div>
                         </div>
-                        <div class="song-play flex items-center gap-x-4 mr-3">
+                        <div class="song-play flex items-center gap-x-4 mr-3 max-md:mr-2 max-md:gap-x-1">
                             <div class="visualizer hidden">
-                                <div class="bar bar1"></div>
-                                <div class="bar bar2"></div>
-                                <div class="bar bar3"></div>
-                                <div class="bar bar4"></div>
-                                <div class="bar bar5"></div>
+                                <div class="bar max-md:w-[2px] bar1"></div>
+                                <div class="bar max-md:w-[2px] bar2"></div>
+                                <div class="bar max-md:w-[2px] bar3"></div>
+                                <div class="bar max-md:w-[2px] bar4"></div>
+                                <div class="bar max-md:w-[2px] bar5"></div>
                             </div>
-                            <p class="text-5xl play-from-start text-[#2b8bff] cursor-pointer hover:text-[#29ecfe]"><i class='bx bx-play'></i></p>
+                            <p class="text-5xl play-from-start text-[#2b8bff] cursor-pointer hover:text-[#29ecfe] max-md:text-2xl "><i class='bx bx-play'></i></p>
                         </div>`
                     ;
                     itemDiv.addEventListener('click', () => playSong(index));
