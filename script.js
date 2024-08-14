@@ -250,7 +250,7 @@ oldisgoldSelect.addEventListener('change', () => {
                 arrayDiv.innerHTML = '';
                 songs.forEach((song, index) => {
                     const itemDiv = document.createElement('div');
-                    itemDiv.className = 'item flex justify-between items-center bg-gray-700 rounded-xl p-2 max-md:p-1 mx-4 max-md:mx-2 max-md: hover:bg-gray-600 duration-300 cursor-pointer';
+                    itemDiv.className = 'item flex justify-between items-center bg-gray-700 rounded-xl p-2 max-md:p-1 mx-4 max-md:mx-2 min-md:hover:bg-gray-600 duration-300 cursor-pointer';
                     itemDiv.dataset.index = index;
                     itemDiv.innerHTML = 
                         `<div class="text-white flex items-center gap-x-4 max-md:gap-x-2">
@@ -268,7 +268,7 @@ oldisgoldSelect.addEventListener('change', () => {
                                 <div class="bar max-md:w-[2px] bar4"></div>
                                 <div class="bar max-md:w-[2px] bar5"></div>
                             </div>
-                            <p class="text-5xl play-from-start text-[#2b8bff] cursor-pointer hover:text-[#29ecfe] max-md:text-2xl "><i class='bx bx-play'></i></p>
+                            <p class="text-5xl play-from-start text-[#2b8bff] cursor-pointer min-md:hover:text-[#29ecfe] max-md:text-2xl "><i class='bx bx-play'></i></p>
                         </div>`
                     ;
                     itemDiv.addEventListener('click', () => playSong(index));
@@ -346,12 +346,17 @@ oldisgoldSelect.addEventListener('change', () => {
             });
 
             
-
-    
-
     function playSong(index) {
         mainContainer.classList.remove("mb-28");
-        mainContainer.classList.add("mb-52");
+        mainContainer.classList.remove("max-md:mb-20");
+        if (window.innerWidth < 768) {
+            mainContainer.classList.add("mb-32");
+            mainContainer.classList.remove("mb-56");
+        } else {
+            mainContainer.classList.add("mb-56");
+            mainContainer.classList.remove("mb-32");
+        }
+        // updateClassBasedOnWidth();
         if (index < 0 || index >= songs.length) return;
         currentIndex = index;
         const song = songs[currentIndex];

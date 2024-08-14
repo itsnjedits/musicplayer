@@ -218,6 +218,7 @@ header{
 }
 
 
+
 </style>
 <body class="bg-black ">
 
@@ -228,7 +229,7 @@ header{
                     <h1 class="my font-semibold text-4xl text-[#2b8bff] heading tracking-normal max-md:text-2xl">SoundAura</h1>
                     <h3 class="text-[#29ecfe] text-sm font-semibold tracking-widest heading2 max-md:text-[10px]">ADD-FREE MUSIC PLAYER</h3>
                 </div>
-                <p class="border-[#29ecfe] border-[1px] bg-gray-800 rounded-xl flex items-center justify-center duration-200 hover:bg-gray-600 hover:border-transparent text-6xl max-md:text-4xl max-md:rounded-md play-from-start text-[#2b8bff] cursor-pointer hover:text-[#29ecfe]"><i class='bx bx-play'></i>
+                <p class="border-[#29ecfe] border-[1px] bg-gray-800 rounded-xl flex items-center justify-center duration-200 min-md:hover:bg-gray-600 min-md:hover:border-transparent text-6xl max-md:text-4xl max-md:rounded-md play-from-start text-[#2b8bff] cursor-pointer min-md:hover:text-[#29ecfe]"><i class='bx bx-play'></i>
                 
                 </p>
             </div>
@@ -250,7 +251,7 @@ header{
                         </div>
                     </div>
                 <div class="flex gap-x-2 max-sm:gap-x-2">
-                    <button id="oldisgold-before" class="text-lg max-md:text-sm max-md:py-0 max-sm:py-1 max-sm:px-2 max-md:px-2 bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] font-semibold px-4 py-2 rounded hover:bg-gray-600 hover:border-gray-900 hover:text-[#29ecfe] duration-150 ">Old is Gold</button>
+                    <button id="oldisgold-before" class="text-lg max-md:text-sm max-md:py-0 max-sm:py-1 max-sm:px-2 max-md:px-2 bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] font-semibold px-4 py-2 rounded min-md:hover:bg-gray-600 min-md:hover:border-gray-900 min-md:hover:text-[#29ecfe] duration-150 ">Old is Gold</button>
                     <div class="oldisgold flex-col items-center justify-center hidden">
                         <select id="oldisgold" class="text-white rounded p-1 py-2 max-md:text-[11px] max-md:w-24 max-md:overflow-hidden max-md:text-ellipsis max-md:whitespace-nowrap ">
                             <option class="bg-gray-700" value="Jagjit Singh">Jagjit Singh</option>
@@ -260,7 +261,7 @@ header{
                         </select>
                     </div>
                     
-                <button id="genre-before" class="max-md:text-sm max-md:py-0 max-sm:py-1 max-sm:px-2 max-md:px-2 text-lg bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] font-semibold px-4 py-2 rounded hover:bg-gray-600 hover:border-gray-900 hover:text-[#29ecfe] duration-150 ">Genre</button>
+                <button id="genre-before" class="max-md:text-sm max-md:py-0 max-sm:py-1 max-sm:px-2 max-md:px-2 text-lg bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] font-semibold px-4 py-2 rounded min-md:hover:bg-gray-600 min-md:hover:border-gray-900 min-md:hover:text-[#29ecfe] duration-150 ">Genre</button>
                 <div class="genre flex-col items-center justify-center hidden">
                     <select id="genre" class="text-white rounded p-1 py-2 max-md:text-[11px] max-md:w-24 max-md:overflow-hidden max-md:text-ellipsis max-md:whitespace-nowrap ">
                         <option class="bg-gray-700" value="Hindi-New">Hindi-New</option>
@@ -270,7 +271,7 @@ header{
                         <option class="bg-gray-700" value="Punjabi">Punjabi</option>
                     </select>
                 </div>
-                <button id="singer-before" class="max-md:text-sm max-md:py-0 max-sm:py-1 max-sm:px-2 max-md:px-2 text-lg bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] font-semibold px-4 py-2 rounded hover:bg-gray-600 hover:border-gray-900 hover:text-[#29ecfe] duration-150 ">Singer</button>
+                <button id="singer-before" class="max-md:text-sm max-md:py-0 max-sm:py-1 max-sm:px-2 max-md:px-2 text-lg bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] font-semibold px-4 py-2 rounded min-md:hover:bg-gray-600 min-md:hover:border-gray-900 min-md:hover:text-[#29ecfe] duration-150 ">Singer</button>
                 <div class="singer flex-col items-center justify-center hidden">
                     <select id="singer" class="text-white rounded p-1 py-2 max-md:text-[11px] max-md:w-24 max-md:overflow-hidden max-md:text-ellipsis max-md:whitespace-nowrap ">
                         <option class="bg-gray-700" value="Arijit Singh" selected>Arijit Singh</option>
@@ -292,9 +293,9 @@ header{
         </nav>
     </header>
 
-    <main class="flex flex-col items-center mt-5 mb-28">
+    <main class="flex flex-col items-center mt-5 mb-28 max-md:mb-20">
         <h1 class="text-gray-200 text-3xl max-md:text-2xl max-sm:text-xl max-sm:w-[90%] flex font-semibold without-ads flex items-center text-center">Non-Stop 300+ Songs Without Ads 🔥</h1>
-        <div class="array flex flex-col max-w-6xl bg-gray-800 my-5 w-[90%] rounded-xl py-4 max-md:py-2 gap-y-2">
+        <div class="array flex flex-col max-w-6xl bg-gray-800 my-5 w-[90%] max-md:w-[100%] max-md:rounded-none rounded-xl py-4 max-md:py-2 gap-y-2">
             <!-- Song items will be dynamically added here -->
         </div>
     </main>
@@ -324,9 +325,9 @@ header{
                 
                 
                 
-                <div class="playback-speed">
+                <div class="playback-speed bg-gray-800">
                     <button id="speed-before" class="text-lg bg-gray-800 border-[1px] text-[#29ecfe] border-[#29ecfe] hover:font-semibold hover:border-transparent px-4 py-2 rounded hover:bg-gray-600  hover:text-[#29ecfe] duration-0  max-md:text-sm max-md:px-3 ">Speed</button>
-                    <select id="speed" class="text-white rounded p-2 hidden">
+                    <select id="speed" class="text-white rounded p-2 bg-gray-800 hidden max-md:text-sm">
                         <option class="bg-gray-700" value="0.9">0.9x</option>
                         <option class="bg-gray-700" value="0.95">0.95x</option>
                         <option class="bg-gray-700" value="1" selected>Normal</option>
@@ -339,7 +340,7 @@ header{
                 </div>
                 <div class="volume-container w-16 max-sm:hidden">
                     <i class='bx bxs-volume-full volume-icon'></i>
-                    <input type="range" class="volume-slider" min="0" max="100" value="50" />
+                    <input type="range" class="volume-slider" min="0" max="100" value="60" />
                 </div>
                 
                 
