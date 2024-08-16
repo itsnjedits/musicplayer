@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const forward = document.getElementById('forward');
     const rewind = document.getElementById('rewind');
     const volumeSlider = document.querySelector('.volume-slider'); // Add this line to select the volume slider
+    const slider = document.querySelector('.volume-slider');
     const musicplayer = document.getElementsByClassName('musicplayer')[0];
     const mainContainer = document.getElementsByTagName("main")[0];
     const singerBefore = document.getElementById("singer-before");
@@ -26,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const singer = document.getElementsByClassName("singer")[0];
     const speed = document.getElementById("speed");
     const singerSelect = document.getElementById('singer'); // Add this line to select the singer dropdown
+    const reqButton = document.getElementsByClassName("req")[0];
     musicplayer.style.animationPlayState = 'paused';
     let currentPlaybackRate = parseFloat(speedSelect.value); // Store the current playback speed
 
@@ -41,33 +43,34 @@ genreBefore.addEventListener('click', () => {
     updateSongsByGenre('Hindi-New'); // Default value for initialization
 });
 
+
 function updateSongsByGenre(selectedGenre) {
     let jsonFile = '';
 
     switch (selectedGenre) {
         case 'Hindi-New': {
             jsonFile = 'Genres/Hindi-New.json';
-            document.querySelector('.without-ads').innerHTML = `${selectedGenre} Songs - Without Ads 🔥`;
+            document.querySelector('.without-ads').innerHTML = `${selectedGenre} Songs - No Ads`;
             break;
         }
         case 'Hindi-Old': {
             jsonFile = 'Genres/Hindi-Old.json';
-            document.querySelector('.without-ads').innerHTML = `${selectedGenre} Songs - Without Ads 🔥`;
+            document.querySelector('.without-ads').innerHTML = `${selectedGenre} Songs - No Ads`;
             break;
         }
         case 'Ghazals': {
             jsonFile = 'Genres/Ghazals.json';
-            document.querySelector('.without-ads').innerHTML = `${selectedGenre} Songs - Without Ads 🔥`;
+            document.querySelector('.without-ads').innerHTML = `${selectedGenre} Songs - No Ads`;
             break;
         }
         case 'Slowed & Reverb': {
             jsonFile = 'Genres/Slowed-Reverb.json';
-            document.querySelector('.without-ads').innerHTML = `${selectedGenre} Songs - Without Ads 🔥`;
+            document.querySelector('.without-ads').innerHTML = `${selectedGenre} Songs - No Ads`;
             break;
         }
         case 'Punjabi': {
             jsonFile = 'Genres/Punjabi.json';
-            document.querySelector('.without-ads').innerHTML = `${selectedGenre} Songs - Without Ads 🔥`;
+            document.querySelector('.without-ads').innerHTML = `${selectedGenre} Songs - No Ads`;
             break;
         }
         default:
@@ -106,22 +109,22 @@ function updateSongsByOldIsGold(selectedSinger) {
     switch (selectedSinger) {
         case 'Jagjit Singh': {
             jsonFile = 'OldIsGold/JagjitSingh.json';
-            document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - Without Ads 🔥`;
+            document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`;
             break;
         }
         case 'Ghulam Ali': {
             jsonFile = 'OldIsGold/GhulamAli.json';
-            document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - Without Ads 🔥`;
+            document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`;
             break;
         }
         case 'Kishore Kumar': {
             jsonFile = 'OldIsGold/KishoreKumar.json';
-            document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - Without Ads 🔥`;
+            document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`;
             break;
         }
         case 'Mohammad Rafi': {
             jsonFile = 'OldIsGold/MohammadRafi.json';
-            document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - Without Ads 🔥`;
+            document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`;
             break;
         }
         default:
@@ -141,10 +144,6 @@ oldisgoldSelect.addEventListener('change', () => {
     const selectedSinger = oldisgoldSelect.value;
     updateSongsByOldIsGold(selectedSinger);
 });
-
-
-
-
 
 
 
@@ -186,7 +185,48 @@ oldisgoldSelect.addEventListener('change', () => {
                     arrayDiv.appendChild(itemDiv);
                 });
             }
-            document.querySelector('.without-ads').innerHTML = `Non-Stop 300+ Songs - Without Ads 🔥`
+            document.querySelector('.without-ads').innerHTML = `Non-Stop 350+ Songs - No Ads`
+    })
+
+    reqButton.addEventListener('click',()=>{
+        fetch('Request/requestedSongs.json')
+            .then(response => response.json())
+            .then(data => {
+                songs = data.sort((a, b) => a.title.localeCompare(b.title)); // Sort songs alphabetically
+                loadSongList();
+            })
+            .catch(error => console.error('Error fetching songs:', error));
+            function loadSongList() {
+                const arrayDiv = document.querySelector('.array');
+                arrayDiv.innerHTML = '';
+                songs.forEach((song, index) => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'item flex justify-between items-center bg-gray-700 rounded-xl p-2 max-md:p-1 mx-4 max-md:mx-2 min-md:hover:bg-gray-600 duration-300 cursor-pointer';
+                    itemDiv.dataset.index = index;
+                    itemDiv.innerHTML = 
+                        `<div class="text-white flex items-center gap-x-4 max-md:gap-x-2">
+                            <img src="${song.image}" class="max-md:max-md:h-12 max-md:w-20 w-36 h-20 object-cover rounded-lg object-top" alt="${song.title}">
+                            <div class="text">
+                                <h2 class="max-md:text-base song-title font-semibold text-xl max-[500px]:text-[13.5px]">${song.title}</h2>
+                                <p class="song-artist max-md:text-sm text-gray-300 max-[500px]:text-[12px]">${song.artist}</p>
+                            </div>
+                        </div>
+                        <div class="song-play flex items-center gap-x-4 mr-3 max-md:mr-2 max-md:gap-x-1">
+                            <div class="visualizer hidden">
+                                <div class="bar max-md:w-[2px] bar1"></div>
+                                <div class="bar max-md:w-[2px] bar2"></div>
+                                <div class="bar max-md:w-[2px] bar3"></div>
+                                <div class="bar max-md:w-[2px] bar4"></div>
+                                <div class="bar max-md:w-[2px] bar5"></div>
+                            </div>
+                            <p class="text-5xl play-from-start text-[#2b8bff] cursor-pointer min-md:hover:text-[#29ecfe] max-md:text-2xl "><i class='bx bx-play'></i></p>
+                        </div>`
+                    ;
+                    itemDiv.addEventListener('click', () => playSong(index));
+                    arrayDiv.appendChild(itemDiv);
+                });
+            }
+            document.querySelector('.without-ads').innerHTML = `Your Requests, Our Responsibility - No Ads`
     })
 
     function disableAllButtons() {
@@ -282,47 +322,47 @@ oldisgoldSelect.addEventListener('change', () => {
                 switch (selectedSinger) {
                     case 'Arijit Singh':
                         jsonFile = 'Singersongs/Arijit Singh.json';
-                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - Without Ads 🔥`
+                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`
                         break;
                     case 'Atif Aslam':
                         jsonFile = 'Singersongs/Atif Aslam.json';
-                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - Without Ads 🔥`
+                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`
                         break;
                     case 'Mohammad Irfan':
                         jsonFile = 'Singersongs/Mohammad Irfan.json';
-                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - Without Ads 🔥`
+                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`
                         break;
                     case 'KK':
                         jsonFile = 'Singersongs/KK.json';
-                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - Without Ads 🔥`
+                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`
                         break;
                     case 'Shafaqat Amanat Ali':
                         jsonFile = 'Singersongs/Shafaqat Amanat Ali.json';
-                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - Without Ads 🔥`
+                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`
                         break;
                     case 'Mohit Chauhan':
                         jsonFile = 'Singersongs/Mohit Chauhan.json';
-                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - Without Ads 🔥`
+                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`
                         break;
                     case 'Mohit Chauhan':
                         jsonFile = 'Singersongs/Mohit Chauhan.json';
-                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - Without Ads 🔥`
+                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`
                         break;
                     case 'Jubin Nautiyal':
                         jsonFile = 'Singersongs/Jubin Nautiyal.json';
-                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - Without Ads 🔥`
+                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`
                         break;
                     case 'Armaan Malik':
                         jsonFile = 'Singersongs/Armaan Malik.json';
-                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - Without Ads 🔥`
+                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`
                         break;
                     case 'Rahat Fateh Ali Khan':
                         jsonFile = 'Singersongs/Rahat Fateh Ali Khan.json';
-                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - Without Ads 🔥`
+                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`
                         break;
                     case 'Sonu Nigam':
                         jsonFile = 'Singersongs/Sonu Nigam.json';
-                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - Without Ads 🔥`
+                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`
                         break;
                     
                     default:
@@ -482,9 +522,10 @@ oldisgoldSelect.addEventListener('change', () => {
     });
     progress.addEventListener('input', seek);
 
+
     // Keyboard shortcuts
     document.addEventListener('keydown', (event) => {
-        if (event.code === 'Space' || 'KeyN' || 'KeyP' || 'ArrowRight' || 'ArrowLeft') {
+        if (event.code === 'Space' || 'KeyN' || 'KeyP' || 'ArrowRight' || 'ArrowLeft' || 'keyM') {
                 if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') {
                     return;
                 } else {
@@ -493,6 +534,9 @@ oldisgoldSelect.addEventListener('change', () => {
                         nextButton.click();
                     } else if (event.code === 'KeyP') {
                         prevButton.click();
+                    } else if (event.code === 'KeyM') {
+                        if(audio.volume === 0) {audio.volume = 0.6;slider.value = 60;}
+                        else {audio.volume = 0;slider.value = 0;}
                     } else if (event.code === 'ArrowRight') {
                         changeTime(10);
                     } else if (event.code === 'ArrowLeft') {

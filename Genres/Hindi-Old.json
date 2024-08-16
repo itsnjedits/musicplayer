@@ -309,6 +309,116 @@
                 "file": "Audio/Ye Dil Tum Bin with lyrics ये दिल तुम बिन गाने के बोल Izzat DharmendraJayalalitha.mp3",
                 "image": "Thumbnails/Ye Dil Tum Bin with lyrics ये दिल तुम बिन गाने के बोल Izzat DharmendraJayalalitha_thumbnail.jpg",
                 "artist": "Mohammad Rafi"
-            }
+            },
+            
+                {
+                    "title": "Ae Mere Watan Ke Logon",
+                    "artist": "Lata Mangeshkar",
+                    "file": "Audio/Ae Mere Watan Ke Logon with Lyrics Lata Mangeshkar Live in Concert Lata Mangeshkar Songs.mp3",
+                    "image": "Thumbnails/Ae Mere Watan Ke Logon with Lyrics Lata Mangeshkar Live in Concert Lata Mangeshkar Songs_thumbnail.jpg"
+                },
+                {
+                    "title": "Do Deewane Shaher Mein",
+                    "artist": "Bhupinder Singh",
+                    "file": "Audio/Do Deewane Shaher Mein with lyrics दो दीवाने शहर में के बोल Runa Laila Bhupinder S. Gharaonda.mp3",
+                    "image": "Thumbnails/Do Deewane Shaher Mein with lyrics दो दीवाने शहर में के बोल Runa Laila Bhupinder S. Gharaonda_thumbnail.jpg"
+                },
+                {
+                    "title": "Jab Hum Jawan Honge",
+                    "artist": "Bhupinder Singh",
+                    "file": "Audio/Jab Hum Jawan Honge -Lyrics- Sunny Deol l Amrita Singh Chorustune.mp3",
+                    "image": "Thumbnails/Jab Hum Jawan Honge -Lyrics- Sunny Deol l Amrita Singh Chorustune_thumbnail.jpg"
+                },
+                {
+                    "title": "Kabhi Kisiko Muqammal Jahan Nahi Milta",
+                    "artist": "Bhupinder Singh",
+                    "file": "Audio/Kabhi Kisiko Muqammal Jahan Nahi Milta Bhupinder Singh Ahista Ahista 1981.mp3",
+                    "image": "Thumbnails/Kabhi Kisiko Muqammal Jahan Nahi Milta Bhupinder Singh Ahista Ahista 1981_thumbnail.jpg"
+                },
+                {
+                    "title": "Kahin Door Jab Din Dhal Jaaye",
+                    "artist": "Mukesh",
+                    "file": "Audio/Kahi Door Jab with Lyrics कहीं दूर जब गाने के बोल Anand Rajesh Khanna- Sumita Sanyal.mp3",
+                    "image": "Thumbnails/Kahi Door Jab with Lyrics कहीं दूर जब गाने के बोल Anand Rajesh Khanna- Sumita Sanyal_thumbnail.jpg"
+                },
+                {
+                    "title": "Kisi Nazar Ko Tera Intejar",
+                    "artist": "Bhupendar Singh",
+                    "file": "Audio/Kisi Nazar ko Tera Intejar aaj bhi haa full song lyricsbhupendar.mp3",
+                    "image": "Thumbnails/Kisi Nazar ko Tera Intejar aaj bhi haa full song lyricsbhupendar_thumbnail.jpg"
+                },
+                {
+                    "title": "Kya Khoob Lagti Ho",
+                    "artist": "Mukesh",
+                    "file": "Audio/Kya Khoob Lagti Ho with lyrics क्या खूब लगती हो गाने Dharmatma Hema Malini Feroz Khan.mp3",
+                    "image": "Thumbnails/Kya Khoob Lagti Ho with lyrics क्या खूब लगती हो गाने Dharmatma Hema Malini Feroz Khan_thumbnail.jpg"
+                },
+                {
+                    "title": "Lambi Judai",
+                    "artist": "Reshma",
+                    "file": "Audio/Lambi Judai - Lyrical Hero Reshma Jackie Shroff- Meenakshi Seshadri 80s Hindi Hits.mp3",
+                    "image": "Thumbnails/Lambi Judai - Lyrical Hero Reshma Jackie Shroff- Meenakshi Seshadri 80s Hindi Hits_thumbnail.jpg"
+                },
+                {
+                    "title": "Luka Chuppi Bahut Hui",
+                    "artist": "Lata Mangeshkar, AR Rahman",
+                    "file": "Audio/Luka Chuppi Bahut Hui -LYRICS- - Lata Mangeshkar- AR Rahman Prasoon Joshi- Nacim Rang De Basanti.mp3",
+                    "image": "Thumbnails/Luka Chuppi Bahut Hui -LYRICS- - Lata Mangeshkar- AR Rahman Prasoon Joshi- Nacim Rang De Basanti_thumbnail.jpg"
+                },
+                {
+                    "title": "Main Pal Do Pal Ka Shayar Hoon",
+                    "artist": "Mukesh",
+                    "file": "Audio/Main Pal Do Pal Ka Shayar Hoon Amitabh Bachchans Poetry Recital Kabhi Kabhie -1976-.mp3",
+                    "image": "Thumbnails/Main Pal Do Pal Ka Shayar Hoon Amitabh Bachchans Poetry Recital Kabhi Kabhie -1976-_thumbnail.jpg"
+                },
+                {
+                    "title": "Main Zindagi Ka Saath Nibhaata Chala Gaya",
+                    "artist": "Mohammad Rafi",
+                    "file": "Audio/Main Zindagi Ka Saath Nibhaata Chala Gaya Mohd. Rafi Dev Anand Hum Dono -1961-.mp3",
+                    "image": "Thumbnails/Main Zindagi Ka Saath Nibhaata Chala Gaya Mohd. Rafi Dev Anand Hum Dono -1961-_thumbnail.jpg"
+                },
+                {
+                    "title": "Mere Naina Sawan Bhadon",
+                    "artist": "Kishore Kumar",
+                    "file": "Audio/Mere Naina Sawan Bhadon with lyrics मेरे नैना सावन भादों Lata Mangeshkar Mehbooba.mp3",
+                    "image": "Thumbnails/Mere Naina Sawan Bhadon with lyrics मेरे नैना सावन भादों Lata Mangeshkar Mehbooba_thumbnail.jpg"
+                },
+                {
+                    "title": "Naam Goom Jayega",
+                    "artist": "Bhupinder Singh",
+                    "file": "Audio/Naam Goom Jayega with lyrics नाम गूम जायेगा गाने के बोल Kinara JeetendraHema MaliniDharmendra.mp3",
+                    "image": "Thumbnails/Naam Goom Jayega with lyrics नाम गूम जायेगा गाने के बोल Kinara JeetendraHema MaliniDharmendra_thumbnail.jpg"
+                },
+                {
+                    "title": "Pyar Kiya Nahin Jata",
+                    "artist": "Lata Mangeshkar, Shabbir Kumar",
+                    "file": "Audio/Pyar Kiya Nahin Jata -Lyrical Video- Lata Mangeshkar Shabbir Kumar Woh 7 Din.mp3",
+                    "image": "Thumbnails/Pyar Kiya Nahin Jata -Lyrical Video- Lata Mangeshkar Shabbir Kumar Woh 7 Din_thumbnail.jpg"
+                },
+                {
+                    "title": "Raat Ki Hatheli Par",
+                    "artist": "Udit Narayan",
+                    "file": "Audio/Raat Ki Hatheli Par.mp3",
+                    "image": "Thumbnails/Raat Ki Hatheli Par_thumbnail.jpg"
+                },
+                {
+                    "title": "Vande Mataram",
+                    "artist": "A.R. Rahman",
+                    "file": "Audio/Vande Mataram - A.R. Rahman Maa Tujhe Salaam Independence Day Song.mp3",
+                    "image": "Thumbnails/Vande Mataram - A.R. Rahman Maa Tujhe Salaam Independence Day Song_thumbnail.jpg"
+                },
+                {
+                    "title": "Zeehal e muskin",
+                    "artist": "Lata Mangeshkar, Shabbir Kumar",
+                    "file": "Audio/Zeehal e muskin song with lyrics ज़िहाल ए मुस्किन Lata Mangeshkar Shabbir Kumar Ghulam.mp3",
+                    "image": "Thumbnails/Zeehal e muskin song with lyrics ज़िहाल ए मुस्किन Lata Mangeshkar Shabbir Kumar Ghulam_thumbnail.jpg"
+                },
+                {
+                    "title": "Zindagi Har Kadam Ek Nai Jung Hai",
+                    "artist": "Shabbir Kumar",
+                    "file": "Audio/Zindagi Har Kadam Ek Nai Jung Hai with lyrics ज़िन्दगी हर कदम एक नई जंग है गाने के बोल Meri Jung.mp3",
+                    "image": "Thumbnails/Zindagi Har Kadam Ek Nai Jung Hai with lyrics ज़िन्दगी हर कदम एक नई जंग है गाने के बोल Meri Jung_thumbnail.jpg"
+                }
+            
         ]
     
