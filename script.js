@@ -43,48 +43,27 @@ genreBefore.addEventListener('click', () => {
     updateSongsByGenre('Hindi-New'); // Default value for initialization
 });
 
-
 function updateSongsByGenre(selectedGenre) {
-    let jsonFile = '';
+    const genreMap = {
+        'Hindi-New': 'Genres/Hindi-New.json',
+        'Hindi-Old': 'Genres/Hindi-Old.json',
+        'Ghazals': 'Genres/Ghazals.json',
+        'Slowed & Reverb': 'Genres/Slowed-Reverb.json',
+        'Punjabi': 'Genres/Punjabi.json'
+    };
 
-    switch (selectedGenre) {
-        case 'Hindi-New': {
-            jsonFile = 'Genres/Hindi-New.json';
-            document.querySelector('.without-ads').innerHTML = `${selectedGenre} Songs - No Ads`;
-            break;
-        }
-        case 'Hindi-Old': {
-            jsonFile = 'Genres/Hindi-Old.json';
-            document.querySelector('.without-ads').innerHTML = `${selectedGenre} Songs - No Ads`;
-            break;
-        }
-        case 'Ghazals': {
-            jsonFile = 'Genres/Ghazals.json';
-            document.querySelector('.without-ads').innerHTML = `${selectedGenre} Songs - No Ads`;
-            break;
-        }
-        case 'Slowed & Reverb': {
-            jsonFile = 'Genres/Slowed-Reverb.json';
-            document.querySelector('.without-ads').innerHTML = `${selectedGenre} Songs - No Ads`;
-            break;
-        }
-        case 'Punjabi': {
-            jsonFile = 'Genres/Punjabi.json';
-            document.querySelector('.without-ads').innerHTML = `${selectedGenre} Songs - No Ads`;
-            break;
-        }
-        default:
-            jsonFile = 'Allsongs/songs.json'; // Fallback to a default if needed
-    }
+    const jsonFile = genreMap[selectedGenre] || 'Allsongs/songs.json';
+    document.querySelector('.without-ads').innerHTML = `${selectedGenre} Songs - No Ads`;
 
     fetch(jsonFile)
         .then(response => response.json())
         .then(data => {
-            songs = data.sort((a, b) => a.title.localeCompare(b.title)); // Sort songs alphabetically
+            songs = data.sort((a, b) => a.title.localeCompare(b.title));
             loadSongList();
         })
         .catch(error => console.error('Error fetching songs:', error));
 }
+
 
 genreSelect.addEventListener('change', () => {
     const selectedGenre = genreSelect.value;
@@ -102,132 +81,84 @@ oldisgoldBefore.addEventListener('click', () => {
     oldisgold.classList.add("flex");
     updateSongsByOldIsGold('Jagjit Singh'); // Default value for initialization
 });
-
 function updateSongsByOldIsGold(selectedSinger) {
-    let jsonFile = '';
+    const singerMap = {
+        'Jagjit Singh': 'OldIsGold/JagjitSingh.json',
+        'Ghulam Ali': 'OldIsGold/GhulamAli.json',
+        'Kishore Kumar': 'OldIsGold/KishoreKumar.json',
+        'Mohammad Rafi': 'OldIsGold/MohammadRafi.json'
+    };
 
-    switch (selectedSinger) {
-        case 'Jagjit Singh': {
-            jsonFile = 'OldIsGold/JagjitSingh.json';
-            document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`;
-            break;
-        }
-        case 'Ghulam Ali': {
-            jsonFile = 'OldIsGold/GhulamAli.json';
-            document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`;
-            break;
-        }
-        case 'Kishore Kumar': {
-            jsonFile = 'OldIsGold/KishoreKumar.json';
-            document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`;
-            break;
-        }
-        case 'Mohammad Rafi': {
-            jsonFile = 'OldIsGold/MohammadRafi.json';
-            document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`;
-            break;
-        }
-        default:
-            jsonFile = 'Allsongs/songs.json'; // Fallback to a default if needed
-    }
+    const jsonFile = singerMap[selectedSinger] || 'Allsongs/songs.json';
+    document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`;
 
     fetch(jsonFile)
         .then(response => response.json())
         .then(data => {
-            songs = data.sort((a, b) => a.title.localeCompare(b.title)); // Sort songs alphabetically
+            songs = data.sort((a, b) => a.title.localeCompare(b.title));
             loadSongList();
         })
         .catch(error => console.error('Error fetching songs:', error));
 }
+
 
 oldisgoldSelect.addEventListener('change', () => {
     const selectedSinger = oldisgoldSelect.value;
     updateSongsByOldIsGold(selectedSinger);
 });
 
+function loadSongList() {
+    const arrayDiv = document.querySelector('.array');
+    arrayDiv.innerHTML = '';
+    songs.forEach((song, index) => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'item flex justify-between items-center bg-gray-700 rounded-xl p-2 max-md:p-1 mx-4 max-md:mx-2 min-md:hover:bg-gray-600 duration-300 cursor-pointer';
+        itemDiv.dataset.index = index;
+        itemDiv.innerHTML = 
+            `<div class="text-white flex items-center gap-x-4 max-md:gap-x-2">
+                <img src="${song.image}" class="max-md:max-md:h-12 max-md:w-20 w-36 h-20 object-cover rounded-lg object-top" alt="${song.title}">
+                <div class="text">
+                    <h2 class="max-md:text-base song-title font-semibold text-xl max-[500px]:text-[13.5px]">${song.title}</h2>
+                    <p class="song-artist max-md:text-sm text-gray-300 max-[500px]:text-[12px]">${song.artist}</p>
+                </div>
+            </div>
+            <div class="song-play flex items-center gap-x-4 mr-3 max-md:mr-2 max-md:gap-x-1">
+                <div class="visualizer hidden">
+                    <div class="bar max-md:w-[2px] bar1"></div>
+                    <div class="bar max-md:w-[2px] bar2"></div>
+                    <div class="bar max-md:w-[2px] bar3"></div>
+                    <div class="bar max-md:w-[2px] bar4"></div>
+                    <div class="bar max-md:w-[2px] bar5"></div>
+                </div>
+                <p class="text-5xl play-from-start text-[#2b8bff] cursor-pointer min-md:hover:text-[#29ecfe] max-md:text-2xl "><i class='bx bx-play'></i></p>
+            </div>`
+        ;
+        itemDiv.addEventListener('click', () => playSong(index));
+        arrayDiv.appendChild(itemDiv);
+    });
+}
 
-
-    title.addEventListener('click',()=>{
-        fetch('Allsongs/songs.json')
+function fetching(filename){
+    fetch(`${filename}`)
             .then(response => response.json())
             .then(data => {
                 songs = data.sort((a, b) => a.title.localeCompare(b.title)); // Sort songs alphabetically
                 loadSongList();
             })
             .catch(error => console.error('Error fetching songs:', error));
-            function loadSongList() {
-                const arrayDiv = document.querySelector('.array');
-                arrayDiv.innerHTML = '';
-                songs.forEach((song, index) => {
-                    const itemDiv = document.createElement('div');
-                    itemDiv.className = 'item flex justify-between items-center bg-gray-700 rounded-xl p-2 max-md:p-1 mx-4 max-md:mx-2 min-md:hover:bg-gray-600 duration-300 cursor-pointer';
-                    itemDiv.dataset.index = index;
-                    itemDiv.innerHTML = 
-                        `<div class="text-white flex items-center gap-x-4 max-md:gap-x-2">
-                            <img src="${song.image}" class="max-md:max-md:h-12 max-md:w-20 w-36 h-20 object-cover rounded-lg object-top" alt="${song.title}">
-                            <div class="text">
-                                <h2 class="max-md:text-base song-title font-semibold text-xl max-[500px]:text-[13.5px]">${song.title}</h2>
-                                <p class="song-artist max-md:text-sm text-gray-300 max-[500px]:text-[12px]">${song.artist}</p>
-                            </div>
-                        </div>
-                        <div class="song-play flex items-center gap-x-4 mr-3 max-md:mr-2 max-md:gap-x-1">
-                            <div class="visualizer hidden">
-                                <div class="bar max-md:w-[2px] bar1"></div>
-                                <div class="bar max-md:w-[2px] bar2"></div>
-                                <div class="bar max-md:w-[2px] bar3"></div>
-                                <div class="bar max-md:w-[2px] bar4"></div>
-                                <div class="bar max-md:w-[2px] bar5"></div>
-                            </div>
-                            <p class="text-5xl play-from-start text-[#2b8bff] cursor-pointer min-md:hover:text-[#29ecfe] max-md:text-2xl "><i class='bx bx-play'></i></p>
-                        </div>`
-                    ;
-                    itemDiv.addEventListener('click', () => playSong(index));
-                    arrayDiv.appendChild(itemDiv);
-                });
-            }
+}
+    title.addEventListener('click',()=>{
+        fetching('Allsongs/songs.json')
+            
             document.querySelector('.without-ads').innerHTML = `Non-Stop 350+ Songs - No Ads`
     })
 
     reqButton.addEventListener('click',()=>{
-        fetch('Request/requestedSongs.json')
-            .then(response => response.json())
-            .then(data => {
-                songs = data.sort((a, b) => a.title.localeCompare(b.title)); // Sort songs alphabetically
-                loadSongList();
-            })
-            .catch(error => console.error('Error fetching songs:', error));
-            function loadSongList() {
-                const arrayDiv = document.querySelector('.array');
-                arrayDiv.innerHTML = '';
-                songs.forEach((song, index) => {
-                    const itemDiv = document.createElement('div');
-                    itemDiv.className = 'item flex justify-between items-center bg-gray-700 rounded-xl p-2 max-md:p-1 mx-4 max-md:mx-2 min-md:hover:bg-gray-600 duration-300 cursor-pointer';
-                    itemDiv.dataset.index = index;
-                    itemDiv.innerHTML = 
-                        `<div class="text-white flex items-center gap-x-4 max-md:gap-x-2">
-                            <img src="${song.image}" class="max-md:max-md:h-12 max-md:w-20 w-36 h-20 object-cover rounded-lg object-top" alt="${song.title}">
-                            <div class="text">
-                                <h2 class="max-md:text-base song-title font-semibold text-xl max-[500px]:text-[13.5px]">${song.title}</h2>
-                                <p class="song-artist max-md:text-sm text-gray-300 max-[500px]:text-[12px]">${song.artist}</p>
-                            </div>
-                        </div>
-                        <div class="song-play flex items-center gap-x-4 mr-3 max-md:mr-2 max-md:gap-x-1">
-                            <div class="visualizer hidden">
-                                <div class="bar max-md:w-[2px] bar1"></div>
-                                <div class="bar max-md:w-[2px] bar2"></div>
-                                <div class="bar max-md:w-[2px] bar3"></div>
-                                <div class="bar max-md:w-[2px] bar4"></div>
-                                <div class="bar max-md:w-[2px] bar5"></div>
-                            </div>
-                            <p class="text-5xl play-from-start text-[#2b8bff] cursor-pointer min-md:hover:text-[#29ecfe] max-md:text-2xl "><i class='bx bx-play'></i></p>
-                        </div>`
-                    ;
-                    itemDiv.addEventListener('click', () => playSong(index));
-                    arrayDiv.appendChild(itemDiv);
-                });
-            }
+        fetching('Request/requestedSongs.json');
             document.querySelector('.without-ads').innerHTML = `Your Requests, Our Responsibility - No Ads`
     })
+
+
 
     function disableAllButtons() {
         playPauseButton.disabled = true;
@@ -285,100 +216,33 @@ oldisgoldSelect.addEventListener('change', () => {
                 loadSongList();
             })
             .catch(error => console.error('Error fetching songs:', error));
-            function loadSongList() {
-                const arrayDiv = document.querySelector('.array');
-                arrayDiv.innerHTML = '';
-                songs.forEach((song, index) => {
-                    const itemDiv = document.createElement('div');
-                    itemDiv.className = 'item flex justify-between items-center bg-gray-700 rounded-xl p-2 max-md:p-1 mx-4 max-md:mx-2 min-md:hover:bg-gray-600 duration-300 cursor-pointer';
-                    itemDiv.dataset.index = index;
-                    itemDiv.innerHTML = 
-                        `<div class="text-white flex items-center gap-x-4 max-md:gap-x-2">
-                            <img src="${song.image}" class="max-md:max-md:h-12 max-md:w-20 w-36 h-20 object-cover rounded-lg object-top" alt="${song.title}">
-                            <div class="text">
-                                <h2 class="max-md:text-base song-title font-semibold text-xl max-[500px]:text-[13.5px]">${song.title}</h2>
-                                <p class="song-artist max-md:text-sm text-gray-300 max-[500px]:text-[12px]">${song.artist}</p>
-                            </div>
-                        </div>
-                        <div class="song-play flex items-center gap-x-4 mr-3 max-md:mr-2 max-md:gap-x-1">
-                            <div class="visualizer hidden">
-                                <div class="bar max-md:w-[2px] bar1"></div>
-                                <div class="bar max-md:w-[2px] bar2"></div>
-                                <div class="bar max-md:w-[2px] bar3"></div>
-                                <div class="bar max-md:w-[2px] bar4"></div>
-                                <div class="bar max-md:w-[2px] bar5"></div>
-                            </div>
-                            <p class="text-5xl play-from-start text-[#2b8bff] cursor-pointer min-md:hover:text-[#29ecfe] max-md:text-2xl "><i class='bx bx-play'></i></p>
-                        </div>`
-                    ;
-                    itemDiv.addEventListener('click', () => playSong(index));
-                    arrayDiv.appendChild(itemDiv);
-                });
-            }
+            loadSongList();
+function updateSongsBySinger(selectedSinger) {
+    const singerMap = {
+        'Arijit Singh': 'Singersongs/Arijit Singh.json',
+        'Atif Aslam': 'Singersongs/Atif Aslam.json',
+        'Mohammad Irfan': 'Singersongs/Mohammad Irfan.json',
+        'KK': 'Singersongs/KK.json',
+        'Shafaqat Amanat Ali': 'Singersongs/Shafaqat Amanat Ali.json',
+        'Mohit Chauhan': 'Singersongs/Mohit Chauhan.json',
+        'Jubin Nautiyal': 'Singersongs/Jubin Nautiyal.json',
+        'Armaan Malik': 'Singersongs/Armaan Malik.json',
+        'Rahat Fateh Ali Khan': 'Singersongs/Rahat Fateh Ali Khan.json',
+        'Sonu Nigam': 'Singersongs/Sonu Nigam.json'
+    };
 
-            function updateSongsBySinger(selectedSinger) {
-                let jsonFile = '';
-            
-                switch (selectedSinger) {
-                    case 'Arijit Singh':
-                        jsonFile = 'Singersongs/Arijit Singh.json';
-                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`
-                        break;
-                    case 'Atif Aslam':
-                        jsonFile = 'Singersongs/Atif Aslam.json';
-                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`
-                        break;
-                    case 'Mohammad Irfan':
-                        jsonFile = 'Singersongs/Mohammad Irfan.json';
-                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`
-                        break;
-                    case 'KK':
-                        jsonFile = 'Singersongs/KK.json';
-                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`
-                        break;
-                    case 'Shafaqat Amanat Ali':
-                        jsonFile = 'Singersongs/Shafaqat Amanat Ali.json';
-                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`
-                        break;
-                    case 'Mohit Chauhan':
-                        jsonFile = 'Singersongs/Mohit Chauhan.json';
-                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`
-                        break;
-                    case 'Mohit Chauhan':
-                        jsonFile = 'Singersongs/Mohit Chauhan.json';
-                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`
-                        break;
-                    case 'Jubin Nautiyal':
-                        jsonFile = 'Singersongs/Jubin Nautiyal.json';
-                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`
-                        break;
-                    case 'Armaan Malik':
-                        jsonFile = 'Singersongs/Armaan Malik.json';
-                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`
-                        break;
-                    case 'Rahat Fateh Ali Khan':
-                        jsonFile = 'Singersongs/Rahat Fateh Ali Khan.json';
-                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`
-                        break;
-                    case 'Sonu Nigam':
-                        jsonFile = 'Singersongs/Sonu Nigam.json';
-                        document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`
-                        break;
-                    
-                    default:
-                        jsonFile = 'Allsongs/songs.json'; // Fallback to a default if needed
-                }
-                // console.log(jsonFile);
-            
-                // Load songs based on the selected singer
-                fetch(jsonFile)
-                    .then(response => response.json())
-                    .then(data => {
-                        songs = data.sort((a, b) => a.title.localeCompare(b.title)); // Sort songs alphabetically
-                        loadSongList();
-                    })
-                    .catch(error => console.error('Error fetching songs:', error));
-            }
+    const jsonFile = singerMap[selectedSinger] || 'Allsongs/songs.json';
+    document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`;
+
+    fetch(jsonFile)
+        .then(response => response.json())
+        .then(data => {
+            songs = data.sort((a, b) => a.title.localeCompare(b.title));
+            loadSongList();
+        })
+        .catch(error => console.error('Error fetching songs:', error));
+}
+
 
             singerSelect.addEventListener('change', () => {
                 const selectedSinger = singerSelect.value;
@@ -524,121 +388,66 @@ oldisgoldSelect.addEventListener('change', () => {
 
 
     // Keyboard shortcuts
-    document.addEventListener('keydown', (event) => {
-        if (event.code === 'Space' || 'KeyN' || 'KeyP' || 'ArrowRight' || 'ArrowLeft' || 'keyM') {
-                if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') {
-                    return;
-                } else {
-                    event.preventDefault();
-                    if (event.code === 'KeyN') {
-                        nextButton.click();
-                    } else if (event.code === 'KeyP') {
-                        prevButton.click();
-                    } else if (event.code === 'KeyM') {
-                        if(audio.volume === 0) {audio.volume = 0.6;slider.value = 60;}
-                        else {audio.volume = 0;slider.value = 0;}
-                    } else if (event.code === 'ArrowRight') {
-                        changeTime(10);
-                    } else if (event.code === 'ArrowLeft') {
-                        changeTime(-10);
-                    }
-                    else if(event.code === 'Space'){
-                        playPauseButton.click();
-                    }
-                }
-            
-        } 
-    });
+  document.addEventListener('keydown', (event) => {
+  const isInput = ['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName);
+  const actions = {
+    KeyN: () => nextButton.click(),
+    KeyP: () => prevButton.click(),
+    KeyM: () => {
+      audio.volume = audio.volume ? 0 : 0.6;
+      slider.value = audio.volume * 100;
+    },
+    ArrowRight: () => changeTime(10),
+    ArrowLeft: () => changeTime(-10),
+    Space: () => playPauseButton.click()
+  };
+
+  if (!isInput && actions[event.code]) {
+    event.preventDefault();
+    actions[event.code]();
+  }
+});
+
 
     // Auto-next feature
     audio.addEventListener('ended', playNextSong);
 
-
-// Get the search input element
-const searchInput = document.getElementById('search-input');
-
-// Get the search next button element
-const searchNextBtn = document.getElementById('search-next-btn');
-
-// Add an event listener to the search input
-searchInput.addEventListener('input', searchWebsite);
-
-// Add an event listener to the search next button
-searchNextBtn.addEventListener('click', searchNext);
-
-// Function to search the website
-let searchResultIndex = -1;
-function searchWebsite() {
-  const searchTerm = searchInput.value.trim().toLowerCase();
-  const allElements = document.body.getElementsByClassName('item');
-
-  // Remove any existing highlights
-  for (let i = 0; i < allElements.length; i++) {
-    const element = allElements[i];
-    element.children[0].children[1].children[0].style.color = '';
-    element.children[0].children[1].children[1].style.color = '';
-    element.classList.remove("bg-gray-900");
-  }
-
-  if (searchTerm !== '') {
-    // Loop through all elements on the page
-    for (let i = 0; i < allElements.length; i++) {
-      const element = allElements[i];
-      const elementText = element.textContent.toLowerCase();
-
-      // Check if the search term is found in the element's text
-      if (elementText.includes(searchTerm)) {
-        searchResultIndex = i;
-        element.children[0].children[1].children[0].style.color = "yellow"
-        element.children[0].children[1].children[1].style.color = "yellow"
-        element.classList.add("bg-gray-900");
-
-        // Calculate the offset to scroll to the middle of the page
-        const yOffset = element.offsetTop + (element.offsetHeight / 2) - (window.innerHeight / 2);
-
-        // Scroll to the found element
-        window.scrollTo({ top: yOffset, behavior: 'smooth' });
-
-        break;
+    // Searching Songs
+    const searchInput = document.getElementById('search-input');
+    const searchNextBtn = document.getElementById('search-next-btn');
+    
+    searchInput.addEventListener('input', () => searchWebsite(false));
+    searchNextBtn.addEventListener('click', () => searchWebsite(true));
+    
+    let searchResultIndex = -1;
+    
+    function searchWebsite(findNext) {
+      const searchTerm = searchInput.value.trim().toLowerCase();
+      const elements = document.querySelectorAll('.item');
+    
+      elements.forEach(el => {
+        el.children[0].children[1].children[0].style.color = '';
+        el.children[0].children[1].children[1].style.color = '';
+        el.classList.remove('bg-gray-900');
+      });
+    
+      if (searchTerm) {
+        for (let i = findNext ? searchResultIndex + 1 : 0; i < elements.length; i++) {
+          if (elements[i].textContent.toLowerCase().includes(searchTerm)) {
+            searchResultIndex = i;
+            highlightElement(elements[i]);
+            break;
+          }
+        }
       }
     }
-  }
-}
-
-// Function to search the next occurrence
-function searchNext() {
-  const searchTerm = searchInput.value.trim().toLowerCase();
-  const allElements = document.body.getElementsByClassName('item');
-
-  // Remove any existing highlights
-  for (let i = 0; i < allElements.length; i++) {
-    const element = allElements[i];
-    element.children[0].children[1].children[0].style.color = '';
-    element.children[0].children[1].children[1].style.color = '';
-    element.classList.remove("bg-gray-900");
-  }
-
-  if (searchTerm !== '') {
-    // Loop through all elements on the page
-    for (let i = searchResultIndex + 1; i < allElements.length; i++) {
-      const element = allElements[i];
-      const elementText = element.textContent.toLowerCase();
-
-      // Check if the search term is found in the element's text
-      if (elementText.includes(searchTerm)) {
-        searchResultIndex = i;
-        element.children[0].children[1].children[0].style.color = "yellow"
-        element.children[0].children[1].children[1].style.color = "yellow"
-        element.classList.add("bg-gray-900");
-
-        // Calculate the offset to scroll to the middle of the page
-        const yOffset = element.offsetTop + (element.offsetHeight / 2) - (window.innerHeight / 2);
-
-        // Scroll to the found element
-        window.scrollTo({ top: yOffset, behavior: 'smooth' });
-
-        break;
-      }
+    
+    function highlightElement(el) {
+      el.children[0].children[1].children[0].style.color = 'yellow';
+      el.children[0].children[1].children[1].style.color = 'yellow';
+      el.classList.add('bg-gray-900');
+    
+      const yOffset = el.offsetTop + (el.offsetHeight / 2) - (window.innerHeight / 2);
+      window.scrollTo({ top: yOffset, behavior: 'smooth' });
     }
-  }
-}});
+    });
