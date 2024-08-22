@@ -244,7 +244,7 @@ header{
                         </p>
                     </div>
                     <div class="request">
-                        <button id="requestSongButton" class="text-lg max-md:text-sm max-md:py-0 max-sm:py-1 max-sm:px-2 max-md:px-2 bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] font-semibold px-4 py-2 rounded min-md:hover:bg-gray-600 min-md:hover:border-gray-900 min-md:hover:text-[#29ecfe] duration-150 "><a href="https://docs.google.com/forms/d/e/1FAIpQLSd8Fdms4rUhOCXAgrq9XJdCNeJHg8EX3SS9F6I1PeTM7shh8A/viewform?usp=sf_link">Req Song</a></button>
+                        <button id="requestSongButton" class="text-lg max-md:text-sm max-md:py-0 max-sm:py-1 max-sm:px-2 max-md:px-2 bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] font-semibold px-4 py-2 rounded min-md:hover:bg-gray-600 min-md:hover:border-gray-900 min-md:hover:text-[#29ecfe] duration-150 "><a href="https://docs.google.com/forms/d/e/1FAIpQLSd8Fdms4rUhOCXAgrq9XJdCNeJHg8EX3SS9F6I1PeTM7shh8A/viewform?usp=sf_link" target="_blank">Req Song</a></button>
                     </div>
                 </div>
             </div>
@@ -265,7 +265,7 @@ header{
                             </button>
                         </div>
                     </div>
-                <div class="flex gap-x-2 max-sm:gap-x-2">
+                <div class="flex gap-x-2 max-sm:gap-x-2 justify-center">
                     <button id="oldisgold-before" class="text-lg max-md:text-sm max-md:py-0 max-sm:py-1 max-sm:px-2 max-md:px-2 bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] font-semibold px-4 py-2 rounded min-md:hover:bg-gray-600 min-md:hover:border-gray-900 min-md:hover:text-[#29ecfe] duration-150 ">Old is Gold</button>
                     <div class="oldisgold flex-col items-center justify-center hidden">
                         <select id="oldisgold" class="text-white rounded p-1 py-2 max-md:text-[11px] max-md:w-24 max-md:overflow-hidden max-md:text-ellipsis max-md:whitespace-nowrap ">
@@ -303,8 +303,9 @@ header{
                 </div>
                 
                 </div>
-                <div class="flex items-center justify-center">
+                <div class="flex items-center justify-center gap-x-2">
                     <button class="req flex items-center max-md:text-sm max-md:py-0 max-sm:py-1 max-sm:px-2 max-md:px-2 text-lg bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] font-semibold px-4 py-2 rounded min-md:hover:bg-gray-600 min-md:hover:border-gray-900 min-md:hover:text-[#29ecfe] duration-150 gap-x-1"><p>Previous Requests</p><i class='mt-1 bx bx-message-check'></i></button>
+                    <button class="yourPlaylist flex items-center max-md:text-sm max-md:py-0 max-sm:py-1 max-sm:px-2 max-md:px-2 text-lg bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] font-semibold px-4 py-2 rounded min-md:hover:bg-gray-600 min-md:hover:border-gray-900 min-md:hover:text-[#29ecfe] duration-150 gap-x-1"><p>Your Playlist</p></button>
                 </div>
                 <!-- wrap --></div>
             </div>
@@ -313,11 +314,14 @@ header{
     </header>
    
     <main class="flex flex-col items-center mt-5 mb-28 max-md:mb-20">
-        <h1 class="text-gray-200 text-3xl max-md:text-2xl max-sm:text-xl max-sm:w-[90%] flex font-semibold without-ads flex items-center text-center">Non-Stop 350+ Songs - No Ads</h1>
+        <h1 class="text-gray-200 text-3xl max-md:text-2xl max-sm:text-xl max-sm:w-[90%] font-semibold text-center without-ads">
+            Non-Stop 350+ Songs - No Ads
+        </h1>
         <div class="array flex flex-col max-w-6xl bg-gray-800 my-5 w-[90%] max-md:w-[100%] max-md:rounded-none rounded-xl py-4 max-md:py-2 gap-y-2">
             <!-- Song items will be dynamically added here -->
         </div>
     </main>
+    
     <div class="player flex justify-center fixed bottom-0 w-full">
         <div class="musicplayer bg-gray-900 text-white rounded-lg shadow-lg p-4 flex flex-col max-w-6xl w-[90%] max-md:w-[100%] max-md:rounded-none max-md:p-2">
             <!-- Song Description -->
@@ -382,5 +386,8 @@ header{
         }
     </script>
     <script src="script.js"></script>
+    <script>
+        
+    </script>
 </body>
 </html>
