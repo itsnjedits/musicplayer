@@ -109,7 +109,7 @@ oldisgoldSelect.addEventListener('change', () => {
     updateSongsByOldIsGold(selectedSinger);
 });
 function trimAndDecodeURL(url) {
-    const baseURL = 'http://127.0.0.1:5500/';
+    const baseURL = 'https://itsnjedits.github.io/musicplayer/';
     if (url.startsWith(baseURL)) {
         // Trim the base URL
         let trimmedURL = url.slice(baseURL.length);
@@ -122,7 +122,7 @@ function trimAndDecodeURL(url) {
 }
 
 function modifyAndDecodeURL(url) {
-    const baseURL = 'http://127.0.0.1:5500/Thumbnails';
+    const baseURL = 'https://itsnjedits.github.io/musicplayer/Thumbnails';
     const newBaseURL = 'Audio';
     const oldExtension = '_thumbnail.jpg';
     const newExtension = '.mp3';
