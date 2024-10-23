@@ -42,11 +42,12 @@ genreBefore.addEventListener('click', () => {
     genreBefore.classList.add("hidden");
     genre.classList.remove("hidden");
     genre.classList.add("flex");
-    updateSongsByGenre('Hindi-New'); // Default value for initialization
+    updateSongsByGenre('Gym'); // Default value for initialization
 });
 
 function updateSongsByGenre(selectedGenre) {
     const genreMap = {
+        'Gym': 'Genres/Gym.json',
         'Hindi-New': 'Genres/Hindi-New.json',
         'Hindi-Old': 'Genres/Hindi-Old.json',
         'Ghazals': 'Genres/Ghazals.json',
