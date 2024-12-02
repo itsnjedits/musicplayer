@@ -243,9 +243,7 @@ header{
                         <p class="border-[#29ecfe] border-[1px] bg-gray-800 rounded-xl flex items-center justify-center duration-200 min-md:hover:bg-gray-600 min-md:hover:border-transparent text-5xl max-md:text-3xl max-md:rounded-md play-from-start text-[#2b8bff] cursor-pointer min-md:hover:text-[#29ecfe]"><i class='bx bx-play'></i>
                         </p>
                     </div>
-                    <div class="request">
-                        <button id="requestSongButton" class="text-lg max-md:text-sm max-md:py-0 max-sm:py-1 max-sm:px-2 max-md:px-2 bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] font-semibold px-4 py-2 rounded min-md:hover:bg-gray-600 min-md:hover:border-gray-900 min-md:hover:text-[#29ecfe] duration-150 "><a href="https://docs.google.com/forms/d/e/1FAIpQLSd8Fdms4rUhOCXAgrq9XJdCNeJHg8EX3SS9F6I1PeTM7shh8A/viewform?usp=sf_link" target="_blank">Req Song</a></button>
-                    </div>
+                    
                 </div>
             </div>
             <!-- 1 -->
@@ -305,7 +303,7 @@ header{
                 
                 </div>
                 <div class="flex items-center justify-center gap-x-2">
-                    <button class="req flex items-center max-md:text-sm max-md:py-0 max-sm:py-1 max-sm:px-2 max-md:px-2 text-lg bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] font-semibold px-4 py-2 rounded min-md:hover:bg-gray-600 min-md:hover:border-gray-900 min-md:hover:text-[#29ecfe] duration-150 gap-x-1"><p>Previous Requests</p><i class='mt-1 bx bx-message-check'></i></button>
+                    <button id="requestSongButton" class="text-lg max-md:text-sm max-md:py-0 max-sm:py-1 max-sm:px-2 max-md:px-2 bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] font-semibold px-4 py-2 rounded min-md:hover:bg-gray-600 min-md:hover:border-gray-900 min-md:hover:text-[#29ecfe] duration-150 "><a href="https://docs.google.com/forms/d/e/1FAIpQLSd8Fdms4rUhOCXAgrq9XJdCNeJHg8EX3SS9F6I1PeTM7shh8A/viewform?usp=sf_link" target="_blank">Req Song</a></button>
                     <button class="yourPlaylist flex items-center max-md:text-sm max-md:py-0 max-sm:py-1 max-sm:px-2 max-md:px-2 text-lg bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] font-semibold px-4 py-2 rounded min-md:hover:bg-gray-600 min-md:hover:border-gray-900 min-md:hover:text-[#29ecfe] duration-150 gap-x-1"><p>Your Playlist</p></button>
                 </div>
                 <!-- wrap --></div>
@@ -387,18 +385,5 @@ header{
         }
     </script>
     <script src="script.js"></script>
-    <script type="text/javascript">
-        (function(d, t) {
-            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-            v.onload = function() {
-              window.voiceflow.chat.load({
-                verify: { projectID: '673c3c42f98e49f3930ca5b3' },
-                url: 'https://general-runtime.voiceflow.com',
-                versionID: 'production'
-              });
-            }
-            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-        })(document, 'script');
-      </script>
 </body>
 </html>

@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     let songs = [];
     let currentIndex = 0;
@@ -28,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const singer = document.getElementsByClassName("singer")[0];
     const speed = document.getElementById("speed");
     const singerSelect = document.getElementById('singer'); // Add this line to select the singer dropdown
-    const reqButton = document.getElementsByClassName("req")[0];
     musicplayer.style.animationPlayState = 'paused';
     let currentPlaybackRate = parseFloat(speedSelect.value); // Store the current playback speed
     const playlistButton = document.querySelector(".yourPlaylist");
@@ -303,7 +301,7 @@ function loadSongList() {
                 playlist.push(songData);
         
                 // Log the updated playlist array
-                console.log(JSON.stringify(playlist, null, 2));
+                // console.log(JSON.stringify(playlist, null, 2));
                 return; // Exit the event handler to prevent playSong from being called
             }
             // Play the song if the click was on the itemDiv
@@ -332,14 +330,11 @@ function fetching(filename){
         })
         
     playlistButton.addEventListener('click',()=>{
-        document.querySelector('.without-ads').innerHTML = `Apne Gaane`
+        document.querySelector('.without-ads').innerHTML = `Your Instant Playlist`
         
     })
 
-    reqButton.addEventListener('click',()=>{
-        fetching('Request/requestedSongs.json');
-            document.querySelector('.without-ads').innerHTML = `Your Requests, Our Responsibility - No Ads`
-    })
+
 
 
 
