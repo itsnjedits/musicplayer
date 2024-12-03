@@ -54,7 +54,7 @@ function updateSongsByGenre(selectedGenre) {
     };
 
     const jsonFile = genreMap[selectedGenre] || 'Allsongs/songs.json';
-    document.querySelector('.without-ads').innerHTML = `${selectedGenre} Songs - No Ads`;
+    document.querySelector('.without-ads').innerHTML = `${selectedGenre} Songs - No Ads 🔥`;
 
     fetch(jsonFile)
         .then(response => response.json())
@@ -71,42 +71,6 @@ genreSelect.addEventListener('change', () => {
     updateSongsByGenre(selectedGenre);
 });
 
-
-const oldisgoldBefore = document.getElementById("oldisgold-before");
-const oldisgold = document.getElementsByClassName("oldisgold")[0];
-const oldisgoldSelect = document.getElementById('oldisgold');
-
-oldisgoldBefore.addEventListener('click', () => {
-    oldisgoldBefore.classList.add("hidden");
-    oldisgold.classList.remove("hidden");
-    oldisgold.classList.add("flex");
-    updateSongsByOldIsGold('Jagjit Singh'); // Default value for initialization
-});
-function updateSongsByOldIsGold(selectedSinger) {
-    const singerMap = {
-        'Jagjit Singh': 'OldIsGold/JagjitSingh.json',
-        'Ghulam Ali': 'OldIsGold/GhulamAli.json',
-        'Kishore Kumar': 'OldIsGold/KishoreKumar.json',
-        'Mohammad Rafi': 'OldIsGold/MohammadRafi.json'
-    };
-
-    const jsonFile = singerMap[selectedSinger] || 'Allsongs/songs.json';
-    document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`;
-
-    fetch(jsonFile)
-        .then(response => response.json())
-        .then(data => {
-            songs = data.sort((a, b) => a.title.localeCompare(b.title));
-            loadSongList();
-        })
-        .catch(error => console.error('Error fetching songs:', error));
-}
-
-
-oldisgoldSelect.addEventListener('change', () => {
-    const selectedSinger = oldisgoldSelect.value;
-    updateSongsByOldIsGold(selectedSinger);
-});
 function trimAndDecodeURL(url) {
     const baseURL = 'https://itsnjedits.github.io/musicplayer/';
     if (url.startsWith(baseURL)) {
@@ -326,11 +290,11 @@ function fetching(filename){
     title.addEventListener('click',()=>{
         fetching('Allsongs/songs.json')
             
-            document.querySelector('.without-ads').innerHTML = `Non-Stop 350+ Songs - No Ads`
+            document.querySelector('.without-ads').innerHTML = `Non-Stop 350+ Songs - No Ads 🔥`
         })
         
     playlistButton.addEventListener('click',()=>{
-        document.querySelector('.without-ads').innerHTML = `Your Instant Playlist`
+        document.querySelector('.without-ads').innerHTML = `Your Instant Playlist 🔥`
         
     })
 
@@ -371,7 +335,7 @@ function fetching(filename){
         singerBefore.classList.add("hidden");
         singer.classList.remove("hidden");
         singer.classList.add("flex");
-        updateSongsBySinger('Arijit Singh');
+        updateSongsBySinger('Jagjit Singh');
     });
 
     speedBefore.addEventListener('click', () => {
@@ -406,11 +370,14 @@ function updateSongsBySinger(selectedSinger) {
         'Jubin Nautiyal': 'Singersongs/Jubin Nautiyal.json',
         'Armaan Malik': 'Singersongs/Armaan Malik.json',
         'Rahat Fateh Ali Khan': 'Singersongs/Rahat Fateh Ali Khan.json',
-        'Sonu Nigam': 'Singersongs/Sonu Nigam.json'
+        'Jagjit Singh': 'Singersongs/JagjitSingh.json',
+        'Ghulam Ali': 'Singersongs/GhulamAli.json',
+        'Kishore Kumar': 'Singersongs/KishoreKumar.json',
+        'Mohammad Rafi': 'Singersongs/MohammadRafi.json'
     };
 
     const jsonFile = singerMap[selectedSinger] || 'Allsongs/songs.json';
-    document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads`;
+    document.querySelector('.without-ads').innerHTML = `${selectedSinger} Songs - No Ads 🔥`;
 
     fetch(jsonFile)
         .then(response => response.json())

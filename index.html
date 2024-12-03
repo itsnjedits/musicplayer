@@ -46,7 +46,7 @@
     cursor: pointer;
 }
 
- .singer select, .oldisgold select, .genre select{
+ .singer select, .genre select{
     background-color: rgb(56, 60, 67); /* Adjust as needed */
     color: #ffffff;
     cursor: pointer;
@@ -264,16 +264,7 @@ header{
                         </div>
                     </div>
                 <div class="flex gap-x-2 max-sm:gap-x-2 justify-center">
-                    <button id="oldisgold-before" class="text-lg max-md:text-sm max-md:py-0 max-sm:py-1 max-sm:px-2 max-md:px-2 bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] font-semibold px-4 py-2 rounded min-md:hover:bg-gray-600 min-md:hover:border-gray-900 min-md:hover:text-[#29ecfe] duration-150 ">Old is Gold</button>
-                    <div class="oldisgold flex-col items-center justify-center hidden">
-                        <select id="oldisgold" class="text-white rounded p-1 py-2 max-md:text-[11px] max-md:w-24 max-md:overflow-hidden max-md:text-ellipsis max-md:whitespace-nowrap ">
-                            <option class="bg-gray-700" value="Jagjit Singh">Jagjit Singh</option>
-                            <option class="bg-gray-700" value="Ghulam Ali">Ghulam Ali</option>
-                            <option class="bg-gray-700" value="Kishore Kumar">Kishore Kumar</option>
-                            <option class="bg-gray-700" value="Mohammad Rafi">Mohammad Rafi</option>
-                        </select>
-                    </div>
-                    
+
                 <button id="genre-before" class="max-md:text-sm max-md:py-0 max-sm:py-1 max-sm:px-2 max-md:px-2 text-lg bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] font-semibold px-4 py-2 rounded min-md:hover:bg-gray-600 min-md:hover:border-gray-900 min-md:hover:text-[#29ecfe] duration-150 ">Genre</button>
                 <div class="genre flex-col items-center justify-center hidden">
                     <select id="genre" class="text-white rounded p-1 py-2 max-md:text-[11px] max-md:w-24 max-md:overflow-hidden max-md:text-ellipsis max-md:whitespace-nowrap ">
@@ -288,7 +279,8 @@ header{
                 <button id="singer-before" class="max-md:text-sm max-md:py-0 max-sm:py-1 max-sm:px-2 max-md:px-2 text-lg bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] font-semibold px-4 py-2 rounded min-md:hover:bg-gray-600 min-md:hover:border-gray-900 min-md:hover:text-[#29ecfe] duration-150 ">Singer</button>
                 <div class="singer flex-col items-center justify-center hidden">
                     <select id="singer" class="text-white rounded p-1 py-2 max-md:text-[11px] max-md:w-24 max-md:overflow-hidden max-md:text-ellipsis max-md:whitespace-nowrap ">
-                        <option class="bg-gray-700" value="Arijit Singh" selected>Arijit Singh</option>
+                        <option class="bg-gray-700" value="Jagjit Singh" selected>Jagjit Singh</option>
+                        <option class="bg-gray-700" value="Arijit Singh">Arijit Singh</option>
                         <option class="bg-gray-700" value="Atif Aslam">Atif Aslam</option>
                         <option class="bg-gray-700" value="Mohammad Irfan">Mohammad Irfan</option>
                         <option class="bg-gray-700" value="KK">KK</option>
@@ -298,6 +290,9 @@ header{
                         <option class="bg-gray-700" value="Armaan Malik">Armaan Malik</option>
                         <option class="bg-gray-700" value="Mohit Chauhan">Mohit Chauhan</option>
                         <option class="bg-gray-700" value="Shafaqat Amanat Ali">Shafaqat Amanat Ali</option>
+                        <option class="bg-gray-700" value="Ghulam Ali">Ghulam Ali</option>
+                        <option class="bg-gray-700" value="Kishore Kumar">Kishore Kumar</option>
+                        <option class="bg-gray-700" value="Mohammad Rafi">Mohammad Rafi</option>
                     </select>
                 </div>
                 
@@ -314,7 +309,7 @@ header{
    
     <main class="flex flex-col items-center mt-5 mb-28 max-md:mb-20">
         <h1 class="text-gray-200 text-3xl max-md:text-2xl max-sm:text-xl max-sm:w-[90%] font-semibold text-center without-ads">
-            Non-Stop 350+ Songs - No Ads
+            Non-Stop 350+ Songs - No Ads 🔥
         </h1>
         <div class="array flex flex-col max-w-6xl bg-gray-800 my-5 w-[90%] max-md:w-[100%] max-md:rounded-none rounded-xl py-4 max-md:py-2 gap-y-2">
             <!-- Song items will be dynamically added here -->
