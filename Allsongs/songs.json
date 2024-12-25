@@ -499,12 +499,6 @@
     "artist": "Mohit Chauhan"
 },
 {
-    "title": "Ye Dooriyan",
-    "file": "Audio/LYRICS Yeh Dooriyan Love Aaj Kal 2 Mohit Chauhan Pritam Kartik Ariyan - Sara Ali Khan .mp3",
-    "image": "Thumbnails/LYRICS Yeh Dooriyan Love Aaj Kal 2 Mohit Chauhan Pritam Kartik Ariyan - Sara Ali Khan _thumbnail.jpg",
-    "artist": "Mohit Chauhan"
-},
-{
     "title": "Is Dard-E-Dil Ki Sifarish",
     "file": "Audio/Lyrics- Is Dard-E-Dil Ki Sifarish Ab Karde Koi Yahan Mohammad I- Gajendra V Mithoon Yaariyan.mp3",
     "image": "Thumbnails/Lyrics- Is Dard-E-Dil Ki Sifarish Ab Karde Koi Yahan Mohammad I- Gajendra V Mithoon Yaariyan_thumbnail.jpg",
@@ -1276,7 +1270,7 @@
     "title": "Behti Hawa Sa Tha Woh",
     "file": "Audio/Behti Hawa Sa Tha Woh - Lyrics - 3 Idiots Aamir Khan Kareena Kapoor Madhavan Sharman Joshi.mp3",
     "image": "Thumbnails/Behti Hawa Sa Tha Woh - Lyrics - 3 Idiots Aamir Khan Kareena Kapoor Madhavan Sharman Joshi_thumbnail.jpg",
-    "artist": "Arijit Singh"
+    "artist": "Shaan"
 },
 {
     "title": "Bolna",
@@ -2206,4 +2200,65 @@
         "title": "Tu Hi Hai Aashiqui (Slowed + Reverb)",
         "artist": "Arijit Singh"
     }
+    ,
+        {
+            "file": "Audio/Haal-E-Dil Mera - SLOW + REVERB - Sanam Teri Kasam Movie Song ( MALE VERSION ) DeeEdm.mp3",
+            "image": "Thumbnails/Haal-E-Dil Mera - SLOW + REVERB - Sanam Teri Kasam Movie Song ( MALE VERSION ) DeeEdm_thumbnail.jpg",
+            "title": "Haal-E-Dil Mera - SLOWED + REVERB",
+            "artist": "Sreerama Chandra"
+        },
+        {
+            "file": "Audio/Hoshwalon Ko Khabar - Lofi Reverbed - Jagjit Singh - Blue Night.mp3",
+            "image": "Thumbnails/Hoshwalon Ko Khabar - Lofi Reverbed - Jagjit Singh - Blue Night_thumbnail.jpg",
+            "title": "Hoshwalon Ko Khabar - Lofi",
+            "artist": "Jagjit Singh"
+        },
+        {
+            "file": "Audio/ISHQ MUBARAK [Slowed+Reverb]  ~ Arjit Singh -- MACK'S LOFI --.mp3",
+            "image": "Thumbnails/ISHQ MUBARAK [Slowed+Reverb]  ~ Arjit Singh -- MACK'S LOFI --_thumbnail.jpg",
+            "title": "ISHQ MUBARAK [Slowed+Reverb]",
+            "artist": "Arijit Singh"
+        },
+        {
+            "file": "Audio/Iss darde dil ki sifarish song (slowe+reverb) by  - Mohammad I, Gajendra V - Mithoon - Yaariyan.mp3",
+            "image": "Thumbnails/Iss darde dil ki sifarish song (slowe+reverb) by  - Mohammad I, Gajendra V - Mithoon - Yaariyan_thumbnail.jpg",
+            "title": "Iss darde dil ki sifarish - Slowed & Reverb",
+            "artist": "Mohammad Irfan"
+        },
+        {
+            "file": "Audio/kabhi jo badal barse (slowed down w rain) ☔.mp3",
+            "image": "Thumbnails/kabhi jo badal barse (slowed down w rain) ☔_thumbnail.jpg",
+            "title": "Kabhi jo badal barse - Slowed & Reverb",
+            "artist": "Arijit Singh"
+        },
+        {
+            "file": "Audio/kuch toh bata zindagi song - ( slowed + Reverb ) Lyrics.mp3",
+            "image": "Thumbnails/kuch toh bata zindagi song - ( slowed + Reverb ) Lyrics_thumbnail.jpg",
+            "title": "Kuch toh bata zindagi - (Slowed + Reverb)",
+            "artist": "Jubin Nautiyal"
+        },
+        {
+            "file": "Audio/Muskurane ki wajah tum ho [Slowed + Reverb] Arijit Singh - Bollywood hindi lofi song.mp3",
+            "image": "Thumbnails/Muskurane ki wajah tum ho [Slowed + Reverb] Arijit Singh - Bollywood hindi lofi song_thumbnail.jpg",
+            "title": "Muskurane ki wajah tum ho [Slowed + Reverb]",
+            "artist": "Arijit Singh"
+        },
+        {
+            "file": "Audio/Sanam Teri Kasam Lofi Song [Slowed × Reverb] - Akasa - Darshan Raval _ Lofi Song _ NR Lofi.mp3",
+            "image": "Thumbnails/Sanam Teri Kasam Lofi Song [Slowed × Reverb] - Akasa - Darshan Raval _ Lofi Song _ NR Lofi_thumbnail.jpg",
+            "title": "Sanam Teri Kasam [Slowed + Reverb]",
+            "artist": "Ankit Tiwari, Palak Muchhal"
+        },
+        {
+            "file": "Audio/Yeh Dooriyan (Slowed +Reverb) - Love Aaj Kal -  Mohit Chauhan.mp3",
+            "image": "Thumbnails/Yeh Dooriyan (Slowed +Reverb) - Love Aaj Kal -  Mohit Chauhan_thumbnail.jpg",
+            "title": "Yeh Dooriyan (Slowed + Reverb)",
+            "artist": "Mohit Chauhan"
+        },
+        {
+            "file": "Audio/💜Bewajah Nahi Milna Tera Mera [Slowed × Reverb] - Himesh Reshammiya - Lofi Song - NR Lofi.mp3",
+            "image": "Thumbnails/💜Bewajah Nahi Milna Tera Mera [Slowed × Reverb] - Himesh Reshammiya - Lofi Song - NR Lofi_thumbnail.jpg",
+            "title": "Bewajah Nahi Milna Tera Mera [Slowed + Reverb]",
+            "artist": "Himesh Reshammiya"
+        }
 ]

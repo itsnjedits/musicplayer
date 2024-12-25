@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const songImage = document.getElementById('song-image');
     const songTitle = document.querySelector('.song-title');
     const songArtist = document.querySelector('.song-artist');
-    const playFromStartButton = document.querySelector('.play-from-start');
+    // const playFromStartButton = document.querySelector('.play-from-start');
     const progress = document.getElementById('progress');
     const timeCompleted = document.getElementById('timecompleted');
     const timeTotal = document.getElementById('timetotal');
@@ -143,7 +143,7 @@ function removeFromPlaylist(index) {
                     <div class="bar max-md:w-[2px] bar5"></div>
                 </div>
                 <p class="text-5xl remove-from-playlist  text-[#2b8bff] cursor-pointer hover:text-[#29ecfe] max-md:text-2xl "><i class='bx bx-minus'></i></p>
-                <p class="text-5xl play-from-start text-[#2b8bff] cursor-pointer min-md:hover:text-[#29ecfe] max-md:text-2xl "><i class='bx bx-play'></i></p>
+                
             </div>`;
         
         // Remove button ka event listener
@@ -192,7 +192,7 @@ playlistButton.addEventListener('click', () => {
                     <div class="bar max-md:w-[2px] bar5"></div>
                 </div>
                 <p class="text-5xl remove-from-playlist text-[#2b8bff] cursor-pointer hover:text-[#29ecfe] max-md:text-2xl "><i class='bx bx-minus'></i></p>
-                <p class="text-5xl play-from-start text-[#2b8bff] cursor-pointer min-md:hover:text-[#29ecfe] max-md:text-2xl "><i class='bx bx-play'></i></p>
+                
             </div>`;
         
         // Remove button ka event listener
@@ -237,7 +237,7 @@ function loadSongList() {
                     <div class="bar max-md:w-[2px] bar5"></div>
                 </div>
                 <p class="text-5xl add-to-playlist  text-[#2b8bff] cursor-pointer hover:text-[#29ecfe] max-md:text-2xl "><i class='bx bx-plus'></i></p>
-                <p class="text-5xl play-from-start text-[#2b8bff] cursor-pointer min-md:hover:text-[#29ecfe] max-md:text-2xl "><i class='bx bx-play'></i></p>
+                
             </div>`
         ;
 
@@ -341,14 +341,6 @@ function fetching(filename){
     speedBefore.addEventListener('click', () => {
         speedBefore.classList.add("hidden");
         speed.classList.remove("hidden");
-    });
-
-    //Play From start button jisse songs start se play hote hain
-
-    playFromStartButton.addEventListener('click', () => {
-        if (songs.length > 0) {
-            playSong(0);
-        }
     });
 
     fetch('Allsongs/songs.json')
