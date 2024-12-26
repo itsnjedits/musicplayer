@@ -32,9 +32,38 @@ document.addEventListener('DOMContentLoaded', () => {
     const playlistButton = document.querySelector(".yourPlaylist");
     
 
+
     const genreBefore = document.getElementById("genre-before");
 const genre = document.getElementsByClassName("genre")[0];
 const genreSelect = document.getElementById('genre');
+
+setTimeout(() => {
+    // Pehle shadow-root ke parent element ko target karo
+    const shadowHost = document.querySelector('#voiceflow-chat');
+  
+    if (shadowHost) {
+      // Shadow DOM ko access karo
+      const shadowRoot = shadowHost.shadowRoot;
+  
+      if (shadowRoot) {
+        // Shadow DOM ke andar target element ko dhoondo
+        const element = shadowRoot.querySelector('.vfrc-widget--launcher');
+  
+        if (element) {
+          // Inline style set karo
+          element.style.bottom = '100px';
+          element.style.right = '10px';
+          console.log('Styles updated successfully!');
+        } else {
+          console.error('Element with class "vfrc-widget--launcher" not found in Shadow DOM.');
+        }
+      } else {
+        console.error('Shadow root not found for the #voiceflow-chat element.');
+      }
+    } else {
+      console.error('Element with id "voiceflow-chat" not found.');
+    }
+  }, 5000); // 5 seconds ke baad execute hoga
 
 genreBefore.addEventListener('click', () => {
     genreBefore.classList.add("hidden");
