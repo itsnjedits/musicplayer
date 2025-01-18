@@ -227,6 +227,8 @@ header{
   display: none; /* hide the results container by default */
 }
 
+
+
 </style>
 <body class="bg-black ">
 
@@ -303,7 +305,7 @@ header{
             <!-- 3 -->
         </nav>
     </header>
-   
+
     <main class="flex flex-col items-center mt-5 mb-28 max-md:mb-20">
         <h1 class="text-gray-200 text-3xl max-md:text-2xl max-sm:text-xl max-sm:w-[90%] font-semibold text-center without-ads">
             Non-Stop 350+ Songs - No Ads 🔥
@@ -365,6 +367,42 @@ header{
         </div>
 
     </div>
+    <!-- jagjit bot 3.0 song req and suggestion -->
+    <div style="width: 0; height: 0;" id="VG_OVERLAY_CONTAINER">
+        <!-- Here is where TIXAE Agents renders the widget. -->
+        <!-- Set render to 'full-width' then adjust the width and height to 500px (for example) to render the chatbot itself without the popup. -->
+    </div>
+
+    <!-- Remove 'defer' if you want widget to load faster (Will affect website loading) -->
+     
+    <script defer>
+        (function() {
+            window.VG_CONFIG = {
+                ID: "1o8yve6loccobiz8", // YOUR AGENT ID
+                region: 'eu', // YOUR ACCOUNT REGION 
+                render: 'bottom-right', // can be 'full-width' or 'bottom-left' or 'bottom-right'
+                stylesheets: [
+                    // Base TIXAE Agents CSS
+                    "https://vg-bunny-cdn.b-cdn.net/vg_live_build/styles.css",
+                    // Add your custom css stylesheets, Can also add relative URL ('/public/your-file.css)
+                ],
+                // THIS IS SUPPOSED TO BE CHANGED OR REMOVED.
+                // user: {
+                //     name: 'John Doe', // User's name
+                //     email: 'johndoe@gmail.com', // User's email
+                //     phone: '+1234567890', // User's phone number
+                // }
+                // Optional user data -- end
+                // **
+                // userID: 'USER_ID', // If you want to use your own user_id
+                // autostart: true, // Whether to autostart the chatbot with the proactive message
+            }
+            var VG_SCRIPT = document.createElement("script");
+            VG_SCRIPT.src = "https://vg-bunny-cdn.b-cdn.net/vg_live_build/vg_bundle.js";
+            VG_SCRIPT.defer = true; // Remove 'defer' if you want widget to load faster (Will affect website loading)
+            document.body.appendChild(VG_SCRIPT);
+        })()
+    </script>
     <script>
         function logohover() {
             document.querySelector(".heading").style.color = "#29ecfe";
@@ -376,19 +414,7 @@ header{
             document.querySelector(".heading2").style.color = "#29ecfe"; // Original color
         }
     </script>
-    <script type="text/javascript">
-        (function(d, t) {
-            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-            v.onload = function() {
-              window.voiceflow.chat.load({
-                verify: { projectID: '676384f10d7dd035adc5a02a' },
-                url: 'https://general-runtime.voiceflow.com',
-                versionID: 'production'
-              });
-            }
-            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-        })(document, 'script');
-      </script>
     <script src="script.js"></script>
+    
 </body>
 </html>
