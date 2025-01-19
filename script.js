@@ -32,11 +32,34 @@ document.addEventListener('DOMContentLoaded', () => {
     const playlistButton = document.querySelector(".yourPlaylist");
     
 
-
     const genreBefore = document.getElementById("genre-before");
-const genre = document.getElementsByClassName("genre")[0];
-const genreSelect = document.getElementById('genre');
+    const genre = document.getElementsByClassName("genre")[0];
+    const genreSelect = document.getElementById('genre');
 
+    document.querySelector('.randomSong').addEventListener('click', () => {
+        // Sare songs collect karo
+        const songs = document.querySelectorAll('.item');
+    
+        // Random song select karo
+        const randomIndex = Math.floor(Math.random() * songs.length);
+        const randomSong = songs[randomIndex];
+    
+        // Pehle ke highlighted songs ka highlight hatayein (agar koi hai toh)
+        songs.forEach(song => {
+            song.children[0].children[1].children[0].style.color = '';
+            song.children[0].children[1].children[1].style.color = '';
+            song.classList.remove('bg-gray-900');
+        });
+    
+        // Highlight aur scroll karne ka function call karo
+        highlightElement(randomSong);
+    
+        // Random song ka naam console me show karo
+        const songTitle = randomSong.querySelector('.song-title').textContent;
+        // console.log(`Randomly selected song: ${songTitle}`);
+    });
+    
+    
 
 genreBefore.addEventListener('click', () => {
     genreBefore.classList.add("hidden");
