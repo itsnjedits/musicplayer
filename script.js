@@ -59,6 +59,18 @@ document.addEventListener('DOMContentLoaded', () => {
         // console.log(`Randomly selected song: ${songTitle}`);
     });
     
+    document.querySelector('.randomSong').addEventListener('click', function () {
+        // Generate a random number between 1 and 6
+        const randomNumber = Math.floor(Math.random() * 6) + 1;
+    
+        // Change the dice icon based on the random number
+        const diceIcon = this.querySelector('i');
+        diceIcon.className = `bx bxs-dice-${randomNumber}`;
+    
+        // Optionally, you can add a small animation to make it look more interactive
+        this.classList.add('rolling');
+        setTimeout(() => this.classList.remove('rolling'), 200);
+      });
     
 
 genreBefore.addEventListener('click', () => {
