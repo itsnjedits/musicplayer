@@ -80,7 +80,7 @@ genreBefore.addEventListener('click', () => {
     genreBefore.classList.add("hidden");
     genre.classList.remove("hidden");
     genre.classList.add("flex");
-    updateSongsByGenre('Gym'); // Default value for initialization
+    updateSongsByGenre('Slowed & Reverb'); // Default value for initialization
 });
 
 moodBefore.addEventListener('click', () => {
