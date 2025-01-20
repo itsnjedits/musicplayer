@@ -35,6 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const genreBefore = document.getElementById("genre-before");
     const genre = document.getElementsByClassName("genre")[0];
     const genreSelect = document.getElementById('genre');
+    const moodBefore = document.getElementById("mood-before");
+    const mood = document.getElementsByClassName("mood")[0];
+    const moodSelect = document.getElementById('mood');
 
     document.querySelector('.randomSong').addEventListener('click', () => {
         // Sare songs collect karo
@@ -80,6 +83,13 @@ genreBefore.addEventListener('click', () => {
     updateSongsByGenre('Gym'); // Default value for initialization
 });
 
+moodBefore.addEventListener('click', () => {
+    moodBefore.classList.add("hidden");
+    mood.classList.remove("hidden");
+    mood.classList.add("flex");
+    updateSongsByMood('Ghazal'); // Default value for initialization
+});
+
 function updateSongsByGenre(selectedGenre) {
     const genreMap = {
         'Gym': 'Genres/Gym.json',
@@ -101,11 +111,34 @@ function updateSongsByGenre(selectedGenre) {
         })
         .catch(error => console.error('Error fetching songs:', error));
 }
+function updateSongsByMood(selectedMood) {
+    const moodMap = {
+        'Sad': 'Mood/Sad.json',
+        'Happy': 'Mood/Happy.json',
+        'Romantic': 'Mood/Romantic.json',
+        'Ghazal': 'Mood/Ghazal.json',
+    };
 
+    const jsonFile = moodMap[selectedMood] || 'Allsongs/songs.json';
+    document.querySelector('.without-ads').innerHTML = `${selectedMood} Songs - No Ads 🔥`;
+
+    fetch(jsonFile)
+        .then(response => response.json())
+        .then(data => {
+            songs = data.sort((a, b) => a.title.localeCompare(b.title));
+            loadSongList();
+        })
+        .catch(error => console.error('Error fetching songs:', error));
+}
 
 genreSelect.addEventListener('change', () => {
     const selectedGenre = genreSelect.value;
     updateSongsByGenre(selectedGenre);
+});
+
+moodSelect.addEventListener('change', () => {
+    const selectedMood = moodSelect.value;
+    updateSongsByMood(selectedMood);
 });
 
 function trimAndDecodeURL(url) {
