@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
         isLooping = !isLooping;
         loopButton.classList.toggle('text-red-500', isLooping);
     });
+    const reqSongButton = document.querySelector(".reqSong");
+
     const title = document.querySelector(".title");
     const playPauseButton = document.getElementById('play-pause');
     const prevButton = document.getElementById('prev');
@@ -43,6 +45,57 @@ document.addEventListener('DOMContentLoaded', () => {
     const moodBefore = document.getElementById("mood-before");
     const mood = document.getElementsByClassName("mood")[0];
     const moodSelect = document.getElementById('mood');
+
+    const iframeContainer = document.createElement("div");
+    iframeContainer.style.position = "fixed";
+    iframeContainer.style.top = "50%";
+    iframeContainer.style.left = "50%";
+    iframeContainer.style.transform = "translate(-50%, -50%)";
+    iframeContainer.style.width = "90%";
+    iframeContainer.style.maxWidth = "400px";
+    iframeContainer.style.height = "82vh";
+    iframeContainer.style.background = "rgb(17 24 39)";
+    iframeContainer.style.display = "none";
+    iframeContainer.style.zIndex = "1000";
+    iframeContainer.style.padding = "10px";
+    iframeContainer.style.borderRadius = "9px";
+    iframeContainer.style.borderRadius = "9px";
+    iframeContainer.style.border = "2px solid #29ecfe";
+    iframeContainer.style.boxShadow = "0 0 10px rgba(0,0,0,0.5)";
+
+    const iframe = document.createElement("iframe");
+    iframe.src = "https://docs.google.com/forms/d/e/1FAIpQLSd8Fdms4rUhOCXAgrq9XJdCNeJHg8EX3SS9F6I1PeTM7shh8A/viewform?embedded=true";
+    iframe.width = "100%";
+    iframe.height = "100%";
+    iframe.style.border = "none";
+    iframeContainer.appendChild(iframe);
+
+    // Close button
+    const closeButton = document.createElement("button");
+    closeButton.innerText = "X";
+    closeButton.style.fontSize = "27px";
+closeButton.style.position = "absolute";
+closeButton.style.top = "10px";
+closeButton.style.right = "10px";
+closeButton.style.background = "#ff0000";
+closeButton.style.fontWeight = "600";
+closeButton.style.color = "white";
+closeButton.style.border = "none";
+closeButton.style.padding = "1px 11px";
+closeButton.style.cursor = "pointer";
+closeButton.style.borderRadius = "8px";
+closeButton.style.margin = "-6px";
+
+    closeButton.addEventListener("click", () => {
+        iframeContainer.style.display = "none";
+    });
+    iframeContainer.appendChild(closeButton);
+
+    document.body.appendChild(iframeContainer);
+
+    reqSongButton.addEventListener("click", () => {
+        iframeContainer.style.display = "block";
+    });
 
     document.querySelector('.randomSong').addEventListener('click', () => {
         // Sare songs collect karo
