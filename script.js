@@ -3,6 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
     const playlist = [];
     const audio = new Audio();
+    let isLooping = false;
+    const loopButton = document.querySelector('.loop');
+    loopButton.addEventListener('click', () => {
+        isLooping = !isLooping;
+        loopButton.classList.toggle('text-red-500', isLooping);
+    });
     const title = document.querySelector(".title");
     const playPauseButton = document.getElementById('play-pause');
     const prevButton = document.getElementById('prev');
@@ -23,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const musicplayer = document.getElementsByClassName('musicplayer')[0];
     const mainContainer = document.getElementsByTagName("main")[0];
     const singerBefore = document.getElementById("singer-before");
-    const speedBefore = document.getElementById("speed-before");
     const singer = document.getElementsByClassName("singer")[0];
     const speed = document.getElementById("speed");
     const singerSelect = document.getElementById('singer'); // Add this line to select the singer dropdown
@@ -95,7 +100,6 @@ function updateSongsByGenre(selectedGenre) {
         'Gym': 'Genres/Gym.json',
         'Hindi-New': 'Genres/Hindi-New.json',
         'Hindi-Old': 'Genres/Hindi-Old.json',
-        'Ghazals': 'Genres/Ghazals.json',
         'Slowed & Reverb': 'Genres/Slowed-Reverb.json',
         'Punjabi': 'Genres/Punjabi.json'
     };
@@ -335,7 +339,7 @@ function loadSongList() {
                 playlist.push(songData);
         
                 // Log the updated playlist array
-                // console.log(JSON.stringify(playlist, null, 2));
+                console.log(JSON.stringify(playlist, null, 2));
                 return; // Exit the event handler to prevent playSong from being called
             }
             // Play the song if the click was on the itemDiv
@@ -408,10 +412,6 @@ function fetching(filename){
         updateSongsBySinger('Jagjit Singh');
     });
 
-    speedBefore.addEventListener('click', () => {
-        speedBefore.classList.add("hidden");
-        speed.classList.remove("hidden");
-    });
 
     fetch('Allsongs/songs.json')
             .then(response => response.json())
@@ -457,27 +457,39 @@ function updateSongsBySinger(selectedSinger) {
             });
 
             
-    function playSong(index) {
-        mainContainer.classList.remove("mb-28");
-        mainContainer.classList.remove("max-md:mb-20");
-        if (window.innerWidth < 768) {
-            mainContainer.classList.add("mb-32");
-            mainContainer.classList.remove("mb-56");
-        } else {
-            mainContainer.classList.add("mb-56");
-            mainContainer.classList.remove("mb-32");
-        }
-        // updateClassBasedOnWidth();
-        if (index < 0 || index >= songs.length) return;
-        currentIndex = index;
-        const song = songs[currentIndex];
-        audio.src = song.file;
-        audio.playbackRate = currentPlaybackRate; // Apply the stored playback speed
-        audio.play();
-        musicplayer.style.animationPlayState = 'running';
-        updatePlayer(song);
-        enableAllButtons(); // Enable buttons when a song is playing
-    }
+            function playSong(index) {
+                mainContainer.classList.remove("mb-28");
+                mainContainer.classList.remove("max-md:mb-20");
+                if (window.innerWidth < 768) {
+                    mainContainer.classList.add("mb-32");
+                    mainContainer.classList.remove("mb-56");
+                } else {
+                    mainContainer.classList.add("mb-56");
+                    mainContainer.classList.remove("mb-32");
+                }
+        
+                if (index < 0 || index >= songs.length) {
+                    if (isLooping) {
+                        currentIndex = 0; // Restart from first song
+                    } else {
+                        return; // Stop playback
+                    }
+                } else {
+                    currentIndex = index;
+                }
+                
+                const song = songs[currentIndex];
+                audio.src = song.file;
+                audio.playbackRate = currentPlaybackRate;
+                audio.play();
+                musicplayer.style.animationPlayState = 'running';
+                updatePlayer(song);
+                enableAllButtons();
+                
+                audio.onended = () => {
+                    playSong(currentIndex + 1);
+                };
+            }
 
 
     function updatePlayer(song) {
