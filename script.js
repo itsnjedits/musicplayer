@@ -338,7 +338,14 @@ playlistButton.addEventListener('click', () => {
     });
 });
 
-
+document.addEventListener('click', (event) => {
+    const bulbButton = event.target.closest('.bulb'); // Check if clicked element is the bulb button
+    
+    if (bulbButton) {
+        bulbButton.classList.toggle('bg-black');
+        bulbButton.classList.toggle('bg-gray-800');
+    }
+});
 
 function loadSongList() {
     const arrayDiv = document.querySelector('.array');
@@ -370,40 +377,42 @@ function loadSongList() {
         ;
 
         itemDiv.addEventListener('click', (event) => {
-            // Check if the click event was on the 'add-to-playlist' element
             const addToPlaylistButton = event.target.closest('.add-to-playlist');
             if (addToPlaylistButton) {
-                event.stopPropagation(); // Ensure the click event does not bubble up to the itemDiv
-                
-                // Extract data from the DOM
+                event.stopPropagation();
+
                 const imageURL = trimAndDecodeURL(addToPlaylistButton.parentElement.parentElement.children[0].children[0].src);
-                const fileURL = modifyAndDecodeURL(addToPlaylistButton.parentElement.parentElement.children[0].children[0].src);
                 const title = addToPlaylistButton.parentElement.parentElement.children[0].children[1].children[0].textContent;
                 const artist = addToPlaylistButton.parentElement.parentElement.children[0].children[1].children[1].textContent;
-        
-                // Create a JSON object
+
+                const bulbButton = document.querySelector('.bulb');
+                const isBulbActive = bulbButton && bulbButton.classList.contains('bg-black');
+
+
+                let fileURL;
+                if (isBulbActive) {
+                    fileURL = `OSHO-${title}.mp3`;
+                } else {
+                    fileURL = modifyAndDecodeURL(addToPlaylistButton.parentElement.parentElement.children[0].children[0].src);
+                }
+
                 const songData = {
                     image: imageURL,
                     file: fileURL,
                     title: title,
                     artist: artist
                 };
-        
-                // Add the JSON object to the array
+
                 playlist.push(songData);
-        
-                // Log the updated playlist array
                 console.log(JSON.stringify(playlist, null, 2));
-                return; // Exit the event handler to prevent playSong from being called
+                return;
             }
-            // Play the song if the click was on the itemDiv
             playSong(index);
         });
-        
+
         arrayDiv.appendChild(itemDiv);
     });
 }
-
 
 
 function fetching(filename){
