@@ -290,15 +290,29 @@ function removeFromPlaylist(index) {
 }
 
 // Event listener for the playlist button
+
 playlistButton.addEventListener('click', () => {
     const arrayDiv = document.querySelector('.array');
     arrayDiv.innerHTML = '';
 
-    // Filter out duplicate songs based on image
-    songs = playlist.filter((song, index, self) => 
-        index === self.findIndex((s) => s.image === song.image)
-    );
+    // Get the status of the bulb button
+    const bulbButton = document.querySelector('.bulb');
+    const isBulbActive = bulbButton && bulbButton.classList.contains('bg-black');
 
+    // Filter songs based on the condition
+    if (isBulbActive) {
+        // Filter out duplicate songs based on title
+        songs = playlist.filter((song, index, self) => 
+            index === self.findIndex((s) => s.title === song.title)
+        );
+    } else {
+        // Filter out duplicate songs based on image
+        songs = playlist.filter((song, index, self) => 
+            index === self.findIndex((s) => s.image === song.image)
+        );
+    }
+
+    // Loop through filtered songs and render them
     songs.forEach((song, index) => {
         const itemDiv = document.createElement('div');
         itemDiv.className = 'item flex justify-between items-center bg-gray-700 rounded-xl p-2 max-md:p-1 mx-4 max-md:mx-2 min-md:hover:bg-gray-600 duration-300 cursor-pointer';
@@ -322,7 +336,7 @@ playlistButton.addEventListener('click', () => {
                 <p class="text-5xl remove-from-playlist text-[#2b8bff] cursor-pointer hover:text-[#29ecfe] max-md:text-2xl "><i class='bx bx-minus'></i></p>
                 
             </div>`;
-        
+
         // Remove button ka event listener
         itemDiv.querySelector('.remove-from-playlist').addEventListener('click', (e) => {
             e.stopPropagation(); // Ye ensure karega ki parent click event trigger na ho
@@ -337,6 +351,7 @@ playlistButton.addEventListener('click', () => {
         arrayDiv.appendChild(itemDiv);
     });
 });
+
 
 document.addEventListener('click', (event) => {
     const bulbButton = event.target.closest('.bulb'); // Check if clicked element is the bulb button
@@ -435,10 +450,6 @@ function fetching(filename){
         
     })
 
-
-
-
-
     function disableAllButtons() {
         playPauseButton.disabled = true;
         playPauseButton.classList.remove('hover:min-md:bg-blue-400');
@@ -530,30 +541,51 @@ function updateSongsBySinger(selectedSinger) {
                     mainContainer.classList.add("mb-56");
                     mainContainer.classList.remove("mb-32");
                 }
-        
-                if (index < 0 || index >= songs.length) {
+            
+                // Handle invalid index
+                if (index < 0) return;
+            
+                if (index >= songs.length) {
                     if (isLooping) {
-                        currentIndex = 0; // Restart from first song
+                        index = 0; // Restart from first song
                     } else {
-                        return; // Stop playback
+                        return; // Stop playback on last song
                     }
-                } else {
-                    currentIndex = index;
                 }
-                
+            
+                currentIndex = index;
                 const song = songs[currentIndex];
+            
+                // Stop current playback only if audio is playing
+                if (!audio.paused) {
+                    audio.pause();
+                }
+            
+                // Ensure previous event listeners are removed to prevent duplicate calls
+                audio.onended = null;
+            
+                // Load new song
                 audio.src = song.file;
+                audio.load(); // Ensure the new song is loaded properly
+            
                 audio.playbackRate = currentPlaybackRate;
-                audio.play();
-                musicplayer.style.animationPlayState = 'running';
+            
+                audio.play().then(() => {
+                    musicplayer.style.animationPlayState = 'running';
+                }).catch(error => console.error("Playback error:", error));
+            
                 updatePlayer(song);
                 enableAllButtons();
-                
+            
+                // Fix song skipping issue
                 audio.onended = () => {
-                    playSong(currentIndex);
+                    if (currentIndex === songs.length - 1 && !isLooping) {
+                        return; // Stop playback at last song if looping is off
+                    }
+                    playSong(currentIndex + 1); // Play next song
                 };
-                
             }
+            
 
 
     function updatePlayer(song) {
