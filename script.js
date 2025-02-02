@@ -391,7 +391,7 @@ function loadSongList() {
 
                 let fileURL;
                 if (isBulbActive) {
-                    fileURL = `OSHO-${title}.mp3`;
+                    fileURL = `Audio/OSHO-${title}.mp3`;
                 } else {
                     fileURL = modifyAndDecodeURL(addToPlaylistButton.parentElement.parentElement.children[0].children[0].src);
                 }
@@ -550,8 +550,9 @@ function updateSongsBySinger(selectedSinger) {
                 enableAllButtons();
                 
                 audio.onended = () => {
-                    playSong(currentIndex + 1);
+                    playSong(currentIndex);
                 };
+                
             }
 
 
