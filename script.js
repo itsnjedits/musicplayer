@@ -173,8 +173,7 @@ function updateSongsByMood(selectedMood) {
         'Sad': 'Mood/Sad.json',
         'Happy': 'Mood/Happy.json',
         'Romantic': 'Mood/Romantic.json',
-        'Ghazal': 'Mood/Ghazal.json',
-        'Osho': 'Mood/Osho.json'
+        'Ghazal': 'Mood/Ghazal.json'
     };
 
     const jsonFile = moodMap[selectedMood] || 'Allsongs/songs.json';
@@ -295,22 +294,9 @@ playlistButton.addEventListener('click', () => {
     const arrayDiv = document.querySelector('.array');
     arrayDiv.innerHTML = '';
 
-    // Get the status of the bulb button
-    const bulbButton = document.querySelector('.bulb');
-    const isBulbActive = bulbButton && bulbButton.classList.contains('bg-black');
-
-    // Filter songs based on the condition
-    if (isBulbActive) {
-        // Filter out duplicate songs based on title
-        songs = playlist.filter((song, index, self) => 
-            index === self.findIndex((s) => s.title === song.title)
-        );
-    } else {
-        // Filter out duplicate songs based on image
-        songs = playlist.filter((song, index, self) => 
-            index === self.findIndex((s) => s.image === song.image)
-        );
-    }
+    songs = playlist.filter((song, index, self) => 
+        index === self.findIndex((s) => s.image === song.image)
+    );
 
     // Loop through filtered songs and render them
     songs.forEach((song, index) => {
@@ -353,14 +339,6 @@ playlistButton.addEventListener('click', () => {
 });
 
 
-document.addEventListener('click', (event) => {
-    const bulbButton = event.target.closest('.bulb'); // Check if clicked element is the bulb button
-    
-    if (bulbButton) {
-        bulbButton.classList.toggle('bg-black');
-        bulbButton.classList.toggle('bg-gray-800');
-    }
-});
 
 function loadSongList() {
     const arrayDiv = document.querySelector('.array');
@@ -399,17 +377,8 @@ function loadSongList() {
                 const imageURL = trimAndDecodeURL(addToPlaylistButton.parentElement.parentElement.children[0].children[0].src);
                 const title = addToPlaylistButton.parentElement.parentElement.children[0].children[1].children[0].textContent;
                 const artist = addToPlaylistButton.parentElement.parentElement.children[0].children[1].children[1].textContent;
-
-                const bulbButton = document.querySelector('.bulb');
-                const isBulbActive = bulbButton && bulbButton.classList.contains('bg-black');
-
-
                 let fileURL;
-                if (isBulbActive) {
-                    fileURL = `Audio/OSHO-${title}.mp3`;
-                } else {
-                    fileURL = modifyAndDecodeURL(addToPlaylistButton.parentElement.parentElement.children[0].children[0].src);
-                }
+                fileURL = modifyAndDecodeURL(addToPlaylistButton.parentElement.parentElement.children[0].children[0].src);
 
                 const songData = {
                     image: imageURL,
