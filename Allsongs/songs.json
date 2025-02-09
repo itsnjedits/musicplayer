@@ -2332,6 +2332,134 @@
             "artist": "Arijit Singh",
             "image": "Thumbnails/🎤Arijit Singh - Tera Yaar Hoon Main Full Lyrics Song Sonu Ke Titu Ki Sweety Kartik Aaryan _thumbnail.jpg",
             "file": "Audio/🎤Arijit Singh - Tera Yaar Hoon Main Full Lyrics Song Sonu Ke Titu Ki Sweety Kartik Aaryan .mp3"
-        }
+        },
+        
+            {
+                "file": "Audio/Aas Paas Khuda - Rahat Fateh Ali Khan 320Kbps.mp3",
+                "image": "Thumbnails/Aas Paas Khuda - Rahat Fateh Ali Khan 320Kbps_thumbnail.jpg",
+                "title": "Aas Paas Khuda",
+                "artist": "Rahat Fateh Ali Khan"
+            },
+            {
+                "file": "Audio/ae watan.mp3",
+                "image": "Thumbnails/ae watan_thumbnail.jpg",
+                "title": "ae watan",
+                "artist": "Arijit Singh"
+            },
+            {
+                "file": "Audio/BHAR DO JHOLI MERI.mp3",
+                "image": "Thumbnails/BHAR DO JHOLI MERI_thumbnail.jpg",
+                "title": "Bhar Do Jholi Meri",
+                "artist": "Adnan Sami"
+            },
+            {
+                "file": "Audio/ENNA SONA.mp3",
+                "image": "Thumbnails/ENNA SONA_thumbnail.jpg",
+                "title": "Enna Sona",
+                "artist": "Arijit Singh"
+            },
+            {
+                "file": "Audio/GULABI AANKHEIN.mp3",
+                "image": "Thumbnails/GULABI AANKHEIN_thumbnail.jpg",
+                "title": "Gulabi Aankhein",
+                "artist": "Atif Aslam"
+            },
+            {
+                "file": "Audio/KHAIRIYAT.mp3",
+                "image": "Thumbnails/KHAIRIYAT_thumbnail.jpg",
+                "title": "Khairiyat",
+                "artist": "Arijit Singh"
+            },
+            {
+                "file": "Audio/KOI JO MILA TO MUJHE.mp3",
+                "image": "Thumbnails/KOI JO MILA TO MUJHE_thumbnail.jpg",
+                "title": "Koi Jo Mila To Mujhe",
+                "artist": "Shankar Mahadevan"
+            },
+            {
+                "file": "Audio/MANN BHARYAA RAJ BARMAN.mp3",
+                "image": "Thumbnails/MANN BHARYAA RAJ BARMAN_thumbnail.jpg",
+                "title": "Mann Bharya",
+                "artist": "Raj Barman"
+            },
+            {
+                "file": "Audio/MERE NAAM TU.mp3",
+                "image": "Thumbnails/MERE NAAM TU_thumbnail.jpg",
+                "title": "Mere Naam Tu",
+                "artist": "Abhay Jodhpurkar"
+            },
+            {
+                "file": "Audio/Mitwa - Shahrukh Khan.mp3",
+                "image": "Thumbnails/Mitwa - Shahrukh Khan_thumbnail.jpg",
+                "title": "Mitwa",
+                "artist": "Shankar Mahadevan, Shafqat Amanat Ali"
+            },
+            {
+                "file": "Audio/NAZAR NA LAG JAAYE.mp3",
+                "image": "Thumbnails/NAZAR NA LAG JAAYE_thumbnail.jpg",
+                "title": "Nazar Na Lag Jaaye",
+                "artist": "Ash King, Sachin-Jigar"
+            },
+            {
+                "file": "Audio/PAL PAL DIL KE PAAS.mp3",
+                "image": "Thumbnails/PAL PAL DIL KE PAAS_thumbnail.jpg",
+                "title": "Pal Pal Dil Ke Paas",
+                "artist": "Arijit Singh"
+            },
+            {
+                "file": "Audio/PANIYON SA.mp3",
+                "image": "Thumbnails/PANIYON SA_thumbnail.jpg",
+                "title": "Paniyon Sa",
+                "artist": "Atif Aslam, Tulsi Kumar"
+            },
+            {
+                "file": "Audio/PHIR SE UD CHALA.mp3",
+                "image": "Thumbnails/PHIR SE UD CHALA_thumbnail.jpg",
+                "title": "Phir Se Ud Chala",
+                "artist": "Mohit Chauhan"
+            },
+            {
+                "file": "Audio/Rafta Rafta - Atif Aslam.mp3",
+                "image": "Thumbnails/Rafta Rafta - Atif Aslam_thumbnail.jpg",
+                "title": "Rafta Rafta",
+                "artist": "Atif Aslam"
+            },
+            {
+                "file": "Audio/SAANSEIN DENE AANA.mp3",
+                "image": "Thumbnails/SAANSEIN DENE AANA_thumbnail.jpg",
+                "title": "Saansein Dene Aana",
+                "artist": "Raj Barman"
+            },
+            {
+                "file": "Audio/SAANSON KO.mp3",
+                "image": "Thumbnails/SAANSON KO_thumbnail.jpg",
+                "title": "Saanson Ko",
+                "artist": "Arijit Singh"
+            },
+            {
+                "file": "Audio/Sapna Jahan.mp3",
+                "image": "Thumbnails/Sapna Jahan_thumbnail.jpg",
+                "title": "Sapna Jahan",
+                "artist": "Sonu Nigam, Neeti Mohan"
+            },
+            {
+                "file": "Audio/Tu Mile Dil Khile - Raj Barman.mp3",
+                "image": "Thumbnails/Tu Mile Dil Khile - Raj Barman_thumbnail.jpg",
+                "title": "Tu Mile Dil Khile",
+                "artist": "Raj Barman"
+            },
+            {
+                "file": "Audio/TUM MILE.mp3",
+                "image": "Thumbnails/TUM MILE_thumbnail.jpg",
+                "title": "Tum Mile",
+                "artist": "Shafaqat Amanat Ali"
+            },
+            {
+                "file": "Audio/ZIDDI DIL.mp3",
+                "image": "Thumbnails/ZIDDI DIL_thumbnail.jpg",
+                "title": "Ziddi Dil",
+                "artist": "Vishal Dadlani"
+            }
+        
     
 ]
