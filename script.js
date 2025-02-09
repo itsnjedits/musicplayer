@@ -557,18 +557,22 @@ function updateSongsBySinger(selectedSinger) {
             
 
 
-    function updatePlayer(song) {
-        songImage.src = song.image;
-        songTitle.textContent = song.title;
-        songArtist.textContent = song.artist;
-        songDescription.classList.remove('opacity-0'); // Show the song description
-        songDescription.style.display = 'flex'; // Show the music player
-        playPauseButton.innerHTML = `<i class='bx bx-pause' ></i>`;
-        updateButtons();
-        updateTime();
-        updateVisualizers(); // Update visualizers
-        highlightCurrentSong(); // Highlight the current song
-    }
+            function updatePlayer(song) {
+                songImage.src = song.image;
+                songImage.style.objectFit = "cover";
+                songImage.style.objectPosition = "top";
+                
+                songTitle.textContent = song.title;
+                songArtist.textContent = song.artist;
+                songDescription.classList.remove('opacity-0'); // Show the song description
+                songDescription.style.display = 'flex'; // Show the music player
+                playPauseButton.innerHTML = `<i class='bx bx-pause' ></i>`;
+                updateButtons();
+                updateTime();
+                updateVisualizers(); // Update visualizers
+                highlightCurrentSong(); // Highlight the current song
+            }
+            
 
     function updateButtons() {
         prevButton.disabled = currentIndex === 0;
@@ -623,7 +627,7 @@ function updateSongsBySinger(selectedSinger) {
         const items = document.querySelectorAll('.item');
         items.forEach(item => {
             const visualizer = item.querySelector('.visualizer');
-            if (parseInt(item.dataset.index) === currentIndex || songDescription.style.display === 'flex' && item.querySelector('.song-title').textContent === songTitle.textContent) {
+            if (parseInt(item.dataset.index) === currentIndex || songDescription.style.display === 'flex' && (item.querySelector('.song-title').textContent === songTitle.textContent && item.querySelector('.song-artist').textContent === songArtist.textContent)) {
                 visualizer.classList.remove('hidden');
 
             } else {
@@ -636,9 +640,10 @@ function updateSongsBySinger(selectedSinger) {
         const items = document.querySelectorAll('.item');
         items.forEach(item => {
             const songTitleElement = item.querySelector('.song-title');
+            const songTitleElement2 = item.querySelector('.song-artist');
             item.classList.remove('bg-gray-700','bg-gray-600'); // Add border class
 
-            if (songTitleElement.textContent === songTitle.textContent) {
+            if (songTitleElement.textContent === songTitle.textContent && songTitleElement2.textContent === songArtist.textContent) {
                 item.classList.add('border-[1px]', 'border-[#29ecfe]','bg-gray-600'); // Add border class
             } else {
                 item.classList.remove('border-[1px]', 'border-[#29ecfe]'); // Remove border class
