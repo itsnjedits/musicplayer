@@ -2459,7 +2459,68 @@
                 "image": "Thumbnails/ZIDDI DIL_thumbnail.jpg",
                 "title": "Ziddi Dil",
                 "artist": "Vishal Dadlani"
-            }
+            },
+                {
+                    "title": "Tu Jaane Na [Slowed & Reverb]",
+                    "artist": "Atif Aslam",
+                    "file": "Audio/Atif Aslam - Tu Jaane Na [Slowed   Reverb].mp3",
+                    "image": "Thumbnails/Atif Aslam - Tu Jaane Na [Slowed   Reverb]_thumbnail.jpg"
+                },
+                {
+                    "title": "Atif Aslam Mashup [Slowed & Reverb]",
+                    "artist": "Atif Aslam",
+                    "file": "Audio/Atif Aslam Mashup _ slowed Reverb _ lofi _ lofi bollywood _ love song.mp3",
+                    "image": "Thumbnails/Atif Aslam Mashup _ slowed Reverb _ lofi _ lofi bollywood _ love song_thumbnail.jpg"
+                },
+                {
+                    "title": "Aye Dil Laya Hai Bahar",
+                    "artist": "Kavita Krishnamurthy, Hariharan",
+                    "file": "Audio/Aye Dil Laya Hai Bahaar - Video Song _ Kya Kehna _ Preity Zinta _ Kavita Krishnamurthy & Hariharan.mp3",
+                    "image": "Thumbnails/Aye Dil Laya Hai Bahaar - Video Song _ Kya Kehna _ Preity Zinta _ Kavita Krishnamurthy & Hariharan_thumbnail.jpg"
+                },
+                {
+                    "title": "Lag Ja Gale",
+                    "artist": "Lata Mangeshkar",
+                    "file": "Audio/Lag Ja Gale Se Phir _  Lata Mangeshkar Hits _ Woh Kaun Thi_ (1964).mp3",
+                    "image": "Thumbnails/Lag Ja Gale Se Phir _  Lata Mangeshkar Hits _ Woh Kaun Thi_ (1964)_thumbnail.jpg"
+                },
+                {
+                    "title": "Mann Bharrya",
+                    "artist": "Mudasir Aashi Khan",
+                    "file": "Audio/MANN BHARRYA _  (Full Song) Cover By Mudasir Aashi Khan _ 2022 _ Aashi Records.mp3",
+                    "image": "Thumbnails/MANN BHARRYA _  (Full Song) Cover By Mudasir Aashi Khan _ 2022 _ Aashi Records_thumbnail.jpg"
+                },
+                {
+                    "title": "Mitti Di Khushboo",
+                    "artist": "Ayushmann Khurrana",
+                    "file": "Audio/OFFICIAL_ 'Mitti Di Khushboo' FULL VIDEO Song _ Ayushmann Khurrana _ Rochak Kohli (1).mp3",
+                    "image": "Thumbnails/OFFICIAL_ 'Mitti Di Khushboo' FULL VIDEO Song _ Ayushmann Khurrana _ Rochak Kohli (1)_thumbnail.jpg"
+                },
+                {
+                    "title": "Pani Da Rang",
+                    "artist": "Ayushmann Khurrana",
+                    "file": "Audio/Pani Da Rang (Video Song) _ Vicky Donor _ Ayushmann Khurrana & Yami Gautam.mp3",
+                    "image": "Thumbnails/Pani Da Rang (Video Song) _ Vicky Donor _ Ayushmann Khurrana & Yami Gautam_thumbnail.jpg"
+                },
+                {
+                    "title": "Sari Raat Aahe Bharta [Slowed & Reverb]",
+                    "artist": "Gajendra Verma",
+                    "file": "Audio/Sari Raat Aahe Bharta [Slowed & Reverb] Music lover _ LoFi73.mp3",
+                    "image": "Thumbnails/Sari Raat Aahe Bharta [Slowed & Reverb] Music lover _ LoFi73_thumbnail.jpg"
+                },
+                {
+                    "title": "Tujhse Naraaz Nahin Zindagi",
+                    "artist": "Anup Ghoshal",
+                    "file": "Audio/Tujhse Naraaz Nahin Zindagi (Male) _ Masoom _ Naseeruddin Shah _ Jugal Hansraj _ #TujhseNaraazNahin.mp3",
+                    "image": "Thumbnails/Tujhse Naraaz Nahin Zindagi (Male) _ Masoom _ Naseeruddin Shah _ Jugal Hansraj _ #TujhseNaraazNahin_thumbnail.jpg"
+                },
+                {
+                    "title": "Tumse Milke Aisa Laga Tumse Milke",
+                    "artist": "Asha Bhosle, Suresh Wadkar",
+                    "file": "Audio/Tumse Milke _ Asha Bhosle _ Suresh Wadkar _ Parinda _ Bollywood Song _ 1989.mp3",
+                    "image": "Thumbnails/Tumse Milke _ Asha Bhosle _ Suresh Wadkar _ Parinda _ Bollywood Song _ 1989_thumbnail.jpg"
+                }
+            
         
     
 ]
