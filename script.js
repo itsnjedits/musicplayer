@@ -154,7 +154,8 @@ function updateSongsByGenre(selectedGenre) {
         'Hindi-New': 'Genres/Hindi-New.json',
         'Hindi-Old': 'Genres/Hindi-Old.json',
         'Slowed & Reverb': 'Genres/Slowed-Reverb.json',
-        'Punjabi': 'Genres/Punjabi.json'
+        'Punjabi': 'Genres/Punjabi.json',
+        'Meditation': 'Genres/Meditation.json'
     };
 
     const jsonFile = genreMap[selectedGenre] || 'Allsongs/songs.json';

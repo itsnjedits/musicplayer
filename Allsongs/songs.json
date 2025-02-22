@@ -2510,8 +2510,8 @@
     {
         "title": "Tujhse Naraaz Nahin Zindagi",
         "artist": "Anup Ghoshal",
-        "file": "Audio/Tujhse Naraaz Nahin Zindagi (Male) _ Masoom _ Naseeruddin Shah _ Jugal Hansraj _ #TujhseNaraazNahin.mp3",
-        "image": "Thumbnails/Tujhse Naraaz Nahin Zindagi (Male) _ Masoom _ Naseeruddin Shah _ Jugal Hansraj _ #TujhseNaraazNahin_thumbnail.jpg"
+        "file": "Audio/tujhseNaarazNahiZindagi.mp3",
+        "image": "Thumbnails/tujhseNaarazNahiZindagi_thumbnail.jpg"
     },
     {
         "title": "Tumse Milke Aisa Laga Tumse Milke",
@@ -2530,5 +2530,30 @@
         "image": "Thumbnails/Kiska Rasta Dekhe - Kishore Kumar (Reverb)_thumbnail.jpg",
         "title": "Kiska Rasta  Dekhe - Slowed & Reverb",
         "artist": "Kishore Kumar"
-    }
+    },
+        {
+            "title": "Mindfulness",
+            "artist": "Malte Marten",
+            "file": "Audio/Mindfulness (1111 Hz) - 1 hour handpan music - Malte Marten.mp3",
+            "image": "Thumbnails/Mindfulness (1111 Hz) - 1 hour handpan music - Malte Marten_thumbnail.jpg"
+        },
+        {
+            "title": "Peaceful Solitude",
+            "artist": "Peaceful Solitude",
+            "file": "Audio/peaceful solitude for 1 hour.mp3",
+            "image": "Thumbnails/peaceful solitude for 1 hour_thumbnail.jpg"
+        },
+        {
+            "title": "Seeds of Growth",
+            "artist": "Malte Marten",
+            "file": "Audio/Seeds of Growth (1111hz) - 1 hour handpan music - Malte Marten.mp3",
+            "image": "Thumbnails/Seeds of Growth (1111hz) - 1 hour handpan music - Malte Marten_thumbnail.jpg"
+        },
+        {
+            "title": "The Art Of Letting Go",
+            "artist": "Malte Marten",
+            "file": "Audio/The Art Of Letting Go _ 1 hour handpan music _ Malte Marten.mp3",
+            "image": "Thumbnails/The Art Of Letting Go _ 1 hour handpan music _ Malte Marten_thumbnail.jpg"
+        }
+    
 ]
