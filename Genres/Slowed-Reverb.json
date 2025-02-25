@@ -412,5 +412,29 @@
         "image": "Thumbnails/Kiska Rasta Dekhe - Kishore Kumar (Reverb)_thumbnail.jpg",
         "title": "Kiska Rasta  Dekhe - Slowed & Reverb",
         "artist": "Kishore Kumar"
+    },
+    {
+        "title": "Aadat (Slowed & Reverb)",
+        "artist": "Atif Aslam",
+        "file": "Audio/Aadat (Slowed   Reverb) _ Atif Aslam _ Kalyug _ SR Lofi.mp3",
+        "image": "Thumbnails/Aadat (Slowed   Reverb) _ Atif Aslam _ Kalyug _ SR Lofi_thumbnail.jpg"
+    },
+    {
+        "title": "Ek Din Aap Yun [Slowed & Reverb]",
+        "artist": "Alka Yagnik, Kumar Sanu",
+        "file": "Audio/Ek Din Aap Yun [ Slowed   Reverb ] _ 90's songs.mp3",
+        "image": "Thumbnails/Ek Din Aap Yun [ Slowed   Reverb ] _ 90's songs_thumbnail.jpg"
+    },
+    {
+        "title": "Jee Le Zaraa (Slowed & Reverb)",
+        "artist": "Vishal Dadlani",
+        "file": "Audio/Jee Le Zaraa (Slowed   Reverb) _ Vishal Dadlani _ Talaash _ SR Lofi.mp3",
+        "image": "Thumbnails/Jee Le Zaraa (Slowed   Reverb) _ Vishal Dadlani _ Talaash _ SR Lofi_thumbnail.jpg"
+    },
+    {
+        "title": "Maine Dil Se Kaha [Slowed & Reverb]",
+        "artist": "KK",
+        "file": "Audio/Maine Dil Se Kaha - slowed.mp3",
+        "image": "Thumbnails/Maine Dil Se Kaha - slowed_thumbnail.jpg"
     }
 ]
