@@ -2532,30 +2532,6 @@
         "artist": "Kishore Kumar"
     },
     {
-        "title": "Mindfulness",
-        "artist": "Malte Marten",
-        "file": "Audio/Mindfulness (1111 Hz) - 1 hour handpan music - Malte Marten.mp3",
-        "image": "Thumbnails/Mindfulness (1111 Hz) - 1 hour handpan music - Malte Marten_thumbnail.jpg"
-    },
-    {
-        "title": "Peaceful Solitude",
-        "artist": "Peaceful Solitude",
-        "file": "Audio/peaceful solitude for 1 hour.mp3",
-        "image": "Thumbnails/peaceful solitude for 1 hour_thumbnail.jpg"
-    },
-    {
-        "title": "Seeds of Growth",
-        "artist": "Malte Marten",
-        "file": "Audio/Seeds of Growth (1111hz) - 1 hour handpan music - Malte Marten.mp3",
-        "image": "Thumbnails/Seeds of Growth (1111hz) - 1 hour handpan music - Malte Marten_thumbnail.jpg"
-    },
-    {
-        "title": "The Art Of Letting Go",
-        "artist": "Malte Marten",
-        "file": "Audio/The Art Of Letting Go _ 1 hour handpan music _ Malte Marten.mp3",
-        "image": "Thumbnails/The Art Of Letting Go _ 1 hour handpan music _ Malte Marten_thumbnail.jpg"
-    },
-    {
         "title": "Aadat (Slowed & Reverb)",
         "artist": "Atif Aslam",
         "file": "Audio/Aadat (Slowed   Reverb) _ Atif Aslam _ Kalyug _ SR Lofi.mp3",
@@ -2600,7 +2576,55 @@
     {
         "title": "Chale Toh Kat Hi Jayega Safar",
         "artist": "Musarrat Nazir",
-        "file": "Audio/_Chale Toh Kat Hi Jayega Safar_ _ Musarrat Nazir _ Ghazal _ Lyrics Video _ Moseeqi _ Ahista Ahista.mp3",
-        "image": "Thumbnails/_Chale Toh Kat Hi Jayega Safar_ _ Musarrat Nazir _ Ghazal _ Lyrics Video _ Moseeqi _ Ahista Ahista_thumbnail.jpg"
+        "file": "Audio/Chale Toh Kat Hi Jaayega Safar.mp3",
+        "image": "Thumbnails/Chale Toh Kat Hi Jaayega Safar_thumbnail.jpg"
+    },
+    {
+        "title": "Tu Hai To Main Hoon",
+        "artist": "Arijit Singh",
+        "file": "Audio/Arijit Singh_ Tu Hain Toh Main Hoon (Lyrics) _ Sky Force _ Afsana Khan.mp3",
+        "image": "Thumbnails/Arijit Singh_ Tu Hain Toh Main Hoon (Lyrics) _ Sky Force _ Afsana Khan_thumbnail.jpg"
+    },
+    {
+        "title": "Bichhdan",
+        "artist": "Rahat Fateh Ali Khan",
+        "file": "Audio/Bichdann _ Rahat Fateh Ali Khan _ Lyrics _ VJ-Vikas Jain.mp3",
+        "image": "Thumbnails/Bichdann _ Rahat Fateh Ali Khan _ Lyrics _ VJ-Vikas Jain_thumbnail.jpg"
+    },
+    {
+        "title": "In Dino (Slowed & Reverb)",
+        "artist": "Pritam",
+        "file": "Audio/In Dino(slowed reverb) and the rain reminds you of someone _ Life In a Metro _ Pritam.mp3",
+        "image": "Thumbnails/In Dino(slowed reverb) and the rain reminds you of someone _ Life In a Metro _ Pritam_thumbnail.jpg"
+    },
+    {
+        "title": "Tum Itna Jo [Slowed & Reverb]",
+        "artist": "Papon",
+        "file": "Audio/Papon (🎤) _ TUM ITNA JO [Slowed   Reverb] ❤️.mp3",
+        "image": "Thumbnails/Papon (🎤) _ TUM ITNA JO [Slowed   Reverb] ❤️_thumbnail.jpg"
+    },
+    {
+        "title": "Rafta Rafta Wo Meri",
+        "artist": "Mehndi Hasan",
+        "file": "Audio/Rafta Rafta Wo Meri _ Muhammad Ali _ Melodious Ghazal _ Tribute to Mehdi Hasan.mp3",
+        "image": "Thumbnails/Rafta Rafta Wo Meri _ Muhammad Ali _ Melodious Ghazal _ Tribute to Mehdi Hasan_thumbnail.jpg"
+    },
+    {
+        "title": "Tu Hi Rab Tu Hi Dua",
+        "artist": "Rahat Fateh Ali Khan, Tulsi Kumar",
+        "file": "Audio/Tu Hi Rab Tu Hi Dua Full Song with Lyrics_ Rahat Fateh Ali Khan_ Tulsi Kumar.mp3",
+        "image": "Thumbnails/Tu Hi Rab Tu Hi Dua Full Song with Lyrics_ Rahat Fateh Ali Khan_ Tulsi Kumar_thumbnail.jpg"
+    },
+    {
+        "title": "Tum Itna Jo [Slowed & Reverb]",
+        "artist": "Papon",
+        "file": "Audio/Tum itna jo - Papon Slowed & Reverb (1).mp3",
+        "image": "Thumbnails/Tum itna jo - Papon Slowed & Reverb (1)_thumbnail.jpg"
+    },
+    {
+        "title": "Tum Itna Jo",
+        "artist": "Papon",
+        "file": "Audio/Tum Itna Jo - Papon _ MTV Unplugged.mp3",
+        "image": "Thumbnails/Tum Itna Jo - Papon _ MTV Unplugged_thumbnail.jpg"
     }
 ]

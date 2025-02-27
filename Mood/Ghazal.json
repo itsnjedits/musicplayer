@@ -112,5 +112,18 @@
         "artist": "Jagjit Singh",
         "image": "Thumbnails/Hoshwalon Ko Khabar - Lofi Reverbed - Jagjit Singh - Blue Night_thumbnail.jpg",
         "file": "Audio/Hoshwalon Ko Khabar - Lofi Reverbed - Jagjit Singh - Blue Night.mp3"
+    },
+    {
+        "title": "Rafta Rafta Wo Meri",
+        "artist": "Mehndi Hasan",
+        "file": "Audio/Rafta Rafta Wo Meri _ Muhammad Ali _ Melodious Ghazal _ Tribute to Mehdi Hasan.mp3",
+        "image": "Thumbnails/Rafta Rafta Wo Meri _ Muhammad Ali _ Melodious Ghazal _ Tribute to Mehdi Hasan_thumbnail.jpg"
+    }
+,
+{
+        "title": "Tum Itna Jo",
+        "artist": "Papon",
+        "file": "Audio/Tum Itna Jo - Papon _ MTV Unplugged.mp3",
+        "image": "Thumbnails/Tum Itna Jo - Papon _ MTV Unplugged_thumbnail.jpg"
     }
 ]
