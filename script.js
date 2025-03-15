@@ -174,7 +174,8 @@ function updateSongsByMood(selectedMood) {
         'Sad': 'Mood/Sad.json',
         'Happy': 'Mood/Happy.json',
         'Romantic': 'Mood/Romantic.json',
-        'Ghazal': 'Mood/Ghazal.json'
+        'Ghazal': 'Mood/Ghazal.json',
+        'Party': 'Mood/Party.json'
     };
 
     const jsonFile = moodMap[selectedMood] || 'Allsongs/songs.json';
