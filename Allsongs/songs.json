@@ -2686,5 +2686,35 @@
         "artist": "Arijit Singh",
         "file": "Audio/Tum Hi Ho (Slowed   Reverb).mp3",
         "image": "Thumbnails/Tum Hi Ho (Slowed   Reverb)_thumbnail.jpg"
+    },
+    {
+        "title": "Ishq - Slowed & Reverb",
+        "artist": "Faheem Abdullah, Rauhan Malik, Amir Ameer",
+        "file": "Audio/Ishq (Slowed   Reverb) _ Faheem Abdullah, Rauhan Malik _ Lost Found _ SR Lofi.mp3",
+        "image": "Thumbnails/Ishq (Slowed   Reverb) _ Faheem Abdullah, Rauhan Malik _ Lost Found _ SR Lofi_thumbnail.jpg"
+    },
+    {
+        "title": "Jashn-E-Bahaaraa - Instrumental - Flute",
+        "artist": "Javed Ali",
+        "file": "Audio/Jashn-E-Bahaaraa (Instrumental - Flute).mp3",
+        "image": "Thumbnails/Jashn-E-Bahaaraa (Instrumental - Flute)_thumbnail.jpg"
+    },
+    {
+        "title": "O Sajni Re - Slowed & Reverb",
+        "artist": "Arijit Singh",
+        "file": "Audio/Sajni - Slow and Reverb _ Arijit Singh _ LoFi Vibes _ Laapataa Ladies _ Shahbaz Siddiqui.mp3",
+        "image": "Thumbnails/Sajni - Slow and Reverb _ Arijit Singh _ LoFi Vibes _ Laapataa Ladies _ Shahbaz Siddiqui_thumbnail.jpg"
+    },
+    {
+        "title": "Samjhawan - Slowed & Reverb",
+        "artist": "Arijit Singh",
+        "file": "Audio/Samjhawan (Slowed   Reverb) _ Arijit Singh, Shreya Ghoshal _ Humpty Sharma Ki Dulhania _ SR Lofi.mp3",
+        "image": "Thumbnails/Samjhawan (Slowed   Reverb) _ Arijit Singh, Shreya Ghoshal _ Humpty Sharma Ki Dulhania _ SR Lofi_thumbnail.jpg"
+    },
+    {
+        "title": "Hamdard - Slowed + Reverb",
+        "artist": "Arijit Singh",
+        "file": "Audio/[Slowed Reverb] Hamdard - Ek Villain _ Arijit Singh _ Mithoon - Vhan Muzic.mp3",
+        "image": "Thumbnails/[Slowed Reverb] Hamdard - Ek Villain _ Arijit Singh _ Mithoon - Vhan Muzic_thumbnail.jpg"
     }
 ]
