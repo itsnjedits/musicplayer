@@ -686,9 +686,10 @@ function updateSongsBySinger(selectedSinger) {
     KeyN: () => nextButton.click(),
     KeyP: () => prevButton.click(),
     KeyM: () => {
-      audio.volume = audio.volume ? 0 : 0.6;
-      slider.value = audio.volume * 100;
+        audio.volume = audio.volume ? 0 : 0.6;
+        slider.value = audio.volume * 100;
     },
+    KeyR: () => document.querySelector('.randomSong').click(),
     ArrowRight: () => changeTime(10),
     ArrowLeft: () => changeTime(-10),
     Space: () => playPauseButton.click()
