@@ -422,7 +422,7 @@ function updateSongsByMood(selectedMood) {
     title.addEventListener('click', () => {
         fetching('Allsongs/songs.json')
 
-        document.querySelector('.without-ads').innerHTML = `Non-Stop 350+ Songs - No Ads 🔥`
+        document.querySelector('.without-ads').innerHTML = `Non-Stop 400+ Songs - No Ads 🔥`
     })
 
     playlistButton.addEventListener('click', () => {
