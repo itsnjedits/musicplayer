@@ -1,50 +1,62 @@
 [
     {
-        "title": "Darmiyaan - Slowed & Reverb",
-        "file": "Audio/Darmiyaan - slowed and reverb - Nexus Music.mp3",
-        "image": "Thumbnails/Darmiyaan - slowed and reverb - Nexus Music_thumbnail.jpg",
-        "artist": "Shafaqat Amanat Ali"
-    },
-    {
         "title": "Allah Waariyan",
+        "artist": "Shafaqat Amanat Ali",
         "file": "Audio/Allah Waariyan Lyrics English translation Yaariyan.mp3",
-        "image": "Thumbnails/Allah Waariyan Lyrics English translation Yaariyan_thumbnail.jpg",
-        "artist": "Shafaqat Amanat Ali"
-    },
-    {
-        "title": "Kyun Main Jagoon",
-        "file": "Audio/Kyun Meri Raahein Mujhse Pooche Ghar Kaha Hai Full Song with Lyrics Shafqat A Ali Akshay K.mp3",
-        "image": "Thumbnails/Kyun Meri Raahein Mujhse Pooche Ghar Kaha Hai Full Song with Lyrics Shafqat A Ali Akshay K_thumbnail.jpg",
-        "artist": "Shafaqat Amanat Ali"
+        "image": "Thumbnails/Allah Waariyan Lyrics English translation Yaariyan_thumbnail.jpg"
     },
     {
         "title": "Bin Tere",
+        "artist": "Shafaqat Amanat Ali",
         "file": "Audio/Lyrics - Bin Tere Full Song Shafqat Amanat Ali- Sunidhi Chauhan Vishal Dadlani Vishal-Shekhar.mp3",
-        "image": "Thumbnails/Lyrics - Bin Tere Full Song Shafqat Amanat Ali- Sunidhi Chauhan Vishal Dadlani Vishal-Shekhar_thumbnail.jpg",
-        "artist": "Shafaqat Amanat Ali"
+        "image": "Thumbnails/Lyrics - Bin Tere Full Song Shafqat Amanat Ali- Sunidhi Chauhan Vishal Dadlani Vishal-Shekhar_thumbnail.jpg"
+    },
+    {
+        "title": "Darmiyaan - Slowed & Reverb",
+        "artist": "Shafaqat Amanat Ali",
+        "file": "Audio/Darmiyaan - slowed and reverb - Nexus Music.mp3",
+        "image": "Thumbnails/Darmiyaan - slowed and reverb - Nexus Music_thumbnail.jpg"
+    },
+    {
+        "title": "Kyun Main Jagoon",
+        "artist": "Shafaqat Amanat Ali",
+        "file": "Audio/Kyun Meri Raahein Mujhse Pooche Ghar Kaha Hai Full Song with Lyrics Shafqat A Ali Akshay K.mp3",
+        "image": "Thumbnails/Kyun Meri Raahein Mujhse Pooche Ghar Kaha Hai Full Song with Lyrics Shafqat A Ali Akshay K_thumbnail.jpg"
     },
     {
         "title": "Manchala Teri Ore",
+        "artist": "Shafaqat Amanat Ali",
         "file": "Audio/Lyrics- Manchala Teri Ore Shafqat Amanat Ali- Nupur Pant Vishal-Shekhar- Amitabh Bhattacharya.mp3",
-        "image": "Thumbnails/Lyrics- Manchala Teri Ore Shafqat Amanat Ali- Nupur Pant Vishal-Shekhar- Amitabh Bhattacharya_thumbnail.jpg",
-        "artist": "Shafaqat Amanat Ali"
+        "image": "Thumbnails/Lyrics- Manchala Teri Ore Shafqat Amanat Ali- Nupur Pant Vishal-Shekhar- Amitabh Bhattacharya_thumbnail.jpg"
     },
     {
         "title": "Tere Naina",
+        "artist": "Shafaqat Amanat Ali",
         "file": "Audio/My Name Is Khan - Tere Naina -Lyrics Video-.mp3",
-        "image": "Thumbnails/My Name Is Khan - Tere Naina -Lyrics Video-_thumbnail.jpg",
-        "artist": "Shafaqat Amanat Ali"
+        "image": "Thumbnails/My Name Is Khan - Tere Naina -Lyrics Video-_thumbnail.jpg"
     },
     {
         "title": "Teri Jhuki Nazar",
+        "artist": "Shafaqat Amanat Ali",
         "file": "Audio/Shafqat Amanat Ali - Teri Jhuki Nazar -Lyrics-.mp3",
-        "image": "Thumbnails/Shafqat Amanat Ali - Teri Jhuki Nazar -Lyrics-_thumbnail.jpg",
-        "artist": "Shafaqat Amanat Ali"
+        "image": "Thumbnails/Shafqat Amanat Ali - Teri Jhuki Nazar -Lyrics-_thumbnail.jpg"
+    },
+    {
+        "title": "Tum Mile",
+        "artist": "Shafaqat Amanat Ali",
+        "file": "Audio/TUM MILE.mp3",
+        "image": "Thumbnails/TUM MILE_thumbnail.jpg"
     },
     {
         "title": "Yeh Honsla Kaise Jhuke",
+        "artist": "Shafaqat Amanat Ali",
         "file": "Audio/yeh hosla kaise jhuke.mp3",
-        "image": "Thumbnails/yeh hosla kaise jhuke_thumbnail.jpg",
-        "artist": "Shafaqat Amanat Ali"
+        "image": "Thumbnails/yeh hosla kaise jhuke_thumbnail.jpg"
+    },
+    {
+        "title": "Mitwa",
+        "artist": "Shankar Mahadevan, Shafqat Amanat Ali",
+        "file": "Audio/Mitwa - Shahrukh Khan.mp3",
+        "image": "Thumbnails/Mitwa - Shahrukh Khan_thumbnail.jpg"
     }
 ]

@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Mann Bharya",
+        "artist": "Raj Barman",
+        "file": "Audio/MANN BHARYAA RAJ BARMAN.mp3",
+        "image": "Thumbnails/MANN BHARYAA RAJ BARMAN_thumbnail.jpg"
+    },
+    {
+        "title": "Saansein Dene Aana",
+        "artist": "Raj Barman",
+        "file": "Audio/SAANSEIN DENE AANA.mp3",
+        "image": "Thumbnails/SAANSEIN DENE AANA_thumbnail.jpg"
+    },
+    {
+        "title": "Tu Mile Dil Khile",
+        "artist": "Raj Barman",
+        "file": "Audio/Tu Mile Dil Khile - Raj Barman.mp3",
+        "image": "Thumbnails/Tu Mile Dil Khile - Raj Barman_thumbnail.jpg"
+    },
+    {
+        "title": "Tu Milta Hai Mujhe",
+        "artist": "Raj Barman",
+        "file": "Audio/Tu Milta Hai Mujhe.mp3",
+        "image": "Thumbnails/Tu Milta Hai Mujhe_thumbnail.jpg"
+    }
+]

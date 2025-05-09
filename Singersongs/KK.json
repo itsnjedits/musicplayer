@@ -1,92 +1,140 @@
 [
     {
-        "title": "Labon Ko - Slowed & Reverb",
-        "file": "Audio/Labon Ko -Slowed - Reverbed- KK.mp3",
-        "image": "Thumbnails/Labon Ko -Slowed - Reverbed- KK_thumbnail.jpg",
-        "artist": "KK"
-    },
-    {
-        "title": "Beete Lamhein",
-        "file": "Audio/Beete Lamhein Lyrics KK The Train Mithoon Sayeed Qadri Emraan Hashmi .mp3",
-        "image": "Thumbnails/Beete Lamhein Lyrics KK The Train Mithoon Sayeed Qadri Emraan Hashmi _thumbnail.jpg",
-        "artist": "KK"
-    },
-    {
-        "title": "Dil Ibadat Kar Raha Hai",
-        "file": "Audio/Dil Ibadat Kar Raha Hai Full Song -LYRICS- - K.K Tum Mile Pritam- Sayeed Quadri Emraan Hashmi.mp3",
-        "image": "Thumbnails/Dil Ibadat Kar Raha Hai Full Song -LYRICS- - K.K Tum Mile Pritam- Sayeed Quadri Emraan Hashmi_thumbnail.jpg",
-        "artist": "KK"
-    },
-    {
-        "title": "Haan Tu Hain",
-        "file": "Audio/HAAN TU HAIN FULL SONG -LYRICS- - K.K. JANNAT EMRAAN HASHMI PRITAM- SAYEED QUADRI.mp3",
-        "image": "Thumbnails/HAAN TU HAIN FULL SONG -LYRICS- - K.K. JANNAT EMRAAN HASHMI PRITAM- SAYEED QUADRI_thumbnail.jpg",
-        "artist": "KK"
-    },
-    {
-        "title": "Hai Junoon",
-        "file": "Audio/Hai Junoon -LYRICS- - K.K New York Pritam John Abraham- Katrina Yaaron Ji Bhar Ke Jile Pal.mp3",
-        "image": "Thumbnails/Hai Junoon -LYRICS- - K.K New York Pritam John Abraham- Katrina Yaaron Ji Bhar Ke Jile Pal_thumbnail.jpg",
-        "artist": "KK"
-    },
-    {
-        "title": "Khuda Jaane",
-        "file": "Audio/KHUDA JAANE FULL SONG -LYRICS- - K.K. SHILPA RAO BACHNA AE HASEENO.mp3",
-        "image": "Thumbnails/KHUDA JAANE FULL SONG -LYRICS- - K.K. SHILPA RAO BACHNA AE HASEENO_thumbnail.jpg",
-        "artist": "KK"
-    },
-    {
-        "title": "Kya Mujhe Pyaar Hai",
-        "file": "Audio/Kya Mujhe Pyaar Hai - K.k. -Lyrics- 7clouds Hindi.mp3",
-        "image": "Thumbnails/Kya Mujhe Pyaar Hai - K.k. -Lyrics- 7clouds Hindi_thumbnail.jpg",
-        "artist": "KK"
-    },
-    {
-        "title": "Kya Mujhe Pyaar Hai (Slowed)",
-        "file": "Audio/Kya Mujhe Pyaar Hai l KK 🖤🖤 I Lofi Mix I Slowed and Reverb I LateNight Vibes.mp3",
-        "image": "Thumbnails/Kya Mujhe Pyaar Hai l KK 🖤🖤 I Lofi Mix I Slowed and Reverb I LateNight Vibes_thumbnail.jpg",
-        "artist": "KK"
-    },
-    {
-        "title": "Labon Ko",
-        "file": "Audio/Lyrics Labon Ko Bhool Bhulaiyaa Pritam K.K. Akshay Kumar- Shiney Ahuja- Vidya Balan(1).mp3",
-        "image": "Thumbnails/Lyrics Labon Ko Bhool Bhulaiyaa Pritam K.K. Akshay Kumar- Shiney Ahuja- Vidya Balan(1)_thumbnail.jpg",
-        "artist": "KK"
-    },
-    {
-        "title": "Teri Yaadon Mein",
-        "file": "Audio/Teri Yaadon Mein Full Song The Killer KK Emraan Hashmi High volume High quality.mp3",
-        "image": "Thumbnails/Teri Yaadon Mein Full Song The Killer KK Emraan Hashmi High volume High quality_thumbnail.jpg",
-        "artist": "KK"
-    },
-    {
-        "title": "Tu Hi Meri Shab Hai",
-        "file": "Audio/TU HI MERI SHAB HAI -LYRICS- - K.K. GANGSTER PRITAM EMRAAN HASHMI.mp3",
-        "image": "Thumbnails/TU HI MERI SHAB HAI -LYRICS- - K.K. GANGSTER PRITAM EMRAAN HASHMI_thumbnail.jpg",
-        "artist": "KK"
-    },
-    {
-        "title": "Tu Jo Mila",
-        "file": "Audio/Tu Jo Mila Lyrical Song.mp3",
-        "image": "Thumbnails/Tu Jo Mila Lyrical Song_thumbnail.jpg",
-        "artist": "KK"
-    },
-    {
-        "title": "Tujhe Sochta Hoon",
-        "file": "Audio/TUJHE SOCHTA HOON -LYRICS- - K.K. JANNAT 2 PRITAM- SAYEED QUADRI EMRAAN HASHMI.mp3",
-        "image": "Thumbnails/TUJHE SOCHTA HOON -LYRICS- - K.K. JANNAT 2 PRITAM- SAYEED QUADRI EMRAAN HASHMI_thumbnail.jpg",
-        "artist": "KK"
-    },
-    {
-        "title": "Zara Sa",
-        "file": "Audio/Zara Sa Lyrics Jannat KK Pritam Sayeed Quadri Mahesh Bhatt Emraan Hashmi- Sonal(1).mp3",
-        "image": "Thumbnails/Zara Sa Lyrics Jannat KK Pritam Sayeed Quadri Mahesh Bhatt Emraan Hashmi- Sonal(1)_thumbnail.jpg",
-        "artist": "KK"
+        "title": "Teri Yaadon Mein (Slowed + Reverb)",
+        "artist": "KK, Shreya Ghoshal",
+        "file": "Audio/Teri Yaadon Mein Khoya Rehta Hoon (Slowed + Reverb) _ KK, Shreya Ghoshal _ The Killer _ SR Lofi.mp3",
+        "image": "Thumbnails/Teri Yaadon Mein Khoya Rehta Hoon (Slowed + Reverb) _ KK, Shreya Ghoshal _ The Killer _ SR Lofi_thumbnail.jpg"
     },
     {
         "title": "Ajab Si",
+        "artist": "KK",
         "file": "Audio/Lyrics Aankhon Mein Teri Ajab Si K.K Vishal-Shekhar Shah Rukh K- Deepika P Om Shanti Om.mp3",
-        "image": "Thumbnails/Lyrics Aankhon Mein Teri Ajab Si K.K Vishal-Shekhar Shah Rukh K- Deepika P Om Shanti Om_thumbnail.jpg",
-        "artist": "KK"
+        "image": "Thumbnails/Lyrics Aankhon Mein Teri Ajab Si K.K Vishal-Shekhar Shah Rukh K- Deepika P Om Shanti Om_thumbnail.jpg"
+    },
+    {
+        "title": "Beete Lamhein",
+        "artist": "KK",
+        "file": "Audio/Beete Lamhein Lyrics KK The Train Mithoon Sayeed Qadri Emraan Hashmi .mp3",
+        "image": "Thumbnails/Beete Lamhein Lyrics KK The Train Mithoon Sayeed Qadri Emraan Hashmi _thumbnail.jpg"
+    },
+    {
+        "title": "Dil Ibaadat - Slowed & Reverb",
+        "artist": "KK",
+        "file": "Audio/Dil Ibaadat [ Perfectly Slowed ] -- KK -- Itz Dhruv.mp3",
+        "image": "Thumbnails/Dil Ibaadat [ Perfectly Slowed ] -- KK -- Itz Dhruv_thumbnail.jpg"
+    },
+    {
+        "title": "Dil Ibadat Kar Raha Hai",
+        "artist": "KK",
+        "file": "Audio/Dil Ibadat Kar Raha Hai Full Song -LYRICS- - K.K Tum Mile Pritam- Sayeed Quadri Emraan Hashmi.mp3",
+        "image": "Thumbnails/Dil Ibadat Kar Raha Hai Full Song -LYRICS- - K.K Tum Mile Pritam- Sayeed Quadri Emraan Hashmi_thumbnail.jpg"
+    },
+    {
+        "title": "Haan Tu Hain",
+        "artist": "KK",
+        "file": "Audio/HAAN TU HAIN FULL SONG -LYRICS- - K.K. JANNAT EMRAAN HASHMI PRITAM- SAYEED QUADRI.mp3",
+        "image": "Thumbnails/HAAN TU HAIN FULL SONG -LYRICS- - K.K. JANNAT EMRAAN HASHMI PRITAM- SAYEED QUADRI_thumbnail.jpg"
+    },
+    {
+        "title": "Hai Junoon",
+        "artist": "KK",
+        "file": "Audio/Hai Junoon -LYRICS- - K.K New York Pritam John Abraham- Katrina Yaaron Ji Bhar Ke Jile Pal.mp3",
+        "image": "Thumbnails/Hai Junoon -LYRICS- - K.K New York Pritam John Abraham- Katrina Yaaron Ji Bhar Ke Jile Pal_thumbnail.jpg"
+    },
+    {
+        "title": "Khuda Jaane",
+        "artist": "KK",
+        "file": "Audio/KHUDA JAANE FULL SONG -LYRICS- - K.K. SHILPA RAO BACHNA AE HASEENO.mp3",
+        "image": "Thumbnails/KHUDA JAANE FULL SONG -LYRICS- - K.K. SHILPA RAO BACHNA AE HASEENO_thumbnail.jpg"
+    },
+    {
+        "title": "Kya Mujhe Pyaar Hai",
+        "artist": "KK",
+        "file": "Audio/Kya Mujhe Pyaar Hai - K.k. -Lyrics- 7clouds Hindi.mp3",
+        "image": "Thumbnails/Kya Mujhe Pyaar Hai - K.k. -Lyrics- 7clouds Hindi_thumbnail.jpg"
+    },
+    {
+        "title": "Kya Mujhe Pyaar Hai (Slowed)",
+        "artist": "KK",
+        "file": "Audio/Kya Mujhe Pyaar Hai l KK 🖤🖤 I Lofi Mix I Slowed and Reverb I LateNight Vibes.mp3",
+        "image": "Thumbnails/Kya Mujhe Pyaar Hai l KK 🖤🖤 I Lofi Mix I Slowed and Reverb I LateNight Vibes_thumbnail.jpg"
+    },
+    {
+        "title": "Labon Ko",
+        "artist": "KK",
+        "file": "Audio/Lyrics Labon Ko Bhool Bhulaiyaa Pritam K.K. Akshay Kumar- Shiney Ahuja- Vidya Balan(1).mp3",
+        "image": "Thumbnails/Lyrics Labon Ko Bhool Bhulaiyaa Pritam K.K. Akshay Kumar- Shiney Ahuja- Vidya Balan(1)_thumbnail.jpg"
+    },
+    {
+        "title": "Labon Ko - Slowed & Reverb",
+        "artist": "KK",
+        "file": "Audio/Labon Ko -Slowed - Reverbed- KK.mp3",
+        "image": "Thumbnails/Labon Ko -Slowed - Reverbed- KK_thumbnail.jpg"
+    },
+    {
+        "title": "Maine Dil Se Kaha [Slowed & Reverb]",
+        "artist": "KK",
+        "file": "Audio/Maine Dil Se Kaha - slowed.mp3",
+        "image": "Thumbnails/Maine Dil Se Kaha - slowed_thumbnail.jpg"
+    },
+    {
+        "title": "Maine Dil Se Kaha Dhoond Laana Khushi",
+        "artist": "KK",
+        "file": "Audio/Maine Dil Se Kaha Dhoond Laana Khushi (LYRICS) - K.K _ Rog _ M.M. Kreem, Nilesh Mishra _ Irrfan Khan.mp3",
+        "image": "Thumbnails/Maine Dil Se Kaha Dhoond Laana Khushi (LYRICS) - K.K _ Rog _ M.M. Kreem, Nilesh Mishra _ Irrfan Khan_thumbnail.jpg"
+    },
+    {
+        "title": "Teri Yaadon Mein",
+        "artist": "KK",
+        "file": "Audio/Teri Yaadon Mein Full Song The Killer KK Emraan Hashmi High volume High quality.mp3",
+        "image": "Thumbnails/Teri Yaadon Mein Full Song The Killer KK Emraan Hashmi High volume High quality_thumbnail.jpg"
+    },
+    {
+        "title": "Tu Hi Meri Shab Hai",
+        "artist": "KK",
+        "file": "Audio/TU HI MERI SHAB HAI -LYRICS- - K.K. GANGSTER PRITAM EMRAAN HASHMI.mp3",
+        "image": "Thumbnails/TU HI MERI SHAB HAI -LYRICS- - K.K. GANGSTER PRITAM EMRAAN HASHMI_thumbnail.jpg"
+    },
+    {
+        "title": "Tu Jo Mila",
+        "artist": "KK",
+        "file": "Audio/Tu Jo Mila Lyrical Song.mp3",
+        "image": "Thumbnails/Tu Jo Mila Lyrical Song_thumbnail.jpg"
+    },
+    {
+        "title": "Tujhe Sochta Hoon",
+        "artist": "KK",
+        "file": "Audio/TUJHE SOCHTA HOON -LYRICS- - K.K. JANNAT 2 PRITAM- SAYEED QUADRI EMRAAN HASHMI.mp3",
+        "image": "Thumbnails/TUJHE SOCHTA HOON -LYRICS- - K.K. JANNAT 2 PRITAM- SAYEED QUADRI EMRAAN HASHMI_thumbnail.jpg"
+    },
+    {
+        "title": "Tujhe Sochta Hoon (Lofi Flip)",
+        "artist": "KK",
+        "file": "Audio/Tujhe Sochta Hoon Lofi Flip 🥀- (Slowed + Reverb)❤️ - KK - Lofi Songs - Lofi is Love.mp3",
+        "image": "Thumbnails/Tujhe Sochta Hoon Lofi Flip 🥀- (Slowed + Reverb)❤️ - KK - Lofi Songs - Lofi is Love_thumbnail.jpg"
+    },
+    {
+        "title": "Tujhe Sochta Hoon (Slowed + Reverb)",
+        "artist": "KK",
+        "file": "Audio/Tujhe Sochta Hoon [Slowed   Reverb   Rain] K.K _ Wormono lofi.mp3",
+        "image": "Thumbnails/Tujhe Sochta Hoon [Slowed   Reverb   Rain] K.K _ Wormono lofi_thumbnail.jpg"
+    },
+    {
+        "title": "Zara Sa",
+        "artist": "KK",
+        "file": "Audio/Zara Sa Lyrics Jannat KK Pritam Sayeed Quadri Mahesh Bhatt Emraan Hashmi- Sonal(1).mp3",
+        "image": "Thumbnails/Zara Sa Lyrics Jannat KK Pritam Sayeed Quadri Mahesh Bhatt Emraan Hashmi- Sonal(1)_thumbnail.jpg"
+    },
+    {
+        "title": "Zara Sa (Slowed + Reverb)",
+        "artist": "KK",
+        "file": "Audio/Zara Sa - Lofi (Slowed + Reverb) - KK - SR Lofi.mp3",
+        "image": "Thumbnails/Zara Sa - Lofi (Slowed + Reverb) - KK - SR Lofi_thumbnail.jpg"
+    },
+    {
+        "title": "Toh Phir Aao X Labon Ko - Remix",
+        "artist": "Mustafa Zahid, KK",
+        "file": "Audio/Toh Phir Aao X Labon Ko (Synthwave Remix) _ Adbhut Chapter 15(END) _ ROHAN _ Indian Synthwave.mp3",
+        "image": "Thumbnails/Toh Phir Aao X Labon Ko (Synthwave Remix) _ Adbhut Chapter 15(END) _ ROHAN _ Indian Synthwave_thumbnail.jpg"
     }
 ]

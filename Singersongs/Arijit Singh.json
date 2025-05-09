@@ -1,470 +1,572 @@
 [
     {
-        "title": "Baatein Ye Kabhi Na - Slowed & Reverb",
-        "file": "Audio/Baatein Ye Kabhi Na - Slowed - Reverb - - Arijit Singh Khamoshiyan Lyrics Lofi Titan Music.mp3",
-        "image": "Thumbnails/Baatein Ye Kabhi Na - Slowed - Reverb - - Arijit Singh Khamoshiyan Lyrics Lofi Titan Music_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Bandeya - Slowed & Reverb",
-        "file": "Audio/Bandeya - Arijit Singh Dil Juunglee Song Slowed and Reverb Lofi Mix.mp3",
-        "image": "Thumbnails/Bandeya - Arijit Singh Dil Juunglee Song Slowed and Reverb Lofi Mix_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Channa Mereya - Slowed & Reverb",
-        "file": "Audio/Channa Mereya -Slowed-Reverb- Song Lyrics Arijit Singh.mp3",
-        "image": "Thumbnails/Channa Mereya -Slowed-Reverb- Song Lyrics Arijit Singh_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Hua Hai Aaj Pehli Baar - Slowed & Reverb",
-        "file": "Audio/Hua Hai Aaj Pehli Baar from Sanam Re -Slowed and Reverbed-.mp3",
-        "image": "Thumbnails/Hua Hai Aaj Pehli Baar from Sanam Re -Slowed and Reverbed-_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Humnava Mere - Slowed & Reverb",
-        "file": "Audio/Humnava Mere -Slowed-Reverb- Song Lyrics Jubin Nautiyal(1).mp3",
-        "image": "Thumbnails/Humnava Mere -Slowed-Reverb- Song Lyrics Jubin Nautiyal(1)_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Kashmir Main Tu Kanyakumari - Slowed & Reverb",
-        "file": "Audio/Kashmir Main Tu Kanyakumari - Slowed - Reverb - ♬(1).mp3",
-        "image": "Thumbnails/Kashmir Main Tu Kanyakumari - Slowed - Reverb - ♬(1)_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Khairiyat - Slowed & Reverb",
-        "file": "Audio/Khairiyat -Slowed - Reverb- Arijit Singh Chhichhore SR Lofi.mp3",
-        "image": "Thumbnails/Khairiyat -Slowed - Reverb- Arijit Singh Chhichhore SR Lofi_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Khamoshiyan - Slowed & Reverb",
-        "file": "Audio/Khamoshiyan - Arijit Singh -Slowed-Reverb-Lofi- Song Indian Lofi.mp3",
-        "image": "Thumbnails/Khamoshiyan - Arijit Singh -Slowed-Reverb-Lofi- Song Indian Lofi_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Main Dhoondne Ko Zamaane Mein - Slowed & Reverb",
-        "file": "Audio/Main Dhoondne Ko Zamaane Mein Jab Wafa Nikla- Slowed and Reverbed -Magical- Arijit Singh.mp3",
-        "image": "Thumbnails/Main Dhoondne Ko Zamaane Mein Jab Wafa Nikla- Slowed and Reverbed -Magical- Arijit Singh_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Main Jitna Tumhe Dekhu - Slowed & Reverb",
-        "file": "Audio/Main Jitna Tumhe Dekhu LoFi Remix Song Slowed Reverb Indian Lofi 76 (1).mp3",
-        "image": "Thumbnails/Main Jitna Tumhe Dekhu LoFi Remix Song Slowed Reverb Indian Lofi 76 (1)_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Hamdard - Slowed & Reverb",
-        "file": "Audio/Hamdard Slowed and Reverb -super- Ek Villain Arijit Singh Mithoon.mp3",
-        "image": "Thumbnails/Hamdard Slowed and Reverb -super- Ek Villain Arijit Singh Mithoon_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Sanam Re - Slowed & Reverb",
-        "file": "Audio/Sanam Re Lofi -Lyrics- - Arijit Singh(1).mp3",
-        "image": "Thumbnails/Sanam Re Lofi -Lyrics- - Arijit Singh(1)_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Soch Na Sake - Slowed & Reverb",
-        "file": "Audio/Soch Na Sake - Arjit Singh -Slowed and Reverbed-(1).mp3",
-        "image": "Thumbnails/Soch Na Sake - Arjit Singh -Slowed and Reverbed-(1)_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Tera Chehra - Slowed & Reverb",
-        "file": "Audio/Tera Chehra -Slowed-Reverb- Arijit Singh Sanam Teri Kasam Lofi Music Channel(1).mp3",
-        "image": "Thumbnails/Tera Chehra -Slowed-Reverb- Arijit Singh Sanam Teri Kasam Lofi Music Channel(1)_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Teri Meri Kahaani - Slowed & Reverb",
-        "file": "Audio/Teri Meri Kahaani - - Slowed - Reverb - Arijit Singh Palak muchhal Chirantan Bhatt Lofi mix.mp3",
-        "image": "Thumbnails/Teri Meri Kahaani - - Slowed - Reverb - Arijit Singh Palak muchhal Chirantan Bhatt Lofi mix_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
         "title": "Ae Dil Hai Mushkil",
+        "artist": "Arijit Singh",
         "file": "Audio/Ae Dil Hai Mushkil -Title Song- Lyrics Arijit Singh Amitabh Bhattacharya Pritam.mp3",
-        "image": "Thumbnails/Ae Dil Hai Mushkil -Title Song- Lyrics Arijit Singh Amitabh Bhattacharya Pritam_thumbnail.jpg",
-        "artist": "Arijit Singh"
+        "image": "Thumbnails/Ae Dil Hai Mushkil -Title Song- Lyrics Arijit Singh Amitabh Bhattacharya Pritam_thumbnail.jpg"
+    },
+    {
+        "title": "ae watan",
+        "artist": "Arijit Singh",
+        "file": "Audio/ae watan.mp3",
+        "image": "Thumbnails/ae watan_thumbnail.jpg"
     },
     {
         "title": "Agar Tum Saath Ho",
+        "artist": "Arijit Singh",
         "file": "Audio/Agar Tum Saath Ho Tamasha Alka Yagnik Arijit Singh Lyrics Song.mp3",
-        "image": "Thumbnails/Agar Tum Saath Ho Tamasha Alka Yagnik Arijit Singh Lyrics Song_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Satranga",
-        "file": "Audio/ANIMAL- Satranga -Lyrics- Arijit Ranbir Kapoor Rashmika.mp3",
-        "image": "Thumbnails/ANIMAL- Satranga -Lyrics- Arijit Ranbir Kapoor Rashmika_thumbnail.jpg",
-        "artist": "Arijit Singh"
+        "image": "Thumbnails/Agar Tum Saath Ho Tamasha Alka Yagnik Arijit Singh Lyrics Song_thumbnail.jpg"
     },
     {
         "title": "Apna Bana Le",
+        "artist": "Arijit Singh",
         "file": "Audio/Apna Bana Le - Bhediya -Official Lyrics Video- Varun Dhawan- Kriti S Sachin-J- Arijit S- Amitabh B.mp3",
-        "image": "Thumbnails/Apna Bana Le - Bhediya -Official Lyrics Video- Varun Dhawan- Kriti S Sachin-J- Arijit S- Amitabh B_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Raabta",
-        "file": "Audio/Arijit Singh - Raabta -Lyrics Video- Agent Vinod Saif Ali Khan - Kareena Kapoor Khan.mp3",
-        "image": "Thumbnails/Arijit Singh - Raabta -Lyrics Video- Agent Vinod Saif Ali Khan - Kareena Kapoor Khan_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Khamoshiyan",
-        "file": "Audio/Arijit Singh Jeet Gannguli - Khamoshiyan -Lyrics-.mp3",
-        "image": "Thumbnails/Arijit Singh Jeet Gannguli - Khamoshiyan -Lyrics-_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Tera Chehra",
-        "file": "Audio/Arijit Singh Tera Chehra Sanam Teri Kasam.mp3",
-        "image": "Thumbnails/Arijit Singh Tera Chehra Sanam Teri Kasam_thumbnail.jpg",
-        "artist": "Arijit Singh"
+        "image": "Thumbnails/Apna Bana Le - Bhediya -Official Lyrics Video- Varun Dhawan- Kriti S Sachin-J- Arijit S- Amitabh B_thumbnail.jpg"
     },
     {
         "title": "Baatein Ye Kabhi Na",
+        "artist": "Arijit Singh",
         "file": "Audio/Arijit Singh- Jeet Gannguli - Baatein Ye Kabhi Na -Lyrics-.mp3",
-        "image": "Thumbnails/Arijit Singh- Jeet Gannguli - Baatein Ye Kabhi Na -Lyrics-_thumbnail.jpg",
-        "artist": "Arijit Singh"
+        "image": "Thumbnails/Arijit Singh- Jeet Gannguli - Baatein Ye Kabhi Na -Lyrics-_thumbnail.jpg"
     },
     {
-        "title": "Gerua",
-        "file": "Audio/Arijit Singh- Pritam - Gerua -Lyrics- From Dilwale.mp3",
-        "image": "Thumbnails/Arijit Singh- Pritam - Gerua -Lyrics- From Dilwale_thumbnail.jpg",
-        "artist": "Arijit Singh"
+        "title": "Baatein Ye Kabhi Na - Slowed & Reverb",
+        "artist": "Arijit Singh",
+        "file": "Audio/Baatein Ye Kabhi Na - Slowed - Reverb - - Arijit Singh Khamoshiyan Lyrics Lofi Titan Music.mp3",
+        "image": "Thumbnails/Baatein Ye Kabhi Na - Slowed - Reverb - - Arijit Singh Khamoshiyan Lyrics Lofi Titan Music_thumbnail.jpg"
     },
     {
-        "title": "Soch Na Sake",
-        "file": "Audio/Arijit Singh- Tulsi Kumar- Armaan Malik - Soch Na Sake - lyrics -.mp3",
-        "image": "Thumbnails/Arijit Singh- Tulsi Kumar- Armaan Malik - Soch Na Sake - lyrics -_thumbnail.jpg",
-        "artist": "Arijit Singh"
+        "title": "Baatein Ye Kabhi Na (Slowed + Reverb)",
+        "artist": "Arijit Singh",
+        "file": "Audio/Baatein Ye Kabhi Na [Slowed   Reverb] - Arijit Singh _ Khamoshiyan _ Lofi Songs _ Lofi Vibes.mp3",
+        "image": "Thumbnails/Baatein Ye Kabhi Na [Slowed   Reverb] - Arijit Singh _ Khamoshiyan _ Lofi Songs _ Lofi Vibes_thumbnail.jpg"
     },
     {
         "title": "Bandeya",
+        "artist": "Arijit Singh",
         "file": "Audio/Bandeya -From Dil Juunglee-.mp3",
-        "image": "Thumbnails/Bandeya -From Dil Juunglee-_thumbnail.jpg",
-        "artist": "Arijit Singh"
+        "image": "Thumbnails/Bandeya -From Dil Juunglee-_thumbnail.jpg"
     },
     {
-        "title": "Chahun Main Ya Na",
-        "file": "Audio/Chahu main ya na - Aashiqui 2 -LYRICS-.mp3",
-        "image": "Thumbnails/Chahu main ya na - Aashiqui 2 -LYRICS-_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Chhod Diya",
-        "file": "Audio/Chhod Diya -Lyrics- - Arijit Singh- Kanika Kapoor Baazaar.mp3",
-        "image": "Thumbnails/Chhod Diya -Lyrics- - Arijit Singh- Kanika Kapoor Baazaar_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Hamari Adhuri Kahani",
-        "file": "Audio/Hamari Adhuri Kahani -LYRICS- Full Song Arijit-singh Jeet Gannguli.mp3",
-        "image": "Thumbnails/Hamari Adhuri Kahani -LYRICS- Full Song Arijit-singh Jeet Gannguli_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Hawayein",
-        "file": "Audio/HAWAYEIN SONG -LYRICS- ARIJIT SINGH PRITAM- IRSHAAD KAMIL SHAH RUKH KHAN- ANUSHKA SHARMA.mp3",
-        "image": "Thumbnails/HAWAYEIN SONG -LYRICS- ARIJIT SINGH PRITAM- IRSHAAD KAMIL SHAH RUKH KHAN- ANUSHKA SHARMA_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Humdard",
-        "file": "Audio/HUMDARD LYRICS Ek Villain Arijit Singh Mithoon Sidharth - Shraddha - Ritesh.mp3",
-        "image": "Thumbnails/HUMDARD LYRICS Ek Villain Arijit Singh Mithoon Sidharth - Shraddha - Ritesh_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Ilahi",
-        "file": "Audio/Ilahi song lyrics -arijit singh-.mp3",
-        "image": "Thumbnails/Ilahi song lyrics -arijit singh-_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Ishq Mubarak",
-        "file": "Audio/Ishq Mubarak Lyrics Tum Bin 2 Arijit Singh Neha Sharma- Aditya Seal - Aashim Gulati.mp3",
-        "image": "Thumbnails/Ishq Mubarak Lyrics Tum Bin 2 Arijit Singh Neha Sharma- Aditya Seal - Aashim Gulati_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Itni Si Baat Hain",
-        "file": "Audio/Itni Si Baat Hain Full Lyric Video Song AZHAR Emraan Hashmi- Prachi Desai Arijit Singh- Pritam.mp3",
-        "image": "Thumbnails/Itni Si Baat Hain Full Lyric Video Song AZHAR Emraan Hashmi- Prachi Desai Arijit Singh- Pritam_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Jaan Nisaar",
-        "file": "Audio/Jaan nisaar song lyrics Arijit Singh Asees Kaur Kedarnath.mp3",
-        "image": "Thumbnails/Jaan nisaar song lyrics Arijit Singh Asees Kaur Kedarnath_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Janam Janam",
-        "file": "Audio/Janam Janam -Lyrics- - Arijit Singh 7clouds Hindi.mp3",
-        "image": "Thumbnails/Janam Janam -Lyrics- - Arijit Singh 7clouds Hindi_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Jo Bheji Thi Duaa",
-        "file": "Audio/Jo Bheji Thi Duaa - Arijit Singh Nandini Srikar- Kumaar Vishal-Shekhar Shanghai.mp3",
-        "image": "Thumbnails/Jo Bheji Thi Duaa - Arijit Singh Nandini Srikar- Kumaar Vishal-Shekhar Shanghai_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Lambiyaan Si Judaiyaan",
-        "file": "Audio/Lambiyaan Si Judaiyaan Lyrical Song.mp3",
-        "image": "Thumbnails/Lambiyaan Si Judaiyaan Lyrical Song_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Lo Maan Liya",
-        "file": "Audio/Lo maan liya lyrics Arijit singh Jeet Gannguli Kausar Munir Emran Hashmi-Kirti Kharbanda.mp3",
-        "image": "Thumbnails/Lo maan liya lyrics Arijit singh Jeet Gannguli Kausar Munir Emran Hashmi-Kirti Kharbanda_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Tose Naina",
-        "file": "Audio/LyricsTose Naina Full Song Arijit Singh Hanif Shaikh Micky Virus.mp3",
-        "image": "Thumbnails/LyricsTose Naina Full Song Arijit Singh Hanif Shaikh Micky Virus_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Main Dhoondne Ko Zamaane Mein",
-        "file": "Audio/Main Dhoondne Ko Zamaane Mein Lyrics Heartless Arijit Singh Arafat- Gaurav Adhyayan- Ariana.mp3",
-        "image": "Thumbnails/Main Dhoondne Ko Zamaane Mein Lyrics Heartless Arijit Singh Arafat- Gaurav Adhyayan- Ariana_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Main Phir Bhi Tumko Chahunga",
-        "file": "Audio/Main Phir Bhi Tumko Chahunga -Lyrics- - Arijit Singh Shashaa Tirupati Lyrics Tube.mp3",
-        "image": "Thumbnails/Main Phir Bhi Tumko Chahunga -Lyrics- - Arijit Singh Shashaa Tirupati Lyrics Tube_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Main Rang Sharbaton Ka",
-        "file": "Audio/Main Rang Sharbaton Ka -Lyrics- Arijit Singh Irshad Kamil Pritam Tips Official Lyrics Mazic.mp3",
-        "image": "Thumbnails/Main Rang Sharbaton Ka -Lyrics- Arijit Singh Irshad Kamil Pritam Tips Official Lyrics Mazic_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Mast Magan",
-        "file": "Audio/Mast Magan lyrics 2 States ArijitSingh Arjun Kapoor- Alia Bhatt.mp3",
-        "image": "Thumbnails/Mast Magan lyrics 2 States ArijitSingh Arjun Kapoor- Alia Bhatt_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Muskurane Ki Wajah Tum Ho",
-        "file": "Audio/Muskurane ki Wajah tum ho song -lyrics- Arijit Singh Movie- Citylight.mp3",
-        "image": "Thumbnails/Muskurane ki Wajah tum ho song -lyrics- Arijit Singh Movie- Citylight_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Naina",
-        "file": "Audio/Naina Lyrics Arijit Singh Pritam Amitabh Bhattacharya (1).mp3",
-        "image": "Thumbnails/Naina Lyrics Arijit Singh Pritam Amitabh Bhattacharya (1)_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "O Sajni Re",
-        "file": "Audio/O SAJNI RE - LYRICS ARIJI SINGH LAAPATAA LADIES LYRICS VIDEO SF LYRICS HUB .mp3",
-        "image": "Thumbnails/O SAJNI RE - LYRICS ARIJI SINGH LAAPATAA LADIES LYRICS VIDEO SF LYRICS HUB _thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Phir Aur Kya Chahiye",
-        "file": "Audio/Phir Aur Kya Chahiye -Lyrics- - Arijit Singh arijitsingh(1).mp3",
-        "image": "Thumbnails/Phir Aur Kya Chahiye -Lyrics- - Arijit Singh arijitsingh(1)_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Phir Mohabbat",
-        "file": "Audio/Phir Mohabbat Karne Chala Hai Tu - LYRICS - Arijit Singh Murder 2 Emraan Hashmi - Jacqueline.mp3",
-        "image": "Thumbnails/Phir Mohabbat Karne Chala Hai Tu - LYRICS - Arijit Singh Murder 2 Emraan Hashmi - Jacqueline_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Qaafirana",
-        "file": "Audio/Qaafirana -Lyrics- Kedarnath Sushant Singh Rajput- Sara Ali Khan- Arijit Singh- Nikita Gandhi.mp3",
-        "image": "Thumbnails/Qaafirana -Lyrics- Kedarnath Sushant Singh Rajput- Sara Ali Khan- Arijit Singh- Nikita Gandhi_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Roke Na Ruke Naina",
-        "file": "Audio/Roke Na Ruke Naina -Lyrics- Badrinath Ki Dulhania I Arijit Singh Varun Dhawan I Alia Bhatt.mp3",
-        "image": "Thumbnails/Roke Na Ruke Naina -Lyrics- Badrinath Ki Dulhania I Arijit Singh Varun Dhawan I Alia Bhatt_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Samjhawan",
-        "file": "Audio/Samjhawan Lyric Video - Humpty Sharma Ki DulhanialVarun-AliaArijit Singh- Shreya Ghoshal.mp3",
-        "image": "Thumbnails/Samjhawan Lyric Video - Humpty Sharma Ki DulhanialVarun-AliaArijit Singh- Shreya Ghoshal_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Sawan Aaya Hai",
-        "file": "Audio/Sawan Aaya hai Lyrics Arijit Singh Tony Kakkar Bipasha Basu Creature 3D RB Lyrics Lover.mp3",
-        "image": "Thumbnails/Sawan Aaya hai Lyrics Arijit Singh Tony Kakkar Bipasha Basu Creature 3D RB Lyrics Lover_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Shayad",
-        "file": "Audio/Shayad Lyrics - Love Aaj Kal Ft. Arijit Singh Kartik Sara Arushi Pritam.mp3",
-        "image": "Thumbnails/Shayad Lyrics - Love Aaj Kal Ft. Arijit Singh Kartik Sara Arushi Pritam_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Sukoon Mila",
-        "file": "Audio/Sukoon Mila Lyrics Mary Kom Arijit Singh .mp3",
-        "image": "Thumbnails/Sukoon Mila Lyrics Mary Kom Arijit Singh _thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Tere Hawale",
-        "file": "Audio/Tere Hawale -LYRICS- - Arijit Singh- Shilpa Rao Aamir- Kareena Pritam Laal Singh Chaddha.mp3",
-        "image": "Thumbnails/Tere Hawale -LYRICS- - Arijit Singh- Shilpa Rao Aamir- Kareena Pritam Laal Singh Chaddha_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Thodi Jagah",
-        "file": "Audio/Thodi Jagah Lyrics – Marjaavaan Arijit Singh.mp3",
-        "image": "Thumbnails/Thodi Jagah Lyrics – Marjaavaan Arijit Singh_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Tum Hi Ho",
-        "file": "Audio/tum hi ho song lyrics.mp3",
-        "image": "Thumbnails/tum hi ho song lyrics_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Zaalima",
-        "file": "Audio/Zaalima -Lyrics- Raees Shahrukh Khan- Mahira Khan- Arijit Singh- Harshdeep Kaur.mp3",
-        "image": "Thumbnails/Zaalima -Lyrics- Raees Shahrukh Khan- Mahira Khan- Arijit Singh- Harshdeep Kaur_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Sooraj Dooba Hai Yaaron",
-        "file": "Audio/🎤Aditi Sharma- Arijit Singh - Sooraj Dooba Hai Yaaron Full Lyrics Song Ranbir - Jacqueline Roy .mp3",
-        "image": "Thumbnails/🎤Aditi Sharma- Arijit Singh - Sooraj Dooba Hai Yaaron Full Lyrics Song Ranbir - Jacqueline Roy _thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Ve Maahi",
-        "file": "Audio/O Maahi Ve Maahi Mainu Chhaddeyo Naa -Lyrics- - Arijit Singh Lyrics Tube.mp3",
-        "image": "Thumbnails/O Maahi Ve Maahi Mainu Chhaddeyo Naa -Lyrics- - Arijit Singh Lyrics Tube_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Bulleya",
-        "file": "Audio/Arijit Singh - Bulleya -Lyrics-.mp3",
-        "image": "Thumbnails/Arijit Singh - Bulleya -Lyrics-_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Darkhaast",
-        "file": "Audio/Arijit Singh - Darkhaast -Lyrics- Ft. Sunidhi Chauhan Shivaay.mp3",
-        "image": "Thumbnails/Arijit Singh - Darkhaast -Lyrics- Ft. Sunidhi Chauhan Shivaay_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Behti Hawa Sa Tha Woh",
-        "file": "Audio/Behti Hawa Sa Tha Woh - Lyrics - 3 Idiots Aamir Khan Kareena Kapoor Madhavan Sharman Joshi.mp3",
-        "image": "Thumbnails/Behti Hawa Sa Tha Woh - Lyrics - 3 Idiots Aamir Khan Kareena Kapoor Madhavan Sharman Joshi_thumbnail.jpg",
-        "artist": "Arijit Singh"
+        "title": "Bandeya - Slowed & Reverb",
+        "artist": "Arijit Singh",
+        "file": "Audio/Bandeya - Arijit Singh Dil Juunglee Song Slowed and Reverb Lofi Mix.mp3",
+        "image": "Thumbnails/Bandeya - Arijit Singh Dil Juunglee Song Slowed and Reverb Lofi Mix_thumbnail.jpg"
     },
     {
         "title": "Bolna",
+        "artist": "Arijit Singh",
         "file": "Audio/Bolna Maahi Bol Na Bolna Maahi Bol Na Full Song -Lyrics- - Arijit Singh Asees Kaur Lyrics Tube.mp3",
-        "image": "Thumbnails/Bolna Maahi Bol Na Bolna Maahi Bol Na Full Song -Lyrics- - Arijit Singh Asees Kaur Lyrics Tube_thumbnail.jpg",
-        "artist": "Arijit Singh"
+        "image": "Thumbnails/Bolna Maahi Bol Na Bolna Maahi Bol Na Full Song -Lyrics- - Arijit Singh Asees Kaur Lyrics Tube_thumbnail.jpg"
+    },
+    {
+        "title": "Bulleya",
+        "artist": "Arijit Singh",
+        "file": "Audio/Arijit Singh - Bulleya -Lyrics-.mp3",
+        "image": "Thumbnails/Arijit Singh - Bulleya -Lyrics-_thumbnail.jpg"
+    },
+    {
+        "title": "Chahun Main Ya Na",
+        "artist": "Arijit Singh",
+        "file": "Audio/Chahu main ya na - Aashiqui 2 -LYRICS-.mp3",
+        "image": "Thumbnails/Chahu main ya na - Aashiqui 2 -LYRICS-_thumbnail.jpg"
     },
     {
         "title": "Chal Wahan Jaate Hain",
+        "artist": "Arijit Singh",
         "file": "Audio/Chal Wahan Jaate Hain Lyrics Arijit Singh Tiger Shroff- Kriti Sanon Amaal Malik .mp3",
-        "image": "Thumbnails/Chal Wahan Jaate Hain Lyrics Arijit Singh Tiger Shroff- Kriti Sanon Amaal Malik _thumbnail.jpg",
-        "artist": "Arijit Singh"
+        "image": "Thumbnails/Chal Wahan Jaate Hain Lyrics Arijit Singh Tiger Shroff- Kriti Sanon Amaal Malik _thumbnail.jpg"
     },
     {
-        "title": "Woh Din",
-        "file": "Audio/Chhichhore Arijith singh - Woh Din -Lyrics-.mp3",
-        "image": "Thumbnails/Chhichhore Arijith singh - Woh Din -Lyrics-_thumbnail.jpg",
-        "artist": "Arijit Singh"
+        "title": "Channa Mereya - Slowed & Reverb",
+        "artist": "Arijit Singh",
+        "file": "Audio/Channa Mereya -Slowed-Reverb- Song Lyrics Arijit Singh.mp3",
+        "image": "Thumbnails/Channa Mereya -Slowed-Reverb- Song Lyrics Arijit Singh_thumbnail.jpg"
+    },
+    {
+        "title": "Chhod Diya",
+        "artist": "Arijit Singh",
+        "file": "Audio/Chhod Diya -Lyrics- - Arijit Singh- Kanika Kapoor Baazaar.mp3",
+        "image": "Thumbnails/Chhod Diya -Lyrics- - Arijit Singh- Kanika Kapoor Baazaar_thumbnail.jpg"
+    },
+    {
+        "title": "Darkhaast",
+        "artist": "Arijit Singh",
+        "file": "Audio/Arijit Singh - Darkhaast -Lyrics- Ft. Sunidhi Chauhan Shivaay.mp3",
+        "image": "Thumbnails/Arijit Singh - Darkhaast -Lyrics- Ft. Sunidhi Chauhan Shivaay_thumbnail.jpg"
+    },
+    {
+        "title": "Darkhaast - Slowed And Reverb",
+        "artist": "Arijit Singh",
+        "file": "Audio/Darkhaast [Slowed Reverb] _ Arijit Singh _ Lofi _ Revibe.mp3",
+        "image": "Thumbnails/Darkhaast [Slowed Reverb] _ Arijit Singh _ Lofi _ Revibe_thumbnail.jpg"
     },
     {
         "title": "Dekha Hazaro Dafaa",
+        "artist": "Arijit Singh",
         "file": "Audio/DEKHA HAZARO DAFAA -Lyrics- ARIJIT SINGH Aankhein hamein raas aa gayi Ab hum yahaan se jaaye kahan.mp3",
-        "image": "Thumbnails/DEKHA HAZARO DAFAA -Lyrics- ARIJIT SINGH Aankhein hamein raas aa gayi Ab hum yahaan se jaaye kahan_thumbnail.jpg",
-        "artist": "Arijit Singh"
+        "image": "Thumbnails/DEKHA HAZARO DAFAA -Lyrics- ARIJIT SINGH Aankhein hamein raas aa gayi Ab hum yahaan se jaaye kahan_thumbnail.jpg"
     },
     {
         "title": "Dil Cheez Tujhe Dedi",
+        "artist": "Arijit Singh",
         "file": "Audio/Dil Cheez Tujhe Dedi Lyrics – Airlift.mp3",
-        "image": "Thumbnails/Dil Cheez Tujhe Dedi Lyrics – Airlift_thumbnail.jpg",
-        "artist": "Arijit Singh"
+        "image": "Thumbnails/Dil Cheez Tujhe Dedi Lyrics – Airlift_thumbnail.jpg"
+    },
+    {
+        "title": "Enna Sona",
+        "artist": "Arijit Singh",
+        "file": "Audio/ENNA SONA.mp3",
+        "image": "Thumbnails/ENNA SONA_thumbnail.jpg"
+    },
+    {
+        "title": "Gerua",
+        "artist": "Arijit Singh",
+        "file": "Audio/Arijit Singh- Pritam - Gerua -Lyrics- From Dilwale.mp3",
+        "image": "Thumbnails/Arijit Singh- Pritam - Gerua -Lyrics- From Dilwale_thumbnail.jpg"
+    },
+    {
+        "title": "Hamari Adhuri Kahani",
+        "artist": "Arijit Singh",
+        "file": "Audio/Hamari Adhuri Kahani -LYRICS- Full Song Arijit-singh Jeet Gannguli.mp3",
+        "image": "Thumbnails/Hamari Adhuri Kahani -LYRICS- Full Song Arijit-singh Jeet Gannguli_thumbnail.jpg"
+    },
+    {
+        "title": "Hamdard - Slowed & Reverb",
+        "artist": "Arijit Singh",
+        "file": "Audio/Hamdard Slowed and Reverb -super- Ek Villain Arijit Singh Mithoon.mp3",
+        "image": "Thumbnails/Hamdard Slowed and Reverb -super- Ek Villain Arijit Singh Mithoon_thumbnail.jpg"
+    },
+    {
+        "title": "Hamdard - Slowed + Reverb",
+        "artist": "Arijit Singh",
+        "file": "Audio/[Slowed Reverb] Hamdard - Ek Villain _ Arijit Singh _ Mithoon - Vhan Muzic.mp3",
+        "image": "Thumbnails/[Slowed Reverb] Hamdard - Ek Villain _ Arijit Singh _ Mithoon - Vhan Muzic_thumbnail.jpg"
     },
     {
         "title": "Har Kisi Ko",
+        "artist": "Arijit Singh",
         "file": "Audio/Har Kisi Ko Nahi Milta Lyrics Boss Arijit Singh- Neeti Mohan Akshay Kumar- Sonakshi Sinha .mp3",
-        "image": "Thumbnails/Har Kisi Ko Nahi Milta Lyrics Boss Arijit Singh- Neeti Mohan Akshay Kumar- Sonakshi Sinha _thumbnail.jpg",
-        "artist": "Arijit Singh"
+        "image": "Thumbnails/Har Kisi Ko Nahi Milta Lyrics Boss Arijit Singh- Neeti Mohan Akshay Kumar- Sonakshi Sinha _thumbnail.jpg"
     },
     {
-        "title": "Kalank",
-        "file": "Audio/Kalank - Arijit Singh -Lyrics- Lyrical Bam Hindi.mp3",
-        "image": "Thumbnails/Kalank - Arijit Singh -Lyrics- Lyrical Bam Hindi_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Phir Le Aya Dil",
-        "file": "Audio/Phir Le Aya Dil Lyrics Barfi- Arijit Singh Ranbir K - Priyanka C - Ileana Dcruz Pritam.mp3",
-        "image": "Thumbnails/Phir Le Aya Dil Lyrics Barfi- Arijit Singh Ranbir K - Priyanka C - Ileana Dcruz Pritam_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Raabta",
-        "file": "Audio/Raabta - Arijit Singh Slowed - Reverb Lyrics Use Headphones 🎧🎧.mp3",
-        "image": "Thumbnails/Raabta - Arijit Singh Slowed - Reverb Lyrics Use Headphones 🎧🎧_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Suno Na Sangemarmar",
-        "file": "Audio/Suno Na Sangemarmar Lyrics - Arijit Singh.mp3",
-        "image": "Thumbnails/Suno Na Sangemarmar Lyrics - Arijit Singh_thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Tera Fitoor",
-        "file": "Audio/Tera Fitoor -LYRICS- - Genius Arijit Singh Songs Everyday .mp3",
-        "image": "Thumbnails/Tera Fitoor -LYRICS- - Genius Arijit Singh Songs Everyday _thumbnail.jpg",
-        "artist": "Arijit Singh"
-    },
-    {
-        "title": "Phir Kabhi",
-        "file": "Audio/🎤Arijit Singh - Phir Kabhi Full Lyrics Song M.S. Dhoni The Untold Story Sushant Singh Rajput.mp3",
-        "image": "Thumbnails/🎤Arijit Singh - Phir Kabhi Full Lyrics Song M.S. Dhoni The Untold Story Sushant Singh Rajput_thumbnail.jpg",
-        "artist": "Arijit Singh"
+        "title": "Hawayein",
+        "artist": "Arijit Singh",
+        "file": "Audio/HAWAYEIN SONG -LYRICS- ARIJIT SINGH PRITAM- IRSHAAD KAMIL SHAH RUKH KHAN- ANUSHKA SHARMA.mp3",
+        "image": "Thumbnails/HAWAYEIN SONG -LYRICS- ARIJIT SINGH PRITAM- IRSHAAD KAMIL SHAH RUKH KHAN- ANUSHKA SHARMA_thumbnail.jpg"
     },
     {
         "title": "Hum Mar Jayenge",
+        "artist": "Arijit Singh",
         "file": "Audio/🎤Arijit Singh - Tulsi Kumar - Hum Mar Jayenge Full Lyrics Song Aashiqui 2 .mp3",
-        "image": "Thumbnails/🎤Arijit Singh - Tulsi Kumar - Hum Mar Jayenge Full Lyrics Song Aashiqui 2 _thumbnail.jpg",
-        "artist": "Arijit Singh"
+        "image": "Thumbnails/🎤Arijit Singh - Tulsi Kumar - Hum Mar Jayenge Full Lyrics Song Aashiqui 2 _thumbnail.jpg"
+    },
+    {
+        "title": "Humdard",
+        "artist": "Arijit Singh",
+        "file": "Audio/HUMDARD LYRICS Ek Villain Arijit Singh Mithoon Sidharth - Shraddha - Ritesh.mp3",
+        "image": "Thumbnails/HUMDARD LYRICS Ek Villain Arijit Singh Mithoon Sidharth - Shraddha - Ritesh_thumbnail.jpg"
+    },
+    {
+        "title": "Ik Vaari Aa",
+        "artist": "Arijit Singh",
+        "file": "Audio/Ik Vaari Aa -Lyrics- - Raabta Sushant Singh Rajput Kriti Sanon Arijit Singh Pritam.mp3",
+        "image": "Thumbnails/Ik Vaari Aa -Lyrics- - Raabta Sushant Singh Rajput Kriti Sanon Arijit Singh Pritam.jpg"
+    },
+    {
+        "title": "Ilahi",
+        "artist": "Arijit Singh",
+        "file": "Audio/Ilahi song lyrics -arijit singh-.mp3",
+        "image": "Thumbnails/Ilahi song lyrics -arijit singh-_thumbnail.jpg"
+    },
+    {
+        "title": "Ishq Mubarak",
+        "artist": "Arijit Singh",
+        "file": "Audio/Ishq Mubarak Lyrics Tum Bin 2 Arijit Singh Neha Sharma- Aditya Seal - Aashim Gulati.mp3",
+        "image": "Thumbnails/Ishq Mubarak Lyrics Tum Bin 2 Arijit Singh Neha Sharma- Aditya Seal - Aashim Gulati_thumbnail.jpg"
+    },
+    {
+        "title": "ISHQ MUBARAK [Slowed+Reverb]",
+        "artist": "Arijit Singh",
+        "file": "Audio/ISHQ MUBARAK [Slowed+Reverb]  ~ Arjit Singh -- MACK'S LOFI --.mp3",
+        "image": "Thumbnails/ISHQ MUBARAK [Slowed+Reverb]  ~ Arjit Singh -- MACK'S LOFI --_thumbnail.jpg"
+    },
+    {
+        "title": "Itni Si Baat Hain",
+        "artist": "Arijit Singh",
+        "file": "Audio/Itni Si Baat Hain Full Lyric Video Song AZHAR Emraan Hashmi- Prachi Desai Arijit Singh- Pritam.mp3",
+        "image": "Thumbnails/Itni Si Baat Hain Full Lyric Video Song AZHAR Emraan Hashmi- Prachi Desai Arijit Singh- Pritam_thumbnail.jpg"
+    },
+    {
+        "title": "Jaan Nisaar",
+        "artist": "Arijit Singh",
+        "file": "Audio/Jaan nisaar song lyrics Arijit Singh Asees Kaur Kedarnath.mp3",
+        "image": "Thumbnails/Jaan nisaar song lyrics Arijit Singh Asees Kaur Kedarnath_thumbnail.jpg"
+    },
+    {
+        "title": "Jaan Nisaar (Slowed + Reverb)",
+        "artist": "Arijit Singh",
+        "file": "Audio/Jaan Nisaar Slowed And Reverb Song _ Musical India.mp3",
+        "image": "Thumbnails/Jaan Nisaar Slowed And Reverb Song _ Musical India_thumbnail.jpg"
+    },
+    {
+        "title": "Janam Janam",
+        "artist": "Arijit Singh",
+        "file": "Audio/Janam Janam -Lyrics- - Arijit Singh 7clouds Hindi.mp3",
+        "image": "Thumbnails/Janam Janam -Lyrics- - Arijit Singh 7clouds Hindi_thumbnail.jpg"
+    },
+    {
+        "title": "Jo Bheji Thi Duaa",
+        "artist": "Arijit Singh",
+        "file": "Audio/Jo Bheji Thi Duaa - Arijit Singh Nandini Srikar- Kumaar Vishal-Shekhar Shanghai.mp3",
+        "image": "Thumbnails/Jo Bheji Thi Duaa - Arijit Singh Nandini Srikar- Kumaar Vishal-Shekhar Shanghai_thumbnail.jpg"
+    },
+    {
+        "title": "Kabhi jo badal barse - Slowed & Reverb",
+        "artist": "Arijit Singh",
+        "file": "Audio/kabhi jo badal barse (slowed down w rain) ☔.mp3",
+        "image": "Thumbnails/kabhi jo badal barse (slowed down w rain) ☔_thumbnail.jpg"
+    },
+    {
+        "title": "Kalank",
+        "artist": "Arijit Singh",
+        "file": "Audio/Kalank - Arijit Singh -Lyrics- Lyrical Bam Hindi.mp3",
+        "image": "Thumbnails/Kalank - Arijit Singh -Lyrics- Lyrical Bam Hindi_thumbnail.jpg"
+    },
+    {
+        "title": "Kashmir Main Tu Kanyakumari - Slowed & Reverb",
+        "artist": "Arijit Singh",
+        "file": "Audio/Kashmir Main Tu Kanyakumari - Slowed - Reverb - ♬(1).mp3",
+        "image": "Thumbnails/Kashmir Main Tu Kanyakumari - Slowed - Reverb - ♬(1)_thumbnail.jpg"
+    },
+    {
+        "title": "Khairiyat",
+        "artist": "Arijit Singh",
+        "file": "Audio/KHAIRIYAT.mp3",
+        "image": "Thumbnails/KHAIRIYAT_thumbnail.jpg"
+    },
+    {
+        "title": "Khairiyat - Slowed & Reverb",
+        "artist": "Arijit Singh",
+        "file": "Audio/Khairiyat -Slowed - Reverb- Arijit Singh Chhichhore SR Lofi.mp3",
+        "image": "Thumbnails/Khairiyat -Slowed - Reverb- Arijit Singh Chhichhore SR Lofi_thumbnail.jpg"
+    },
+    {
+        "title": "Khamoshiyan",
+        "artist": "Arijit Singh",
+        "file": "Audio/Arijit Singh Jeet Gannguli - Khamoshiyan -Lyrics-.mp3",
+        "image": "Thumbnails/Arijit Singh Jeet Gannguli - Khamoshiyan -Lyrics-_thumbnail.jpg"
+    },
+    {
+        "title": "Khamoshiyan - Slowed & Reverb",
+        "artist": "Arijit Singh",
+        "file": "Audio/Khamoshiyan - Arijit Singh -Slowed-Reverb-Lofi- Song Indian Lofi.mp3",
+        "image": "Thumbnails/Khamoshiyan - Arijit Singh -Slowed-Reverb-Lofi- Song Indian Lofi_thumbnail.jpg"
+    },
+    {
+        "title": "Lambiyaan Si Judaiyaan",
+        "artist": "Arijit Singh",
+        "file": "Audio/Lambiyaan Si Judaiyaan Lyrical Song.mp3",
+        "image": "Thumbnails/Lambiyaan Si Judaiyaan Lyrical Song_thumbnail.jpg"
+    },
+    {
+        "title": "Lo Maan Liya",
+        "artist": "Arijit Singh",
+        "file": "Audio/Lo maan liya lyrics Arijit singh Jeet Gannguli Kausar Munir Emran Hashmi-Kirti Kharbanda.mp3",
+        "image": "Thumbnails/Lo maan liya lyrics Arijit singh Jeet Gannguli Kausar Munir Emran Hashmi-Kirti Kharbanda_thumbnail.jpg"
+    },
+    {
+        "title": "Main Dhoondne Ko Zamaane Mein",
+        "artist": "Arijit Singh",
+        "file": "Audio/Main Dhoondne Ko Zamaane Mein Lyrics Heartless Arijit Singh Arafat- Gaurav Adhyayan- Ariana.mp3",
+        "image": "Thumbnails/Main Dhoondne Ko Zamaane Mein Lyrics Heartless Arijit Singh Arafat- Gaurav Adhyayan- Ariana_thumbnail.jpg"
+    },
+    {
+        "title": "Main Dhoondne Ko Zamaane Mein - Slowed & Reverb",
+        "artist": "Arijit Singh",
+        "file": "Audio/Main Dhoondne Ko Zamaane Mein Jab Wafa Nikla- Slowed and Reverbed -Magical- Arijit Singh.mp3",
+        "image": "Thumbnails/Main Dhoondne Ko Zamaane Mein Jab Wafa Nikla- Slowed and Reverbed -Magical- Arijit Singh_thumbnail.jpg"
+    },
+    {
+        "title": "Main Jitna Tumhe Dekhu - Slowed & Reverb",
+        "artist": "Arijit Singh",
+        "file": "Audio/Main Jitna Tumhe Dekhu LoFi Remix Song Slowed Reverb Indian Lofi 76 (1).mp3",
+        "image": "Thumbnails/Main Jitna Tumhe Dekhu LoFi Remix Song Slowed Reverb Indian Lofi 76 (1)_thumbnail.jpg"
+    },
+    {
+        "title": "Main Phir Bhi Tumko Chahunga",
+        "artist": "Arijit Singh",
+        "file": "Audio/Main Phir Bhi Tumko Chahunga -Lyrics- - Arijit Singh Shashaa Tirupati Lyrics Tube.mp3",
+        "image": "Thumbnails/Main Phir Bhi Tumko Chahunga -Lyrics- - Arijit Singh Shashaa Tirupati Lyrics Tube_thumbnail.jpg"
+    },
+    {
+        "title": "Main Rang Sharbaton Ka",
+        "artist": "Arijit Singh",
+        "file": "Audio/Main Rang Sharbaton Ka -Lyrics- Arijit Singh Irshad Kamil Pritam Tips Official Lyrics Mazic.mp3",
+        "image": "Thumbnails/Main Rang Sharbaton Ka -Lyrics- Arijit Singh Irshad Kamil Pritam Tips Official Lyrics Mazic_thumbnail.jpg"
+    },
+    {
+        "title": "Mast Magan",
+        "artist": "Arijit Singh",
+        "file": "Audio/Mast Magan lyrics 2 States ArijitSingh Arjun Kapoor- Alia Bhatt.mp3",
+        "image": "Thumbnails/Mast Magan lyrics 2 States ArijitSingh Arjun Kapoor- Alia Bhatt_thumbnail.jpg"
+    },
+    {
+        "title": "Muskurane Ki Wajah Tum Ho",
+        "artist": "Arijit Singh",
+        "file": "Audio/Muskurane ki Wajah tum ho song -lyrics- Arijit Singh Movie- Citylight.mp3",
+        "image": "Thumbnails/Muskurane ki Wajah tum ho song -lyrics- Arijit Singh Movie- Citylight_thumbnail.jpg"
+    },
+    {
+        "title": "Muskurane ki wajah tum ho [Slowed + Reverb]",
+        "artist": "Arijit Singh",
+        "file": "Audio/Muskurane ki wajah tum ho [Slowed + Reverb] Arijit Singh - Bollywood hindi lofi song.mp3",
+        "image": "Thumbnails/Muskurane ki wajah tum ho [Slowed + Reverb] Arijit Singh - Bollywood hindi lofi song_thumbnail.jpg"
+    },
+    {
+        "title": "Naina",
+        "artist": "Arijit Singh",
+        "file": "Audio/Naina Lyrics Arijit Singh Pritam Amitabh Bhattacharya (1).mp3",
+        "image": "Thumbnails/Naina Lyrics Arijit Singh Pritam Amitabh Bhattacharya (1)_thumbnail.jpg"
+    },
+    {
+        "title": "O Sajni Re",
+        "artist": "Arijit Singh",
+        "file": "Audio/O SAJNI RE - LYRICS ARIJI SINGH LAAPATAA LADIES LYRICS VIDEO SF LYRICS HUB .mp3",
+        "image": "Thumbnails/O SAJNI RE - LYRICS ARIJI SINGH LAAPATAA LADIES LYRICS VIDEO SF LYRICS HUB _thumbnail.jpg"
+    },
+    {
+        "title": "O Sajni Re - Slowed & Reverb",
+        "artist": "Arijit Singh",
+        "file": "Audio/Sajni - Slow and Reverb _ Arijit Singh _ LoFi Vibes _ Laapataa Ladies _ Shahbaz Siddiqui.mp3",
+        "image": "Thumbnails/Sajni - Slow and Reverb _ Arijit Singh _ LoFi Vibes _ Laapataa Ladies _ Shahbaz Siddiqui_thumbnail.jpg"
+    },
+    {
+        "title": "Pal Pal Dil Ke Paas",
+        "artist": "Arijit Singh",
+        "file": "Audio/PAL PAL DIL KE PAAS.mp3",
+        "image": "Thumbnails/PAL PAL DIL KE PAAS_thumbnail.jpg"
+    },
+    {
+        "title": "Phir Aur Kya Chahiye",
+        "artist": "Arijit Singh",
+        "file": "Audio/Phir Aur Kya Chahiye -Lyrics- - Arijit Singh arijitsingh(1).mp3",
+        "image": "Thumbnails/Phir Aur Kya Chahiye -Lyrics- - Arijit Singh arijitsingh(1)_thumbnail.jpg"
+    },
+    {
+        "title": "Phir Kabhi",
+        "artist": "Arijit Singh",
+        "file": "Audio/🎤Arijit Singh - Phir Kabhi Full Lyrics Song M.S. Dhoni The Untold Story Sushant Singh Rajput.mp3",
+        "image": "Thumbnails/🎤Arijit Singh - Phir Kabhi Full Lyrics Song M.S. Dhoni The Untold Story Sushant Singh Rajput_thumbnail.jpg"
+    },
+    {
+        "title": "Phir Le Aya Dil",
+        "artist": "Arijit Singh",
+        "file": "Audio/Phir Le Aya Dil Lyrics Barfi- Arijit Singh Ranbir K - Priyanka C - Ileana Dcruz Pritam.mp3",
+        "image": "Thumbnails/Phir Le Aya Dil Lyrics Barfi- Arijit Singh Ranbir K - Priyanka C - Ileana Dcruz Pritam_thumbnail.jpg"
+    },
+    {
+        "title": "Phir Mohabbat",
+        "artist": "Arijit Singh",
+        "file": "Audio/Phir Mohabbat Karne Chala Hai Tu - LYRICS - Arijit Singh Murder 2 Emraan Hashmi - Jacqueline.mp3",
+        "image": "Thumbnails/Phir Mohabbat Karne Chala Hai Tu - LYRICS - Arijit Singh Murder 2 Emraan Hashmi - Jacqueline_thumbnail.jpg"
+    },
+    {
+        "title": "Phir Mohabbat - Slowed And Reverb",
+        "artist": "Arijit Singh",
+        "file": "Audio/Dil Sambhal Jaa Zara _ Lofi (Slowed   reverbed) _ Arijit  Singh _ _LOFI BOLLYWOOD SONG 2022.mp3",
+        "image": "Thumbnails/Dil Sambhal Jaa Zara _ Lofi (Slowed   reverbed) _ Arijit  Singh _ _LOFI BOLLYWOOD SONG 2022_thumbnail.jpg"
+    },
+    {
+        "title": "Qaafirana",
+        "artist": "Arijit Singh",
+        "file": "Audio/Qaafirana -Lyrics- Kedarnath Sushant Singh Rajput- Sara Ali Khan- Arijit Singh- Nikita Gandhi.mp3",
+        "image": "Thumbnails/Qaafirana -Lyrics- Kedarnath Sushant Singh Rajput- Sara Ali Khan- Arijit Singh- Nikita Gandhi_thumbnail.jpg"
+    },
+    {
+        "title": "Raabta",
+        "artist": "Arijit Singh",
+        "file": "Audio/Arijit Singh - Raabta -Lyrics Video- Agent Vinod Saif Ali Khan - Kareena Kapoor Khan.mp3",
+        "image": "Thumbnails/Arijit Singh - Raabta -Lyrics Video- Agent Vinod Saif Ali Khan - Kareena Kapoor Khan_thumbnail.jpg"
+    },
+    {
+        "title": "Raabta - Slowed & Reverb",
+        "artist": "Arijit Singh",
+        "file": "Audio/Raabta - Arijit Singh Slowed - Reverb Lyrics Use Headphones 🎧🎧.mp3",
+        "image": "Thumbnails/Raabta - Arijit Singh Slowed - Reverb Lyrics Use Headphones 🎧🎧_thumbnail.jpg"
+    },
+    {
+        "title": "Roke Na Ruke Naina",
+        "artist": "Arijit Singh",
+        "file": "Audio/Roke Na Ruke Naina -Lyrics- Badrinath Ki Dulhania I Arijit Singh Varun Dhawan I Alia Bhatt.mp3",
+        "image": "Thumbnails/Roke Na Ruke Naina -Lyrics- Badrinath Ki Dulhania I Arijit Singh Varun Dhawan I Alia Bhatt_thumbnail.jpg"
+    },
+    {
+        "title": "Saanson Ko",
+        "artist": "Arijit Singh",
+        "file": "Audio/SAANSON KO.mp3",
+        "image": "Thumbnails/SAANSON KO_thumbnail.jpg"
+    },
+    {
+        "title": "Samjhawan",
+        "artist": "Arijit Singh",
+        "file": "Audio/Samjhawan Lyric Video - Humpty Sharma Ki DulhanialVarun-AliaArijit Singh- Shreya Ghoshal.mp3",
+        "image": "Thumbnails/Samjhawan Lyric Video - Humpty Sharma Ki DulhanialVarun-AliaArijit Singh- Shreya Ghoshal_thumbnail.jpg"
+    },
+    {
+        "title": "Samjhawan - Slowed & Reverb",
+        "artist": "Arijit Singh",
+        "file": "Audio/Samjhawan (Slowed   Reverb) _ Arijit Singh, Shreya Ghoshal _ Humpty Sharma Ki Dulhania _ SR Lofi.mp3",
+        "image": "Thumbnails/Samjhawan (Slowed   Reverb) _ Arijit Singh, Shreya Ghoshal _ Humpty Sharma Ki Dulhania _ SR Lofi_thumbnail.jpg"
+    },
+    {
+        "title": "Sanam Re - Slowed & Reverb",
+        "artist": "Arijit Singh",
+        "file": "Audio/Sanam Re Lofi -Lyrics- - Arijit Singh(1).mp3",
+        "image": "Thumbnails/Sanam Re Lofi -Lyrics- - Arijit Singh(1)_thumbnail.jpg"
+    },
+    {
+        "title": "Satranga",
+        "artist": "Arijit Singh",
+        "file": "Audio/ANIMAL- Satranga -Lyrics- Arijit Ranbir Kapoor Rashmika.mp3",
+        "image": "Thumbnails/ANIMAL- Satranga -Lyrics- Arijit Ranbir Kapoor Rashmika_thumbnail.jpg"
+    },
+    {
+        "title": "Sawan Aaya Hai",
+        "artist": "Arijit Singh",
+        "file": "Audio/Sawan Aaya hai Lyrics Arijit Singh Tony Kakkar Bipasha Basu Creature 3D RB Lyrics Lover.mp3",
+        "image": "Thumbnails/Sawan Aaya hai Lyrics Arijit Singh Tony Kakkar Bipasha Basu Creature 3D RB Lyrics Lover_thumbnail.jpg"
+    },
+    {
+        "title": "Shayad",
+        "artist": "Arijit Singh",
+        "file": "Audio/Shayad Lyrics - Love Aaj Kal Ft. Arijit Singh Kartik Sara Arushi Pritam.mp3",
+        "image": "Thumbnails/Shayad Lyrics - Love Aaj Kal Ft. Arijit Singh Kartik Sara Arushi Pritam_thumbnail.jpg"
+    },
+    {
+        "title": "Soch Na Sake",
+        "artist": "Arijit Singh",
+        "file": "Audio/Arijit Singh- Tulsi Kumar- Armaan Malik - Soch Na Sake - lyrics -.mp3",
+        "image": "Thumbnails/Arijit Singh- Tulsi Kumar- Armaan Malik - Soch Na Sake - lyrics -_thumbnail.jpg"
+    },
+    {
+        "title": "Soch Na Sake - Slowed & Reverb",
+        "artist": "Arijit Singh",
+        "file": "Audio/Soch Na Sake - Arjit Singh -Slowed and Reverbed-(1).mp3",
+        "image": "Thumbnails/Soch Na Sake - Arjit Singh -Slowed and Reverbed-(1)_thumbnail.jpg"
+    },
+    {
+        "title": "Sooraj Dooba Hai Yaaron",
+        "artist": "Arijit Singh",
+        "file": "Audio/🎤Aditi Sharma- Arijit Singh - Sooraj Dooba Hai Yaaron Full Lyrics Song Ranbir - Jacqueline Roy .mp3",
+        "image": "Thumbnails/🎤Aditi Sharma- Arijit Singh - Sooraj Dooba Hai Yaaron Full Lyrics Song Ranbir - Jacqueline Roy _thumbnail.jpg"
+    },
+    {
+        "title": "Sukoon Mila",
+        "artist": "Arijit Singh",
+        "file": "Audio/Sukoon Mila Lyrics Mary Kom Arijit Singh .mp3",
+        "image": "Thumbnails/Sukoon Mila Lyrics Mary Kom Arijit Singh _thumbnail.jpg"
     },
     {
         "title": "Sun Raha Hai (Male Version)",
+        "artist": "Arijit Singh",
         "file": "Audio/SUNN RAHA HAI NA TU - LYRICAL- AASHIQUI 2ARIJIT SINGH.mp3",
-        "image": "Thumbnails/SUNN RAHA HAI NA TU - LYRICAL- AASHIQUI 2ARIJIT SINGH_thumbnail.jpg",
-        "artist": "Arijit Singh"
+        "image": "Thumbnails/SUNN RAHA HAI NA TU - LYRICAL- AASHIQUI 2ARIJIT SINGH_thumbnail.jpg"
+    },
+    {
+        "title": "Suno Na Sangemarmar",
+        "artist": "Arijit Singh",
+        "file": "Audio/Suno Na Sangemarmar Lyrics - Arijit Singh.mp3",
+        "image": "Thumbnails/Suno Na Sangemarmar Lyrics - Arijit Singh_thumbnail.jpg"
+    },
+    {
+        "title": "Tera Chehra",
+        "artist": "Arijit Singh",
+        "file": "Audio/Arijit Singh Tera Chehra Sanam Teri Kasam.mp3",
+        "image": "Thumbnails/Arijit Singh Tera Chehra Sanam Teri Kasam_thumbnail.jpg"
+    },
+    {
+        "title": "Tera Chehra - Slowed & Reverb",
+        "artist": "Arijit Singh",
+        "file": "Audio/Tera Chehra -Slowed-Reverb- Arijit Singh Sanam Teri Kasam Lofi Music Channel(1).mp3",
+        "image": "Thumbnails/Tera Chehra -Slowed-Reverb- Arijit Singh Sanam Teri Kasam Lofi Music Channel(1)_thumbnail.jpg"
+    },
+    {
+        "title": "Tera Fitoor",
+        "artist": "Arijit Singh",
+        "file": "Audio/Tera Fitoor -LYRICS- - Genius Arijit Singh Songs Everyday .mp3",
+        "image": "Thumbnails/Tera Fitoor -LYRICS- - Genius Arijit Singh Songs Everyday _thumbnail.jpg"
+    },
+    {
+        "title": "Tera Yaar Hoon Main",
+        "artist": "Arijit Singh",
+        "file": "Audio/🎤Arijit Singh - Tera Yaar Hoon Main Full Lyrics Song Sonu Ke Titu Ki Sweety Kartik Aaryan .mp3",
+        "image": "Thumbnails/🎤Arijit Singh - Tera Yaar Hoon Main Full Lyrics Song Sonu Ke Titu Ki Sweety Kartik Aaryan _thumbnail.jpg"
+    },
+    {
+        "title": "Tere Hawale",
+        "artist": "Arijit Singh",
+        "file": "Audio/Tere Hawale -LYRICS- - Arijit Singh- Shilpa Rao Aamir- Kareena Pritam Laal Singh Chaddha.mp3",
+        "image": "Thumbnails/Tere Hawale -LYRICS- - Arijit Singh- Shilpa Rao Aamir- Kareena Pritam Laal Singh Chaddha_thumbnail.jpg"
+    },
+    {
+        "title": "Teri Meri Kahaani - Slowed & Reverb",
+        "artist": "Arijit Singh",
+        "file": "Audio/Teri Meri Kahaani - - Slowed - Reverb - Arijit Singh Palak muchhal Chirantan Bhatt Lofi mix.mp3",
+        "image": "Thumbnails/Teri Meri Kahaani - - Slowed - Reverb - Arijit Singh Palak muchhal Chirantan Bhatt Lofi mix_thumbnail.jpg"
+    },
+    {
+        "title": "Thodi Jagah",
+        "artist": "Arijit Singh",
+        "file": "Audio/Thodi Jagah Lyrics – Marjaavaan Arijit Singh.mp3",
+        "image": "Thumbnails/Thodi Jagah Lyrics – Marjaavaan Arijit Singh_thumbnail.jpg"
+    },
+    {
+        "title": "Tose Naina",
+        "artist": "Arijit Singh",
+        "file": "Audio/LyricsTose Naina Full Song Arijit Singh Hanif Shaikh Micky Virus.mp3",
+        "image": "Thumbnails/LyricsTose Naina Full Song Arijit Singh Hanif Shaikh Micky Virus_thumbnail.jpg"
+    },
+    {
+        "title": "Tu Hai To Main Hoon",
+        "artist": "Arijit Singh",
+        "file": "Audio/Arijit Singh_ Tu Hain Toh Main Hoon (Lyrics) _ Sky Force _ Afsana Khan.mp3",
+        "image": "Thumbnails/Arijit Singh_ Tu Hain Toh Main Hoon (Lyrics) _ Sky Force _ Afsana Khan_thumbnail.jpg"
+    },
+    {
+        "title": "Tu Hi Hai Aashiqui (Slowed + Reverb)",
+        "artist": "Arijit Singh",
+        "file": "Audio/Tu Hi Hai Aashiqui.mp3",
+        "image": "Thumbnails/Tu Hi Hai Aashiqui_thumbnail.jpg"
+    },
+    {
+        "title": "Tum Hi Ho",
+        "artist": "Arijit Singh",
+        "file": "Audio/tum hi ho song lyrics.mp3",
+        "image": "Thumbnails/tum hi ho song lyrics_thumbnail.jpg"
+    },
+    {
+        "title": "Tum Hi Ho (Slowed + Reverb)",
+        "artist": "Arijit Singh",
+        "file": "Audio/Tum Hi Ho (Slowed   Reverb).mp3",
+        "image": "Thumbnails/Tum Hi Ho (Slowed   Reverb)_thumbnail.jpg"
+    },
+    {
+        "title": "Ve Maahi",
+        "artist": "Arijit Singh",
+        "file": "Audio/O Maahi Ve Maahi Mainu Chhaddeyo Naa -Lyrics- - Arijit Singh Lyrics Tube.mp3",
+        "image": "Thumbnails/O Maahi Ve Maahi Mainu Chhaddeyo Naa -Lyrics- - Arijit Singh Lyrics Tube_thumbnail.jpg"
+    },
+    {
+        "title": "Woh Din",
+        "artist": "Arijit Singh",
+        "file": "Audio/Chhichhore Arijith singh - Woh Din -Lyrics-.mp3",
+        "image": "Thumbnails/Chhichhore Arijith singh - Woh Din -Lyrics-_thumbnail.jpg"
+    },
+    {
+        "title": "Zaalima",
+        "artist": "Arijit Singh",
+        "file": "Audio/Zaalima -Lyrics- Raees Shahrukh Khan- Mahira Khan- Arijit Singh- Harshdeep Kaur.mp3",
+        "image": "Thumbnails/Zaalima -Lyrics- Raees Shahrukh Khan- Mahira Khan- Arijit Singh- Harshdeep Kaur_thumbnail.jpg"
     }
 ]
