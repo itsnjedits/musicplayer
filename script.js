@@ -169,15 +169,23 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .catch(error => console.error('Error fetching songs:', error));
     }
-    function updateSongsByMood(selectedMood) {
-        const moodMap = {
-            'Sad': 'Mood/Sad.json',
-            'Happy': 'Mood/Happy.json',
-            'Romantic': 'Mood/Romantic.json',
-            'Ghazal': 'Mood/Ghazal.json',
-            'Party': 'Mood/Party.json',
-            'Religious': 'Mood/Religious.json'
-        };
+function updateSongsByMood(selectedMood) {
+    const moodMap = {
+        'Ghazal': 'Mood/Ghazal.json', // optional: keeping this if needed
+        // 'Happy': 'Mood/Happy.json',
+        'Inspirational': 'Mood/Inspirational.json',
+        'Instrumental': 'Mood/Instrumental.json',
+        'Mashup': 'Mood/Mashup.json',
+        'Motivational': 'Mood/Motivational.json',
+        'Nostalgic': 'Mood/Nostalgic.json',
+        'Party': 'Mood/Party.json',
+        'Patriotic': 'Mood/Patriotic.json',
+        'Punjabi': 'Mood/Punjabi.json',
+        'Rap': 'Mood/Rap.json',
+        'Romantic': 'Mood/Romantic.json',
+        'Sad': 'Mood/Sad.json',
+        'Spiritual': 'Mood/Spiritual.json'
+    };
 
         const jsonFile = moodMap[selectedMood] || 'Allsongs/songs.json';
         document.querySelector('.without-ads').innerHTML = `${selectedMood} Songs - No Ads 🔥`;

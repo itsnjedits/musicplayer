@@ -1,5 +1,59 @@
 [
     {
+        "title": "Daru Badnaam",
+        "artist": "Kamal Kahlon, Param Singh",
+        "file": "Audio/Daru Badnaam -Lyrics- - Kamal Kahlon - Param Singh.mp3",
+        "image": "Thumbnails/Daru Badnaam -Lyrics- - Kamal Kahlon - Param Singh_thumbnail.jpg"
+    },
+    {
+        "title": "Daru Badnam - Slowed & Reverb",
+        "artist": "Kamal Kahlon",
+        "file": "Audio/Daru Badnam - 8D - Reverb - Music Girl.mp3",
+        "image": "Thumbnails/Daru Badnam - 8D - Reverb - Music Girl_thumbnail.jpg"
+    },
+    {
+        "title": "High Rated Gabru",
+        "artist": "Nawabzaade",
+        "file": "Audio/high rated gabru lyrics nawabzaade.mp3",
+        "image": "Thumbnails/high rated gabru lyrics nawabzaade_thumbnail.jpg"
+    },
+    {
+        "title": "Hookah Bar - Slowed & Reverb",
+        "artist": "Himesh Reshammiya",
+        "file": "Audio/Hookah Bar -Lyrics- - Himesh Reshammiya Lofi Song Khiladi 786(1).mp3",
+        "image": "Thumbnails/Hookah Bar -Lyrics- - Himesh Reshammiya Lofi Song Khiladi 786(1)_thumbnail.jpg"
+    },
+    {
+        "title": "Lat Lag Gayi - Slowed & Reverb",
+        "artist": "Benny Dayal",
+        "file": "Audio/Lat Lag Gayi - Benny Dayal Race-2 -Slowed-Reverb-(1).mp3",
+        "image": "Thumbnails/Lat Lag Gayi - Benny Dayal Race-2 -Slowed-Reverb-(1)_thumbnail.jpg"
+    },
+    {
+        "title": "Laung Da Lashkara",
+        "artist": "Patiala House",
+        "file": "Audio/Laung Da Lashkara -Lyrics- Patiala House Akshay kumar- Anushka Sharma.mp3",
+        "image": "Thumbnails/Laung Da Lashkara -Lyrics- Patiala House Akshay kumar- Anushka Sharma_thumbnail.jpg"
+    },
+    {
+        "title": "Sauda Khara Khara",
+        "artist": "Good Newwz",
+        "file": "Audio/Sauda Khara Khara Good Newwz Akshay Kumar - Kareena - Diljit - Kiara Sukhbir-Dhvani-Lijo-DjChetas.mp3",
+        "image": "Thumbnails/Sauda Khara Khara Good Newwz Akshay Kumar - Kareena - Diljit - Kiara Sukhbir-Dhvani-Lijo-DjChetas_thumbnail.jpg"
+    },
+    {
+        "title": "She Don’t Know",
+        "artist": "Millind Gaba",
+        "file": "Audio/She Dont Know -Lyrics- Millind Gaba Shabby- Dhruv Yogi.mp3",
+        "image": "Thumbnails/She Dont Know -Lyrics- Millind Gaba Shabby- Dhruv Yogi_thumbnail.jpg"
+    },
+    {
+        "title": "Tauba Tauba",
+        "artist": "Karan Aujla",
+        "file": "Audio/Tauba Tauba - Karan Aujla -LyricsEnglish Meaning-.mp3",
+        "image": "Thumbnails/Tauba Tauba - Karan Aujla -LyricsEnglish Meaning-_thumbnail.jpg"
+    },
+    {
         "title": "52 Gaj Ka Daman",
         "artist": "Renuka Panwar",
         "file": "Audio/52 GAJ KA DAMAN _ PRANJAL DAHIYA _ AMAN JAJI _ RENUKA PANWAR  _ MUKESH JAJI _ SAHIL SANDHU.mp3",
@@ -330,12 +384,6 @@
         "image": "Thumbnails/Rang Barse Song _ Holi Song _ Silsila _ Amitabh Bachchan, Rekha, Sanjeev, Jaya _ रंग बरसे _ होली गीत_thumbnail.jpg"
     },
     {
-        "title": "Sauda Khara Khara",
-        "artist": "Sukhbir, Dhvani Bhanushali",
-        "file": "Audio/Sauda Khara Khara _Good Newwz_ Akshay Kumar , Kareena , Diljit , Kiara_ Sukhbir,Dhvani,Lijo,DjChetas.mp3",
-        "image": "Thumbnails/Sauda Khara Khara _Good Newwz_ Akshay Kumar , Kareena , Diljit , Kiara_ Sukhbir,Dhvani,Lijo,DjChetas_thumbnail.jpg"
-    },
-    {
         "title": "Suit Suit",
         "artist": "Guru Randhawa",
         "file": "Audio/Suit Suit Video Song _ Hindi Medium _ Irrfan Khan & Saba Qamar _ Guru Randhawa _ Arjun.mp3",
@@ -347,4 +395,5 @@
         "file": "Audio/Tattad Tattad (Ramji Ki Chal) - Full Song - Ranveer Singh _ Goliyon Ki Rasleela Ram-leela.mp3",
         "image": "Thumbnails/Tattad Tattad (Ramji Ki Chal) - Full Song - Ranveer Singh _ Goliyon Ki Rasleela Ram-leela_thumbnail.jpg"
     }
+
 ]

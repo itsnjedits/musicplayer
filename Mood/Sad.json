@@ -1,476 +1,200 @@
 [
     {
-        "title": "Aadat - Slowed & Reverb",
-        "artist": "Atif Aslam",
-        "image": "Thumbnails/Aadat -slowed - reverbed- Atif Aslam Kalyug-2005- full song_thumbnail.jpg",
-        "file": "Audio/Aadat -slowed - reverbed- Atif Aslam Kalyug-2005- full song.mp3"
-    },
-    {
-        "title": "Bandeya - Slowed & Reverb",
-        "artist": "Arijit Singh",
-        "image": "Thumbnails/Bandeya - Arijit Singh Dil Juunglee Song Slowed and Reverb Lofi Mix_thumbnail.jpg",
-        "file": "Audio/Bandeya - Arijit Singh Dil Juunglee Song Slowed and Reverb Lofi Mix.mp3"
-    },
-    {
-        "title": "Banjara - Slowed & Reverb",
-        "artist": "Mohammad Irfan",
-        "image": "Thumbnails/Banjara ♥️ - Slowed - Reverb Lyrics - Ek Villain Banjara Slowed Lyrical Video_thumbnail.jpg",
-        "file": "Audio/Banjara ♥️ - Slowed - Reverb Lyrics - Ek Villain Banjara Slowed Lyrical Video.mp3"
-    },
-    {
-        "title": "Channa Mereya - Slowed & Reverb",
-        "artist": "Arijit Singh",
-        "image": "Thumbnails/Channa Mereya -Slowed-Reverb- Song Lyrics Arijit Singh_thumbnail.jpg",
-        "file": "Audio/Channa Mereya -Slowed-Reverb- Song Lyrics Arijit Singh.mp3"
-    },
-    {
-        "title": "Dard Dilo Ke - Slowed & Reverb",
-        "artist": "Mohammad Irfan",
-        "image": "Thumbnails/Dard dilo ke - slowed-reverb- Mohamad irfaan_thumbnail.jpg",
-        "file": "Audio/Dard dilo ke - slowed-reverb- Mohamad irfaan.mp3"
-    },
-    {
-        "title": "Main Dhoondne Ko Zamaane Mein - Slowed & Reverb",
-        "artist": "Arijit Singh",
-        "image": "Thumbnails/Main Dhoondne Ko Zamaane Mein Jab Wafa Nikla- Slowed and Reverbed -Magical- Arijit Singh_thumbnail.jpg",
-        "file": "Audio/Main Dhoondne Ko Zamaane Mein Jab Wafa Nikla- Slowed and Reverbed -Magical- Arijit Singh.mp3"
-    },
-    {
-        "title": "Tune Jo Na Kaha - Slowed & Reverb",
-        "artist": "Mohit Chauhan",
-        "image": "Thumbnails/Tune Jo Na Kaha -slowed - reverbed-_thumbnail.jpg",
-        "file": "Audio/Tune Jo Na Kaha -slowed - reverbed-.mp3"
-    },
-    {
-        "title": "Woh Lamhe - Slowed & Reverb",
-        "artist": "Atif Aslam",
-        "image": "Thumbnails/Woh Lamhe Woh Baatein - slowed and reverb - - Atif Aslam Nexus Music_thumbnail.jpg",
-        "file": "Audio/Woh Lamhe Woh Baatein - slowed and reverb - - Atif Aslam Nexus Music.mp3"
-    },
-    {
-        "title": "Bulleya - MTV Unplugged",
-        "artist": "Papon",
-        "image": "Thumbnails/MTV Unplugged - Bulleya Full Song Audio Sultan Papon Vishal and Shekhar Irshad Kamil_thumbnail.jpg",
-        "file": "Audio/MTV Unplugged - Bulleya Full Song Audio Sultan Papon Vishal and Shekhar Irshad Kamil.mp3"
-    },
-    {
         "title": "Aadat",
         "artist": "Atif Aslam",
-        "image": "Thumbnails/Aadat Lyrics - Full song Singer Atif Aslam_thumbnail.jpg",
-        "file": "Audio/Aadat Lyrics - Full song Singer Atif Aslam.mp3"
+        "file": "Audio/Aadat Lyrics - Full song Singer Atif Aslam.mp3",
+        "image": "Thumbnails/Aadat Lyrics - Full song Singer Atif Aslam_thumbnail.jpg"
+    },
+    {
+        "title": "Aadat - Slowed & Reverb",
+        "artist": "Atif Aslam",
+        "file": "Audio/Aadat -slowed - reverbed- Atif Aslam Kalyug-2005- full song.mp3",
+        "image": "Thumbnails/Aadat -slowed - reverbed- Atif Aslam Kalyug-2005- full song_thumbnail.jpg"
+    },
+    {
+        "title": "Aadat (Slowed & Reverb)",
+        "artist": "Atif Aslam",
+        "file": "Audio/Aadat (Slowed   Reverb) _ Atif Aslam _ Kalyug _ SR Lofi.mp3",
+        "image": "Thumbnails/Aadat (Slowed   Reverb) _ Atif Aslam _ Kalyug _ SR Lofi_thumbnail.jpg"
     },
     {
         "title": "Ae Dil Hai Mushkil",
         "artist": "Arijit Singh",
-        "image": "Thumbnails/Ae Dil Hai Mushkil -Title Song- Lyrics Arijit Singh Amitabh Bhattacharya Pritam_thumbnail.jpg",
-        "file": "Audio/Ae Dil Hai Mushkil -Title Song- Lyrics Arijit Singh Amitabh Bhattacharya Pritam.mp3"
-    },
-    {
-        "title": "Agar Tum Saath Ho",
-        "artist": "Arijit Singh",
-        "image": "Thumbnails/Agar Tum Saath Ho Tamasha Alka Yagnik Arijit Singh Lyrics Song_thumbnail.jpg",
-        "file": "Audio/Agar Tum Saath Ho Tamasha Alka Yagnik Arijit Singh Lyrics Song.mp3"
-    },
-    {
-        "title": "Allah Waariyan",
-        "artist": "Shafaqat Amanat Ali",
-        "image": "Thumbnails/Allah Waariyan Lyrics English translation Yaariyan_thumbnail.jpg",
-        "file": "Audio/Allah Waariyan Lyrics English translation Yaariyan.mp3"
-    },
-    {
-        "title": "Bandeya",
-        "artist": "Arijit Singh",
-        "image": "Thumbnails/Bandeya -From Dil Juunglee-_thumbnail.jpg",
-        "file": "Audio/Bandeya -From Dil Juunglee-.mp3"
-    },
-    {
-        "title": "Banjaara",
-        "artist": "Mohammad Irfan",
-        "image": "Thumbnails/Banjaara -Lyrics- Ek villain 7clouds Hindi_thumbnail.jpg",
-        "file": "Audio/Banjaara -Lyrics- Ek villain 7clouds Hindi.mp3"
-    },
-    {
-        "title": "Beete Lamhein",
-        "artist": "KK",
-        "image": "Thumbnails/Beete Lamhein Lyrics KK The Train Mithoon Sayeed Qadri Emraan Hashmi _thumbnail.jpg",
-        "file": "Audio/Beete Lamhein Lyrics KK The Train Mithoon Sayeed Qadri Emraan Hashmi .mp3"
-    },
-    {
-        "title": "Chhod Diya",
-        "artist": "Arijit Singh",
-        "image": "Thumbnails/Chhod Diya -Lyrics- - Arijit Singh- Kanika Kapoor Baazaar_thumbnail.jpg",
-        "file": "Audio/Chhod Diya -Lyrics- - Arijit Singh- Kanika Kapoor Baazaar.mp3"
-    },
-    {
-        "title": "Dard Dilo Ke",
-        "artist": "Mohammad Irfan",
-        "image": "Thumbnails/Dard Dilo Ke - Mohammed Irfan Lyrics LyricsSoul_thumbnail.jpg",
-        "file": "Audio/Dard Dilo Ke - Mohammed Irfan Lyrics LyricsSoul.mp3"
-    },
-    {
-        "title": "Dekhte Dekhte",
-        "artist": "Atif Aslam",
-        "image": "Thumbnails/Dekhte Dekhte -Lyrics- - Atif aslam_thumbnail.jpg",
-        "file": "Audio/Dekhte Dekhte -Lyrics- - Atif aslam.mp3"
-    },
-    {
-        "title": "Hamari Adhuri Kahani",
-        "artist": "Arijit Singh",
-        "image": "Thumbnails/Hamari Adhuri Kahani -LYRICS- Full Song Arijit-singh Jeet Gannguli_thumbnail.jpg",
-        "file": "Audio/Hamari Adhuri Kahani -LYRICS- Full Song Arijit-singh Jeet Gannguli.mp3"
-    },
-    {
-        "title": "Jo Bheji Thi Duaa",
-        "artist": "Arijit Singh",
-        "image": "Thumbnails/Jo Bheji Thi Duaa - Arijit Singh Nandini Srikar- Kumaar Vishal-Shekhar Shanghai_thumbnail.jpg",
-        "file": "Audio/Jo Bheji Thi Duaa - Arijit Singh Nandini Srikar- Kumaar Vishal-Shekhar Shanghai.mp3"
-    },
-    {
-        "title": "Kyun Main Jagoon",
-        "artist": "Shafaqat Amanat Ali",
-        "image": "Thumbnails/Kyun Meri Raahein Mujhse Pooche Ghar Kaha Hai Full Song with Lyrics Shafqat A Ali Akshay K_thumbnail.jpg",
-        "file": "Audio/Kyun Meri Raahein Mujhse Pooche Ghar Kaha Hai Full Song with Lyrics Shafqat A Ali Akshay K.mp3"
-    },
-    {
-        "title": "Lambiyaan Si Judaiyaan",
-        "artist": "Arijit Singh",
-        "image": "Thumbnails/Lambiyaan Si Judaiyaan Lyrical Song_thumbnail.jpg",
-        "file": "Audio/Lambiyaan Si Judaiyaan Lyrical Song.mp3"
-    },
-    {
-        "title": "Lo Maan Liya",
-        "artist": "Arijit Singh",
-        "image": "Thumbnails/Lo maan liya lyrics Arijit singh Jeet Gannguli Kausar Munir Emran Hashmi-Kirti Kharbanda_thumbnail.jpg",
-        "file": "Audio/Lo maan liya lyrics Arijit singh Jeet Gannguli Kausar Munir Emran Hashmi-Kirti Kharbanda.mp3"
-    },
-    {
-        "title": "Bin Tere",
-        "artist": "Shafaqat Amanat Ali",
-        "image": "Thumbnails/Lyrics - Bin Tere Full Song Shafqat Amanat Ali- Sunidhi Chauhan Vishal Dadlani Vishal-Shekhar_thumbnail.jpg",
-        "file": "Audio/Lyrics - Bin Tere Full Song Shafqat Amanat Ali- Sunidhi Chauhan Vishal Dadlani Vishal-Shekhar.mp3"
-    },
-    {
-        "title": "Rabba",
-        "artist": "Mohit Chauhan",
-        "image": "Thumbnails/Lyrics Rabba Mohit Chauhan Kausar M- Sajid - Wajid Kriti Sanon- Tiger Shroff Heropanti_thumbnail.jpg",
-        "file": "Audio/Lyrics Rabba Mohit Chauhan Kausar M- Sajid - Wajid Kriti Sanon- Tiger Shroff Heropanti.mp3"
-    },
-    {
-        "title": "Main Dhoondne Ko Zamaane Mein",
-        "artist": "Arijit Singh",
-        "image": "Thumbnails/Main Dhoondne Ko Zamaane Mein Lyrics Heartless Arijit Singh Arafat- Gaurav Adhyayan- Ariana_thumbnail.jpg",
-        "file": "Audio/Main Dhoondne Ko Zamaane Mein Lyrics Heartless Arijit Singh Arafat- Gaurav Adhyayan- Ariana.mp3"
-    },
-    {
-        "title": "Naina",
-        "artist": "Arijit Singh",
-        "image": "Thumbnails/Naina Lyrics Arijit Singh Pritam Amitabh Bhattacharya (1)_thumbnail.jpg",
-        "file": "Audio/Naina Lyrics Arijit Singh Pritam Amitabh Bhattacharya (1).mp3"
-    },
-    {
-        "title": "Roke Na Ruke Naina",
-        "artist": "Arijit Singh",
-        "image": "Thumbnails/Roke Na Ruke Naina -Lyrics- Badrinath Ki Dulhania I Arijit Singh Varun Dhawan I Alia Bhatt_thumbnail.jpg",
-        "file": "Audio/Roke Na Ruke Naina -Lyrics- Badrinath Ki Dulhania I Arijit Singh Varun Dhawan I Alia Bhatt.mp3"
-    },
-    {
-        "title": "Tujhe Bhula Diya",
-        "artist": "Mohit Chauhan",
-        "image": "Thumbnails/Tujhe Bhula Diya lyrics Mohit Chauhan Anjana Anjani Bollywood lyrics_thumbnail.jpg",
-        "file": "Audio/Tujhe Bhula Diya lyrics Mohit Chauhan Anjana Anjani Bollywood lyrics.mp3"
-    },
-    {
-        "title": "Tujhe Sochta Hoon",
-        "artist": "KK",
-        "image": "Thumbnails/TUJHE SOCHTA HOON -LYRICS- - K.K. JANNAT 2 PRITAM- SAYEED QUADRI EMRAAN HASHMI_thumbnail.jpg",
-        "file": "Audio/TUJHE SOCHTA HOON -LYRICS- - K.K. JANNAT 2 PRITAM- SAYEED QUADRI EMRAAN HASHMI.mp3"
-    },
-    {
-        "title": "Tune Jo Na Kaha",
-        "artist": "Mohit Chauhan",
-        "image": "Thumbnails/Tune Jo Na Kaha - lyrics New YorkJohn Abraham Katrina Kaif Neil Nitin Mohit Chauhan- Pritam_thumbnail.jpg",
-        "file": "Audio/Tune Jo Na Kaha - lyrics New YorkJohn Abraham Katrina Kaif Neil Nitin Mohit Chauhan- Pritam.mp3"
-    },
-    {
-        "title": "Woh Lamhe",
-        "artist": "Atif Aslam",
-        "image": "Thumbnails/Woh Lamhe Woh Baatein -Lyrics Video- Atif Aslam Emraan Hashmi Zeher -2005- WorldFamousLyrics_thumbnail.jpg",
-        "file": "Audio/Woh Lamhe Woh Baatein -Lyrics Video- Atif Aslam Emraan Hashmi Zeher -2005- WorldFamousLyrics.mp3"
-    },
-    {
-        "title": "Yeh Honsla Kaise Jhuke",
-        "artist": "Shafaqat Amanat Ali",
-        "image": "Thumbnails/yeh hosla kaise jhuke_thumbnail.jpg",
-        "file": "Audio/yeh hosla kaise jhuke.mp3"
-    },
-    {
-        "title": "Zindagi Kuch Toh Bata",
-        "artist": "Jubin Nautiyal",
-        "image": "Thumbnails/Zindagi Kuch Toh Bata - Jubin Nautiyal Lyrics_thumbnail.jpg",
-        "file": "Audio/Zindagi Kuch Toh Bata - Jubin Nautiyal Lyrics.mp3"
-    },
-    {
-        "title": "Zaroori Tha",
-        "artist": "Rahat Fateh Ali Khan",
-        "image": "Thumbnails/Zaroori Tha -Lyrics- - Rahat Fateh Ali Khan_thumbnail.jpg",
-        "file": "Audio/Zaroori Tha -Lyrics- - Rahat Fateh Ali Khan.mp3"
-    },
-    {
-        "title": "Kabhi Alvida Naa Kehna",
-        "artist": "Sonu Nigam",
-        "image": "Thumbnails/Kabhi Alvida Naa Kehna - Bollywood Song Lyrics Translation_thumbnail.jpg",
-        "file": "Audio/Kabhi Alvida Naa Kehna - Bollywood Song Lyrics Translation.mp3"
-    },
-    {
-        "title": "Kal Ho Naa Ho",
-        "artist": "Sonu Nigam",
-        "image": "Thumbnails/Kal Ho Naa Ho -lyrics Sonu Nigam Kal Ho Naa Ho -LYRICS🖤_thumbnail.jpg",
-        "file": "Audio/Kal Ho Naa Ho -lyrics Sonu Nigam Kal Ho Naa Ho -LYRICS🖤.mp3"
-    },
-    {
-        "title": "Kiska Hai Ye Tumko Intezar",
-        "artist": "Sonu Nigam",
-        "image": "Thumbnails/Kiska Hai Ye Tumko Intezar Lyrics - Main Hoon Na -Title Song-_thumbnail.jpg",
-        "file": "Audio/Kiska Hai Ye Tumko Intezar Lyrics - Main Hoon Na -Title Song-.mp3"
-    },
-    {
-        "title": "Sandese Aate Hai",
-        "artist": "Sonu Nigam",
-        "image": "Thumbnails/Sandese Aate Hai -Lyrics- Border Patriotic Songs 15 August Independence Day_thumbnail.jpg",
-        "file": "Audio/Sandese Aate Hai -Lyrics- Border Patriotic Songs 15 August Independence Day.mp3"
-    },
-    {
-        "title": "Abhi Mujh Mein Kahin",
-        "artist": "Sonu Nigam",
-        "image": "Thumbnails/Sonu Nigam- Ajay-Atul - Abhi Mujh Mein Kahin -Lyrics-_thumbnail.jpg",
-        "file": "Audio/Sonu Nigam- Ajay-Atul - Abhi Mujh Mein Kahin -Lyrics-.mp3"
-    },
-    {
-        "title": "Mann Bharya",
-        "artist": "B Praak",
-        "image": "Thumbnails/-LYRICS- MANN BHARRYA SONG B PRAAK FT. JAANI ARVIND KHAIRA HIMANSHI KHURANA_thumbnail.jpg",
-        "file": "Audio/-LYRICS- MANN BHARRYA SONG B PRAAK FT. JAANI ARVIND KHAIRA HIMANSHI KHURANA.mp3"
-    },
-    {
-        "title": "Filhaal",
-        "artist": "B Praak",
-        "image": "Thumbnails/MAIN KISI AUR KA HOON FILHAAL -LYRICS - - B PRAAK_thumbnail.jpg",
-        "file": "Audio/MAIN KISI AUR KA HOON FILHAAL -LYRICS - - B PRAAK.mp3"
-    },
-    {
-        "title": "Qismat",
-        "artist": "B Praak, Ammy Virk",
-        "image": "Thumbnails/Qismat -Full Lyrics- Jaani B Praak Punjabi Songs_thumbnail.jpg",
-        "file": "Audio/Qismat -Full Lyrics- Jaani B Praak Punjabi Songs.mp3"
-    },
-    {
-        "title": "Aaoge Jab Tum",
-        "artist": "Rashid Khan",
-        "image": "Thumbnails/aaoge jab Tum oo saajna -lyrics-_thumbnail.jpg",
-        "file": "Audio/aaoge jab Tum oo saajna -lyrics-.mp3"
-    },
-    {
-        "title": "Bulleya",
-        "artist": "Arijit Singh",
-        "image": "Thumbnails/Arijit Singh - Bulleya -Lyrics-_thumbnail.jpg",
-        "file": "Audio/Arijit Singh - Bulleya -Lyrics-.mp3"
-    },
-    {
-        "title": "Bulleya - Papon",
-        "artist": "Papon",
-        "image": "Thumbnails/Bulleya Full Song with Lyrics Papon Salman Khan Anushka Sharma Sultan(1)_thumbnail.jpg",
-        "file": "Audio/Bulleya Full Song with Lyrics Papon Salman Khan Anushka Sharma Sultan(1).mp3"
-    },
-    {
-        "title": "Woh Din",
-        "artist": "Arijit Singh",
-        "image": "Thumbnails/Chhichhore Arijith singh - Woh Din -Lyrics-_thumbnail.jpg",
-        "file": "Audio/Chhichhore Arijith singh - Woh Din -Lyrics-.mp3"
-    },
-    {
-        "title": "Kalank",
-        "artist": "Arijit Singh",
-        "image": "Thumbnails/Kalank - Arijit Singh -Lyrics- Lyrical Bam Hindi_thumbnail.jpg",
-        "file": "Audio/Kalank - Arijit Singh -Lyrics- Lyrical Bam Hindi.mp3"
-    },
-    {
-        "title": "Lut Gaye - Slowed & Reverb",
-        "artist": "Jubin Nautiyal",
-        "image": "Thumbnails/Lut Gaye - Jubin Nautiyal Slowed - Reverb Music Vibes_thumbnail.jpg",
-        "file": "Audio/Lut Gaye - Jubin Nautiyal Slowed - Reverb Music Vibes.mp3"
-    },
-    {
-        "title": "Maine Royaan - Slowed & Reverb",
-        "artist": "Tanveer Evan",
-        "image": "Thumbnails/Maine Royaan Lofi -Lyrics- - Piran Khan Ft. Tanveer Evan_thumbnail.jpg",
-        "file": "Audio/Maine Royaan Lofi -Lyrics- - Piran Khan Ft. Tanveer Evan.mp3"
-    },
-    {
-        "title": "Maine Royaan Lofi-Remix",
-        "artist": "Tanveer Evan",
-        "image": "Thumbnails/Maine Royaan Lofi-Remix Tanveer Evan_thumbnail.jpg",
-        "file": "Audio/Maine Royaan Lofi-Remix Tanveer Evan.mp3"
-    },
-    {
-        "title": "Phir Le Aya Dil",
-        "artist": "Arijit Singh",
-        "image": "Thumbnails/Phir Le Aya Dil Lyrics Barfi- Arijit Singh Ranbir K - Priyanka C - Ileana Dcruz Pritam_thumbnail.jpg",
-        "file": "Audio/Phir Le Aya Dil Lyrics Barfi- Arijit Singh Ranbir K - Priyanka C - Ileana Dcruz Pritam.mp3"
-    },
-    {
-        "title": "Ye Tune Kya Kiya - Slowed & Reverb",
-        "artist": "Javed Bashir",
-        "image": "Thumbnails/ye tune kya kiya -slowed and reverb- javed bashir 8d audio LYRICSTAY_thumbnail.jpg",
-        "file": "Audio/ye tune kya kiya -slowed and reverb- javed bashir 8d audio LYRICSTAY.mp3"
-    },
-    {
-        "title": "Ye Tune Kya Kiya",
-        "artist": "Javed Bashir",
-        "image": "Thumbnails/Ye Tune Kya Kiya Lyrics Video Once Upon A Time In Mumbai Dobara Javed Bashir Akshay Kumar _thumbnail.jpg",
-        "file": "Audio/Ye Tune Kya Kiya Lyrics Video Once Upon A Time In Mumbai Dobara Javed Bashir Akshay Kumar .mp3"
-    },
-    {
-        "title": "Chithi Na Koi Sandesh",
-        "artist": "Jagjit Singh",
-        "image": "Thumbnails/Chithi Na Koi Sandesh with lyrics चिठी न कोई सन्देश Dushman Jagjit Singh Anand Bakshi_thumbnail.jpg",
-        "file": "Audio/Chithi Na Koi Sandesh with lyrics चिठी न कोई सन्देश Dushman Jagjit Singh Anand Bakshi.mp3"
-    },
-    {
-        "title": "Chingari Koi Bhadke",
-        "artist": "Kishore Kumar",
-        "image": "Thumbnails/Chingari Koi Bhadke with lyrics चिंगारी कोई भड़के के बोल Kishore Kumar_thumbnail.jpg",
-        "file": "Audio/Chingari Koi Bhadke with lyrics चिंगारी कोई भड़के के बोल Kishore Kumar.mp3"
-    },
-    {
-        "title": "Kora Kagaz Tha",
-        "artist": "Kishore Kumar",
-        "image": "Thumbnails/Kora Kagaz Tha with Lyrics कोरा कागज़ था Lata Mangeshkar Kishore Kumar Aradhna Rajesh Khanna_thumbnail.jpg",
-        "file": "Audio/Kora Kagaz Tha with Lyrics कोरा कागज़ था Lata Mangeshkar Kishore Kumar Aradhna Rajesh Khanna.mp3"
-    },
-    {
-        "title": "Mere Mehboob Qayamat Hogi",
-        "artist": "Kishore Kumar",
-        "image": "Thumbnails/Mere Mehboob Qayamat Hogi Full Song With Lyrics Mr. X in Bombay Kishore Kumar Hit Songs_thumbnail.jpg",
-        "file": "Audio/Mere Mehboob Qayamat Hogi Full Song With Lyrics Mr. X in Bombay Kishore Kumar Hit Songs.mp3"
-    },
-    {
-        "title": "O Saathi Re",
-        "artist": "Kishore Kumar",
-        "image": "Thumbnails/O Saathi Re -Male- with lyrics ओ साथी रे गाने के बोल Muqaddar ka Sikandar RekhaAmitabh Bachan_thumbnail.jpg",
-        "file": "Audio/O Saathi Re -Male- with lyrics ओ साथी रे गाने के बोल Muqaddar ka Sikandar RekhaAmitabh Bachan.mp3"
-    },
-    {
-        "title": "Tere Bina Zindagi Se",
-        "artist": "Kishore Kumar",
-        "image": "Thumbnails/Tere Bina Zindagi Se with Lyrics तेरे बिना ज़िन्दगी से के बोल Aandhi Suchitra Sen- Sanjeev Kumar_thumbnail.jpg",
-        "file": "Audio/Tere Bina Zindagi Se with Lyrics तेरे बिना ज़िन्दगी से के बोल Aandhi Suchitra Sen- Sanjeev Kumar.mp3"
-    },
-    {
-        "title": "Aaj Mausam Bada Beimaan Hai",
-        "artist": "Mohammad Rafi",
-        "image": "Thumbnails/Aaj Mausam Bada Beimaan Hai with lyrics आज मौसम बड़ा बेईमान है गाने के बोल LoaferDharmendraMumtaz_thumbnail.jpg",
-        "file": "Audio/Aaj Mausam Bada Beimaan Hai with lyrics आज मौसम बड़ा बेईमान है गाने के बोल LoaferDharmendraMumtaz.mp3"
-    },
-    {
-        "title": "Kya Hua Tera Wada",
-        "artist": "Mohammad Rafi",
-        "image": "Thumbnails/Kya Hua Tera Wada with lyrics क्या हुआ तेरा वादा Hum Kisise kum nahi Mohammed Rafi Rishi K_thumbnail.jpg",
-        "file": "Audio/Kya Hua Tera Wada with lyrics क्या हुआ तेरा वादा Hum Kisise kum nahi Mohammed Rafi Rishi K.mp3"
-    },
-    {
-        "title": "Ye Dil Tum Bin",
-        "artist": "Mohammad Rafi",
-        "image": "Thumbnails/Ye Dil Tum Bin with lyrics ये दिल तुम बिन गाने के बोल Izzat DharmendraJayalalitha_thumbnail.jpg",
-        "file": "Audio/Ye Dil Tum Bin with lyrics ये दिल तुम बिन गाने के बोल Izzat DharmendraJayalalitha.mp3"
-    },
-    {
-        "title": "Kahin Door Jab Din Dhal Jaaye",
-        "artist": "Mukesh",
-        "image": "Thumbnails/Kahi Door Jab with Lyrics कहीं दूर जब गाने के बोल Anand Rajesh Khanna- Sumita Sanyal_thumbnail.jpg",
-        "file": "Audio/Kahi Door Jab with Lyrics कहीं दूर जब गाने के बोल Anand Rajesh Khanna- Sumita Sanyal.mp3"
-    },
-    {
-        "title": "Lambi Judai",
-        "artist": "Reshma",
-        "image": "Thumbnails/Lambi Judai - Lyrical Hero Reshma Jackie Shroff- Meenakshi Seshadri 80s Hindi Hits_thumbnail.jpg",
-        "file": "Audio/Lambi Judai - Lyrical Hero Reshma Jackie Shroff- Meenakshi Seshadri 80s Hindi Hits.mp3"
-    },
-    {
-        "title": "Luka Chuppi Bahut Hui",
-        "artist": "Lata Mangeshkar, AR Rahman",
-        "image": "Thumbnails/Luka Chuppi Bahut Hui -LYRICS- - Lata Mangeshkar- AR Rahman Prasoon Joshi- Nacim Rang De Basanti_thumbnail.jpg",
-        "file": "Audio/Luka Chuppi Bahut Hui -LYRICS- - Lata Mangeshkar- AR Rahman Prasoon Joshi- Nacim Rang De Basanti.mp3"
-    },
-    {
-        "title": "Main Pal Do Pal Ka Shayar Hoon",
-        "artist": "Mukesh",
-        "image": "Thumbnails/Main Pal Do Pal Ka Shayar Hoon Amitabh Bachchans Poetry Recital Kabhi Kabhie -1976-_thumbnail.jpg",
-        "file": "Audio/Main Pal Do Pal Ka Shayar Hoon Amitabh Bachchans Poetry Recital Kabhi Kabhie -1976-.mp3"
-    },
-    {
-        "title": "Mere Naina Sawan Bhadon",
-        "artist": "Kishore Kumar",
-        "image": "Thumbnails/Mere Naina Sawan Bhadon with lyrics मेरे नैना सावन भादों Lata Mangeshkar Mehbooba_thumbnail.jpg",
-        "file": "Audio/Mere Naina Sawan Bhadon with lyrics मेरे नैना सावन भादों Lata Mangeshkar Mehbooba.mp3"
-    },
-    {
-        "title": "Naam Goom Jayega",
-        "artist": "Bhupinder Singh",
-        "image": "Thumbnails/Naam Goom Jayega with lyrics नाम गूम जायेगा गाने के बोल Kinara JeetendraHema MaliniDharmendra_thumbnail.jpg",
-        "file": "Audio/Naam Goom Jayega with lyrics नाम गूम जायेगा गाने के बोल Kinara JeetendraHema MaliniDharmendra.mp3"
-    },
-    {
-        "title": "Sun Raha Hai (Female Version)",
-        "artist": "Shreya Ghoshal",
-        "image": "Thumbnails/Sun Raha Hai -Lyrics-Aashiqui 2Shreya GhoshalShraddha Kapoor- Aditya Roy Kapur_thumbnail.jpg",
-        "file": "Audio/Sun Raha Hai -Lyrics-Aashiqui 2Shreya GhoshalShraddha Kapoor- Aditya Roy Kapur.mp3"
-    },
-    {
-        "title": "Sun Raha Hai (Male Version)",
-        "artist": "Arijit Singh",
-        "image": "Thumbnails/SUNN RAHA HAI NA TU - LYRICAL- AASHIQUI 2ARIJIT SINGH_thumbnail.jpg",
-        "file": "Audio/SUNN RAHA HAI NA TU - LYRICAL- AASHIQUI 2ARIJIT SINGH.mp3"
-    },
-    {
-        "title": "Aadat - Instrumental Cover",
-        "artist": "Leo Twins",
-        "image": "Thumbnails/Aadat (Cover) - Atif Aslam - Leo Twins_thumbnail.jpg",
-        "file": "Audio/Aadat (Cover) - Atif Aslam - Leo Twins.mp3"
+        "file": "Audio/Ae Dil Hai Mushkil -Title Song- Lyrics Arijit Singh Amitabh Bhattacharya Pritam.mp3",
+        "image": "Thumbnails/Ae Dil Hai Mushkil -Title Song- Lyrics Arijit Singh Amitabh Bhattacharya Pritam_thumbnail.jpg"
     },
     {
         "title": "Aye Dil-E-Nadan",
         "artist": "Lata Mangeshkar",
-        "image": "Thumbnails/Aye Dil-E-Nadan-ऐ दिल-ए-नादान_Lata Mangeshkar_Razia Sultan (1983)_Hema Malini_Romantic Songs_thumbnail.jpg",
-        "file": "Audio/Aye Dil-E-Nadan-ऐ दिल-ए-नादान_Lata Mangeshkar_Razia Sultan (1983)_Hema Malini_Romantic Songs.mp3"
+        "file": "Audio/Aye Dil-E-Nadan-ऐ दिल-ए-नादान_Lata Mangeshkar_Razia Sultan (1983)_Hema Malini_Romantic Songs.mp3",
+        "image": "Thumbnails/Aye Dil-E-Nadan-ऐ दिल-ए-नादान_Lata Mangeshkar_Razia Sultan (1983)_Hema Malini_Romantic Songs_thumbnail.jpg"
     },
     {
-        "title": "Banjare (Slowed + Reverb)",
-        "artist": "Mohammed Irfan",
-        "image": "Thumbnails/Banjare - ( Slowed + Reverb ) Ek Villain --_thumbnail.jpg",
-        "file": "Audio/Banjare - ( Slowed + Reverb ) Ek Villain --.mp3"
+        "title": "Bichhdan",
+        "artist": "Rahat Fateh Ali Khan",
+        "file": "Audio/Bichdann _ Rahat Fateh Ali Khan _ Lyrics _ VJ-Vikas Jain.mp3",
+        "image": "Thumbnails/Bichdann _ Rahat Fateh Ali Khan _ Lyrics _ VJ-Vikas Jain_thumbnail.jpg"
     },
     {
-        "title": "Bhola Bhala Tha Sidha Sada Tha",
-        "artist": "Sonu Nigam",
-        "image": "Thumbnails/Bhola bhala tha sida sada tha __ song 100k view_thumbnail.jpg",
-        "file": "Audio/Bhola bhala tha sida sada tha __ song 100k view.mp3"
+        "title": "Chupke Chupke Raat Din",
+        "artist": "Ghulam Ali",
+        "file": "Audio/Chupke Chupke Raat Din Aansoon Bahana Yaad Hai Ghulam Ali Ghazals Old ghazals Sad Ghazals.mp3",
+        "image": "Thumbnails/Chupke Chupke Raat Din Aansoon Bahana Yaad Hai Ghulam Ali Ghazals Old ghazals Sad Ghazals_thumbnail.jpg"
     },
     {
-        "title": "Hum Bewafa Hargiz Na The - Unplugged",
-        "artist": "Mohammed Irfan",
-        "image": "Thumbnails/Hum Bewafa Hargiz Na They (The Unwind Mix) I Mohammed Irfan_thumbnail.jpg",
-        "file": "Audio/Hum Bewafa Hargiz Na They (The Unwind Mix) I Mohammed Irfan.mp3"
+        "title": "Dard Dilo Ke",
+        "artist": "Mohammad Irfan",
+        "file": "Audio/Dard Dilo Ke - Mohammed Irfan Lyrics LyricsSoul.mp3",
+        "image": "Thumbnails/Dard Dilo Ke - Mohammed Irfan Lyrics LyricsSoul_thumbnail.jpg"
     },
     {
-        "title": "Kuch toh bata zindagi - (Slowed + Reverb)",
+        "title": "Dard Dilo Ke - Slowed & Reverb",
+        "artist": "Mohammad Irfan",
+        "file": "Audio/Dard dilo ke - slowed-reverb- Mohamad irfaan.mp3",
+        "image": "Thumbnails/Dard dilo ke - slowed-reverb- Mohamad irfaan_thumbnail.jpg"
+    },
+    {
+        "title": "Gham Ka Khazana",
+        "artist": "Jagjit Singh",
+        "file": "Audio/Gham Ka Khazana Tera Bhi Hai Mera Bhi Jagjit Singh Lata Mangeshkar Lyrical Video.mp3",
+        "image": "Thumbnails/Gham Ka Khazana Tera Bhi Hai Mera Bhi Jagjit Singh Lata Mangeshkar Lyrical Video_thumbnail.jpg"
+    },
+    {
+        "title": "Humko Kiske Gham Ne",
+        "artist": "Ghulam Ali",
+        "file": "Audio/Humko Kiske Gham Ne Maara by Ghulam Ali Khan Famous Pakistani Ghazal Pakistani Sad Song.mp3",
+        "image": "Thumbnails/Humko Kiske Gham Ne Maara by Ghulam Ali Khan Famous Pakistani Ghazal Pakistani Sad Song_thumbnail.jpg"
+    },
+    {
+        "title": "Humko Kiske Gham Ne - Live",
+        "artist": "Ghulam Ali",
+        "file": "Audio/Humko Kisi Ke Gham Ne Maara - Ghulam Ali - Ghazal Songs - Mehfil Mein Baar Baar.mp3",
+        "image": "Thumbnails/Humko Kisi Ke Gham Ne Maara - Ghulam Ali - Ghazal Songs - Mehfil Mein Baar Baar_thumbnail.jpg"
+    },
+    {
+        "title": "Is Dard-E-Dil Ki Sifarish",
+        "artist": "Mohammad Irfan",
+        "file": "Audio/Lyrics- Is Dard-E-Dil Ki Sifarish Ab Karde Koi Yahan Mohammad I- Gajendra V Mithoon Yaariyan.mp3",
+        "image": "Thumbnails/Lyrics- Is Dard-E-Dil Ki Sifarish Ab Karde Koi Yahan Mohammad I- Gajendra V Mithoon Yaariyan_thumbnail.jpg"
+    },
+    {
+        "title": "Iss darde dil ki sifarish - Slowed & Reverb",
+        "artist": "Mohammad Irfan",
+        "file": "Audio/Iss darde dil ki sifarish song (slowe+reverb) by  - Mohammad I, Gajendra V - Mithoon - Yaariyan.mp3",
+        "image": "Thumbnails/Iss darde dil ki sifarish song (slowe+reverb) by  - Mohammad I, Gajendra V - Mithoon - Yaariyan_thumbnail.jpg"
+    },
+    {
+        "title": "Koi Fariyaad",
+        "artist": "Jagjit Singh",
+        "file": "Audio/Koi Fariyaad Lyrical Video - Hindi Lyrics _ Jagjit Singh.mp3",
+        "image": "Thumbnails/Koi Fariyaad Lyrical Video - Hindi Lyrics _ Jagjit Singh_thumbnail.jpg"
+    },
+    {
+        "title": "Lambi Judai",
+        "artist": "Reshma",
+        "file": "Audio/Lambi Judai - Lyrical Hero Reshma Jackie Shroff- Meenakshi Seshadri 80s Hindi Hits.mp3",
+        "image": "Thumbnails/Lambi Judai - Lyrical Hero Reshma Jackie Shroff- Meenakshi Seshadri 80s Hindi Hits_thumbnail.jpg"
+    },
+    {
+        "title": "Lambiyaan Si Judaiyaan",
+        "artist": "Arijit Singh",
+        "file": "Audio/Lambiyaan Si Judaiyaan Lyrical Song.mp3",
+        "image": "Thumbnails/Lambiyaan Si Judaiyaan Lyrical Song_thumbnail.jpg"
+    },
+    {
+        "title": "Lo Maan Liya",
+        "artist": "Arijit Singh",
+        "file": "Audio/Lo maan liya lyrics Arijit singh Jeet Gannguli Kausar Munir Emran Hashmi-Kirti Kharbanda.mp3",
+        "image": "Thumbnails/Lo maan liya lyrics Arijit singh Jeet Gannguli Kausar Munir Emran Hashmi-Kirti Kharbanda_thumbnail.jpg"
+    },
+    {
+        "title": "Lut Gaye",
         "artist": "Jubin Nautiyal",
-        "image": "Thumbnails/kuch toh bata zindagi song - ( slowed + Reverb ) Lyrics_thumbnail.jpg",
-        "file": "Audio/kuch toh bata zindagi song - ( slowed + Reverb ) Lyrics.mp3"
+        "file": "Audio/Lut Gaye -Lyrics- - Jubin Nautiyal 🎵.mp3",
+        "image": "Thumbnails/Lut Gaye -Lyrics- - Jubin Nautiyal 🎵_thumbnail.jpg"
     },
     {
-        "title": "Yeh Dooriyan (Slowed + Reverb)",
-        "artist": "Mohit Chauhan",
-        "image": "Thumbnails/Yeh Dooriyan (Slowed +Reverb) - Love Aaj Kal -  Mohit Chauhan_thumbnail.jpg",
-        "file": "Audio/Yeh Dooriyan (Slowed +Reverb) - Love Aaj Kal -  Mohit Chauhan.mp3"
+        "title": "Lut Gaye - Slowed & Reverb",
+        "artist": "Jubin Nautiyal",
+        "file": "Audio/Lut Gaye - Jubin Nautiyal Slowed - Reverb Music Vibes.mp3",
+        "image": "Thumbnails/Lut Gaye - Jubin Nautiyal Slowed - Reverb Music Vibes_thumbnail.jpg"
+    },
+    {
+        "title": "Main Dhoondne Ko Zamaane Mein",
+        "artist": "Arijit Singh",
+        "file": "Audio/Main Dhoondne Ko Zamaane Mein Lyrics Heartless Arijit Singh Arafat- Gaurav Adhyayan- Ariana.mp3",
+        "image": "Thumbnails/Main Dhoondne Ko Zamaane Mein Lyrics Heartless Arijit Singh Arafat- Gaurav Adhyayan- Ariana_thumbnail.jpg"
+    },
+    {
+        "title": "Main Dhoondne Ko Zamaane Mein - Slowed & Reverb",
+        "artist": "Arijit Singh",
+        "file": "Audio/Main Dhoondne Ko Zamaane Mein Jab Wafa Nikla- Slowed and Reverbed -Magical- Arijit Singh.mp3",
+        "image": "Thumbnails/Main Dhoondne Ko Zamaane Mein Jab Wafa Nikla- Slowed and Reverbed -Magical- Arijit Singh_thumbnail.jpg"
+    },
+    {
+        "title": "Maine Royaan - Slowed & Reverb",
+        "artist": "Tanveer Evan",
+        "file": "Audio/Maine Royaan Lofi -Lyrics- - Piran Khan Ft. Tanveer Evan.mp3",
+        "image": "Thumbnails/Maine Royaan Lofi -Lyrics- - Piran Khan Ft. Tanveer Evan_thumbnail.jpg"
+    },
+    {
+        "title": "Maine Royaan Lofi-Remix",
+        "artist": "Tanveer Evan",
+        "file": "Audio/Maine Royaan Lofi-Remix Tanveer Evan.mp3",
+        "image": "Thumbnails/Maine Royaan Lofi-Remix Tanveer Evan_thumbnail.jpg"
+    },
+    {
+        "title": "Mere Naina Sawan Bhadon",
+        "artist": "Kishore Kumar",
+        "file": "Audio/Mere Naina Sawan Bhadon with lyrics मेरे नैना सावन भादों Lata Mangeshkar Mehbooba.mp3",
+        "image": "Thumbnails/Mere Naina Sawan Bhadon with lyrics मेरे नैना सावन भादों Lata Mangeshkar Mehbooba_thumbnail.jpg"
+    },
+    {
+        "title": "O Re Piya",
+        "artist": "Rahat Fateh Ali Khan",
+        "file": "Audio/O Re Piya Aaja nachle movie full -audio song- rahatfatehalikhan - Sahani - Piyush.M - Salim S.mp3",
+        "image": "Thumbnails/O Re Piya Aaja nachle movie full -audio song- rahatfatehalikhan - Sahani - Piyush.M - Salim S_thumbnail.jpg"
+    },
+    {
+        "title": "Roke Na Ruke Naina",
+        "artist": "Arijit Singh",
+        "file": "Audio/Roke Na Ruke Naina -Lyrics- Badrinath Ki Dulhania I Arijit Singh Varun Dhawan I Alia Bhatt.mp3",
+        "image": "Thumbnails/Roke Na Ruke Naina -Lyrics- Badrinath Ki Dulhania I Arijit Singh Varun Dhawan I Alia Bhatt_thumbnail.jpg"
+    },
+    {
+        "title": "Woh Lamhe",
+        "artist": "Atif Aslam",
+        "file": "Audio/Woh Lamhe Woh Baatein -Lyrics Video- Atif Aslam Emraan Hashmi Zeher -2005- WorldFamousLyrics.mp3",
+        "image": "Thumbnails/Woh Lamhe Woh Baatein -Lyrics Video- Atif Aslam Emraan Hashmi Zeher -2005- WorldFamousLyrics_thumbnail.jpg"
+    },
+    {
+        "title": "Woh Lamhe - Slowed & Reverb",
+        "artist": "Atif Aslam",
+        "file": "Audio/Woh Lamhe Woh Baatein - slowed and reverb - - Atif Aslam Nexus Music.mp3",
+        "image": "Thumbnails/Woh Lamhe Woh Baatein - slowed and reverb - - Atif Aslam Nexus Music_thumbnail.jpg"
+    },
+    {
+        "title": "Ye Tune Kya Kiya",
+        "artist": "Javed Bashir",
+        "file": "Audio/Ye Tune Kya Kiya Lyrics Video Once Upon A Time In Mumbai Dobara Javed Bashir Akshay Kumar .mp3",
+        "image": "Thumbnails/Ye Tune Kya Kiya Lyrics Video Once Upon A Time In Mumbai Dobara Javed Bashir Akshay Kumar _thumbnail.jpg"
+    },
+    {
+        "title": "Ye Tune Kya Kiya - Slowed & Reverb",
+        "artist": "Javed Bashir",
+        "file": "Audio/ye tune kya kiya -slowed and reverb- javed bashir 8d audio LYRICSTAY.mp3",
+        "image": "Thumbnails/ye tune kya kiya -slowed and reverb- javed bashir 8d audio LYRICSTAY_thumbnail.jpg"
+    },
+    {
+        "title": "Zaroori Tha",
+        "artist": "Rahat Fateh Ali Khan",
+        "file": "Audio/Zaroori Tha -Lyrics- - Rahat Fateh Ali Khan.mp3",
+        "image": "Thumbnails/Zaroori Tha -Lyrics- - Rahat Fateh Ali Khan_thumbnail.jpg"
+    },
+    {
+        "title": "Zeehal e muskin",
+        "artist": "Lata Mangeshkar, Shabbir Kumar",
+        "file": "Audio/Zeehal e muskin song with lyrics ज़िहाल ए मुस्किन Lata Mangeshkar Shabbir Kumar Ghulam.mp3",
+        "image": "Thumbnails/Zeehal e muskin song with lyrics ज़िहाल ए मुस्किन Lata Mangeshkar Shabbir Kumar Ghulam_thumbnail.jpg"
     }
 ]
