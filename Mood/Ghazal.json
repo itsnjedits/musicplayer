@@ -125,5 +125,17 @@
         "artist": "Papon",
         "file": "Audio/Tum Itna Jo - Papon _ MTV Unplugged.mp3",
         "image": "Thumbnails/Tum Itna Jo - Papon _ MTV Unplugged_thumbnail.jpg"
+    },
+    {
+        "title": "Aap Ko Dekh Kar Dekhta Reh Gaya",
+        "artist": "Jagjit Singh",
+        "file": "Audio/Aap ko dekh kar dekhta rah gaya (Jagjit Singh).mp3",
+        "image": "Thumbnails/Aap ko dekh kar dekhta rah gaya (Jagjit Singh)_thumbnail.jpg"
+    },
+    {
+        "title": "Us Mod Se Shuru Karein Phir Yeh Zindagi",
+        "artist": "Jagjit Singh",
+        "file": "Audio/Us Mod Se Shuru Karen Phir Yeh Zindagi _ Jagjit Singh _ Us Mod Se Shuroo Karein.mp3",
+        "image": "Thumbnails/Us Mod Se Shuru Karen Phir Yeh Zindagi _ Jagjit Singh _ Us Mod Se Shuroo Karein_thumbnail.jpg"
     }
 ]

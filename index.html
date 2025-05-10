@@ -26,239 +26,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Boxicons link -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
+    <link rel="stylesheet" href="style.css">
 </head>
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        font-family: "Poppins";
-    }
-
-    body {
-        height: 100%;
-        width: 100%;
-    }
-
-    .song-description {
-        display: none;
-        /* Hide initially */
-    }
-
-    .playback-speed select {
-        background-color: rgb(75, 85, 99);
-        /* Adjust as needed */
-        color: #ffffff;
-        border: 1px solid #444;
-        cursor: pointer;
-        /* width: 77px; */
-    }
-
-    .singer select,
-    .genre select,
-    .mood select {
-        background-color: rgb(56, 60, 67);
-        /* Adjust as needed */
-        color: #ffffff;
-        cursor: pointer;
-    }
 
 
-    .playback-speed select:focus {
-        outline: none;
-    }
 
-
-    .visualizer {
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        gap: 3px;
-    }
-
-    /* Base styles for bars */
-    .bar {
-        width: 3px;
-        height: 30px;
-        background-color: #29ecfe;
-        animation: riseAndFall 1.5s infinite ease-in-out;
-    }
-
-    /* Specific styles for individual bars */
-    .bar1 {
-        animation-delay: 0s;
-        animation-duration: 1.2s;
-    }
-
-    .bar2 {
-        animation-delay: 0.2s;
-        animation-duration: 1.5s;
-    }
-
-    .bar3 {
-        animation-delay: 0.4s;
-        animation-duration: 1.8s;
-    }
-
-    .bar4 {
-        animation-delay: 0.6s;
-        animation-duration: 1.3s;
-    }
-
-    .bar5 {
-        animation-delay: 0.8s;
-        animation-duration: 1.6s;
-    }
-
-    /* Default keyframes for larger screens */
-    @keyframes riseAndFall {
-        0% {
-            height: 15px;
-        }
-
-        50% {
-            height: 35px;
-        }
-
-        100% {
-            height: 15px;
-        }
-    }
-
-    /* Override keyframes for screens 768px or smaller */
-    @media (max-width: 768px) {
-        .visualizer {
-            gap: 1.5px;
-        }
-
-        .bar {
-            height: 15px;
-        }
-
-        @keyframes riseAndFall {
-            0% {
-                height: 8px;
-            }
-
-            50% {
-                height: 16px;
-            }
-
-            100% {
-                height: 8px;
-            }
-        }
-    }
-
-    .musicplayer {
-        background: linear-gradient(to right, rgb(0, 98, 126), rgb(0, 45, 59), rgb(0, 45, 80), rgb(0, 92, 117));
-        background-size: 400% 400%;
-        animation: gradientShift 20s ease infinite;
-        /* Increased duration to 20 seconds */
-    }
-
-    @keyframes gradientShift {
-        0% {
-            background-position: 0% 0%;
-        }
-
-        50% {
-            background-position: 100% 100%;
-        }
-
-        100% {
-            background-position: 0% 0%;
-        }
-    }
-
-    select option {
-        background-color: rgb(75, 85, 99);
-        color: white;
-    }
-
-    .volume-container {
-        position: relative;
-        display: inline-block;
-    }
-
-    .volume-icon {
-        font-size: 24px;
-        /* Adjust size as needed */
-        cursor: pointer;
-    }
-
-    .volume-slider {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-90%);
-        transform: translateY(-55%);
-        width: 100px;
-        /* Adjust width as needed */
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-
-    .volume-container:hover .volume-slider {
-        opacity: 1;
-    }
-
-    .heading,
-    .heading2 {
-        transition: color 300ms ease;
-    }
-
-    /* styles.css */
-    ::-webkit-scrollbar {
-        width: 15px;
-    }
-
-    ::-webkit-scrollbar-track {
-        background: #272727;
-        /* Dark background for the scroll track */
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background: #555;
-        /* Dark color for the scroll thumb */
-        border-radius: 6px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-        background: #777;
-        /* Lighter color for hover effect */
-    }
-
-    header {
-        box-shadow: rgba(0, 0, 0, 0.582) 0px 8px 20px;
-    }
-
-    /* Add some basic styling to the search box and results container */
-    #search-input {
-        width: 200px;
-        padding: 10px;
-        font-size: 16px;
-    }
-
-    #search-btn {
-        padding: 10px;
-        font-size: 16px;
-        cursor: pointer;
-    }
-
-    #search-results {
-        padding: 20px;
-        background-color: #f0f0f0;
-        border: 1px solid #ddd;
-        display: none;
-        /* hide the results container by default */
-    }
-
-    .rolling {
-        transform: rotate(360deg);
-        transition: transform 0.3s ease;
-    }
-</style>
 
 <body class="bg-black ">
 
@@ -311,99 +83,399 @@
                     <div class="flex-col items-center justify-center flex gap-y-2">
                         <div class="flex gap-x-2 max-sm:gap-x-2 justify-center">
 
-                            <button id="genre-before"
-                                class="max-md:text-sm max-md:py-0 max-sm:py-1 max-sm:px-2 max-md:px-2 text-lg bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] font-semibold px-4 py-2 rounded min-md:hover:bg-gray-600 min-md:hover:border-gray-900 min-md:hover:text-[#29ecfe] duration-150 ">Genre</button>
-                            <div class="genre flex-col items-center justify-center hidden">
-                                <select id="genre"
-                                    class="text-white rounded p-1 py-2 max-md:text-[11px] max-md:w-24 max-md:overflow-hidden max-md:text-ellipsis max-md:whitespace-nowrap ">
-                                    <option class="bg-gray-700" value="Slowed & Reverb">Slowed & Reverb</option>
-                                    <option class="bg-gray-700" value="Gym">Gym</option>
-                                    <option class="bg-gray-700" value="Hindi-New">Hindi-New</option>
-                                    <option class="bg-gray-700" value="Hindi-Old">Hindi-Old</option>
-                                    <option class="bg-gray-700" value="Punjabi">Punjabi</option>
-                                    <option class="bg-gray-700" value="Meditation">Meditation</option>
-                                </select>
-                            </div>
-                            <button id="mood-before"
-                                class="max-md:text-sm max-md:py-0 max-sm:py-1 max-sm:px-2 max-md:px-2 text-lg bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] font-semibold px-4 py-2 rounded min-md:hover:bg-gray-600 min-md:hover:border-gray-900 min-md:hover:text-[#29ecfe] duration-150 ">Mood</button>
-                            <div class="mood flex-col items-center justify-center hidden">
-                                <select id="mood"
-                                    class="text-white rounded p-1 py-2 max-md:text-[11px] max-md:w-24 max-md:overflow-hidden max-md:text-ellipsis max-md:whitespace-nowrap ">
-                                    <option class="bg-gray-700" value="Ghazal">Ghazal</option>
-                                    <!-- <option class="bg-gray-700" value="Happy">Happy</option> -->
-                                    <option class="bg-gray-700" value="Inspirational">Inspirational</option>
-                                    <option class="bg-gray-700" value="Instrumental">Instrumental</option>
-                                    <option class="bg-gray-700" value="Mashup">Mashup</option>
-                                    <option class="bg-gray-700" value="Motivational">Motivational</option>
-                                    <option class="bg-gray-700" value="Nostalgic">Nostalgic</option>
-                                    <option class="bg-gray-700" value="Party">Party</option>
-                                    <option class="bg-gray-700" value="Patriotic">Patriotic</option>
-                                    <option class="bg-gray-700" value="Punjabi">Punjabi</option>
-                                    <option class="bg-gray-700" value="Rap">Rap</option>
-                                    <option class="bg-gray-700" value="Romantic">Romantic</option>
-                                    <option class="bg-gray-700" value="Sad">Sad</option>
-                                    <option class="bg-gray-700" value="Spiritual">Spiritual</option>
-                                </select>
+
+                            <button id="feature-button"
+                                class="text-lg bg-gray-800 border border-[#29ecfe] text-[#2b8bff] font-semibold px-4 py-2 rounded duration-150 overflow-hidden relative h-[48px]">
+                                <span id="feature-text"
+                                    class="block transition-all duration-500 ease-in-out">Mood</span>
+                            </button>
+
+                            <!-- 🖼️ Fullscreen Modal -->
+                            <div id="selectionModal"
+                                class="fixed z-[1000] p-3 shadow-lg border-2 border-[#29ecfe] rounded-[9px] bg-gray-900/90 hidden flex-col overflow-auto text-white top-[48.5%] left-[50%] "
+                                style=" transform: translate(-50%, -50%); width: 90%; max-width: 774px; height: 70vh;">
+
+                                <!-- ❌ Close Button -->
+
+                                <button id="closeModalBtn"
+                                    class="absolute top-[10px] right-[10px] text-white text-[27px] font-semibold px-[11px] py-[1px] bg-red-700 rounded-[8px] hover:bg-red-800 cursor-pointer">
+                                    X
+                                </button>
+
+                                <div class="flex flex-col items-center w-full max-w-4xl my-6">
+                                    <h2 class="text-2xl font-bold text-[#29ecfe] mb-6">Mood</h2>
+                                    <div class="flex flex-wrap justify-center gap-6">
+                                        <div class="option-item flex flex-col items-center cursor-pointer transition hover:scale-105"
+                                            data-category="Mood" data-value="Sad">
+                                            <img src="Khazana/Sad.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white">Sad</p>
+                                        </div>
+                                        <div class="option-item flex flex-col items-center cursor-pointer transition hover:scale-105"
+                                            data-category="Mood" data-value="Party">
+                                            <img src="Khazana/Party.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white">Party</p>
+                                        </div>
+                                        <div class="option-item flex flex-col items-center cursor-pointer transition hover:scale-105"
+                                            data-category="Mood" data-value="Inspirational">
+                                            <img src="Khazana/Inspirational.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white">Inspirational</p>
+                                        </div>
+                                        <div class="option-item flex flex-col items-center cursor-pointer transition hover:scale-105"
+                                            data-category="Mood" data-value="Instrumental">
+                                            <img src="Khazana/Instrumental.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white">Instrumental</p>
+                                        </div>
+                                        <div class="option-item flex flex-col items-center cursor-pointer transition hover:scale-105"
+                                            data-category="Mood" data-value="Mashup">
+                                            <img src="Khazana/Mashup.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white">Mashup</p>
+                                        </div>
+                                        <div class="option-item flex flex-col items-center cursor-pointer transition hover:scale-105"
+                                            data-category="Mood" data-value="Motivational">
+                                            <img src="Khazana/Motivational.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white">Motivational</p>
+                                        </div>
+                                        <div class="option-item flex flex-col items-center cursor-pointer transition hover:scale-105"
+                                            data-category="Mood" data-value="Nostalgic">
+                                            <img src="Khazana/Nostalgic.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white">Nostalgic</p>
+                                        </div>
+                                        <div class="option-item flex flex-col items-center cursor-pointer transition hover:scale-105"
+                                            data-category="Mood" data-value="Patriotic">
+                                            <img src="Khazana/Patriotic.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white">Patriotic</p>
+                                        </div>
+                                        <div class="option-item flex flex-col items-center cursor-pointer transition hover:scale-105"
+                                            data-category="Mood" data-value="Punjabi">
+                                            <img src="Khazana/Punjabi.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white">Punjabi</p>
+                                        </div>
+                                        <div class="option-item flex flex-col items-center cursor-pointer transition hover:scale-105"
+                                            data-category="Mood" data-value="Rap">
+                                            <img src="Khazana/Rap.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white">Rap</p>
+                                        </div>
+                                        <div class="option-item flex flex-col items-center cursor-pointer transition hover:scale-105"
+                                            data-category="Mood" data-value="Romantic">
+                                            <img src="Khazana/Romantic.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white">Romantic</p>
+                                        </div>
+                                        <div class="option-item flex flex-col items-center cursor-pointer transition hover:scale-105"
+                                            data-category="Mood" data-value="Spiritual">
+                                            <img src="Khazana/Spiritual.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white">Spiritual</p>
+                                        </div>
+                                    </div>
+                                </div>
 
 
-                            </div>
-                            <button id="singer-before"
-                                class="max-md:text-sm max-md:py-0 max-sm:py-1 max-sm:px-2 max-md:px-2 text-lg bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] font-semibold px-4 py-2 rounded min-md:hover:bg-gray-600 min-md:hover:border-gray-900 min-md:hover:text-[#29ecfe] duration-150 ">Singer</button>
-                            <div class="singer flex-col items-center justify-center hidden">
-                                <select id="singer"
-                                    class="text-white rounded p-1 py-2 max-md:text-[11px] max-md:w-24 max-md:overflow-hidden max-md:text-ellipsis max-md:whitespace-nowrap ">
-                                    <option class="bg-gray-700" value="Jagjit Singh">Jagjit Singh</option>
-                                    <option class="bg-gray-700" value="Akhil Sachdeva">Akhil Sachdeva</option>
-                                    <option class="bg-gray-700" value="Alka Yagnik">Alka Yagnik</option>
-                                    <option class="bg-gray-700" value="Amit Trivedi">Amit Trivedi</option>
-                                    <option class="bg-gray-700" value="Ankit Tiwari">Ankit Tiwari</option>
-                                    <option class="bg-gray-700" value="AP Dhillon">AP Dhillon</option>
-                                    <option class="bg-gray-700" value="AR Rahman">AR Rahman</option>
-                                    <option class="bg-gray-700" value="Arijit Singh">Arijit Singh</option>
-                                    <option class="bg-gray-700" value="Arko">Arko</option>
-                                    <option class="bg-gray-700" value="Armaan Malik">Armaan Malik</option>
-                                    <option class="bg-gray-700" value="Asha Bhosle">Asha Bhosle</option>
-                                    <option class="bg-gray-700" value="Atif Aslam">Atif Aslam</option>
-                                    <option class="bg-gray-700" value="Ayushmann Khurrana">Ayushmann Khurrana</option>
-                                    <option class="bg-gray-700" value="B Praak">B Praak</option>
-                                    <option class="bg-gray-700" value="Bhupinder Singh">Bhupinder Singh</option>
-                                    <option class="bg-gray-700" value="Chandan Daas">Chandan Daas</option>
-                                    <option class="bg-gray-700" value="Faheem Abdullah, Rauhan Malik, Amir Ameer">Faheem
-                                        Abdullah, Rauhan Malik, Amir Ameer</option>
-                                    <option class="bg-gray-700" value="Ghulam Ali">Ghulam Ali</option>
-                                    <option class="bg-gray-700" value="Himesh Reshammiya">Himesh Reshammiya</option>
-                                    <option class="bg-gray-700" value="Javed Ali">Javed Ali</option>
-                                    <option class="bg-gray-700" value="Javed Bashir">Javed Bashir</option>
-                                    <option class="bg-gray-700" value="Jubin Nautiyal">Jubin Nautiyal</option>
-                                    <option class="bg-gray-700" value="Kailash Kher">Kailash Kher</option>
-                                    <option class="bg-gray-700" value="Kishore Kumar">Kishore Kumar</option>
-                                    <option class="bg-gray-700" value="KK">KK</option>
-                                    <option class="bg-gray-700" value="Kumar Sanu">Kumar Sanu</option>
-                                    <option class="bg-gray-700" value="Lata Mangeshkar">Lata Mangeshkar</option>
-                                    <option class="bg-gray-700" value="Mehndi Hasan">Mehndi Hasan</option>
-                                    <option class="bg-gray-700" value="Mohammed Irfan">Mohammed Irfan</option>
-                                    <option class="bg-gray-700" value="Mohammed Rafi">Mohammed Rafi</option>
-                                    <option class="bg-gray-700" value="Mohit Chauhan">Mohit Chauhan</option>
-                                    <option class="bg-gray-700" value="Monali Thakur">Monali Thakur</option>
-                                    <option class="bg-gray-700" value="Mukesh">Mukesh</option>
-                                    <option class="bg-gray-700" value="Palak Muchhal">Palak Muchhal</option>
-                                    <option class="bg-gray-700" value="Papon">Papon</option>
-                                    <option class="bg-gray-700" value="Rahat Fateh Ali Khan">Rahat Fateh Ali Khan
-                                    </option>
-                                    <option class="bg-gray-700" value="Raj Barman">Raj Barman</option>
-                                    <option class="bg-gray-700" value="Roopkumar Rathod">Roopkumar Rathod</option>
-                                    <option class="bg-gray-700" value="Shaan">Shaan</option>
-                                    <option class="bg-gray-700" value="Shabbir Kumar">Shabbir Kumar</option>
-                                    <option class="bg-gray-700" value="Shafaqat Amanat Ali">Shafaqat Amanat Ali</option>
-                                    <option class="bg-gray-700" value="Shankar Mahadevan">Shankar Mahadevan</option>
-                                    <option class="bg-gray-700" value="Shreya Ghoshal">Shreya Ghoshal</option>
-                                    <option class="bg-gray-700" value="Sonu Nigam">Sonu Nigam</option>
-                                    <option class="bg-gray-700" value="Sukhwinder Singh">Sukhwinder Singh</option>
-                                    <option class="bg-gray-700" value="Udit Narayan">Udit Narayan</option>
-                                    <option class="bg-gray-700" value="Vishal Dadlani">Vishal Dadlani</option>
-                                </select>
+                                <div class="flex flex-col items-center w-full max-w-4xl my-6">
+                                    <h2 class="text-2xl font-bold text-[#29ecfe] mb-6">Genre</h2>
+                                    <div class="flex flex-wrap justify-center gap-6">
+                                        <div class="option-item flex flex-col items-center cursor-pointer transition hover:scale-105"
+                                            data-category="Genre" data-value="Hindi-Old">
+                                            <img src="Khazana/Hindi-Old.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white">Hindi-Old</p>
+                                        </div>
+                                        <div class="option-item flex flex-col items-center cursor-pointer transition hover:scale-105"
+                                            data-category="Genre" data-value="Hindi-New">
+                                            <img src="Khazana/Hindi-New.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white">Hindi-New</p>
+                                        </div>
+
+                                        <div class="option-item flex flex-col items-center cursor-pointer transition hover:scale-105"
+                                            data-category="Genre" data-value="Slowed-Reverb">
+                                            <img src="Khazana/Slowed-Reverb.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white">Slowed-Reverb</p>
+                                        </div>
+                                        <div class="option-item flex flex-col items-center cursor-pointer transition hover:scale-105"
+                                            data-category="Genre" data-value="Gym">
+                                            <img src="Khazana/Gym.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white">Gym</p>
+                                        </div>
+                                        <div class="option-item flex flex-col items-center cursor-pointer transition hover:scale-105"
+                                            data-category="Genre" data-value="Meditation">
+                                            <img src="Khazana/Meditation.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white">Meditation</p>
+                                        </div>
+                                        <!-- Add more genre options -->
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col items-center w-full max-w-4xl my-6">
+                                    <h2 class="text-2xl font-bold text-[#29ecfe] mb-6">Singer</h2>
+                                    <div class="flex flex-wrap justify-center gap-6 max-h-[52vh] px-4">
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Jagjit Singh"><img src="Khazana/Jagjit Singh.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Jagjit Singh</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Akhil Sachdeva"><img src="Khazana/Akhil Sachdeva.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Akhil Sachdeva</p>
+                                            
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Alka Yagnik"><img src="Khazana/Alka Yagnik.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Alka Yagnik</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Amit Trivedi"><img src="Khazana/Amit Trivedi.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Amit Trivedi</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Ankit Tiwari"><img src="Khazana/Ankit Tiwari.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Ankit Tiwari</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="AP Dhillon"><img src="Khazana/AP Dhillon.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">AP Dhillon</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="AR Rahman"><img src="Khazana/AR Rahman.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">AR Rahman</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Arijit Singh"><img src="Khazana/Arijit Singh.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Arijit Singh</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Arko"><img src="Khazana/Arko.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Arko</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Armaan Malik"><img src="Khazana/Armaan Malik.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Armaan Malik</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Asha Bhosle"><img src="Khazana/Asha Bhosle.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Asha Bhosle</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Atif Aslam"><img src="Khazana/Atif Aslam.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Atif Aslam</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Ayushmann Khurrana">
+                                            <img src="Khazana/Ayushmann Khurrana.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Ayushmann Khurrana</p>
+                                                
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="B Praak"><img src="Khazana/B Praak.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">B Praak</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Bhupinder Singh">
+                                            <img src="Khazana/Bhupinder Singh.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Bhupinder Singh</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Chandan Daas"><img src="Khazana/Chandan Daas.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Chandan Daas</p>
+                                        </div>
+
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Ghulam Ali"><img src="Khazana/Ghulam Ali.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Ghulam Ali</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Himesh Reshammiya">
+                                            <img src="Khazana/Himesh Reshammiya.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Himesh Reshammiya</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Javed Ali"><img src="Khazana/Javed Ali.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Javed Ali</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Javed Bashir"><img src="Khazana/Javed Bashir.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Javed Bashir</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Jubin Nautiyal"><img src="Khazana/Jubin Nautiyal.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Jubin Nautiyal</p>
+                                            
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Kailash Kher"><img src="Khazana/Kailash Kher.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Kailash Kher</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Kishore Kumar"><img src="Khazana/Kishore Kumar.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Kishore Kumar</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="KK"><img src="Khazana/KK.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">KK</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Kumar Sanu"><img src="Khazana/Kumar Sanu.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Kumar Sanu</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Lata Mangeshkar">
+                                            <img src="Khazana/Lata Mangeshkar.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Lata Mangeshkar</p>
+                                            
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Mehndi Hasan"><img src="Khazana/Mehndi Hasan.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Mehndi Hasan</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Mohammed Irfan"><img src="Khazana/Mohammed Irfan.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Mohammed Irfan</p>
+                                            
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Mohammed Rafi"><img src="Khazana/Mohammed Rafi.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Mohammed Rafi</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Mohit Chauhan"><img src="Khazana/Mohit Chauhan.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Mohit Chauhan</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Monali Thakur"><img src="Khazana/Monali Thakur.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Monali Thakur</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Mukesh"><img src="Khazana/Mukesh.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Mukesh</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Palak Muchhal"><img src="Khazana/Palak Muchhal.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Palak Muchhal</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Papon"><img src="Khazana/Papon.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Papon</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Rahat Fateh Ali Khan"><img src="Khazana/Rahat Fateh Ali Khan.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Rahat Fateh Ali Khan</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Raj Barman"><img src="Khazana/Raj Barman.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Raj Barman</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Roopkumar Rathod">
+                                            <img src="Khazana/Roopkumar Rathod.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Roopkumar Rathod</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Shaan"><img src="Khazana/Shaan.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Shaan</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Shabbir Kumar"><img src="Khazana/Shabbir Kumar.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Shabbir Kumar</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Shafaqat Amanat Ali"><img src="Khazana/Shafaqat Amanat Ali.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Shafaqat Amanat Ali</p>
+                                                
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Shankar Mahadevan">
+                                            <img src="Khazana/Shankar Mahadevan.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Shankar Mahadevan</p>
+                                            
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Shreya Ghoshal"><img src="Khazana/Shreya Ghoshal.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Shreya Ghoshal</p>
+                                            
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Sonu Nigam"><img src="Khazana/Sonu Nigam.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Sonu Nigam</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Sukhwinder Singh">
+                                            <img src="Khazana/Sukhwinder Singh.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Sukhwinder Singh</p>
+                                            
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Udit Narayan"><img src="Khazana/Udit Narayan.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Udit Narayan</p>
+                                        </div>
+                                        <div class="option-item flex flex-col justify-center items-center"
+                                            data-category="Singer" data-value="Vishal Dadlani"><img src="Khazana/Vishal Dadlani.jpg" onerror="this.onerror=null; this.src='Khazana/default.jpg';"
+                                                class="w-24 h-24 object-cover rounded-full border-2 border-[#29ecfe] shadow-md" />
+                                            <p class="mt-2 text-sm font-medium text-white text-center">Vishal Dadlani</p>
+                                            
+                                        </div>
+
+                                    </div>
+                                </div>
 
                             </div>
+
 
                         </div>
                         <div class="flex gap-x-2 max-sm:gap-x-2 justify-center">
@@ -509,7 +581,8 @@
             document.querySelector(".heading2").style.color = "#29ecfe"; // Original color
         }
     </script>
-    <script src="script.js"></script>
+    <script src="script copy.js"></script>
+
 
 </body>
 

@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins";
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.song-description {
+    display: none;
+    /* Hide initially */
+}
+
+.playback-speed select {
+    background-color: rgb(75, 85, 99);
+    /* Adjust as needed */
+    color: #ffffff;
+    border: 1px solid #444;
+    cursor: pointer;
+    /* width: 77px; */
+}
+
+.singer select,
+.genre select,
+.mood select {
+    background-color: rgb(56, 60, 67);
+    /* Adjust as needed */
+    color: #ffffff;
+    cursor: pointer;
+}
+
+
+.playback-speed select:focus {
+    outline: none;
+}
+
+
+.visualizer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 3px;
+}
+
+/* Base styles for bars */
+.bar {
+    width: 3px;
+    height: 30px;
+    background-color: #29ecfe;
+    animation: riseAndFall 1.5s infinite ease-in-out;
+}
+
+/* Specific styles for individual bars */
+.bar1 {
+    animation-delay: 0s;
+    animation-duration: 1.2s;
+}
+
+.bar2 {
+    animation-delay: 0.2s;
+    animation-duration: 1.5s;
+}
+
+.bar3 {
+    animation-delay: 0.4s;
+    animation-duration: 1.8s;
+}
+
+.bar4 {
+    animation-delay: 0.6s;
+    animation-duration: 1.3s;
+}
+
+.bar5 {
+    animation-delay: 0.8s;
+    animation-duration: 1.6s;
+}
+
+/* Default keyframes for larger screens */
+@keyframes riseAndFall {
+    0% {
+        height: 15px;
+    }
+
+    50% {
+        height: 35px;
+    }
+
+    100% {
+        height: 15px;
+    }
+}
+
+/* Override keyframes for screens 768px or smaller */
+@media (max-width: 768px) {
+    .visualizer {
+        gap: 1.5px;
+    }
+
+    .bar {
+        height: 15px;
+    }
+
+    @keyframes riseAndFall {
+        0% {
+            height: 8px;
+        }
+
+        50% {
+            height: 16px;
+        }
+
+        100% {
+            height: 8px;
+        }
+    }
+}
+
+.musicplayer {
+    background: linear-gradient(to right, rgb(0, 98, 126), rgb(0, 45, 59), rgb(0, 45, 80), rgb(0, 92, 117));
+    background-size: 400% 400%;
+    animation: gradientShift 20s ease infinite;
+    /* Increased duration to 20 seconds */
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+select option {
+    background-color: rgb(75, 85, 99);
+    color: white;
+}
+
+.volume-container {
+    position: relative;
+    display: inline-block;
+}
+
+.volume-icon {
+    font-size: 24px;
+    /* Adjust size as needed */
+    cursor: pointer;
+}
+
+.volume-slider {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-90%);
+    transform: translateY(-55%);
+    width: 100px;
+    /* Adjust width as needed */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.volume-container:hover .volume-slider {
+    opacity: 1;
+}
+
+.heading,
+.heading2 {
+    transition: color 300ms ease;
+}
+
+/* styles.css */
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: #272727;
+    /* Dark background for the scroll track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555;
+    /* Dark color for the scroll thumb */
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #777;
+    /* Lighter color for hover effect */
+}
+
+header {
+    box-shadow: rgba(0, 0, 0, 0.582) 0px 8px 20px;
+}
+
+/* Add some basic styling to the search box and results container */
+#search-input {
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#search-btn {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#search-results {
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    display: none;
+    /* hide the results container by default */
+}
+
+.rolling {
+    transform: rotate(360deg);
+    transition: transform 0.3s ease;
+}
+
+.option-item {
+    @apply flex flex-col items-center text-sm text-white cursor-pointer transition duration-200 hover:text-[#29ecfe];
+}
+
+#feature-text {
+    transition: all 0.4s ease-in-out;
+    display: inline-block;
+}
