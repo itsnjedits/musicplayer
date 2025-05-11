@@ -2,37 +2,43 @@
     {
         "title": "Rafta Rafta Wo Meri",
         "artist": "Mehndi Hasan",
-        "file": "Audio/Rafta Rafta Wo Meri _ Muhammad Ali _ Melodious Ghazal _ Tribute to Mehdi Hasan.mp3",
-        "image": "Thumbnails/Rafta Rafta Wo Meri _ Muhammad Ali _ Melodious Ghazal _ Tribute to Mehdi Hasan_thumbnail.jpg"
+        "file": "Audio/Rafta Rafta Wo Meri _ Muhammad Ali _ Melodious Ghazal _ Tribute to Mehndi Hasan.p3",
+        "image": "Thumbnails/Rafta Rafta Wo Meri _ Muhammad Ali _ Melodious Ghazal _ Tribute to Mehndi Hasan_thumbnailjpg"
     },
     {
         "title": "Aaye Kuch Abr Kuch Sharab Aaye",
-        "artist": "Mehdi Hassan",
+        "artist": "Mehndi Hasan",
         "file": "Audio/Aaye Kuch Abr Kuch Sharab Aaye.mp3",
         "image": "Thumbnails/Aaye Kuch Abr Kuch Sharab Aaye_thumbnail.jpg"
     },
     {
         "title": "Duniya Kisi Ke Pyar Mein",
-        "artist": "Mehdi Hassan",
+        "artist": "Mehndi Hasan",
         "file": "Audio/Duniya Kisi Ke Pyar Mein.mp3",
         "image": "Thumbnails/Duniya Kisi Ke Pyar Mein_thumbnail.jpg"
     },
     {
         "title": "Mohabbat Karne Wale",
-        "artist": "Mehdi Hassan",
+        "artist": "Mehndi Hasan",
         "file": "Audio/Mohabbat Karne Wale.mp3",
         "image": "Thumbnails/Mohabbat Karne Wale_thumbnail.jpg"
     },
     {
         "title": "Mujhe Tum Nazar Se Gira To Rahe Ho",
-        "artist": "Mehdi Hassan",
+        "artist": "Mehndi Hasan",
         "file": "Audio/MUJHE TUM NAZAR SE GIRA TO RAHAY HO (GHAZAL) - MEHDI HASSAN - FILM DORAHA.mp3",
         "image": "Thumbnails/MUJHE TUM NAZAR SE GIRA TO RAHAY HO (GHAZAL) - MEHDI HASSAN - FILM DORAHA_thumbnail.jpg"
     },
     {
         "title": "Ranjish Hi Sahi",
-        "artist": "Mehdi Hassan",
+        "artist": "Mehndi Hasan",
         "file": "Audio/Ranjish Hi Sahi.mp3",
         "image": "Thumbnails/Ranjish Hi Sahi_thumbnail.jpg"
+    },
+    {
+        "title": "Tu Meri Zindagi Hai",
+        "artist": "Mehndi Hasan",
+        "file": "Audio/Tu Meri Zindagi He.mp3",
+        "image": "Thumbnails/Tu Meri Zindagi He_thumbnail.jpg"
     }
 ]
