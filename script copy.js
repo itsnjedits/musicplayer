@@ -134,21 +134,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 🔁 Animate Text Horizontally (Right to Left Swipe)
   function animateText() {
-    textIndex = (textIndex + 1) % texts.length;
-    
-    // Add left swipe animation class
-    textEl.classList.add("opacity-0", "-translate-x-4");
+  textIndex = (textIndex + 1) % texts.length;
+
+  textEl.classList.add("opacity-0");
+
+  setTimeout(() => {
+    textEl.textContent = texts[textIndex];
+    textEl.classList.remove("opacity-0");
+    textEl.classList.add("blur-slide");
 
     setTimeout(() => {
-      textEl.textContent = texts[textIndex];
-      textEl.classList.remove("-translate-x-4");
-      textEl.classList.add("translate-x-2");
-    }, 200);
-
-    setTimeout(() => {
-      textEl.classList.remove("opacity-0", "translate-x-2");
+      textEl.classList.remove("blur-slide");
     }, 400);
-  }
+  }, 200);
+}
+
+
 
   // ⏲️ Scroll Handler with Cooldown
   window.addEventListener("scroll", () => {
@@ -158,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollCooldown = true;
       setTimeout(() => {
         scrollCooldown = false; // allow scroll again after 60 seconds
-      }, 6000);
+      }, 3000);
     }
   });
 
@@ -191,6 +192,11 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
           songs = data.sort((a, b) => a.title.localeCompare(b.title));
           loadSongList(); // Call your loader
+          // ✅ Update the heading text after fetch
+        const headingEl = document.querySelector(".without-ads");
+        if (headingEl) {
+          headingEl.textContent = `${value} Songs - No Ads 🔥`;
+        }
         })
         .catch(error => console.error('Error fetching songs:', error));
     });
@@ -397,30 +403,72 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>`
                 ;
 
-            itemDiv.addEventListener('click', (event) => {
-                const addToPlaylistButton = event.target.closest('.add-to-playlist');
-                if (addToPlaylistButton) {
-                    event.stopPropagation();
+let resetPlaylistBtnTimer; // Global timer
 
-                    const imageURL = trimAndDecodeURL(addToPlaylistButton.parentElement.parentElement.children[0].children[0].src);
-                    const title = addToPlaylistButton.parentElement.parentElement.children[0].children[1].children[0].textContent;
-                    const artist = addToPlaylistButton.parentElement.parentElement.children[0].children[1].children[1].textContent;
-                    let fileURL;
-                    fileURL = modifyAndDecodeURL(addToPlaylistButton.parentElement.parentElement.children[0].children[0].src);
+itemDiv.addEventListener('click', (event) => {
+    const addToPlaylistButton = event.target.closest('.add-to-playlist');
+    if (addToPlaylistButton) {
+        event.stopPropagation();
 
-                    const songData = {
-                        image: imageURL,
-                        file: fileURL,
-                        title: title,
-                        artist: artist
-                    };
+        const imageURL = trimAndDecodeURL(addToPlaylistButton.parentElement.parentElement.children[0].children[0].src);
+        const title = addToPlaylistButton.parentElement.parentElement.children[0].children[1].children[0].textContent;
+        const artist = addToPlaylistButton.parentElement.parentElement.children[0].children[1].children[1].textContent;
+        const fileURL = modifyAndDecodeURL(addToPlaylistButton.parentElement.parentElement.children[0].children[0].src);
 
-                    playlist.push(songData);
-                    console.log(JSON.stringify(playlist, null, 2));
-                    return;
-                }
-                playSong(index);
-            });
+        const songData = {
+            image: imageURL,
+            file: fileURL,
+            title: title,
+            artist: artist
+        };
+
+        playlist.push(songData);
+        console.log(JSON.stringify(playlist, null, 2));
+
+        // Elements
+        const playlistBtn = document.querySelector('.yourPlaylist');
+        const playlistTextEl = playlistBtn.querySelector('p');
+        const originalText = "My Playlist";
+
+        // ✨ Animate text + bg color
+        playlistTextEl.style.transition = 'opacity 0.3s ease-in-out';
+        playlistBtn.style.transition = 'background-color 0.3s ease-in-out, color 0.3s ease-in-out';
+
+        playlistTextEl.style.opacity = '0';
+
+        setTimeout(() => {
+    playlistTextEl.textContent = "Song Added ✔";
+    playlistTextEl.style.opacity = '1';
+    playlistBtn.style.backgroundColor = "#00ff51";
+    playlistBtn.style.color = "#111";
+
+    // ✨ Add small text class
+    playlistTextEl.classList.add("text-sm");
+}, 300);
+
+// Reset after delay
+clearTimeout(resetPlaylistBtnTimer);
+resetPlaylistBtnTimer = setTimeout(() => {
+    playlistTextEl.style.opacity = '0';
+
+    setTimeout(() => {
+        playlistTextEl.textContent = originalText;
+        playlistTextEl.style.opacity = '1';
+        playlistBtn.style.backgroundColor = "";
+        playlistBtn.style.color = "";
+
+        // 🧼 Remove the small text class
+        playlistTextEl.classList.remove("text-sm");
+    }, 300);
+}, 1000);
+
+        return;
+    }
+
+    playSong(index);
+});
+
+
 
             arrayDiv.appendChild(itemDiv);
         });

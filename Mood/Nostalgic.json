@@ -124,5 +124,17 @@
         "artist": "Mohit Chauhan",
         "file": "Audio/Yeh Dooriyan (Slowed +Reverb) - Love Aaj Kal -  Mohit Chauhan.mp3",
         "image": "Thumbnails/Yeh Dooriyan (Slowed +Reverb) - Love Aaj Kal -  Mohit Chauhan_thumbnail.jpg"
+    },
+    {
+        "title": "Saagar Kinare",
+        "artist": "Kishore Kumar, Lata Mangeshkar",
+        "file": "Audio/Saagar kinare (Lyrical Video) _ Kishore Kumar _ Lata Mangeshkar _ Saagar.mp3",
+        "image": "Thumbnails/Saagar kinare (Lyrical Video) _ Kishore Kumar _ Lata Mangeshkar _ Saagar_thumbnail.jpg"
+    },
+    {
+        "title": "Zindagi Ke Safar Mein Guzar Jaate Hain",
+        "artist": "Kishore Kumar",
+        "file": "Audio/Zindagi Ke Safar Mein Guzar Jaate _ Kishore Kumar _ Aap Ki Kasam 1974 Songs.mp3",
+        "image": "Thumbnails/Zindagi Ke Safar Mein Guzar Jaate _ Kishore Kumar _ Aap Ki Kasam 1974 Songs_thumbnail.jpg"
     }
 ]
