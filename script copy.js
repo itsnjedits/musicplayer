@@ -123,17 +123,21 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => this.classList.remove('rolling'), 200);
     });
 
-  const texts = ["Mood", "Genre", "Singer"];
-  let textIndex = 0;
-  let animationAllowed = true;
-  let scrollCooldown = false; // Prevents repeated scrolls
-  const textEl = document.getElementById("feature-text");
-  const featureBtn = document.getElementById("feature-button");
-  const modal = document.getElementById("selectionModal");
-  const closeModalBtn = document.getElementById("closeModalBtn");
+const texts = ["Mood", "Genre", "Singer"];
+let textIndex = 0;
+let animationAllowed = true;
+let scrollCooldown = false; // Prevents repeated scrolls
+let animationInterval = null;
 
-  // 🔁 Animate Text Horizontally (Right to Left Swipe)
-  function animateText() {
+const textEl = document.getElementById("feature-text");
+const featureBtn = document.getElementById("feature-button");
+const modal = document.getElementById("selectionModal");
+const closeModalBtn = document.getElementById("closeModalBtn");
+const headingText = document.getElementById("heading-text"); // Heading Text for Loading
+const spinner = document.getElementById("loading-spinner"); // Spinner Element
+
+// 🔁 Animate Text Horizontally (Right to Left Swipe)
+function animateText() {
   textIndex = (textIndex + 1) % texts.length;
 
   textEl.classList.add("opacity-0");
@@ -149,88 +153,134 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 200);
 }
 
+// ⏲️ Scroll Handler with Cooldown
+window.addEventListener("scroll", () => {
+  if (animationAllowed && !scrollCooldown) {
+    animateText();
 
-
-  // ⏲️ Scroll Handler with Cooldown
-  window.addEventListener("scroll", () => {
-    if (animationAllowed && !scrollCooldown) {
-      animateText();
-
-      scrollCooldown = true;
-      setTimeout(() => {
-        scrollCooldown = false; // allow scroll again after 60 seconds
+    // Start interval loop if not already running
+    if (!animationInterval) {
+      animationInterval = setInterval(() => {
+        if (animationAllowed) {
+          animateText();
+        } else {
+          clearInterval(animationInterval);
+          animationInterval = null;
+        }
       }, 3000);
     }
-  });
 
-  // 🚫 Stop everything on Button Click
-  featureBtn.addEventListener("click", () => {
-    modal.classList.remove("hidden");
-    modal.classList.add("flex");
-    animationAllowed = false; // Disable scroll-triggered animations forever
-  });
+    scrollCooldown = true;
+    setTimeout(() => {
+      scrollCooldown = false; // allow scroll again after 3 seconds
+    }, 3000);
+  }
+});
 
-  // ❌ Close Modal
-  closeModalBtn.addEventListener("click", () => {
+// 🚫 Stop everything on Button Click
+featureBtn.addEventListener("click", () => {
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
+  animationAllowed = false; // Disable scroll-triggered animations
+  if (animationInterval) {
+    clearInterval(animationInterval);
+    animationInterval = null;
+  }
+});
+
+// ❌ Close Modal
+closeModalBtn.addEventListener("click", () => {
+  modal.classList.add("hidden");
+});
+
+// ✅ Option Select Logic
+document.querySelectorAll(".option-item").forEach(option => {
+  option.addEventListener("click", () => {
+    const category = option.dataset.category;
+    const value = option.dataset.value;
+
+    // Show Loading Text and Spinner
+    if (headingText) headingText.textContent = "Loading...";
+    if (spinner) spinner.classList.remove("hidden");
+
+    textEl.textContent = value;
     modal.classList.add("hidden");
-  });
+    animationAllowed = false;
 
-  // ✅ Option Select Logic
-  document.querySelectorAll(".option-item").forEach(option => {
-    option.addEventListener("click", () => {
-      const category = option.dataset.category;
-      const value = option.dataset.value;
+    const jsonFile = `${category}/${value}.json`;
 
-      textEl.textContent = value;
-      modal.classList.add("hidden");
-      animationAllowed = false;
-
-      const jsonFile = `${category}/${value}.json`;
-
-      fetch(jsonFile)
-        .then(response => response.json())
-        .then(data => {
-          songs = data.sort((a, b) => a.title.localeCompare(b.title));
-          loadSongList(); // Call your loader
-          // ✅ Update the heading text after fetch
-        const headingEl = document.querySelector(".without-ads");
-        if (headingEl) {
-          headingEl.textContent = `${value} Songs - No Ads 🔥`;
-        }
-        })
-        .catch(error => console.error('Error fetching songs:', error));
-    });
-  });
-  
-  // ⏪ Reset Everything on SoundAura Title Click
-  const titleDiv = document.querySelector(".title");
-
-  titleDiv.addEventListener("click", () => {
-    // 1. Reset text to "Mood"
-    textEl.textContent = "Mood";
-    textIndex = 0;
-
-    // 2. Allow animation again
-    animationAllowed = true;
-
-    // 3. Reset scroll cooldown
-    scrollCooldown = false;
-
-    // 4. Hide modal if open
-    modal.classList.add("hidden");
-
-    // 5. (Optional) Re-display all songs
-    fetch("all-songs.json") // 👉 Make sure this file exists
+    fetch(jsonFile)
       .then(response => response.json())
       .then(data => {
         songs = data.sort((a, b) => a.title.localeCompare(b.title));
-        loadSongList(); // Your song loading function
+        loadSongList(); // Call your loader
+        
+        // Update the heading text after fetch
+        if (headingText) headingText.textContent = `${value} Songs - No Ads 🔥`;
+        if (spinner) spinner.classList.add("hidden"); // Hide spinner after loading
       })
-      .catch(error => console.error("Error loading all songs:", error));
+      .catch(error => {
+        console.error('Error fetching songs:', error);
+        if (headingText) headingText.textContent = "Something went wrong ❌";
+        if (spinner) spinner.classList.add("hidden");
+      });
   });
+});
 
+// ⏪ Reset Everything on SoundAura Title Click
+const titleDiv = document.querySelector(".title");
 
+titleDiv.addEventListener("click", () => {
+  // 1. Reset text to "Mood"
+  textEl.textContent = "Mood";
+  textIndex = 0;
 
+  // 2. Allow animation again
+  animationAllowed = true;
+
+  // 3. Reset scroll cooldown
+  scrollCooldown = false;
+
+  // 4. Hide modal if open
+  modal.classList.add("hidden");
+
+  // 5. (Optional) Re-display all songs
+  fetch("all-songs.json") // 👉 Make sure this file exists
+    .then(response => response.json())
+    .then(data => {
+      songs = data.sort((a, b) => a.title.localeCompare(b.title));
+      loadSongList(); // Your song loading function
+    })
+    .catch(error => console.error("Error loading all songs:", error));
+
+  // ✅ Clear any existing interval
+  if (animationInterval) {
+    clearInterval(animationInterval); // Clear the old interval
+    animationInterval = null; // Reset the interval variable
+    console.log("Previous interval cleared");
+  }
+
+  // ✅ Restart animation interval if not running
+  if (!animationInterval) {
+    console.log("Setting interval..."); // Debugging
+    animationInterval = setInterval(() => {
+      if (animationAllowed) {
+        animateText();
+      } else {
+        clearInterval(animationInterval);
+        animationInterval = null;
+      }
+    }, 3000);
+  }
+
+  // Disable scroll animation temporarily
+  scrollCooldown = true;
+
+  // Wait for animation to be set before allowing scroll again
+  setTimeout(() => {
+    scrollCooldown = false;
+  }, 3000);
+});
 
     function trimAndDecodeURL(url) {
         const baseURL = 'https://itsnjedits.github.io/musicplayer/';
@@ -485,7 +535,7 @@ resetPlaylistBtnTimer = setTimeout(() => {
             .catch(error => console.error('Error fetching songs:', error));
     }
     title.addEventListener('click', () => {
-        fetching('Allsongs/songs.json')
+        fetching('all-songs/songs.json')
 
         document.querySelector('.without-ads').innerHTML = `Non-Stop 400+ Songs - No Ads 🔥`
     })
@@ -524,7 +574,7 @@ resetPlaylistBtnTimer = setTimeout(() => {
     disableAllButtons();
 
 
-    fetch('Allsongs/songs.json')
+    fetch('all-songs/songs.json')
         .then(response => response.json())
         .then(data => {
             songs = data.sort((a, b) => a.title.localeCompare(b.title)); // Sort songs alphabetically

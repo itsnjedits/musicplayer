@@ -32,12 +32,57 @@
     .yourPlaylist {
         transition: all 0.4s ease-in-out;
     }
+    /* Optional if not using Tailwind */
+#loading-spinner {
+  border: 2px solid white;
+  border-top-color: transparent;
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/* Default Button Style */
+.text-5xl.add-to-playlist {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for non-mobile */
+.text-5xl.add-to-playlist:hover {
+    color: #29ecfe; /* Change hover color */
+}
+
+/* Active state for mobile */
+.text-5xl.add-to-playlist:active {
+    color: #29ecfe; /* Change color on click */
+    transform: scale(0.95); /* Optional: Scale down for click effect */
+}
+
+/* Ensure hover effect doesn't persist after clicking */
+.text-5xl.add-to-playlist:focus {
+    outline: none;
+    color: #29ecfe;
+}
+
+/* Mobile: Disable hover effect */
+@media (max-width: 768px) {
+    .text-5xl.add-to-playlist:hover {
+        color: #2b8bff; /* Reset hover color on mobile */
+    }
+}
+
 </style>
+
 
 
 <body class="bg-black ">
 
-    <header class="bg-gray-900 flex justify-center sticky top-0">
+    <header class="fixed z-50 bg-gray-900 flex justify-center sticky top-0">
         <nav
             class="flex justify-between items-center w-[90%] max-sm:w-[98%] max-sm:px-2 max-w-6xl px-4 py-4 max-md:flex-col gap-y-4">
             <div class="flex items-center gap-x-4">
@@ -145,10 +190,12 @@
     </header>
 
     <main class="flex flex-col items-center mt-5 mb-28 max-md:mb-20">
-        <h1
-            class="text-gray-200 text-3xl max-md:text-2xl max-sm:text-xl max-sm:w-[90%] font-semibold text-center without-ads">
-            Non-Stop 400+ Songs - No Ads 🔥
-        </h1>
+        <h1 class="without-ads text-gray-200 text-3xl max-md:text-2xl max-sm:text-xl max-sm:w-[90%] font-semibold text-center flex justify-center items-center gap-2">
+  <span id="loading-spinner" class="relative z-20 hidden w-4 h-4 border-4 border-white border-t-transparent rounded-full animate-spin"></span>
+  <span id="heading-text">Non-Stop 400+ Songs - No Ads 🔥</span>
+</h1>
+
+
         <div
             class="array flex flex-col max-w-6xl bg-gray-800 my-5 w-[90%] max-md:w-[100%] max-md:rounded-none rounded-xl py-4 max-md:py-2 gap-y-2">
             <!-- Song items will be dynamically added here -->
@@ -238,7 +285,7 @@
         ],
         "singer-options": [
             'Akhil Sachdeva', 'Alka Yagnik', 'Amit Trivedi', 'Ankit Tiwari', 'AP Dhillon', 'AR Rahman', 'Arijit Singh', 'Arko', 'Armaan Malik',
-            'Asha Bhosle', 'Atif Aslam', 'Ayushmann Khurrana', 'B Praak', 'Bhupinder Singh', 'Chandan Daas', 'default', 'Ghulam Ali',
+            'Asha Bhosle', 'Atif Aslam', 'Ayushmann Khurrana', 'B Praak', 'Bhupinder Singh', 'Chandan Daas', 'Ghulam Ali',
             'Himesh Reshammiya', 'Jagjit Singh', 'Javed Ali', 'Javed Bashir', 'Jubin Nautiyal', 'Kailash Kher', 'Kishore Kumar', 'KK',
             'Kumar Sanu', 'Lata Mangeshkar', 'Mehndi Hasan', 'Mohammed Irfan', 'Mohammed Rafi', 'Mohit Chauhan', 'Monali Thakur', 'Mukesh',
             'Palak Muchhal', 'Papon', 'Rahat Fateh Ali Khan', 'Raj Barman', 'Roopkumar Rathod', 'Shaan', 'Shabbir Kumar',
@@ -271,12 +318,3 @@
     <script src="script copy.js"></script>
 </body>
 </html>
-
-
-
-Audio/Darmiyaan Full Song with Lyrics_ Shafqat Amanat Ali Khan_ Clinton Cerejo_.mp3
-Audio/Hamen aur jeene ki (Mixed track) - Agar Tum Na Hote (1983) _ Kishore Kumar & Lata Mangeshkar _ RD.mp3
-Audio/Kisi ki Muskurahaton Pe Ho - VIDEO SONG _ Anari (1959) _ Raj Kapoor & Nutan _ Mukesh _ Hindi Songs.mp3
-Audio/Saagar kinare (Lyrical Video) _ Kishore Kumar _ Lata Mangeshkar _ Saagar.mp3
-Audio/Zindagi Ke Safar Mein Guzar Jaate _ Kishore Kumar _ Aap Ki Kasam 1974 Songs.mp3
-Audio/मेरी भीगी-भीगी सी पलकों पे रह गए 4k Song (Anamika )1973 Kishore Kumar ,Sanjeev Kumar, Jaya Bachchan.mp3

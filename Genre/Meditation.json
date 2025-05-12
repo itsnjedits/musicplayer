@@ -58,5 +58,17 @@
         "artist": "Nature",
         "file": "Audio/Powerful night thunderstorm - Heavy Rain and Thunder - Rain Sounds for sleep - 1 hour Windy Rain.mp3",
         "image": "Thumbnails/Powerful night thunderstorm - Heavy Rain and Thunder - Rain Sounds for sleep - 1 hour Windy Rain_thumbnail.jpg"
+    },
+    {
+        "title": "Peacefulness",
+        "artist": "AfterTone",
+        "file": "Audio/peacefulness.mp3",
+        "image": "Thumbnails/peacefulness_thumbnail.jpg"
+    },
+    {
+        "title": "Skyflow",
+        "artist": "AfterTone",
+        "file": "Audio/Skyflow.mp3",
+        "image": "Thumbnails/Skyflow_thumbnail.jpg"
     }
 ]
