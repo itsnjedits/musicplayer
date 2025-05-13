@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     const reqSongButton = document.querySelector(".reqSong");
 
-    const title = document.querySelector(".title");
+    // const title = document.querySelector(".title");
     const playPauseButton = document.getElementById('play-pause');
     const prevButton = document.getElementById('prev');
     const nextButton = document.getElementById('next');
@@ -123,164 +123,145 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => this.classList.remove('rolling'), 200);
     });
 
-const texts = ["Mood", "Genre", "Singer"];
-let textIndex = 0;
-let animationAllowed = true;
-let scrollCooldown = false; // Prevents repeated scrolls
-let animationInterval = null;
+    const texts = ["Mood", "Genre", "Singer"];
+    let textIndex = 0;
+    let animationAllowed = true;
+    let scrollCooldown = false; // Prevents repeated scrolls
+    let animationInterval = null;
 
-const textEl = document.getElementById("feature-text");
-const featureBtn = document.getElementById("feature-button");
-const modal = document.getElementById("selectionModal");
-const closeModalBtn = document.getElementById("closeModalBtn");
-const headingText = document.getElementById("heading-text"); // Heading Text for Loading
-const spinner = document.getElementById("loading-spinner"); // Spinner Element
+    const textEl = document.getElementById("feature-text");
+    const featureBtn = document.getElementById("feature-button");
+    const modal = document.getElementById("selectionModal");
+    const closeModalBtn = document.getElementById("closeModalBtn");
+    const headingText = document.getElementById("heading-text"); // Heading Text for Loading
+    const spinner = document.getElementById("loading-spinner"); // Spinner Element
 
-// 🔁 Animate Text Horizontally (Right to Left Swipe)
-function animateText() {
-  textIndex = (textIndex + 1) % texts.length;
+    // 🔁 Animate Text Horizontally (Right to Left Swipe)
+    function animateText() {
+        textIndex = (textIndex + 1) % texts.length;
 
-  textEl.classList.add("opacity-0");
+        textEl.classList.add("opacity-0");
 
-  setTimeout(() => {
-    textEl.textContent = texts[textIndex];
-    textEl.classList.remove("opacity-0");
-    textEl.classList.add("blur-slide");
+        setTimeout(() => {
+            textEl.textContent = texts[textIndex];
+            textEl.classList.remove("opacity-0");
+            textEl.classList.add("blur-slide");
 
-    setTimeout(() => {
-      textEl.classList.remove("blur-slide");
-    }, 400);
-  }, 200);
-}
-
-// ⏲️ Scroll Handler with Cooldown
-window.addEventListener("scroll", () => {
-  if (animationAllowed && !scrollCooldown) {
-    animateText();
-
-    // Start interval loop if not already running
-    if (!animationInterval) {
-      animationInterval = setInterval(() => {
-        if (animationAllowed) {
-          animateText();
-        } else {
-          clearInterval(animationInterval);
-          animationInterval = null;
-        }
-      }, 3000);
+            setTimeout(() => {
+                textEl.classList.remove("blur-slide");
+            }, 400);
+        }, 200);
     }
 
-    scrollCooldown = true;
-    setTimeout(() => {
-      scrollCooldown = false; // allow scroll again after 3 seconds
-    }, 3000);
-  }
-});
+    // ⏲️ Scroll Handler with Cooldown
+    window.addEventListener("scroll", () => {
+        if (animationAllowed && !scrollCooldown) {
+            animateText();
 
-// 🚫 Stop everything on Button Click
-featureBtn.addEventListener("click", () => {
-  modal.classList.remove("hidden");
-  modal.classList.add("flex");
-  animationAllowed = false; // Disable scroll-triggered animations
-  if (animationInterval) {
-    clearInterval(animationInterval);
-    animationInterval = null;
-  }
-});
+            // Start interval loop if not already running
+            if (!animationInterval) {
+                animationInterval = setInterval(() => {
+                    if (animationAllowed) {
+                        animateText();
+                    } else {
+                        clearInterval(animationInterval);
+                        animationInterval = null;
+                    }
+                }, 3000);
+            }
 
-// ❌ Close Modal
-closeModalBtn.addEventListener("click", () => {
-  modal.classList.add("hidden");
-});
+            scrollCooldown = true;
+            setTimeout(() => {
+                scrollCooldown = false; // allow scroll again after 3 seconds
+            }, 3000);
+        }
+    });
 
-// ✅ Option Select Logic
-document.querySelectorAll(".option-item").forEach(option => {
-  option.addEventListener("click", () => {
-    const category = option.dataset.category;
-    const value = option.dataset.value;
+    // 🚫 Stop everything on Button Click
+    featureBtn.addEventListener("click", () => {
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+        animationAllowed = false; // Disable scroll-triggered animations
+        if (animationInterval) {
+            clearInterval(animationInterval);
+            animationInterval = null;
+        }
+    });
 
-    // Show Loading Text and Spinner
-    if (headingText) headingText.textContent = "Loading...";
-    if (spinner) spinner.classList.remove("hidden");
+    // ❌ Close Modal
+    closeModalBtn.addEventListener("click", () => {
+        modal.classList.add("hidden");
+    });
 
-    textEl.textContent = value;
-    modal.classList.add("hidden");
-    animationAllowed = false;
+    // ✅ Option Select Logic
+    document.querySelectorAll(".option-item").forEach(option => {
+        option.addEventListener("click", () => {
+            const category = option.dataset.category;
+            const value = option.dataset.value;
 
-    const jsonFile = `${category}/${value}.json`;
+            // Show Loading Text and Spinner
+            if (headingText) headingText.textContent = "Loading...";
+            if (spinner) spinner.classList.remove("hidden");
 
-    fetch(jsonFile)
-      .then(response => response.json())
-      .then(data => {
-        songs = data.sort((a, b) => a.title.localeCompare(b.title));
-        loadSongList(); // Call your loader
-        
-        // Update the heading text after fetch
-        if (headingText) headingText.textContent = `${value} Songs - No Ads 🔥`;
-        if (spinner) spinner.classList.add("hidden"); // Hide spinner after loading
-      })
-      .catch(error => {
-        console.error('Error fetching songs:', error);
-        if (headingText) headingText.textContent = "Something went wrong ❌";
-        if (spinner) spinner.classList.add("hidden");
-      });
-  });
-});
+            textEl.textContent = value;
+            modal.classList.add("hidden");
+            animationAllowed = false;
 
-// ⏪ Reset Everything on SoundAura Title Click
-const titleDiv = document.querySelector(".title");
+            const jsonFile = `${category}/${value}.json`;
 
-titleDiv.addEventListener("click", () => {
-  // 1. Reset text to "Mood"
-  textEl.textContent = "Mood";
-  textIndex = 0;
+            fetch(jsonFile)
+                .then(response => response.json())
+                .then(data => {
+                    songs = data.sort((a, b) => a.title.localeCompare(b.title));
+                    loadSongList();
 
-  // 2. Allow animation again
-  animationAllowed = true;
+                    // ✅ FORCE UPDATE TEXT
+                    setTimeout(() => {
+                        if (headingText) headingText.textContent = `${value} Songs - No Ads 🔥`;
+                        if (spinner) spinner.classList.add("hidden");
+                    }, 0); // 👈 Slight delay for guaranteed update
+                })
 
-  // 3. Reset scroll cooldown
-  scrollCooldown = false;
+                .catch(error => {
+                    console.error('Error fetching songs:', error);
+                    if (headingText) headingText.textContent = "Something went wrong ❌";
+                    if (spinner) spinner.classList.add("hidden");
+                });
+        });
+    });
 
-  // 4. Hide modal if open
-  modal.classList.add("hidden");
+    document.getElementById("allSongsImage").addEventListener("click", () => {
+        const value = "All Songs";
+        const jsonFile = "all-songs/songs.json";
 
-  // 5. (Optional) Re-display all songs
-  fetch("all-songs.json") // 👉 Make sure this file exists
-    .then(response => response.json())
-    .then(data => {
-      songs = data.sort((a, b) => a.title.localeCompare(b.title));
-      loadSongList(); // Your song loading function
-    })
-    .catch(error => console.error("Error loading all songs:", error));
+        // Button text change
+        textEl.textContent = value;
+        modal.classList.add("hidden");
+        animationAllowed = false;
 
-  // ✅ Clear any existing interval
-  if (animationInterval) {
-    clearInterval(animationInterval); // Clear the old interval
-    animationInterval = null; // Reset the interval variable
-    console.log("Previous interval cleared");
-  }
+        // Show loading
+        if (headingText) headingText.textContent = "Loading...";
+        if (spinner) spinner.classList.remove("hidden");
 
-  // ✅ Restart animation interval if not running
-  if (!animationInterval) {
-    console.log("Setting interval..."); // Debugging
-    animationInterval = setInterval(() => {
-      if (animationAllowed) {
-        animateText();
-      } else {
-        clearInterval(animationInterval);
-        animationInterval = null;
-      }
-    }, 3000);
-  }
+        // Fetch songs
+        fetch(jsonFile)
+            .then(response => response.json())
+            .then(data => {
+                songs = data.sort((a, b) => a.title.localeCompare(b.title));
+                loadSongList();
 
-  // Disable scroll animation temporarily
-  scrollCooldown = true;
+                setTimeout(() => {
+                    if (headingText) headingText.textContent = `${value} - No Ads 🔥`;
+                    if (spinner) spinner.classList.add("hidden");
+                }, 0);
+            })
+            .catch(error => {
+                console.error('Error fetching all songs:', error);
+                if (headingText) headingText.textContent = "Something went wrong ❌";
+                if (spinner) spinner.classList.add("hidden");
+            });
+    });
 
-  // Wait for animation to be set before allowing scroll again
-  setTimeout(() => {
-    scrollCooldown = false;
-  }, 3000);
-});
 
     function trimAndDecodeURL(url) {
         const baseURL = 'https://itsnjedits.github.io/musicplayer/';
@@ -453,73 +434,70 @@ titleDiv.addEventListener("click", () => {
             </div>`
                 ;
 
-let resetPlaylistBtnTimer; // Global timer
+            let resetPlaylistBtnTimer; // Global timer
 
-itemDiv.addEventListener('click', (event) => {
-    const addToPlaylistButton = event.target.closest('.add-to-playlist');
-    if (addToPlaylistButton) {
-        event.stopPropagation();
+            itemDiv.addEventListener('click', (event) => {
+                const addToPlaylistButton = event.target.closest('.add-to-playlist');
+                if (addToPlaylistButton) {
+                    event.stopPropagation();
 
-        const imageURL = trimAndDecodeURL(addToPlaylistButton.parentElement.parentElement.children[0].children[0].src);
-        const title = addToPlaylistButton.parentElement.parentElement.children[0].children[1].children[0].textContent;
-        const artist = addToPlaylistButton.parentElement.parentElement.children[0].children[1].children[1].textContent;
-        const fileURL = modifyAndDecodeURL(addToPlaylistButton.parentElement.parentElement.children[0].children[0].src);
+                    const imageURL = trimAndDecodeURL(addToPlaylistButton.parentElement.parentElement.children[0].children[0].src);
+                    const title = addToPlaylistButton.parentElement.parentElement.children[0].children[1].children[0].textContent;
+                    const artist = addToPlaylistButton.parentElement.parentElement.children[0].children[1].children[1].textContent;
+                    const fileURL = modifyAndDecodeURL(addToPlaylistButton.parentElement.parentElement.children[0].children[0].src);
 
-        const songData = {
-            image: imageURL,
-            file: fileURL,
-            title: title,
-            artist: artist
-        };
+                    const songData = {
+                        image: imageURL,
+                        file: fileURL,
+                        title: title,
+                        artist: artist
+                    };
 
-        playlist.push(songData);
-        console.log(JSON.stringify(playlist, null, 2));
+                    playlist.push(songData);
+                    console.log(JSON.stringify(playlist, null, 2));
 
-        // Elements
-        const playlistBtn = document.querySelector('.yourPlaylist');
-        const playlistTextEl = playlistBtn.querySelector('p');
-        const originalText = "My Playlist";
+                    // Elements
+                    const playlistBtn = document.querySelector('.yourPlaylist');
+                    const playlistTextEl = playlistBtn.querySelector('p');
+                    const originalText = "My Playlist";
 
-        // ✨ Animate text + bg color
-        playlistTextEl.style.transition = 'opacity 0.3s ease-in-out';
-        playlistBtn.style.transition = 'background-color 0.3s ease-in-out, color 0.3s ease-in-out';
+                    // ✨ Animate text + bg color
+                    playlistTextEl.style.transition = 'opacity 0.3s ease-in-out';
+                    playlistBtn.style.transition = 'background-color 0.3s ease-in-out, color 0.3s ease-in-out';
 
-        playlistTextEl.style.opacity = '0';
+                    playlistTextEl.style.opacity = '0';
 
-        setTimeout(() => {
-    playlistTextEl.textContent = "Song Added ✔";
-    playlistTextEl.style.opacity = '1';
-    playlistBtn.style.backgroundColor = "#00ff51";
-    playlistBtn.style.color = "#111";
+                    setTimeout(() => {
+                        playlistTextEl.textContent = "Song Added ✔";
+                        playlistTextEl.style.opacity = '1';
+                        playlistBtn.style.backgroundColor = "#00ff51";
+                        playlistBtn.style.color = "#111";
 
-    // ✨ Add small text class
-    playlistTextEl.classList.add("text-sm");
-}, 300);
+                        // ✨ Add small text class
+                        playlistTextEl.classList.add("text-sm");
+                    }, 300);
 
-// Reset after delay
-clearTimeout(resetPlaylistBtnTimer);
-resetPlaylistBtnTimer = setTimeout(() => {
-    playlistTextEl.style.opacity = '0';
+                    // Reset after delay
+                    clearTimeout(resetPlaylistBtnTimer);
+                    resetPlaylistBtnTimer = setTimeout(() => {
+                        playlistTextEl.style.opacity = '0';
 
-    setTimeout(() => {
-        playlistTextEl.textContent = originalText;
-        playlistTextEl.style.opacity = '1';
-        playlistBtn.style.backgroundColor = "";
-        playlistBtn.style.color = "";
+                        setTimeout(() => {
+                            playlistTextEl.textContent = originalText;
+                            playlistTextEl.style.opacity = '1';
+                            playlistBtn.style.backgroundColor = "";
+                            playlistBtn.style.color = "";
 
-        // 🧼 Remove the small text class
-        playlistTextEl.classList.remove("text-sm");
-    }, 300);
-}, 1000);
+                            // 🧼 Remove the small text class
+                            playlistTextEl.classList.remove("text-sm");
+                        }, 300);
+                    }, 1000);
 
-        return;
-    }
+                    return;
+                }
 
-    playSong(index);
-});
-
-
-
+                playSong(index);
+            });
             arrayDiv.appendChild(itemDiv);
         });
     }
@@ -534,14 +512,10 @@ resetPlaylistBtnTimer = setTimeout(() => {
             })
             .catch(error => console.error('Error fetching songs:', error));
     }
-    title.addEventListener('click', () => {
-        fetching('all-songs/songs.json')
 
-        document.querySelector('.without-ads').innerHTML = `Non-Stop 400+ Songs - No Ads 🔥`
-    })
 
     playlistButton.addEventListener('click', () => {
-        document.querySelector('.without-ads').innerHTML = `Your Instant Playlist 🔥`
+        document.getElementById('heading-text').textContent = `Your Instant Playlist 🔥`;
 
     })
 
@@ -582,6 +556,8 @@ resetPlaylistBtnTimer = setTimeout(() => {
         })
         .catch(error => console.error('Error fetching songs:', error));
     loadSongList();
+
+
 
 
     function playSong(index) {
