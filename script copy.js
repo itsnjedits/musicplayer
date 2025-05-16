@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     // ✅ FORCE UPDATE TEXT
                     setTimeout(() => {
-                        if (headingText) headingText.textContent = `${value} Songs - No Ads 🔥`;
+                        if (headingText) headingText.textContent = `${value} Songs - Ad Free 🔥`;
                         if (spinner) spinner.classList.add("hidden");
                     }, 0); // 👈 Slight delay for guaranteed update
                 })
@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 loadSongList();
 
                 setTimeout(() => {
-                    if (headingText) headingText.textContent = `${value} - No Ads 🔥`;
+                    if (headingText) headingText.textContent = `${value} - Ad Free 🔥`;
                     if (spinner) spinner.classList.add("hidden");
                 }, 0);
             })
@@ -515,7 +515,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     playlistButton.addEventListener('click', () => {
-        document.getElementById('heading-text').textContent = `Your Instant Playlist 🔥`;
+        document.getElementById('heading-text').textContent = `Add, Listen, Enjoy - Ad Free 🔥`;
 
     })
 
