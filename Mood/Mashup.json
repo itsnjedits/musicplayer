@@ -16,5 +16,41 @@
         "artist": "Mustafa Zahid, KK",
         "file": "Audio/Toh Phir Aao X Labon Ko (Synthwave Remix) _ Adbhut Chapter 15(END) _ ROHAN _ Indian Synthwave.mp3",
         "image": "Thumbnails/Toh Phir Aao X Labon Ko (Synthwave Remix) _ Adbhut Chapter 15(END) _ ROHAN _ Indian Synthwave_thumbnail.jpg"
+    },
+    {
+        "title": "Hasi - Rain Version",
+        "artist": "Armaan Malik",
+        "file": "Audio/Hasi.mp3",
+        "image": "Thumbnails/Hasi_thumbnail.jpg"
+    },
+    {
+        "title": "Humsafar - Rain Version",
+        "artist": "Akhil Sachdeva",
+        "file": "Audio/Humsafar.mp3",
+        "image": "Thumbnails/Humsafar_thumbnail.jpg"
+    },
+    {
+        "title": "Kyon - Rain Version",
+        "artist": "Papon",
+        "file": "Audio/Kyon.mp3",
+        "image": "Thumbnails/Kyon_thumbnail.jpg"
+    },
+    {
+        "title": "Naina - Rain Version",
+        "artist": "Arijit Singh",
+        "file": "Audio/Naina.mp3",
+        "image": "Thumbnails/Naina_thumbnail.jpg"
+    },
+    {
+        "title": "Maula Mere Maula - Rain Version",
+        "artist": "Roopkumar Rathod",
+        "file": "Audio/Maula Mere Maula.mp3",
+        "image": "Thumbnails/Maula Mere Maula_thumbnail.jpg"
+    },
+    {
+        "title": "Tujhe Dekh Dekh - Rain Version",
+        "artist": "Rahat Fateh Ali Khan",
+        "file": "Audio/Tujhe Dekh Dekh.mp3",
+        "image": "Thumbnails/Tujhe Dekh Dekh_thumbnail.jpg"
     }
 ]

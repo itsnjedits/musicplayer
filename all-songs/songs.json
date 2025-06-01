@@ -2999,5 +2999,53 @@
         "artist": "Stebin Ben, Nilesh Ahuja",
         "file": "Audio/Thoda Thoda Pyaar _ Sidharth Malhotra, Neha Sharma _ Stebin Ben, Nilesh Ahuja, Kumaar _ Lyrical.mp3",
         "image": "Thumbnails/Thoda Thoda Pyaar _ Sidharth Malhotra, Neha Sharma _ Stebin Ben, Nilesh Ahuja, Kumaar _ Lyrical_thumbnail.jpg"
+    },
+    {
+        "title": "Baarish Ke Aane Se - Slowed And Reverb",
+        "artist": "Shreya Ghoshal, Tony Kakkar",
+        "file": "Audio/Baarish Ke Aane Se (Slowed   Reverb) _ Shreya Ghoshal, Tony Kakkar _ Parth, Manisha Rani.mp3",
+        "image": "Thumbnails/Baarish Ke Aane Se (Slowed   Reverb) _ Shreya Ghoshal, Tony Kakkar _ Parth, Manisha Rani_thumbnail.jpg"
+    },
+    {
+        "title": "Dil Chahta Hai",
+        "artist": "Shankar Mahadevan",
+        "file": "Audio/Kaisi Hai Ye Rut [Full Song] Dil Chahta Hai.mp3",
+        "image": "Thumbnails/Kaisi Hai Ye Rut [Full Song] Dil Chahta Hai_thumbnail.jpg"
+    },
+    {
+        "title": "Hasi - Rain Version",
+        "artist": "Armaan Malik",
+        "file": "Audio/Hasi.mp3",
+        "image": "Thumbnails/Hasi_thumbnail.jpg"
+    },
+    {
+        "title": "Humsafar - Rain Version",
+        "artist": "Akhil Sachdeva",
+        "file": "Audio/Humsafar.mp3",
+        "image": "Thumbnails/Humsafar_thumbnail.jpg"
+    },
+    {
+        "title": "Kyon - Rain Version",
+        "artist": "Papon",
+        "file": "Audio/Kyon.mp3",
+        "image": "Thumbnails/Kyon_thumbnail.jpg"
+    },
+    {
+        "title": "Naina - Rain Version",
+        "artist": "Arijit Singh",
+        "file": "Audio/Naina.mp3",
+        "image": "Thumbnails/Naina_thumbnail.jpg"
+    },
+    {
+        "title": "Maula Mere Maula - Rain Version",
+        "artist": "Roopkumar Rathod",
+        "file": "Audio/Maula Mere Maula.mp3",
+        "image": "Thumbnails/Maula Mere Maula_thumbnail.jpg"
+    },
+    {
+        "title": "Tujhe Dekh Dekh - Rain Version",
+        "artist": "Rahat Fateh Ali Khan",
+        "file": "Audio/Tujhe Dekh Dekh.mp3",
+        "image": "Thumbnails/Tujhe Dekh Dekh_thumbnail.jpg"
     }
 ]
