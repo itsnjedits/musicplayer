@@ -70,5 +70,11 @@
         "artist": "AfterTone",
         "file": "Audio/Skyflow.mp3",
         "image": "Thumbnails/Skyflow_thumbnail.jpg"
+    },
+    {
+        "title": "Gibran Alocer - Slowed And Reverb",
+        "artist": "playlist",
+        "file": "Audio/Gibran_Alcocer_All_ideas_playlist_Slowed_&_Reverb_Relax_Playlist.mp3",
+        "image": "Thumbnails/Gibran_Alcocer_All_ideas_playlist_Slowed_&_Reverb_Relax_Playlist_thumbnail.jpg"
     }
 ]
