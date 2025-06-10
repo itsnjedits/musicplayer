@@ -468,12 +468,6 @@
         "image": "Thumbnails/I wanna be yours - Arctic monkeys [super slowed] [Tge_xZPQXLo]_thumbnail.jpg"
     },
     {
-        "title": "Mala",
-        "artist": "6ix9ine ft. Anuel AA",
-        "file": "Audio/Mala - 6ix9ine ft. Anuel AA ｜ 8D ｜ (slowed + reverb) 🎶 [IWPi8z1T5Jo].mp3",
-        "image": "Thumbnails/Mala - 6ix9ine ft. Anuel AA ｜ 8D ｜ (slowed + reverb) 🎶 [IWPi8z1T5Jo]_thumbnail.jpg"
-    },
-    {
         "title": "MONTAGEM BRAVO",
         "artist": "Mc Talibã",
         "file": "Audio/MONTAGEM BRAVO - Ultra Slowed [HeVVfEDNQUs].mp3",
@@ -484,18 +478,6 @@
         "artist": "Mc Talibã",
         "file": "Audio/MONTAGEM INVASÃO (Ultra Slowed) [h4xCDX2nHfk].mp3",
         "image": "Thumbnails/MONTAGEM INVASÃO (Ultra Slowed) [h4xCDX2nHfk]_thumbnail.jpg"
-    },
-    {
-        "title": "Space",
-        "artist": "NAOMI!",
-        "file": "Audio/NAOMI! - Space - Ultra Slowed + Reverb ｜｜ Tik Tok edit x Sukuna & Gojo[Bakana☠️] [b1OgIK7t_NM].mp3",
-        "image": "Thumbnails/NAOMI! - Space - Ultra Slowed + Reverb ｜｜ Tik Tok edit x Sukuna & Gojo[Bakana☠️] [b1OgIK7t_NM]_thumbnail.jpg"
-    },
-    {
-        "title": "NUNCA MUDA?",
-        "artist": "Scythermane, NXGHT!",
-        "file": "Audio/NUNCA MUDA？ - Scythermane - NXGHT! (Ultra Slowed) x Aura celebrations [Xet6HVr_1L0].mp3",
-        "image": "Thumbnails/NUNCA MUDA？ - Scythermane - NXGHT! (Ultra Slowed) x Aura celebrations [Xet6HVr_1L0]_thumbnail.jpg"
     },
     {
         "title": "Softly",
@@ -514,18 +496,6 @@
         "artist": "TRASHXRL",
         "file": "Audio/TRASHXRL - Deus Do Olimpo (slowed + reverb) [vegJqJxKy74].mp3",
         "image": "Thumbnails/TRASHXRL - Deus Do Olimpo (slowed + reverb) [vegJqJxKy74]_thumbnail.jpg"
-    },
-    {
-        "title": "Death Rattle",
-        "artist": "Miguel Angeles",
-        "file": "Audio/𝐃𝐄𝐀𝐓𝐇 𝐑𝐀𝐓𝐓𝐋𝐄 (𝐒𝐔𝐏𝐄𝐑  𝐒𝐋𝐎𝐖𝐄𝐃 ) [-Vbk-8tZvK8].mp3",
-        "image": "Thumbnails/𝐃𝐄𝐀𝐓𝐇 𝐑𝐀𝐓𝐓𝐋𝐄 (𝐒𝐔𝐏𝐄𝐑  𝐒𝐋𝐎𝐖𝐄𝐃 ) [-Vbk-8tZvK8]_thumbnail.jpg"
-    },
-    {
-        "title": "Love For You",
-        "artist": "Lovely Lori",
-        "file": "Audio/𝐋𝐨𝐯𝐞𝐥𝐲 𝐋𝐨𝐫𝐢 - 𝐥𝐨𝐯𝐞 𝐟𝐨𝐫 𝐲𝐨𝐮 (𝐬𝐥𝐨𝐰𝐞𝐝 𝐫𝐞𝐯𝐞𝐫𝐛) [iEZAPvMi1iQ].mp3",
-        "image": "Thumbnails/𝐋𝐨𝐯𝐞𝐥𝐲 𝐋𝐨𝐫𝐢 - 𝐥𝐨𝐯𝐞 𝐟𝐨𝐫 𝐲𝐨𝐮 (𝐬𝐥𝐨𝐰𝐞𝐝 𝐫𝐞𝐯𝐞𝐫𝐛) [iEZAPvMi1iQ]_thumbnail.jpg"
     },
     {
         "title": "Esse Cara - Slowed Reverb",
@@ -660,9 +630,39 @@
         "image": "Thumbnails/the weeknd - blinding lights (slowed + reverb) [iDVKMdnvgl8]_thumbnail.jpg"
     },
     {
-        "title": "PHUT HON FUNK",
+        "title": "Mala",
+        "artist": "6ix9ine ft. Anuel AA",
+        "file": "Audio/Mala.mp3",
+        "image": "Thumbnails/Mala_thumbnail.jpg"
+    },
+    {
+        "title": "Space",
+        "artist": "NAOMI!",
+        "file": "Audio/Space.mp3",
+        "image": "Thumbnails/Space_thumbnail.jpg"
+    },
+    {
+        "title": "Nunca Muda",
+        "artist": "Scythermane, NXGHT!",
+        "file": "Audio/Nunca Muda.mp3",
+        "image": "Thumbnails/Nunca Muda_thumbnail.jpg"
+    },
+    {
+        "title": "Death Rattle",
+        "artist": "Miguel Angeles",
+        "file": "Audio/Death Rattle.mp3",
+        "image": "Thumbnails/Death Rattle_thumbnail.jpg"
+    },
+    {
+        "title": "Love For You",
+        "artist": "Lovely Lori",
+        "file": "Audio/Love For You.mp3",
+        "image": "Thumbnails/Love For You_thumbnail.jpg"
+    },
+    {
+        "title": "Phut Hon Funk",
         "artist": "KhangMxne and MGD",
-        "file": "Audio/𝟐 𝐏𝐇𝐔𝐓 𝐇𝐎𝐍 𝙁𝙪𝙣𝙠 - 𝙎𝘼𝙇𝙀𝙎𝙈𝘼𝙉 𝕭𝖊𝖘𝖙 𝖕𝖆𝖗𝖙 𝖑𝖔𝖔𝖕𝖊𝖉 EDIT  ﹝ 𝙎𝙡𝙤𝙬𝙚𝙙 + 𝙍𝙚𝙫𝙚𝙧𝙗 𝙋𝙝𝙤𝙣𝙠﹞ 4K [-S8KyKEX5vc].mp3",
-        "image": "Thumbnails/𝟐 𝐏𝐇𝐔𝐓 𝐇𝐎𝐍 𝙁𝙪𝙣𝙠 - 𝙎𝘼𝙇𝙀𝙎𝙈𝘼𝙉 𝕭𝖊𝖘𝖙 𝖕𝖆𝖗𝖙 𝖑𝖔𝖔𝖕𝖊𝖉 EDIT  ﹝ 𝙎𝙡𝙤𝙬𝙚𝙙 + 𝙍𝙚𝙫𝙚𝙧𝙗 𝙋𝙝𝙤𝙣𝙠﹞ 4K [-S8KyKEX5vc]_thumbnail.jpg"
+        "file": "Audio/Phut Hon Funk.mp3",
+        "image": "Thumbnails/Phut Hon Funk_thumbnail.jpg"
     }
 ]
