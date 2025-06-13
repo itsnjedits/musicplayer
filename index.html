@@ -24,69 +24,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Tailwind CSS CDN link -->
     <script src="https://cdn.tailwindcss.com"></script>
+
     <!-- Boxicons link -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
 </head>
-<style>
-    .yourPlaylist {
-        transition: all 0.4s ease-in-out;
-    }
-
-    /* Optional if not using Tailwind */
-    #loading-spinner {
-        border: 2px solid white;
-        border-top-color: transparent;
-        border-radius: 50%;
-        width: 1rem;
-        height: 1rem;
-        animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-        0% {
-            transform: rotate(0deg);
-        }
-
-        100% {
-            transform: rotate(360deg);
-        }
-    }
-
-    /* Default Button Style */
-    .text-5xl.add-to-playlist {
-        cursor: pointer;
-        transition: color 0.3s ease;
-    }
-
-    /* Hover effect for non-mobile */
-    .text-5xl.add-to-playlist:hover {
-        color: #29ecfe;
-        /* Change hover color */
-    }
-
-    /* Active state for mobile */
-    .text-5xl.add-to-playlist:active {
-        color: #29ecfe;
-        /* Change color on click */
-        transform: scale(0.95);
-        /* Optional: Scale down for click effect */
-    }
-
-    /* Ensure hover effect doesn't persist after clicking */
-    .text-5xl.add-to-playlist:focus {
-        outline: none;
-        color: #29ecfe;
-    }
-
-    /* Mobile: Disable hover effect */
-    @media (max-width: 768px) {
-        .text-5xl.add-to-playlist:hover {
-            color: #2b8bff;
-            /* Reset hover color on mobile */
-        }
-    }
-</style>
 
 <body class="bg-black ">
 
@@ -138,8 +80,18 @@
                     </div>
                     <div class="flex-col items-center justify-center flex gap-y-2">
                         <div class="flex gap-x-2 max-sm:gap-x-2 justify-center">
+                            <button
+                                class="yourPlaylist flex items-center max-md:text-sm max-md:py-0 max-sm:py-1 max-sm:px-2 max-md:px-2 text-lg bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] font-semibold px-4 py-2 rounded min-md:hover:bg-gray-600 min-md:hover:border-gray-900 min-md:hover:text-[#29ecfe] duration-150 gap-x-1">
+                                <p>My Playlist</p>
+                            </button>
 
+                            <button
+                                class="reqSong flex items-center max-md:text-sm max-md:py-0 max-sm:py-1 max-sm:px-2 max-md:px-2 text-lg bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] font-semibold px-4 py-2 rounded min-md:hover:bg-gray-600 min-md:hover:border-gray-900 min-md:hover:text-[#29ecfe] duration-150 gap-x-1">
+                                <p>Req Song</p>
+                            </button>
 
+                        </div>
+                        <div class="flex gap-x-2 max-sm:gap-x-2 justify-center">
                             <button id="feature-button"
                                 class="max-md:text-sm max-md:py-0 max-sm:py-1 max-sm:px-2 max-md:px-2 text-lg bg-gray-800 border border-[#29ecfe] text-[#2b8bff] font-semibold px-4 py-2 rounded min-md:hover:bg-gray-600 min-md:hover:border-gray-900 min-md:hover:text-[#29ecfe] duration-150">
                                 <span id="feature-text"
@@ -190,20 +142,6 @@
                                 </div>
 
                             </div>
-
-
-                        </div>
-                        <div class="flex gap-x-2 max-sm:gap-x-2 justify-center">
-                            <button
-                                class="yourPlaylist flex items-center max-md:text-sm max-md:py-0 max-sm:py-1 max-sm:px-2 max-md:px-2 text-lg bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] font-semibold px-4 py-2 rounded min-md:hover:bg-gray-600 min-md:hover:border-gray-900 min-md:hover:text-[#29ecfe] duration-150 gap-x-1">
-                                <p>My Playlist</p>
-                            </button>
-
-                            <button
-                                class="reqSong flex items-center max-md:text-sm max-md:py-0 max-sm:py-1 max-sm:px-2 max-md:px-2 text-lg bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] font-semibold px-4 py-2 rounded min-md:hover:bg-gray-600 min-md:hover:border-gray-900 min-md:hover:text-[#29ecfe] duration-150 gap-x-1">
-                                <p>Req Song</p>
-                            </button>
-
                         </div>
                     </div>
                     <!-- wrap -->
@@ -285,8 +223,6 @@
         </div>
 
     </div>
-    <!-- jagjit bot 3.0 song req and suggestion -->
-    <!-- Removed -->
 
     <script>
         function logohover() {
@@ -342,10 +278,9 @@
     </script>
     <script>
         window.addEventListener('load', () => {
-    document.querySelector('.randomSong').click();
-});
+            document.querySelector('.randomSong').click();
+        });
     </script>
-
     <script src="script copy.js"></script>
 </body>
 </html>

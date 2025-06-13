@@ -141,20 +141,21 @@ body {
 }
 
 @keyframes blurIn {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-    filter: blur(4px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-  }
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+        filter: blur(4px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
 }
 
 .blur-slide {
-  animation: blurIn 0.4s ease-out;
+    animation: blurIn 0.4s ease-out;
 }
 
 
@@ -253,4 +254,63 @@ header {
 #feature-text {
     transition: all 0.4s ease-in-out;
     display: inline-block;
+}
+
+
+.yourPlaylist {
+    transition: all 0.4s ease-in-out;
+}
+
+/* Optional if not using Tailwind */
+#loading-spinner {
+    border: 2px solid white;
+    border-top-color: transparent;
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Default Button Style */
+.text-5xl.add-to-playlist {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for non-mobile */
+.text-5xl.add-to-playlist:hover {
+    color: #29ecfe;
+    /* Change hover color */
+}
+
+/* Active state for mobile */
+.text-5xl.add-to-playlist:active {
+    color: #29ecfe;
+    /* Change color on click */
+    transform: scale(0.95);
+    /* Optional: Scale down for click effect */
+}
+
+/* Ensure hover effect doesn't persist after clicking */
+.text-5xl.add-to-playlist:focus {
+    outline: none;
+    color: #29ecfe;
+}
+
+/* Mobile: Disable hover effect */
+@media (max-width: 768px) {
+    .text-5xl.add-to-playlist:hover {
+        color: #2b8bff;
+        /* Reset hover color on mobile */
+    }
 }
