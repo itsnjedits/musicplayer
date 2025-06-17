@@ -108,21 +108,27 @@
         "image": "Thumbnails/Napoleon's song (Amour Plastique- slowed version) [NDT6k7_y3AY]_thumbnail.jpg"
     },
     {
-    "title": "ROI",
-    "artist": "videoclub",
-    "file": "Audio/ROI.mp3",
-    "image": "Thumbnails/ROI_thumbnail.jpg"
-  },
-  {
-    "title": "Cardigan",
-    "artist": "Taylor Swift",
-    "file": "Audio/Cardigan.mp3",
-    "image": "Thumbnails/Cardigan_thumbnail.jpg"
-  },
-  {
-    "title": "Hotline Bling",
-    "artist": "Billie Eilish",
-    "file": "Audio/Hotline Bling.mp3",
-    "image": "Thumbnails/Hotline Bling_thumbnail.jpg"
-  }
+        "title": "ROI",
+        "artist": "videoclub",
+        "file": "Audio/ROI.mp3",
+        "image": "Thumbnails/ROI_thumbnail.jpg"
+    },
+    {
+        "title": "Cardigan",
+        "artist": "Taylor Swift",
+        "file": "Audio/Cardigan.mp3",
+        "image": "Thumbnails/Cardigan_thumbnail.jpg"
+    },
+    {
+        "title": "Hotline Bling",
+        "artist": "Billie Eilish",
+        "file": "Audio/Hotline Bling.mp3",
+        "image": "Thumbnails/Hotline Bling_thumbnail.jpg"
+    },
+    {
+        "title": "Aura / Legacy / Glory",
+        "artist": "Ogryzek",
+        "file": "Audio/Ogryzek  - Aura ｜ Legacy ｜ Glory ｜ EMPIRE [Ultra slowed] [yINdotWPK8U].mp3",
+        "image": "Thumbnails/Ogryzek  - Aura ｜ Legacy ｜ Glory ｜ EMPIRE [Ultra slowed] [yINdotWPK8U]_thumbnail.jpg"
+    }
 ]
