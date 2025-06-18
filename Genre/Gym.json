@@ -886,5 +886,47 @@
         "artist": "Walk Man (unknown/independent)",
         "file": "Audio/Walk Man [d0mDNh5qYWk].mp3",
         "image": "Thumbnails/Walk Man [d0mDNh5qYWk]_thumbnail.jpg"
+    },
+    {
+        "title": "BABYDOLL",
+        "artist": "Ari Abdul",
+        "file": "Audio/Ari Abdul - BABYDOLL (Lyrics) [vnthp1ZgWiU].mp3",
+        "image": "Thumbnails/Ari Abdul - BABYDOLL (Lyrics) [vnthp1ZgWiU]_thumbnail.jpg"
+    },
+    {
+        "title": "Change My Clothes",
+        "artist": "Dream & Alec Benjamin",
+        "file": "Audio/Dream & Alec Benjamin - Change My Clothes (Official Lyric Video) [kxWUcCUfDuE].mp3",
+        "image": "Thumbnails/Dream & Alec Benjamin - Change My Clothes (Official Lyric Video) [kxWUcCUfDuE]_thumbnail.jpg"
+    },
+    {
+        "title": "Roadtrip",
+        "artist": "Dream ft. PmBata",
+        "file": "Audio/Dream ft. PmBata - Roadtrip (Official Lyric Video) [Ow_PNMtMGhU].mp3",
+        "image": "Thumbnails/Dream ft. PmBata - Roadtrip (Official Lyric Video) [Ow_PNMtMGhU]_thumbnail.jpg"
+    },
+    {
+        "title": "Arcade",
+        "artist": "Duncan Laurence",
+        "file": "Audio/Duncan Laurence - Arcade (Lyric Video) [afLScXH8uts].mp3",
+        "image": "Thumbnails/Duncan Laurence - Arcade (Lyric Video) [afLScXH8uts]_thumbnail.jpg"
+    },
+    {
+        "title": "Often (SLOWED) - Remix",
+        "artist": "The Weeknd (Often Remix)",
+        "file": "Audio/Often (SLOWED) - Remix [Official Audio] [-Chvb6bn90Y].mp3",
+        "image": "Thumbnails/Often (SLOWED) - Remix [Official Audio] [-Chvb6bn90Y]_thumbnail.jpg"
+    },
+    {
+        "title": "Dandelions",
+        "artist": "Ruth B.",
+        "file": "Audio/Ruth B. - Dandelions (Lyrics) slowed + reverb [jvtal4uJoqk].mp3",
+        "image": "Thumbnails/Ruth B. - Dandelions (Lyrics) slowed + reverb [jvtal4uJoqk]_thumbnail.jpg"
+    },
+    {
+        "title": "Unstoppable",
+        "artist": "Sia",
+        "file": "Audio/Sia - Unstoppable (Lyrics) [cPZ9v8vBtRQ].mp3",
+        "image": "Thumbnails/Sia - Unstoppable (Lyrics) [cPZ9v8vBtRQ]_thumbnail.jpg"
     }
 ]
