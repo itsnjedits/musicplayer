@@ -247,10 +247,6 @@ header {
     transition: transform 0.3s ease;
 }
 
-.option-item {
-    @apply flex flex-col items-center text-sm text-white cursor-pointer transition duration-200 hover:text-[#29ecfe];
-}
-
 #feature-text {
     transition: all 0.4s ease-in-out;
     display: inline-block;
@@ -313,4 +309,16 @@ header {
         color: #2b8bff;
         /* Reset hover color on mobile */
     }
+}
+
+
+.edit-options::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #111827; /* Tailwind's bg-gray-900 */
 }

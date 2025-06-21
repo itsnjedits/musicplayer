@@ -49,11 +49,16 @@
                                 AD-FREE MUSIC PLAYER</h3>
                         </div>
                         <button
-                            class="flex items-center justify-center randomSong ml-1 p-2 text-xl bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe]  rounded "><i
-                                class='bx bxs-dice-6'></i></button>
+                            class="flex items-center justify-center randomSong ml-1 p-2 text-xl bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] rounded sm:hover:bg-gray-600 sm:hover:border-gray-900 sm:hover:text-[#29ecfe] duration-150 active:scale-95 active:brightness-90">
+                            <i class='bx bxs-dice-6'></i>
+                        </button>
+
                         <button
-                            class="flex items-center justify-center loop ml-1 p-2 text-xl bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe]  rounded "><i
-                                class='bx bx-repeat'></i></button>
+                            class="flex items-center justify-center loop ml-1 p-2 text-xl bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] rounded sm:hover:bg-gray-600 sm:hover:border-gray-900 sm:hover:text-[#29ecfe] duration-150 active:scale-95 active:brightness-90">
+                            <i class='bx bx-repeat'></i>
+                        </button>
+
+
 
                     </div>
 
@@ -81,22 +86,25 @@
                     <div class="flex-col items-center justify-center flex gap-y-2">
                         <div class="flex gap-x-2 max-sm:gap-x-2 justify-center">
                             <button
-                                class="yourPlaylist flex items-center max-md:text-sm max-md:py-0 max-sm:py-1 max-sm:px-2 max-md:px-2 text-lg bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] font-semibold px-4 py-2 rounded min-md:hover:bg-gray-600 min-md:hover:border-gray-900 min-md:hover:text-[#29ecfe] duration-150 gap-x-1">
+                                class="yourPlaylist flex items-center max-md:text-sm max-md:py-0 max-sm:py-1 max-sm:px-2 max-md:px-2 text-lg bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] font-semibold px-4 py-2 rounded sm:hover:bg-gray-600 sm:hover:border-gray-900 sm:hover:text-[#29ecfe] active:scale-95 active:brightness-90 duration-150 gap-x-1">
                                 <p>My Playlist</p>
                             </button>
 
                             <button
-                                class="reqSong flex items-center max-md:text-sm max-md:py-0 max-sm:py-1 max-sm:px-2 max-md:px-2 text-lg bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] font-semibold px-4 py-2 rounded min-md:hover:bg-gray-600 min-md:hover:border-gray-900 min-md:hover:text-[#29ecfe] duration-150 gap-x-1">
+                                class="reqSong flex items-center max-md:text-sm max-md:py-0 max-sm:py-1 max-sm:px-2 max-md:px-2 text-lg bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] font-semibold px-4 py-2 rounded sm:hover:bg-gray-600 sm:hover:border-gray-900 sm:hover:text-[#29ecfe] active:scale-95 active:brightness-90 duration-150 gap-x-1">
                                 <p>Req Song</p>
                             </button>
 
                         </div>
+
                         <div class="flex gap-x-2 max-sm:gap-x-2 justify-center">
+                            <!-- 🎵 Mood Button (unchanged transition, added hover) -->
                             <button id="feature-button"
-                                class="max-md:text-sm max-md:py-0 max-sm:py-1 max-sm:px-2 max-md:px-2 text-lg bg-gray-800 border border-[#29ecfe] text-[#2b8bff] font-semibold px-4 py-2 rounded min-md:hover:bg-gray-600 min-md:hover:border-gray-900 min-md:hover:text-[#29ecfe] duration-150">
+                                class="max-md:text-sm max-md:py-0 max-sm:py-1 max-sm:px-2 max-md:px-2 text-lg bg-gray-800 border border-[#29ecfe] text-[#2b8bff] font-semibold px-4 py-2 rounded sm:hover:bg-gray-600 sm:hover:border-gray-900 sm:hover:text-[#29ecfe] active:scale-95 active:brightness-90 duration-150">
                                 <span id="feature-text"
                                     class="block transition-all duration-500 ease-in-out">Mood</span>
                             </button>
+
 
                             <!-- 🖼️ Fullscreen Modal -->
                             <div id="selectionModal"
@@ -142,6 +150,8 @@
                                 </div>
 
                             </div>
+
+
                         </div>
                     </div>
                     <!-- wrap -->
@@ -282,5 +292,7 @@
         });
     </script>
     <script src="script copy.js"></script>
+
 </body>
+
 </html>
