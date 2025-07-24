@@ -208,6 +208,17 @@ document.addEventListener('DOMContentLoaded', () => {
     return decodeURIComponent(url.replace(BASE_THUMB, 'Audio').replace('_thumbnail.jpg', '.mp3'));
   }
 
+  // --- Local Storage Helper Functions ---
+
+  function savePlaylistToLocalStorage() {
+  localStorage.setItem('userPlaylist', JSON.stringify(playlist));
+}
+
+function loadPlaylistFromLocalStorage() {
+  const stored = localStorage.getItem('userPlaylist');
+  return stored ? JSON.parse(stored) : [];
+}
+
   // --- Playlist Handling ---
   function renderPlaylist(list, container, isRemovable = false) {
     container.innerHTML = '';
@@ -243,53 +254,70 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function removeFromPlaylist(index) {
-    playlist.splice(index, 1);
-    songs = [...new Set(playlist.map(JSON.stringify))].map(JSON.parse);
-    renderPlaylist(songs, document.querySelector('.array'), true);
-  }
+  playlist.splice(index, 1);
+  // ✅ Update localStorage after removal
+  savePlaylistToLocalStorage();
+
+  songs = [...new Set(playlist.map(JSON.stringify))].map(JSON.parse);
+  renderPlaylist(songs, document.querySelector('.array'), true);
+}
+
 
   function addToPlaylist(itemDiv) {
-    const img = itemDiv.querySelector('img');
-    const title = itemDiv.querySelector('.song-title').textContent;
-    const artist = itemDiv.querySelector('.song-artist').textContent;
-    const imageURL = trimAndDecodeURL(img.src);
-    const fileURL = modifyAndDecodeURL(img.src);
+  const img = itemDiv.querySelector('img');
+  const title = itemDiv.querySelector('.song-title').textContent;
+  const artist = itemDiv.querySelector('.song-artist').textContent;
+  const imageURL = trimAndDecodeURL(img.src);
+  const fileURL = modifyAndDecodeURL(img.src);
 
-    playlist.push({ image: imageURL, file: fileURL, title, artist });
+  playlist.push({ image: imageURL, file: fileURL, title, artist });
 
-    const btn = document.querySelector('.yourPlaylist');
-    const textEl = btn.querySelector('p');
-    textEl.style.transition = 'opacity 0.3s';
-    btn.style.transition = 'background-color 0.3s, color 0.3s';
+  // ✅ Save to localStorage
+  savePlaylistToLocalStorage();
+
+  const btn = document.querySelector('.yourPlaylist');
+  const textEl = btn.querySelector('p');
+  textEl.style.transition = 'opacity 0.3s';
+  btn.style.transition = 'background-color 0.3s, color 0.3s';
+  textEl.style.opacity = '0';
+
+  setTimeout(() => {
+    textEl.textContent = "Song Added ✔";
+    textEl.style.opacity = '1';
+    btn.style.backgroundColor = "#00ff51";
+    btn.style.color = "#111";
+    textEl.classList.add("text-sm");
+  }, 300);
+
+  clearTimeout(window.resetPlaylistBtnTimer);
+  window.resetPlaylistBtnTimer = setTimeout(() => {
     textEl.style.opacity = '0';
-
     setTimeout(() => {
-      textEl.textContent = "Song Added ✔";
+      textEl.textContent = "My Playlist";
       textEl.style.opacity = '1';
-      btn.style.backgroundColor = "#00ff51";
-      btn.style.color = "#111";
-      textEl.classList.add("text-sm");
+      btn.style.backgroundColor = "";
+      btn.style.color = "";
+      textEl.classList.remove("text-sm");
     }, 300);
+  }, 1000);
+}
 
-    clearTimeout(window.resetPlaylistBtnTimer);
-    window.resetPlaylistBtnTimer = setTimeout(() => {
-      textEl.style.opacity = '0';
-      setTimeout(() => {
-        textEl.textContent = "My Playlist";
-        textEl.style.opacity = '1';
-        btn.style.backgroundColor = "";
-        btn.style.color = "";
-        textEl.classList.remove("text-sm");
-      }, 300);
-    }, 1000);
-  }
 
   // --- Initialization ---
+
+  // ✅ Restore saved playlist on load
+window.addEventListener('DOMContentLoaded', () => {
+  playlist.push(...loadPlaylistFromLocalStorage());
+});
+
+
   playlistButton.addEventListener('click', () => {
-    songs = [...new Set(playlist.map(JSON.stringify))].map(JSON.parse);
-    document.getElementById('heading-text').textContent = `Add, Listen, Enjoy - Ad Free 🔥`;
-    renderPlaylist(songs, document.querySelector('.array'), true);
-  });
+  const saved = loadPlaylistFromLocalStorage(); // ✅ load from localStorage
+  songs = [...new Set(saved.map(JSON.stringify))].map(JSON.parse);
+  document.getElementById('heading-text').textContent = `Add, Listen, Enjoy - Ad Free 🔥`;
+  renderPlaylist(songs, document.querySelector('.array'), true);
+});
+
 
   function loadSongList() {
     renderPlaylist(songs, document.querySelector('.array'));

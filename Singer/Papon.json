@@ -40,5 +40,17 @@
         "artist": "Papon",
         "file": "Audio/Tum itna jo - Papon Slowed & Reverb (1).mp3",
         "image": "Thumbnails/Tum itna jo - Papon Slowed & Reverb (1)_thumbnail.jpg"
+    },
+    {
+        "title": "Humnava",
+        "artist": "Papon",
+        "file": "Audio/Humnava (From _Hamari Adhuri Kahani_).mp3",
+        "image": "Thumbnails/Humnava (From _Hamari Adhuri Kahani_)_thumbnail.jpg"
+    },
+    {
+        "title": "Humnava - Slowed & Reverb",
+        "artist": "Papon",
+        "file": "Audio/Mithoon, Papon - Humnava (Lyrics).mp3",
+        "image": "Thumbnails/Mithoon, Papon - Humnava (Lyrics)_thumbnail.jpg"
     }
 ]

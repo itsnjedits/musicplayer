@@ -844,5 +844,17 @@
         "artist": "Mehdi Hassan",
         "file": "Audio/Rafta Rafta Woh Meri - Muhammad Ali [Slowed   Reverb].mp3",
         "image": "Thumbnails/Rafta Rafta Woh Meri - Muhammad Ali [Slowed   Reverb]_thumbnail.jpg"
+    },
+    {
+        "title": "Humnava - Slowed & Reverb",
+        "artist": "Papon",
+        "file": "Audio/Mithoon, Papon - Humnava (Lyrics).mp3",
+        "image": "Thumbnails/Mithoon, Papon - Humnava (Lyrics)_thumbnail.jpg"
+    },
+    {
+        "title": "Roke Na Ruke Naina - Slowed & Reverb",
+        "artist": "Arijit Singh",
+        "file": "Audio/Roke Na Ruke Naina (Slowed   Reverb) _ Arijit Singh _ Badrinath Ki Dulhania _ SR Lofi.mp3",
+        "image": "Thumbnails/Roke Na Ruke Naina (Slowed   Reverb) _ Arijit Singh _ Badrinath Ki Dulhania _ SR Lofi_thumbnail.jpg"
     }
 ]
