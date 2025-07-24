@@ -1,4 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+  window.addEventListener('DOMContentLoaded', () => {
+  const saved = loadPlaylistFromLocalStorage();
+  if (saved.length > 0) {
+    // ✅ Load My Playlist directly
+    playlist.push(...saved);
+    songs = [...new Set(saved.map(JSON.stringify))].map(JSON.parse);
+    headingText.textContent = `Add, Listen, Enjoy - Ad Free 🔥`;
+    renderPlaylist(songs, document.querySelector('.array'), true);
+  } else {
+    // 🟡 If playlist is empty, show some welcome text (optional)
+    headingText.textContent = "Welcome! Start building your Playlist 🎵";
+    document.querySelector('.array').innerHTML = `
+      <div class="tracking-wider text-center pt-10 text-[#29ecfe] text-xl">No songs in your playlist yet. Click '+' to add!</div>
+      <div class="tracking-wider text-center pb-10 text-[#29ecfe] text-xl">Go to "Mood" or <u id="get-started-link" class="hover:text-blue-500 cursor-pointer">Get Started</u>
+</div>
+    `;
+  }
+});
+
+document.addEventListener('click', function (e) {
+  const target = e.target;
+  if (target && target.id === 'get-started-link') {
+    const featureBtn = document.getElementById("feature-button");
+    if (featureBtn) featureBtn.click();
+  }
+});
+
   let songs = [], currentIndex = 0;
   const playlist = [], audio = new Audio();
   let isLooping = false, animationAllowed = true, animationInterval = null, scrollCooldown = false;
@@ -351,13 +379,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // ========== FETCH & LOAD SONGS ==========
   toggleButtons(true);
-  fetch('all-songs/songs.json')
-    .then(res => res.json())
-    .then(data => {
-      songs = data.sort((a, b) => a.title.localeCompare(b.title));
-      loadSongList();
-    })
-    .catch(err => console.error('Error:', err));
 
   // ========== PLAY A SONG ==========
   function playSong(index) {
