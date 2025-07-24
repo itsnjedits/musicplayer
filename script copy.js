@@ -221,8 +221,6 @@ document.addEventListener('click', function (e) {
       });
   });
 
-
-
   // --- URL Utility Functions ---
   const BASE_AUDIO = 'https://itsnjedits.github.io/musicplayer/';
   const BASE_THUMB = 'https://itsnjedits.github.io/musicplayer/Thumbnails';
@@ -289,7 +287,6 @@ function loadPlaylistFromLocalStorage() {
   songs = [...new Set(playlist.map(JSON.stringify))].map(JSON.parse);
   renderPlaylist(songs, document.querySelector('.array'), true);
 }
-
 
   function addToPlaylist(itemDiv) {
   const img = itemDiv.querySelector('img');
