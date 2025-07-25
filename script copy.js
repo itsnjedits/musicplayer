@@ -1,34 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  window.addEventListener('DOMContentLoaded', () => {
-  const saved = loadPlaylistFromLocalStorage();
-  if (saved.length > 0) {
-    // ✅ Load My Playlist directly
-    playlist.push(...saved);
-    songs = [...new Set(saved.map(JSON.stringify))].map(JSON.parse);
-    headingText.textContent = `Add, Listen, Enjoy - Ad Free 🔥`;
-    renderPlaylist(songs, document.querySelector('.array'), true);
-  } else {
-    // 🟡 If playlist is empty, show some welcome text (optional)
-    headingText.textContent = "Welcome! Start building your Playlist 🎵";
-    document.querySelector('.array').innerHTML = `
-      <div class="tracking-wider text-center pt-10 text-[#29ecfe] text-xl">No songs in your playlist yet. Click '+' to add!</div>
-      <div class="tracking-wider text-center pb-10 text-[#29ecfe] text-xl">Go to "Mood" or <u id="get-started-link" class="hover:text-blue-500 cursor-pointer">Get Started</u>
-</div>
-    `;
-  }
-});
-
-document.addEventListener('click', function (e) {
-  const target = e.target;
-  if (target && target.id === 'get-started-link') {
-    const featureBtn = document.getElementById("feature-button");
-    if (featureBtn) featureBtn.click();
-  }
-});
-
   let songs = [], currentIndex = 0;
-  const playlist = [], audio = new Audio();
+  let playlist = [], audio = new Audio();
   let isLooping = false, animationAllowed = true, animationInterval = null, scrollCooldown = false;
 
   const loopButton = document.querySelector('.loop');
@@ -51,8 +24,56 @@ document.addEventListener('click', function (e) {
   const mainContainer = document.querySelector("main");
   const playlistButton = document.querySelector(".yourPlaylist");
   musicplayer.style.animationPlayState = 'paused';
-
   let currentPlaybackRate = parseFloat(speedSelect.value);
+
+
+  
+  // --------- Text Animation ---------
+  const texts = ["Mood", "Genre", "Singer"];
+  let textIndex = 0;
+
+  const textEl = document.getElementById("feature-text");
+  const featureBtn = document.getElementById("feature-button");
+  const modal = document.getElementById("selectionModal");
+  const closeModalBtn = document.getElementById("closeModalBtn");
+  const headingText = document.getElementById("heading-text");
+  const spinner = document.getElementById("loading-spinner");
+
+  function animateText() {
+    textIndex = (textIndex + 1) % texts.length;
+    textEl.classList.add("opacity-0");
+    setTimeout(() => {
+      textEl.textContent = texts[textIndex];
+      textEl.classList.remove("opacity-0");
+      textEl.classList.add("blur-slide");
+      setTimeout(() => textEl.classList.remove("blur-slide"), 400);
+    }, 200);
+  }
+
+  window.addEventListener("scroll", () => {
+    if (animationAllowed && !scrollCooldown) {
+      animateText();
+      if (!animationInterval) {
+        animationInterval = setInterval(() => {
+          if (animationAllowed) animateText();
+          else clearInterval(animationInterval);
+        }, 3000);
+      }
+      scrollCooldown = true;
+      setTimeout(() => scrollCooldown = false, 3000);
+    }
+  });
+
+  featureBtn.addEventListener("click", () => {
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+    animationAllowed = false;
+    clearInterval(animationInterval);
+    animationInterval = null;
+  });
+
+  closeModalBtn.addEventListener("click", () => modal.classList.add("hidden"));
+
 
   const iframeContainer = document.createElement("div");
   Object.assign(iframeContainer.style, {
@@ -114,51 +135,6 @@ document.addEventListener('click', function (e) {
     setTimeout(() => this.classList.remove('rolling'), 200);
   });
 
-  // --------- Text Animation ---------
-  const texts = ["Mood", "Genre", "Singer"];
-  let textIndex = 0;
-
-  const textEl = document.getElementById("feature-text");
-  const featureBtn = document.getElementById("feature-button");
-  const modal = document.getElementById("selectionModal");
-  const closeModalBtn = document.getElementById("closeModalBtn");
-  const headingText = document.getElementById("heading-text");
-  const spinner = document.getElementById("loading-spinner");
-
-  function animateText() {
-    textIndex = (textIndex + 1) % texts.length;
-    textEl.classList.add("opacity-0");
-    setTimeout(() => {
-      textEl.textContent = texts[textIndex];
-      textEl.classList.remove("opacity-0");
-      textEl.classList.add("blur-slide");
-      setTimeout(() => textEl.classList.remove("blur-slide"), 400);
-    }, 200);
-  }
-
-  window.addEventListener("scroll", () => {
-    if (animationAllowed && !scrollCooldown) {
-      animateText();
-      if (!animationInterval) {
-        animationInterval = setInterval(() => {
-          if (animationAllowed) animateText();
-          else clearInterval(animationInterval);
-        }, 3000);
-      }
-      scrollCooldown = true;
-      setTimeout(() => scrollCooldown = false, 3000);
-    }
-  });
-
-  featureBtn.addEventListener("click", () => {
-    modal.classList.remove("hidden");
-    modal.classList.add("flex");
-    animationAllowed = false;
-    clearInterval(animationInterval);
-    animationInterval = null;
-  });
-
-  closeModalBtn.addEventListener("click", () => modal.classList.add("hidden"));
 
   // --------- Category Option Selection ---------
   document.querySelectorAll(".option-item").forEach(option => {
@@ -192,6 +168,45 @@ document.addEventListener('click', function (e) {
     });
   });
 
+  
+  // --- URL Utility Functions ---
+  const BASE_AUDIO = 'https://itsnjedits.github.io/musicplayer/';
+  const BASE_THUMB = 'https://itsnjedits.github.io/musicplayer/Thumbnails';
+
+  function trimAndDecodeURL(url) {
+    return url.startsWith(BASE_AUDIO) ? decodeURIComponent(url.slice(BASE_AUDIO.length)) : (console.error('Invalid base URL.'), url);
+  }
+
+  function modifyAndDecodeURL(url) {
+    if (!url.startsWith(BASE_THUMB)) return console.error('Invalid base URL.'), url;
+    return decodeURIComponent(url.replace(BASE_THUMB, 'Audio').replace('_thumbnail.jpg', '.mp3'));
+  }
+
+
+  window.addEventListener('DOMContentLoaded', () => {
+  const saved = loadPlaylistFromLocalStorage();
+  if (saved.length > 0) {
+    playlist = [...saved]; // ✅ now this won't throw error
+    headingText.textContent = `Add, Listen, Enjoy - Ad Free 🔥`;
+    renderPlaylist(playlist, document.querySelector('.array'), true);
+  } else {
+    headingText.textContent = "Welcome! Start building your Playlist 🎵";
+    document.querySelector('.array').innerHTML = `
+      <div class="tracking-wider text-center pt-10 text-[#29ecfe] text-xl">No songs in your playlist yet. Click '+' to add!</div>
+      <div class="tracking-wider text-center pb-10 text-[#29ecfe] text-xl">Go to "Mood" or <u id="get-started-link" class="hover:text-blue-500 cursor-pointer">Get Started</u></div>
+    `;
+  }
+});
+
+
+document.addEventListener('click', function (e) {
+  const target = e.target;
+  if (target && target.id === 'get-started-link') {
+    const featureBtn = document.getElementById("feature-button");
+    if (featureBtn) featureBtn.click();
+  }
+});
+
   // --------- All Songs Load ---------
   document.getElementById("allSongsImage").addEventListener("click", () => {
     const jsonFile = "all-songs/songs.json";
@@ -220,19 +235,6 @@ document.addEventListener('click', function (e) {
         spinner.classList.add("hidden");
       });
   });
-
-  // --- URL Utility Functions ---
-  const BASE_AUDIO = 'https://itsnjedits.github.io/musicplayer/';
-  const BASE_THUMB = 'https://itsnjedits.github.io/musicplayer/Thumbnails';
-
-  function trimAndDecodeURL(url) {
-    return url.startsWith(BASE_AUDIO) ? decodeURIComponent(url.slice(BASE_AUDIO.length)) : (console.error('Invalid base URL.'), url);
-  }
-
-  function modifyAndDecodeURL(url) {
-    if (!url.startsWith(BASE_THUMB)) return console.error('Invalid base URL.'), url;
-    return decodeURIComponent(url.replace(BASE_THUMB, 'Audio').replace('_thumbnail.jpg', '.mp3'));
-  }
 
   // --- Local Storage Helper Functions ---
 
@@ -271,7 +273,7 @@ function loadPlaylistFromLocalStorage() {
 
       itemDiv.querySelector(isRemovable ? '.remove-from-playlist' : '.add-to-playlist').addEventListener('click', e => {
         e.stopPropagation();
-        isRemovable ? removeFromPlaylist(index) : addToPlaylist(itemDiv);
+        isRemovable ? removeFromPlaylistByData(song) : addToPlaylist(itemDiv);
       });
 
       itemDiv.addEventListener('click', () => playSong(index));
@@ -279,14 +281,22 @@ function loadPlaylistFromLocalStorage() {
     });
   }
 
-  function removeFromPlaylist(index) {
-  playlist.splice(index, 1);
-  // ✅ Update localStorage after removal
-  savePlaylistToLocalStorage();
 
-  songs = [...new Set(playlist.map(JSON.stringify))].map(JSON.parse);
-  renderPlaylist(songs, document.querySelector('.array'), true);
+function removeFromPlaylistByData(songToRemove) {
+  const index = playlist.findIndex(song =>
+    song.title === songToRemove.title &&
+    song.artist === songToRemove.artist &&
+    song.image === songToRemove.image
+  );
+
+  if (index !== -1) {
+    playlist.splice(index, 1);
+    savePlaylistToLocalStorage();
+    renderPlaylist(playlist, document.querySelector('.array'), true);
+  }
 }
+
+
 
 function addToPlaylist(itemDiv) {
   const img = itemDiv.querySelector('img');
@@ -360,13 +370,6 @@ function addToPlaylist(itemDiv) {
   }, 1000);
 }
 
-
-  // --- Initialization ---
-
-  // ✅ Restore saved playlist on load
-window.addEventListener('DOMContentLoaded', () => {
-  playlist.push(...loadPlaylistFromLocalStorage());
-});
 
 
   playlistButton.addEventListener('click', () => {
