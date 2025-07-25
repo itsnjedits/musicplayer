@@ -167,7 +167,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
   });
-
   
   // --- URL Utility Functions ---
   const BASE_AUDIO = 'https://itsnjedits.github.io/musicplayer/';
@@ -185,6 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('DOMContentLoaded', () => {
   const saved = loadPlaylistFromLocalStorage();
+  playlistButton.click(); // 🔥 this auto-loads saved playlist
   if (saved.length > 0) {
     playlist = [...saved]; // ✅ now this won't throw error
     headingText.textContent = `Add, Listen, Enjoy - Ad Free 🔥`;
@@ -318,7 +318,7 @@ function addToPlaylist(itemDiv) {
     setTimeout(() => {
       textEl.textContent = "Already in Playlist ✖";
       textEl.style.opacity = '1';
-      btn.style.backgroundColor = "#ff6262";
+      btn.style.backgroundColor = "#d73a49";
       btn.style.color = "#111";
       textEl.classList.add("text-sm");
     }, 300);
@@ -353,7 +353,7 @@ function addToPlaylist(itemDiv) {
   setTimeout(() => {
     textEl.textContent = "Song Added ✔";
     textEl.style.opacity = '1';
-    btn.style.backgroundColor = "#00ff51";
+    btn.style.backgroundColor = "#45da67ff";
     btn.style.color = "#111";
     textEl.classList.add("text-sm");
   }, 300);
