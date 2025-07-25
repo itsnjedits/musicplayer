@@ -192,8 +192,9 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     headingText.textContent = "Welcome! Start building your Playlist 🎵";
     document.querySelector('.array').innerHTML = `
-      <div class="tracking-wider text-center pt-10 text-[#29ecfe] text-xl">No songs in your playlist yet. Click '+' to add!</div>
-      <div class="tracking-wider text-center pb-10 text-[#29ecfe] text-xl">Go to "Mood" or <u id="get-started-link" class="hover:text-blue-500 cursor-pointer">Get Started</u></div>
+      <div class="max-md:text-base text-center pt-10 text-[#29ecfe] text-xl">No songs in your playlist yet. Click '+' to add!</div>
+      <div class="max-md:text-base text-center pb-10 text-[#2b8bff] text-xl">Go to <b>"Mood"</b> or <u id="get-started-link" class="hover:text-[#29ecfe] cursor-pointer font-bold">Get Started</u>
+</div>
     `;
   }
 });
