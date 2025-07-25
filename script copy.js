@@ -288,13 +288,46 @@ function loadPlaylistFromLocalStorage() {
   renderPlaylist(songs, document.querySelector('.array'), true);
 }
 
-  function addToPlaylist(itemDiv) {
+function addToPlaylist(itemDiv) {
   const img = itemDiv.querySelector('img');
   const title = itemDiv.querySelector('.song-title').textContent;
   const artist = itemDiv.querySelector('.song-artist').textContent;
   const imageURL = trimAndDecodeURL(img.src);
   const fileURL = modifyAndDecodeURL(img.src);
 
+  // ✅ Prevent duplicate
+  const alreadyExists = playlist.some(song => song.title === title && song.artist === artist);
+  if (alreadyExists) {
+    // Optional: Notify user it's already added
+    const btn = document.querySelector('.yourPlaylist');
+    const textEl = btn.querySelector('p');
+    textEl.style.transition = 'opacity 0.3s';
+    textEl.style.opacity = '0';
+
+    setTimeout(() => {
+      textEl.textContent = "Already in Playlist ✖";
+      textEl.style.opacity = '1';
+      btn.style.backgroundColor = "#ff6262";
+      btn.style.color = "#111";
+      textEl.classList.add("text-sm");
+    }, 300);
+
+    clearTimeout(window.resetPlaylistBtnTimer);
+    window.resetPlaylistBtnTimer = setTimeout(() => {
+      textEl.style.opacity = '0';
+      setTimeout(() => {
+        textEl.textContent = "My Playlist";
+        textEl.style.opacity = '1';
+        btn.style.backgroundColor = "";
+        btn.style.color = "";
+        textEl.classList.remove("text-sm");
+      }, 300);
+    }, 1000);
+
+    return; // ⛔ exit early
+  }
+
+  // ✅ Add song if not duplicate
   playlist.push({ image: imageURL, file: fileURL, title, artist });
 
   // ✅ Save to localStorage
