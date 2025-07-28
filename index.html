@@ -28,8 +28,45 @@
     <!-- Boxicons link -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
 
+</head>
+<style>
+    
+/* ===== Music Player Background ===== */
+.musicplayer {
+  background: linear-gradient(to right, rgb(0, 98, 126), rgb(0, 45, 59), rgb(0, 45, 80), rgb(0, 92, 117));
+  background-size: 400% 400%;
+  animation: gradientShift 20s ease infinite, shadowShift 20s ease infinite;
+  box-shadow: 0px -8px 20px rgba(0, 187, 255, 0.7); /* default fallback */
+  transition: box-shadow 0.5s ease-in-out;
+}
+
+/* ===== Gradient Background Animation ===== */
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+}
+
+/* ===== Shadow Color Animation ===== */
+@keyframes shadowShift {
+  0% {
+    box-shadow: 0px -8px 20px rgba(0, 98, 126, 0.8);  /* Start color */
+  }
+  25% {
+    box-shadow: 0px -8px 20px rgba(0, 45, 59, 0.8);
+  }
+  50% {
+    box-shadow: 0px -8px 20px rgba(0, 45, 80, 0.8);
+  }
+  75% {
+    box-shadow: 0px -8px 20px rgba(0, 92, 117, 0.8);
+  }
+  100% {
+    box-shadow: 0px -8px 20px rgba(0, 98, 126, 0.8);  /* Loop back */
+  }
+}
+</style>
 <body class="bg-black ">
 
     <header class="fixed z-50 bg-gray-900 flex justify-center sticky top-0">
@@ -181,7 +218,7 @@
             <!-- Song Description -->
             <div class="song-description mb-4 max-md:mb-2 items-center gap-x-4 max-md:gap-x-2">
                 <img id="song-image" src="" alt="Song Image"
-                    class="h-20 w-36 max-md:w-20 max-md:h-12 object-cover rounded-lg">
+                    class="h-20 w-36 max-md:h-12 max-md:w-20 object-cover rounded-lg transition-transform duration-200 hover:scale-105">
                 <div>
                     <h2 class="max-md:text-base song-title font-semibold text-xl max-[500px]:text-[13.5px]">Song Title
                     </h2>
@@ -190,51 +227,72 @@
             </div>
             <!-- Slider and Time -->
             <div class="div1 flex items-center space-x-4 max-md:space-x-2 mb-4">
-                <span id="timecompleted" class="text-sm max-md:text-[10px]">00:00</span>
+                <span style="font-family: 'Roboto Mono', monospace;" id="timecompleted" class="text-sm max-md:text-[10px]">00:00</span>
                 <input type="range" id="progress" class="flex-1 h-2 bg-gray-600 rounded-lg" min="0" max="100" value="0">
-                <span id="timetotal" class="text-sm max-md:text-[10px]">00:00</span>
+                <span style="font-family: 'Roboto Mono', monospace;" id="timetotal" class="text-sm max-md:text-[10px]">00:00</span>
             </div>
             <!-- Controls -->
             <div class="div2 flex items-center justify-center gap-x-4 max-md:gap-x-2">
                 <button id="rewind"
-                    class="max-md:text-2xl max-md:py-1 max-md:px-2 text-3xl bg-gray-600 flex justify-center items-center text-white px-4 py-2 rounded"><i
-                        class='bx bx-rewind'></i></button>
+                    class="btn-control max-md:text-2xl text-4xl bg-gray-600 md:hover:bg-gray-700 text-white md:hover:text-[#29ecfe] px-2 py-1 shadow-xl md:hover:shadow-xl rounded transition duration-150 ease-in-out active:scale-95 touch-effect"><i
+                        class='bx bx-rewind transition duration-150 group-hover:scale-110'></i></button>
                 <button id="prev"
-                    class="max-md:text-2xl max-md:py-1 max-md:px-2 text-3xl bg-gray-600 flex justify-center items-center text-white px-4 py-2 rounded"><i
-                        class='bx bx-skip-previous'></i></button>
+                    class="btn-control max-md:text-2xl text-4xl bg-gray-600 md:hover:bg-gray-700 text-white md:hover:text-[#29ecfe] px-2 py-1 shadow-xl md:hover:shadow-xl rounded transition duration-150 ease-in-out active:scale-95 touch-effect"><i
+                        class='bx bx-skip-previous transition duration-150 group-hover:scale-110'></i></button>
                 <button id="play-pause"
-                    class="max-md:text-2xl max-md:py-1 max-md:px-2 text-3xl bg-blue-500 text-white px-4 py-2 rounded flex justify-center items-center"><i
-                        class='bx bx-play'></i></button>
+                    class="btn-control max-md:text-2xl text-4xl bg-gray-600 md:hover:bg-gray-700 text-[#29ecfe] md:hover:text-[#29ecfe] px-2 py-1 shadow-xl md:hover:shadow-xl rounded transition duration-150 ease-in-out active:scale-95 touch-effect"><i
+                        class='bx bx-play transition duration-150 group-hover:scale-110'></i></button>
                 <button id="next"
-                    class="max-md:text-2xl max-md:py-1 max-md:px-2 text-3xl bg-gray-600 flex justify-center items-center text-white px-4 py-2 rounded"><i
-                        class='bx bx-skip-next'></i></button>
+                    class="btn-control max-md:text-2xl text-4xl bg-gray-600 md:hover:bg-gray-700 text-white md:hover:text-[#29ecfe] px-2 py-1 shadow-xl md:hover:shadow-xl rounded transition duration-150 ease-in-out active:scale-95 touch-effect"><i
+                        class='bx bx-skip-next transition duration-150 group-hover:scale-110'></i></button>
                 <button id="forward"
-                    class="max-md:text-2xl max-md:py-1 max-md:px-2 text-3xl bg-gray-600 flex justify-center items-center text-white px-4 py-2 rounded"><i
-                        class='bx bx-fast-forward'></i></button>
+                    class="btn-control max-md:text-2xl text-4xl bg-gray-600 md:hover:bg-gray-700 text-white md:hover:text-[#29ecfe] px-2 py-1 shadow-xl md:hover:shadow-xl rounded transition duration-150 ease-in-out active:scale-95 touch-effect"><i
+                        class='bx bx-fast-forward transition duration-150 group-hover:scale-110'></i></button>
 
-                <div class="playback-speed bg-gray-800 flex justify-center items-center">
+                <div class="playback-speed flex justify-center items-center">
+  <select id="speed" style="font-family: 'Roboto Mono', monospace;"
+    class="text-white bg-gray-800 border border-[#29ecfe] rounded-2xl p-2 md:p-3 tracking-normal font-semibold appearance-none text-center">
+    <option class="bg-gray-700" style="font-family: 'Roboto Mono', monospace;" value="0.9">0.9x</option>
+    <option class="bg-gray-700" style="font-family: 'Roboto Mono', monospace;" value="0.95">0.95x</option>
+    <option class="bg-gray-700" style="font-family: 'Roboto Mono', monospace;" value="1" selected>1x</option>
+    <option class="bg-gray-700" style="font-family: 'Roboto Mono', monospace;" value="1.05">1.05x</option>
+    <option class="bg-gray-700" style="font-family: 'Roboto Mono', monospace;" value="1.1">1.1x</option>
+    <option class="bg-gray-700" style="font-family: 'Roboto Mono', monospace;" value="1.15">1.15x</option>
+    <option class="bg-gray-700" style="font-family: 'Roboto Mono', monospace;" value="1.2">1.2x</option>
+    <option class="bg-gray-700" style="font-family: 'Roboto Mono', monospace;" value="1.25">1.25x</option>
+  </select>
+</div>
 
-                    <select id="speed" class=" text-white rounded p-2 max-md:p-1 bg-gray-800 max-md:text-sm">
-                        <option class="bg-gray-700" value="0.9">0.9x</option>
-                        <option class="bg-gray-700" value="0.95">0.95x</option>
-                        <option class="bg-gray-700" value="1" selected>1x</option>
-                        <option class="bg-gray-700" value="1.05">1.05x</option>
-                        <option class="bg-gray-700" value="1.1">1.1x</option>
-                        <option class="bg-gray-700" value="1.15">1.15x</option>
-                        <option class="bg-gray-700" value="1.2">1.2x</option>
-                        <option class="bg-gray-700" value="1.25">1.25x</option>
-                    </select>
-                </div>
                 <div class="volume-container w-16 max-sm:hidden">
-                    <i class='bx bxs-volume-full volume-icon'></i>
+                    <i class='text-2xl bx bxs-volume-full volume-icon'></i>
                     <input type="range" class="volume-slider" min="0" max="100" value="100" />
                 </div>
             </div>
         </div>
 
     </div>
-
     <script>
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+        if (isTouchDevice) {
+            const buttons = document.querySelectorAll('.btn-control');
+
+            buttons.forEach(btn => {
+                btn.addEventListener('touchstart', () => {
+                    btn.classList.add('bg-gray-700', 'text-[#29ecfe]');
+                });
+
+                btn.addEventListener('touchend', () => {
+                    btn.classList.remove('bg-gray-700', 'text-[#29ecfe]');
+                });
+
+                // In case user moves finger away without lifting
+                btn.addEventListener('touchcancel', () => {
+                    btn.classList.remove('bg-gray-700', 'text-[#29ecfe]');
+                });
+            });
+        }
+
         function logohover() {
             document.querySelector(".heading").style.color = "#29ecfe";
             document.querySelector(".heading2").style.color = "#2b8bff";
@@ -244,8 +302,7 @@
             document.querySelector(".heading").style.color = "#2b8bff"; // Original color
             document.querySelector(".heading2").style.color = "#29ecfe"; // Original color
         }
-    </script>
-    <script>
+
         const categories = {
             "mood-options": [
                 "Sad", "Ghazal", "Party", "Inspirational", "Instrumental", "Mashup",
@@ -285,13 +342,14 @@
             renderOptions(containerId, items, categoryName);
         }
 
-    </script>
-    <script>
+
         window.addEventListener('load', () => {
             document.querySelector('.randomSong').click();
         });
     </script>
-    <script src="script copy.js"></script>
+    <script src="script copy.js">
+
+    </script>
 
 </body>
 
