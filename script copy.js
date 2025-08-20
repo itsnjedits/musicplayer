@@ -166,82 +166,147 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // === URL Utility ===
-  const BASE_AUDIO = 'https://itsnjedits.github.io/musicplayer/';
-  const BASE_THUMB = 'https://itsnjedits.github.io/musicplayer/Thumbnails';
+// === URL Utility ===
+const BASE_AUDIO = 'https://itsnjedits.github.io/musicplayer/';
+const BASE_THUMB = 'https://itsnjedits.github.io/musicplayer/Thumbnails';
 
-  const trimAndDecodeURL = url => url.startsWith(BASE_AUDIO) ? decodeURIComponent(url.slice(BASE_AUDIO.length)) : (console.error('Invalid base URL.'), url);
-  const modifyAndDecodeURL = url => url.startsWith(BASE_THUMB) ? decodeURIComponent(url.replace(BASE_THUMB, 'Audio').replace('_thumbnail.jpg', '.mp3')) : (console.error('Invalid base URL.'), url);
+const trimAndDecodeURL = url =>
+  url.startsWith(BASE_AUDIO)
+    ? decodeURIComponent(url.slice(BASE_AUDIO.length))
+    : (console.error('Invalid base URL.'), url);
 
-  window.addEventListener('DOMContentLoaded', () => {
-    const saved = loadPlaylistFromLocalStorage();
-    playlistButton.click();
-    headingText.textContent = saved.length ? `Add, Listen, Enjoy - Ad Free 🔥` : "Welcome! Start building your Playlist 🎵";
-    saved.length
-      ? (playlist = [...saved], renderPlaylist(playlist, document.querySelector('.array'), true))
-      : document.querySelector('.array').innerHTML = `
-        <div class="max-md:text-base text-center pt-10 text-[#29ecfe] text-xl">No songs in your playlist yet. Click '+' to add!</div>
-        <div class="max-md:text-base text-center pb-10 text-[#2b8bff] text-xl">Go to <b>\"Mood\"</b> or <u id="get-started-link" class="hover:text-[#29ecfe] cursor-pointer font-bold">Get Started</u></div>`;
+const modifyAndDecodeURL = url =>
+  url.startsWith(BASE_THUMB)
+    ? decodeURIComponent(url.replace(BASE_THUMB, 'Audio').replace('_thumbnail.jpg', '.mp3'))
+    : (console.error('Invalid base URL.'), url);
 
-    // ✅ Restore last played song
-    const lastPlayed = JSON.parse(localStorage.getItem('lastPlayedSong'));
-    if (lastPlayed) {
-      audio.src = lastPlayed.file;
-      audio.load();
-      audio.currentTime = lastPlayed.time || 0;
+// === Global Drag Variables (fix scope issue) ===
+let dragSrcEl = null;
+let isDragging = false;
+let currentY = 0;
+let scrollAnimation;
 
-      songImage.src = lastPlayed.image;
-      Object.assign(songImage.style, { objectFit: "cover", objectPosition: "top" });
-      songTitle.textContent = lastPlayed.title;
-      songArtist.textContent = lastPlayed.artist;
-      songDescription.classList.remove('opacity-0');
-      songDescription.style.display = 'flex';
-      playPauseButton.innerHTML = `<i class='bx bx-play'></i>`; // default to paused
-      lastPlayedSong = lastPlayed; // ✅ Assign
+const updateY = (y) => { if (typeof y === 'number') currentY = y; };
 
-      updateTime();
+function startAutoScroll() {
+  function step() {
+    if (!isDragging) return;
 
-      audio.ontimeupdate = () => {
-        if (!audio.paused && audio.currentTime > 0 && lastPlayedSong) {
-          saveLastPlayedSong(lastPlayedSong, audio.currentTime); // ✅ No error now
-        }
-      };
+    const { topMargin, bottomMargin, baseSpeed } = getEdgeConfig();
+    const distTop = currentY;
+    const distBottom = window.innerHeight - currentY;
+
+    let delta = 0;
+
+    if (distTop < topMargin) {
+      const t = (topMargin - distTop) / topMargin;
+      delta = -(3 + Math.round(t * baseSpeed));
+    } else if (distBottom < bottomMargin) {
+      const t = (bottomMargin - distBottom) / bottomMargin;
+      delta = (3 + Math.round(t * baseSpeed));
     }
-  });
 
-  document.addEventListener('click', e => e.target?.id === 'get-started-link' && document.getElementById("feature-button")?.click());
+    if (delta !== 0) window.scrollBy(0, delta);
+    scrollAnimation = requestAnimationFrame(step);
+  }
 
-  document.getElementById("allSongsImage").addEventListener("click", () => {
-    const jsonFile = "all-songs/songs.json";
-    textEl.textContent = "All Songs";
-    modal.classList.add("hidden");
-    animationAllowed = false;
-    headingText && (headingText.textContent = "Loading...");
-    spinner && spinner.classList.remove("hidden");
+  cancelAnimationFrame(scrollAnimation);
+  scrollAnimation = requestAnimationFrame(step);
+}
 
-    fetch(jsonFile)
-      .then(res => res.json())
-      .then(data => {
-        songs = data.sort((a, b) => a.title.localeCompare(b.title));
-        loadSongList();
-        setTimeout(() => {
-          headingText.textContent = `All Songs - Ad Free 🔥`;
-          spinner.classList.add("hidden");
-        }, 0);
-      })
-      .catch(err => {
-        console.error('Error fetching all songs:', err);
-        headingText.textContent = "Something went wrong ❌";
+function stopAutoScroll() {
+  cancelAnimationFrame(scrollAnimation);
+}
+
+function getEdgeConfig() {
+  const header = document.querySelector('header');
+  const player = document.querySelector('.player');
+  const headH = header ? header.getBoundingClientRect().height : 0;
+  const playH = player ? player.getBoundingClientRect().height : 0;
+
+  return {
+    topMargin: Math.max(60, headH + 20),
+    bottomMargin: Math.max(60, playH + 20),
+    baseSpeed: 14
+  };
+}
+
+// === DOM Loaded ===
+window.addEventListener('DOMContentLoaded', () => {
+  const saved = loadPlaylistFromLocalStorage();
+  playlistButton.click();
+  headingText.textContent = saved.length
+    ? `Add, Listen, Enjoy - Ad Free 🔥`
+    : "Welcome! Start building your Playlist 🎵";
+
+  saved.length
+    ? (playlist = [...saved], renderPlaylist(playlist, document.querySelector('.array'), true))
+    : document.querySelector('.array').innerHTML = `
+      <div class="max-md:text-base text-center pt-10 text-[#29ecfe] text-xl">
+        No songs in your playlist yet. Click '+' to add!
+      </div>
+      <div class="max-md:text-base text-center pb-10 text-[#2b8bff] text-xl">
+        Go to <b>\"Mood\"</b> or <u id="get-started-link" class="hover:text-[#29ecfe] cursor-pointer font-bold">Get Started</u>
+      </div>`;
+
+  // ✅ Restore last played song
+  const lastPlayed = JSON.parse(localStorage.getItem('lastPlayedSong'));
+  if (lastPlayed) {
+    audio.src = lastPlayed.file;
+    audio.load();
+    audio.currentTime = lastPlayed.time || 0;
+
+    songImage.src = lastPlayed.image;
+    Object.assign(songImage.style, { objectFit: "cover", objectPosition: "top" });
+    songTitle.textContent = lastPlayed.title;
+    songArtist.textContent = lastPlayed.artist;
+    songDescription.classList.remove('opacity-0');
+    songDescription.style.display = 'flex';
+    playPauseButton.innerHTML = `<i class='bx bx-play'></i>`;
+    lastPlayedSong = lastPlayed;
+
+    updateTime();
+
+    audio.ontimeupdate = () => {
+      if (!audio.paused && audio.currentTime > 0 && lastPlayedSong) {
+        saveLastPlayedSong(lastPlayedSong, audio.currentTime);
+      }
+    };
+  }
+});
+
+document.addEventListener('click', e => e.target?.id === 'get-started-link' && document.getElementById("feature-button")?.click());
+
+document.getElementById("allSongsImage").addEventListener("click", () => {
+  const jsonFile = "all-songs/songs.json";
+  textEl.textContent = "All Songs";
+  modal.classList.add("hidden");
+  animationAllowed = false;
+  headingText && (headingText.textContent = "Loading...");
+  spinner && spinner.classList.remove("hidden");
+
+  fetch(jsonFile)
+    .then(res => res.json())
+    .then(data => {
+      songs = data.sort((a, b) => a.title.localeCompare(b.title));
+      loadSongList();
+      setTimeout(() => {
+        headingText.textContent = `All Songs - Ad Free 🔥`;
         spinner.classList.add("hidden");
-      });
-  });
+      }, 0);
+    })
+    .catch(err => {
+      console.error('Error fetching all songs:', err);
+      headingText.textContent = "Something went wrong ❌";
+      spinner.classList.add("hidden");
+    });
+});
 
-  // === LocalStorage ===
-  const savePlaylistToLocalStorage = () => localStorage.setItem('userPlaylist', JSON.stringify(playlist));
-  const loadPlaylistFromLocalStorage = () => JSON.parse(localStorage.getItem('userPlaylist')) || [];
+// === LocalStorage ===
+const savePlaylistToLocalStorage = () => localStorage.setItem('userPlaylist', JSON.stringify(playlist));
+const loadPlaylistFromLocalStorage = () => JSON.parse(localStorage.getItem('userPlaylist')) || [];
 
-// === Playlist Render with Drag Support (only for My Playlist) ===
-// === Playlist Render with Drag Support (only for My Playlist) ===
+// === Playlist Render with Drag Support ===
 function renderPlaylist(list, container, isRemovable = false) {
   container.innerHTML = '';
   list.forEach((song, index) => {
@@ -249,7 +314,7 @@ function renderPlaylist(list, container, isRemovable = false) {
     div.className =
       'item flex justify-between items-center bg-gray-700 rounded-xl p-2 max-md:p-1 mx-4 max-md:mx-2 min-md:hover:bg-gray-600 duration-300 cursor-pointer';
     div.dataset.index = index;
-    div.draggable = false; // ❌ default not draggable
+    div.draggable = false;
 
     div.innerHTML = `
       <div class="text-white flex items-center gap-x-4 max-md:gap-x-2">
@@ -281,17 +346,49 @@ function renderPlaylist(list, container, isRemovable = false) {
 
     // ✅ Play on click
     div.addEventListener('click', () => playSong(index));
-
     container.appendChild(div);
 
     // ✅ Only hamburger enables drag
     if (isRemovable) {
       const handle = div.querySelector('.drag-handle');
       if (handle) {
+        // Desktop
         handle.addEventListener('mousedown', () => { div.draggable = true; });
         handle.addEventListener('mouseup',   () => { div.draggable = false; });
-        handle.addEventListener('touchstart',() => { div.draggable = true; }, {passive:true});
-        handle.addEventListener('touchend',  () => { div.draggable = false; }, {passive:true});
+
+        // Mobile
+        handle.addEventListener('touchstart', e => {
+          if (e.touches.length > 1) return;
+          dragSrcEl = div;
+          isDragging = true;
+          div.draggable = true;
+          div.classList.add('opacity-50');
+          updateY(e.touches[0].clientY);
+          startAutoScroll();
+        }, { passive: true });
+
+        handle.addEventListener('touchmove', e => {
+          if (!isDragging) return;
+          e.preventDefault();
+          updateY(e.touches[0].clientY);
+
+          const el = document.elementFromPoint(e.touches[0].clientX, currentY)?.closest('.item');
+          if (el && el !== dragSrcEl) {
+            const rect = el.getBoundingClientRect();
+            const after = currentY - rect.top > rect.height / 2;
+            after ? el.after(dragSrcEl) : el.before(dragSrcEl);
+          }
+        }, { passive: false });
+
+        handle.addEventListener('touchend', () => {
+          if (isDragging) {
+            isDragging = false;
+            div.draggable = false;
+            div.classList.remove('opacity-50');
+            stopAutoScroll();
+            finalizeOrder(container);
+          }
+        }, { passive: true });
       }
     }
   });
@@ -299,67 +396,12 @@ function renderPlaylist(list, container, isRemovable = false) {
   if (isRemovable) enableDragAndDrop(container);
 }
 
-// === Drag & Drop + Touch (with smart auto-scroll) ===
+// === Drag & Drop Desktop ===
 function enableDragAndDrop(container) {
-  let dragSrcEl = null;
-  let longPressTimer = null;
-  let isDragging = false;
-
-  // auto-scroll state
-  let currentY = 0;
-  let scrollAnimation;
-
-  // Header (top) + Player (bottom) aware margins
-  function getEdgeConfig() {
-    const header = document.querySelector('header');
-    const player = document.querySelector('.player');
-    const headH = header ? header.getBoundingClientRect().height : 0;
-    const playH = player ? player.getBoundingClientRect().height : 0;
-
-    return {
-      topMargin: Math.max(60, headH + 20),      // header + cushion
-      bottomMargin: Math.max(60, playH + 20),   // player + cushion
-      baseSpeed: 14
-    };
-  }
-
-  function startAutoScroll() {
-    function step() {
-      if (!isDragging) return;
-
-      const { topMargin, bottomMargin, baseSpeed } = getEdgeConfig();
-      const distTop = currentY;                           // px from viewport top
-      const distBottom = window.innerHeight - currentY;   // px from viewport bottom
-
-      let delta = 0;
-
-      if (distTop < topMargin) {
-        const t = (topMargin - distTop) / topMargin;      // 0..1
-        delta = - (3 + Math.round(t * baseSpeed));
-      } else if (distBottom < bottomMargin) {
-        const t = (bottomMargin - distBottom) / bottomMargin; // 0..1
-        delta =  (3 + Math.round(t * baseSpeed));
-      }
-
-      if (delta !== 0) window.scrollBy(0, delta);
-      scrollAnimation = requestAnimationFrame(step);
-    }
-
-    cancelAnimationFrame(scrollAnimation);
-    scrollAnimation = requestAnimationFrame(step);
-  }
-
-  function stopAutoScroll() {
-    cancelAnimationFrame(scrollAnimation);
-  }
-
-  // keep Y updated even when cursor goes over header/player
-  const updateY = (y) => { if (typeof y === 'number') currentY = y; };
   document.addEventListener('dragover', (e) => { if (isDragging) updateY(e.clientY); }, { passive: true });
   window.addEventListener('dragover',   (e) => { if (isDragging) updateY(e.clientY); }, { passive: true });
 
   container.querySelectorAll('.item').forEach(item => {
-    // === Desktop Drag ===
     item.addEventListener('dragstart', e => {
       dragSrcEl = item;
       isDragging = true;
@@ -388,44 +430,6 @@ function enableDragAndDrop(container) {
       stopAutoScroll();
       finalizeOrder(container);
     });
-
-    // === Mobile: long-press (0.5s) to start drag ===
-    item.addEventListener('touchstart', e => {
-      if (e.touches.length > 1) return; // ignore multi-touch
-      dragSrcEl = item;
-      isDragging = false;
-
-      longPressTimer = setTimeout(() => {
-        isDragging = true;
-        updateY(e.touches[0].clientY);
-        startAutoScroll();
-        item.classList.add('opacity-50');
-      }, 500);
-    }, { passive: true });
-
-    item.addEventListener('touchmove', e => {
-      if (!isDragging) return;           // normal scroll until long-press elapsed
-      e.preventDefault();                // now we are dragging
-
-      updateY(e.touches[0].clientY);
-
-      const el = document.elementFromPoint(e.touches[0].clientX, currentY)?.closest('.item');
-      if (el && el !== dragSrcEl) {
-        const rect = el.getBoundingClientRect();
-        const after = currentY - rect.top > rect.height / 2;
-        after ? el.after(dragSrcEl) : el.before(dragSrcEl);
-      }
-    }, { passive: false });
-
-    item.addEventListener('touchend', () => {
-      clearTimeout(longPressTimer);
-      if (isDragging) {
-        isDragging = false;
-        stopAutoScroll();
-        item.classList.remove('opacity-50');
-        finalizeOrder(container);
-      }
-    }, { passive: true });
   });
 }
 
@@ -442,12 +446,10 @@ function finalizeOrder(container) {
   playlist = newOrder;
   savePlaylistToLocalStorage();
 
-  // ✅ Re-render with updated indices
   renderPlaylist(playlist, container, true);
-
-  // ✅ Auto-click My Playlist after rearrange
   playlistButton.click();
 }
+
 
 
 
