@@ -177,24 +177,86 @@ header {
   box-shadow: rgba(0, 0, 0, 0.582) 0px 8px 20px;
 }
 
-/* ===== Search Box ===== */
-#search-input,
-#search-btn {
-  padding: 10px;
+
+
+
+
+/* 🔹 Search Bar Container */
+.search-container {
+  display: flex;
+  align-items: center;
+  background: #1e293b; /* slate-800 */
+  border: 2px solid #3b82f6; /* blue-500 */
+  border-radius: 10px;
+  padding: 4px;
+  height: 52px; /* fixed nice height */
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.15);
+}
+
+/* 🔹 Search Input */
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: #334155; /* slate-700 */
   font-size: 16px;
+  color: #f1f5f9; /* text-slate-100 */
+  padding: 0 14px;
+  border-radius: 8px;
+  height: 100%;
 }
-#search-input {
-  width: 200px;
+
+.search-input::placeholder {
+  color: #94a3b8; /* slate-400 */
 }
-#search-btn {
+
+/* 🔹 Search Button */
+.search-btn {
+  margin-left: 8px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0 18px;
+  font-size: 15px;
+  height: 100%;
+  border-radius: 8px;
   cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
-#search-results {
-  padding: 20px;
-  background-color: #f0f0f0;
-  border: 1px solid #ddd;
-  display: none;
+
+.search-btn:hover {
+  background: #2563eb;
+  transform: scale(1.05);
 }
+
+.search-btn:active {
+  background: #1d4ed8;
+  transform: scale(0.95);
+}
+
+/* 🔹 Cancel button inside input */
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background-color: #3b82f6;
+  cursor: pointer;
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path stroke='white' stroke-width='3' stroke-linecap='round' d='M6 6l12 12M18 6l-12 12'/></svg>") center/contain no-repeat;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path stroke='white' stroke-width='3' stroke-linecap='round' d='M6 6l12 12M18 6l-12 12'/></svg>") center/contain no-repeat;
+}
+
+input[type="search"]::-webkit-search-cancel-button:hover {
+  background-color: #2563eb;
+}
+
+
+
+
+
 
 /* ===== Edit Options Tooltip Arrow ===== */
 .edit-options::before {
@@ -212,3 +274,10 @@ header {
   #speed {
     background-image: none;
   }
+
+  /* Sabhi elements ke liye text selection disable */
+* {
+  user-select: none;
+  -webkit-user-select: none; /* Safari/Chrome */
+  -ms-user-select: none; /* IE/Edge */
+}

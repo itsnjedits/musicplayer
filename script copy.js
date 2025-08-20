@@ -240,15 +240,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const savePlaylistToLocalStorage = () => localStorage.setItem('userPlaylist', JSON.stringify(playlist));
   const loadPlaylistFromLocalStorage = () => JSON.parse(localStorage.getItem('userPlaylist')) || [];
 
-  // === Playlist Render ===
-  function renderPlaylist(list, container, isRemovable = false) {
-    container.innerHTML = '';
-    list.forEach((song, index) => {
-      const div = document.createElement('div');
-      div.className = 'item flex justify-between items-center bg-gray-700 rounded-xl p-2 max-md:p-1 mx-4 max-md:mx-2 min-md:hover:bg-gray-600 duration-300 cursor-pointer';
-      div.dataset.index = index;
-      div.innerHTML = `
+// === Playlist Render with Drag Support (only for My Playlist) ===
+// === Playlist Render with Drag Support (only for My Playlist) ===
+function renderPlaylist(list, container, isRemovable = false) {
+  container.innerHTML = '';
+  list.forEach((song, index) => {
+    const div = document.createElement('div');
+    div.className =
+      'item flex justify-between items-center bg-gray-700 rounded-xl p-2 max-md:p-1 mx-4 max-md:mx-2 min-md:hover:bg-gray-600 duration-300 cursor-pointer';
+    div.dataset.index = index;
+    div.draggable = false; // ❌ default not draggable
+
+    div.innerHTML = `
       <div class="text-white flex items-center gap-x-4 max-md:gap-x-2">
+        ${isRemovable ? `<span class="drag-handle cursor-grab text-gray-400 text-2xl pl-2">&#9776;</span>` : ""}
         <img src="${song.image}" class="max-md:h-12 max-md:w-20 w-36 h-20 object-cover rounded-lg object-top" alt="${song.title}">
         <div class="text">
           <h2 class="max-md:text-base song-title font-semibold text-xl max-[500px]:text-[13.5px]">${song.title}</h2>
@@ -256,26 +261,197 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </div>
       <div class="song-play flex items-center gap-x-2 mr-3 max-md:mr-2 max-md:gap-x-1">
-        <div class="visualizer hidden">${[1, 2, 3, 4, 5].map(i => `<div class="bar max-md:w-[2px] bar${i}"></div>`).join('')}</div>
+        <div class="visualizer hidden">${[1,2,3,4,5].map(i => `<div class="bar max-md:w-[2px] bar${i}"></div>`).join('')}</div>
         <p class="text-5xl ${isRemovable ? 'remove-from-playlist' : 'add-to-playlist'} text-[#2b8bff] cursor-pointer hover:text-[#29ecfe] max-md:text-2xl">
           <i class='bx bx-${isRemovable ? 'minus' : 'plus'}'></i>
         </p>
       </div>`;
 
-      div.querySelector(isRemovable ? '.remove-from-playlist' : '.add-to-playlist').addEventListener('click', e => {
+    // ✅ Add/Remove
+    div.querySelector(isRemovable ? '.remove-from-playlist' : '.add-to-playlist')
+      .addEventListener('click', e => {
         e.stopPropagation();
         if (isRemovable) {
           removeFromPlaylistByData(song);
-          playlistButton.click(); // 👈 Add this line to auto-click "My Playlist"
+          playlistButton.click();
         } else {
           addToPlaylist(div);
         }
       });
 
-      div.addEventListener('click', () => playSong(index));
-      container.appendChild(div);
-    });
+    // ✅ Play on click
+    div.addEventListener('click', () => playSong(index));
+
+    container.appendChild(div);
+
+    // ✅ Only hamburger enables drag
+    if (isRemovable) {
+      const handle = div.querySelector('.drag-handle');
+      if (handle) {
+        handle.addEventListener('mousedown', () => { div.draggable = true; });
+        handle.addEventListener('mouseup',   () => { div.draggable = false; });
+        handle.addEventListener('touchstart',() => { div.draggable = true; }, {passive:true});
+        handle.addEventListener('touchend',  () => { div.draggable = false; }, {passive:true});
+      }
+    }
+  });
+
+  if (isRemovable) enableDragAndDrop(container);
+}
+
+// === Drag & Drop + Touch (with smart auto-scroll) ===
+function enableDragAndDrop(container) {
+  let dragSrcEl = null;
+  let longPressTimer = null;
+  let isDragging = false;
+
+  // auto-scroll state
+  let currentY = 0;
+  let scrollAnimation;
+
+  // Header (top) + Player (bottom) aware margins
+  function getEdgeConfig() {
+    const header = document.querySelector('header');
+    const player = document.querySelector('.player');
+    const headH = header ? header.getBoundingClientRect().height : 0;
+    const playH = player ? player.getBoundingClientRect().height : 0;
+
+    return {
+      topMargin: Math.max(60, headH + 20),      // header + cushion
+      bottomMargin: Math.max(60, playH + 20),   // player + cushion
+      baseSpeed: 14
+    };
   }
+
+  function startAutoScroll() {
+    function step() {
+      if (!isDragging) return;
+
+      const { topMargin, bottomMargin, baseSpeed } = getEdgeConfig();
+      const distTop = currentY;                           // px from viewport top
+      const distBottom = window.innerHeight - currentY;   // px from viewport bottom
+
+      let delta = 0;
+
+      if (distTop < topMargin) {
+        const t = (topMargin - distTop) / topMargin;      // 0..1
+        delta = - (3 + Math.round(t * baseSpeed));
+      } else if (distBottom < bottomMargin) {
+        const t = (bottomMargin - distBottom) / bottomMargin; // 0..1
+        delta =  (3 + Math.round(t * baseSpeed));
+      }
+
+      if (delta !== 0) window.scrollBy(0, delta);
+      scrollAnimation = requestAnimationFrame(step);
+    }
+
+    cancelAnimationFrame(scrollAnimation);
+    scrollAnimation = requestAnimationFrame(step);
+  }
+
+  function stopAutoScroll() {
+    cancelAnimationFrame(scrollAnimation);
+  }
+
+  // keep Y updated even when cursor goes over header/player
+  const updateY = (y) => { if (typeof y === 'number') currentY = y; };
+  document.addEventListener('dragover', (e) => { if (isDragging) updateY(e.clientY); }, { passive: true });
+  window.addEventListener('dragover',   (e) => { if (isDragging) updateY(e.clientY); }, { passive: true });
+
+  container.querySelectorAll('.item').forEach(item => {
+    // === Desktop Drag ===
+    item.addEventListener('dragstart', e => {
+      dragSrcEl = item;
+      isDragging = true;
+      updateY(e.clientY);
+      startAutoScroll();
+
+      e.dataTransfer.effectAllowed = 'move';
+      e.dataTransfer.setData('text/plain', 'reorder');
+      item.classList.add('opacity-50');
+    });
+
+    item.addEventListener('dragover', e => {
+      e.preventDefault();
+      updateY(e.clientY);
+
+      const target = e.target.closest('.item');
+      if (target && target !== dragSrcEl) {
+        const rect = target.getBoundingClientRect();
+        const after = e.clientY - rect.top > rect.height / 2;
+        after ? target.after(dragSrcEl) : target.before(dragSrcEl);
+      }
+    });
+
+    item.addEventListener('dragend', () => {
+      isDragging = false;
+      stopAutoScroll();
+      finalizeOrder(container);
+    });
+
+    // === Mobile: long-press (0.5s) to start drag ===
+    item.addEventListener('touchstart', e => {
+      if (e.touches.length > 1) return; // ignore multi-touch
+      dragSrcEl = item;
+      isDragging = false;
+
+      longPressTimer = setTimeout(() => {
+        isDragging = true;
+        updateY(e.touches[0].clientY);
+        startAutoScroll();
+        item.classList.add('opacity-50');
+      }, 500);
+    }, { passive: true });
+
+    item.addEventListener('touchmove', e => {
+      if (!isDragging) return;           // normal scroll until long-press elapsed
+      e.preventDefault();                // now we are dragging
+
+      updateY(e.touches[0].clientY);
+
+      const el = document.elementFromPoint(e.touches[0].clientX, currentY)?.closest('.item');
+      if (el && el !== dragSrcEl) {
+        const rect = el.getBoundingClientRect();
+        const after = currentY - rect.top > rect.height / 2;
+        after ? el.after(dragSrcEl) : el.before(dragSrcEl);
+      }
+    }, { passive: false });
+
+    item.addEventListener('touchend', () => {
+      clearTimeout(longPressTimer);
+      if (isDragging) {
+        isDragging = false;
+        stopAutoScroll();
+        item.classList.remove('opacity-50');
+        finalizeOrder(container);
+      }
+    }, { passive: true });
+  });
+}
+
+// === Save Order & Refresh Playlist ===
+function finalizeOrder(container) {
+  container.querySelectorAll('.item').forEach(it => it.classList.remove('opacity-50'));
+
+  const newOrder = [];
+  container.querySelectorAll('.item').forEach(it => {
+    const idx = parseInt(it.dataset.index);
+    newOrder.push(playlist[idx]);
+  });
+
+  playlist = newOrder;
+  savePlaylistToLocalStorage();
+
+  // ✅ Re-render with updated indices
+  renderPlaylist(playlist, container, true);
+
+  // ✅ Auto-click My Playlist after rearrange
+  playlistButton.click();
+}
+
+
+
+
 
   function removeFromPlaylistByData(songToRemove) {
     const i = playlist.findIndex(s => s.title === songToRemove.title && s.artist === songToRemove.artist && s.image === songToRemove.image);
