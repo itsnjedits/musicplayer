@@ -114,13 +114,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const randomIndex = Math.floor(Math.random() * items.length);
     const randomSong = items[randomIndex];
 
+    // 🔹 Sab songs ka reset
     items.forEach(song => {
-      song.children[0].children[1].children[0].style.color = '';
-      song.children[0].children[1].children[1].style.color = '';
       song.classList.remove('bg-gray-900');
+      const title = song.querySelector('.song-title');
+      const artist = song.querySelector('.song-artist');
+      if (title) title.style.color = '';
+      if (artist) artist.style.color = '';
     });
 
+    // 🔹 Sirf selected song highlight
     highlightElement(randomSong);
+
     const songTitle = randomSong.querySelector('.song-title').textContent;
     console.log(`Randomly selected song: ${songTitle}`);
   });
@@ -166,82 +171,82 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-// === URL Utility ===
-const BASE_AUDIO = 'https://itsnjedits.github.io/musicplayer/';
-const BASE_THUMB = 'https://itsnjedits.github.io/musicplayer/Thumbnails';
+  // === URL Utility ===
+  const BASE_AUDIO = 'https://itsnjedits.github.io/musicplayer/';
+  const BASE_THUMB = 'https://itsnjedits.github.io/musicplayer/Thumbnails';
 
-const trimAndDecodeURL = url =>
-  url.startsWith(BASE_AUDIO)
-    ? decodeURIComponent(url.slice(BASE_AUDIO.length))
-    : (console.error('Invalid base URL.'), url);
+  const trimAndDecodeURL = url =>
+    url.startsWith(BASE_AUDIO)
+      ? decodeURIComponent(url.slice(BASE_AUDIO.length))
+      : (console.error('Invalid base URL.'), url);
 
-const modifyAndDecodeURL = url =>
-  url.startsWith(BASE_THUMB)
-    ? decodeURIComponent(url.replace(BASE_THUMB, 'Audio').replace('_thumbnail.jpg', '.mp3'))
-    : (console.error('Invalid base URL.'), url);
+  const modifyAndDecodeURL = url =>
+    url.startsWith(BASE_THUMB)
+      ? decodeURIComponent(url.replace(BASE_THUMB, 'Audio').replace('_thumbnail.jpg', '.mp3'))
+      : (console.error('Invalid base URL.'), url);
 
-// === Global Drag Variables (fix scope issue) ===
-let dragSrcEl = null;
-let isDragging = false;
-let currentY = 0;
-let scrollAnimation;
+  // === Global Drag Variables (fix scope issue) ===
+  let dragSrcEl = null;
+  let isDragging = false;
+  let currentY = 0;
+  let scrollAnimation;
 
-const updateY = (y) => { if (typeof y === 'number') currentY = y; };
+  const updateY = (y) => { if (typeof y === 'number') currentY = y; };
 
-function startAutoScroll() {
-  function step() {
-    if (!isDragging) return;
+  function startAutoScroll() {
+    function step() {
+      if (!isDragging) return;
 
-    const { topMargin, bottomMargin, baseSpeed } = getEdgeConfig();
-    const distTop = currentY;
-    const distBottom = window.innerHeight - currentY;
+      const { topMargin, bottomMargin, baseSpeed } = getEdgeConfig();
+      const distTop = currentY;
+      const distBottom = window.innerHeight - currentY;
 
-    let delta = 0;
+      let delta = 0;
 
-    if (distTop < topMargin) {
-      const t = (topMargin - distTop) / topMargin;
-      delta = -(3 + Math.round(t * baseSpeed));
-    } else if (distBottom < bottomMargin) {
-      const t = (bottomMargin - distBottom) / bottomMargin;
-      delta = (3 + Math.round(t * baseSpeed));
+      if (distTop < topMargin) {
+        const t = (topMargin - distTop) / topMargin;
+        delta = -(3 + Math.round(t * baseSpeed));
+      } else if (distBottom < bottomMargin) {
+        const t = (bottomMargin - distBottom) / bottomMargin;
+        delta = (3 + Math.round(t * baseSpeed));
+      }
+
+      if (delta !== 0) window.scrollBy(0, delta);
+      scrollAnimation = requestAnimationFrame(step);
     }
 
-    if (delta !== 0) window.scrollBy(0, delta);
+    cancelAnimationFrame(scrollAnimation);
     scrollAnimation = requestAnimationFrame(step);
   }
 
-  cancelAnimationFrame(scrollAnimation);
-  scrollAnimation = requestAnimationFrame(step);
-}
+  function stopAutoScroll() {
+    cancelAnimationFrame(scrollAnimation);
+  }
 
-function stopAutoScroll() {
-  cancelAnimationFrame(scrollAnimation);
-}
+  function getEdgeConfig() {
+    const header = document.querySelector('header');
+    const player = document.querySelector('.player');
+    const headH = header ? header.getBoundingClientRect().height : 0;
+    const playH = player ? player.getBoundingClientRect().height : 0;
 
-function getEdgeConfig() {
-  const header = document.querySelector('header');
-  const player = document.querySelector('.player');
-  const headH = header ? header.getBoundingClientRect().height : 0;
-  const playH = player ? player.getBoundingClientRect().height : 0;
+    return {
+      topMargin: Math.max(60, headH + 20),
+      bottomMargin: Math.max(60, playH + 20),
+      baseSpeed: 14
+    };
+  }
 
-  return {
-    topMargin: Math.max(60, headH + 20),
-    bottomMargin: Math.max(60, playH + 20),
-    baseSpeed: 14
-  };
-}
+  // === DOM Loaded ===
+  window.addEventListener('DOMContentLoaded', () => {
+    const saved = loadPlaylistFromLocalStorage();
+    playlistButton.click();
+    headingText.textContent = saved.length
+      ? `Add, Listen, Enjoy - Ad Free 🔥`
+      : "Welcome! Start building your Playlist 🎵";
 
-// === DOM Loaded ===
-window.addEventListener('DOMContentLoaded', () => {
-  const saved = loadPlaylistFromLocalStorage();
-  playlistButton.click();
-  headingText.textContent = saved.length
-    ? `Add, Listen, Enjoy - Ad Free 🔥`
-    : "Welcome! Start building your Playlist 🎵";
-
-  saved.length
-    ? (playlist = [...saved], renderPlaylist(playlist, document.querySelector('.array'), true))
-    : document.querySelector('.array').innerHTML = `
+    saved.length
+      ? (playlist = [...saved], renderPlaylist(playlist, document.querySelector('.array'), true))
+      : document.querySelector('.array').innerHTML = `
       <div class="max-md:text-base text-center pt-10 text-[#29ecfe] text-xl">
         No songs in your playlist yet. Click '+' to add!
       </div>
@@ -249,74 +254,74 @@ window.addEventListener('DOMContentLoaded', () => {
         Go to <b>\"Mood\"</b> or <u id="get-started-link" class="hover:text-[#29ecfe] cursor-pointer font-bold">Get Started</u>
       </div>`;
 
-  // ✅ Restore last played song
-  const lastPlayed = JSON.parse(localStorage.getItem('lastPlayedSong'));
-  if (lastPlayed) {
-    audio.src = lastPlayed.file;
-    audio.load();
-    audio.currentTime = lastPlayed.time || 0;
+    // ✅ Restore last played song
+    const lastPlayed = JSON.parse(localStorage.getItem('lastPlayedSong'));
+    if (lastPlayed) {
+      audio.src = lastPlayed.file;
+      audio.load();
+      audio.currentTime = lastPlayed.time || 0;
 
-    songImage.src = lastPlayed.image;
-    Object.assign(songImage.style, { objectFit: "cover", objectPosition: "top" });
-    songTitle.textContent = lastPlayed.title;
-    songArtist.textContent = lastPlayed.artist;
-    songDescription.classList.remove('opacity-0');
-    songDescription.style.display = 'flex';
-    playPauseButton.innerHTML = `<i class='bx bx-play'></i>`;
-    lastPlayedSong = lastPlayed;
+      songImage.src = lastPlayed.image;
+      Object.assign(songImage.style, { objectFit: "cover", objectPosition: "top" });
+      songTitle.textContent = lastPlayed.title;
+      songArtist.textContent = lastPlayed.artist;
+      songDescription.classList.remove('opacity-0');
+      songDescription.style.display = 'flex';
+      playPauseButton.innerHTML = `<i class='bx bx-play'></i>`;
+      lastPlayedSong = lastPlayed;
 
-    updateTime();
+      updateTime();
 
-    audio.ontimeupdate = () => {
-      if (!audio.paused && audio.currentTime > 0 && lastPlayedSong) {
-        saveLastPlayedSong(lastPlayedSong, audio.currentTime);
-      }
-    };
-  }
-});
+      audio.ontimeupdate = () => {
+        if (!audio.paused && audio.currentTime > 0 && lastPlayedSong) {
+          saveLastPlayedSong(lastPlayedSong, audio.currentTime);
+        }
+      };
+    }
+  });
 
-document.addEventListener('click', e => e.target?.id === 'get-started-link' && document.getElementById("feature-button")?.click());
+  document.addEventListener('click', e => e.target?.id === 'get-started-link' && document.getElementById("feature-button")?.click());
 
-document.getElementById("allSongsImage").addEventListener("click", () => {
-  const jsonFile = "all-songs/songs.json";
-  textEl.textContent = "All Songs";
-  modal.classList.add("hidden");
-  animationAllowed = false;
-  headingText && (headingText.textContent = "Loading...");
-  spinner && spinner.classList.remove("hidden");
+  document.getElementById("allSongsImage").addEventListener("click", () => {
+    const jsonFile = "all-songs/songs.json";
+    textEl.textContent = "All Songs";
+    modal.classList.add("hidden");
+    animationAllowed = false;
+    headingText && (headingText.textContent = "Loading...");
+    spinner && spinner.classList.remove("hidden");
 
-  fetch(jsonFile)
-    .then(res => res.json())
-    .then(data => {
-      songs = data.sort((a, b) => a.title.localeCompare(b.title));
-      loadSongList();
-      setTimeout(() => {
-        headingText.textContent = `All Songs - Ad Free 🔥`;
+    fetch(jsonFile)
+      .then(res => res.json())
+      .then(data => {
+        songs = data.sort((a, b) => a.title.localeCompare(b.title));
+        loadSongList();
+        setTimeout(() => {
+          headingText.textContent = `All Songs - Ad Free 🔥`;
+          spinner.classList.add("hidden");
+        }, 0);
+      })
+      .catch(err => {
+        console.error('Error fetching all songs:', err);
+        headingText.textContent = "Something went wrong ❌";
         spinner.classList.add("hidden");
-      }, 0);
-    })
-    .catch(err => {
-      console.error('Error fetching all songs:', err);
-      headingText.textContent = "Something went wrong ❌";
-      spinner.classList.add("hidden");
-    });
-});
+      });
+  });
 
-// === LocalStorage ===
-const savePlaylistToLocalStorage = () => localStorage.setItem('userPlaylist', JSON.stringify(playlist));
-const loadPlaylistFromLocalStorage = () => JSON.parse(localStorage.getItem('userPlaylist')) || [];
+  // === LocalStorage ===
+  const savePlaylistToLocalStorage = () => localStorage.setItem('userPlaylist', JSON.stringify(playlist));
+  const loadPlaylistFromLocalStorage = () => JSON.parse(localStorage.getItem('userPlaylist')) || [];
 
-// === Playlist Render with Drag Support ===
-function renderPlaylist(list, container, isRemovable = false) {
-  container.innerHTML = '';
-  list.forEach((song, index) => {
-    const div = document.createElement('div');
-    div.className =
-      'item flex justify-between items-center bg-gray-700 rounded-xl p-2 max-md:p-1 mx-4 max-md:mx-2 min-md:hover:bg-gray-600 duration-300 cursor-pointer';
-    div.dataset.index = index;
-    div.draggable = false;
+  // === Playlist Render with Drag Support ===
+  function renderPlaylist(list, container, isRemovable = false) {
+    container.innerHTML = '';
+    list.forEach((song, index) => {
+      const div = document.createElement('div');
+      div.className =
+        'item flex justify-between items-center bg-gray-700 rounded-xl p-2 max-md:p-1 mx-4 max-md:mx-2 min-md:hover:bg-gray-600 duration-300 cursor-pointer';
+      div.dataset.index = index;
+      div.draggable = false;
 
-    div.innerHTML = `
+      div.innerHTML = `
       <div class="text-white flex items-center gap-x-4 max-md:gap-x-2">
         ${isRemovable ? `<span class="drag-handle cursor-grab text-gray-400 text-2xl pl-2">&#9776;</span>` : ""}
         <img src="${song.image}" class="max-md:h-12 max-md:w-20 w-36 h-20 object-cover rounded-lg object-top" alt="${song.title}">
@@ -326,129 +331,129 @@ function renderPlaylist(list, container, isRemovable = false) {
         </div>
       </div>
       <div class="song-play flex items-center gap-x-2 mr-3 max-md:mr-2 max-md:gap-x-1">
-        <div class="visualizer hidden">${[1,2,3,4,5].map(i => `<div class="bar max-md:w-[2px] bar${i}"></div>`).join('')}</div>
+        <div class="visualizer hidden">${[1, 2, 3, 4, 5].map(i => `<div class="bar max-md:w-[2px] bar${i}"></div>`).join('')}</div>
         <p class="text-5xl ${isRemovable ? 'remove-from-playlist' : 'add-to-playlist'} text-[#2b8bff] cursor-pointer hover:text-[#29ecfe] max-md:text-2xl">
           <i class='bx bx-${isRemovable ? 'minus' : 'plus'}'></i>
         </p>
       </div>`;
 
-    // ✅ Add/Remove
-    div.querySelector(isRemovable ? '.remove-from-playlist' : '.add-to-playlist')
-      .addEventListener('click', e => {
-        e.stopPropagation();
-        if (isRemovable) {
-          removeFromPlaylistByData(song);
-          playlistButton.click();
-        } else {
-          addToPlaylist(div);
+      // ✅ Add/Remove
+      div.querySelector(isRemovable ? '.remove-from-playlist' : '.add-to-playlist')
+        .addEventListener('click', e => {
+          e.stopPropagation();
+          if (isRemovable) {
+            removeFromPlaylistByData(song);
+            playlistButton.click();
+          } else {
+            addToPlaylist(div);
+          }
+        });
+
+      // ✅ Play on click
+      div.addEventListener('click', () => playSong(index));
+      container.appendChild(div);
+
+      // ✅ Only hamburger enables drag
+      if (isRemovable) {
+        const handle = div.querySelector('.drag-handle');
+        if (handle) {
+          // Desktop
+          handle.addEventListener('mousedown', () => { div.draggable = true; });
+          handle.addEventListener('mouseup', () => { div.draggable = false; });
+
+          // Mobile
+          handle.addEventListener('touchstart', e => {
+            if (e.touches.length > 1) return;
+            dragSrcEl = div;
+            isDragging = true;
+            div.draggable = true;
+            div.classList.add('opacity-50');
+            updateY(e.touches[0].clientY);
+            startAutoScroll();
+          }, { passive: true });
+
+          handle.addEventListener('touchmove', e => {
+            if (!isDragging) return;
+            e.preventDefault();
+            updateY(e.touches[0].clientY);
+
+            const el = document.elementFromPoint(e.touches[0].clientX, currentY)?.closest('.item');
+            if (el && el !== dragSrcEl) {
+              const rect = el.getBoundingClientRect();
+              const after = currentY - rect.top > rect.height / 2;
+              after ? el.after(dragSrcEl) : el.before(dragSrcEl);
+            }
+          }, { passive: false });
+
+          handle.addEventListener('touchend', () => {
+            if (isDragging) {
+              isDragging = false;
+              div.draggable = false;
+              div.classList.remove('opacity-50');
+              stopAutoScroll();
+              finalizeOrder(container);
+            }
+          }, { passive: true });
+        }
+      }
+    });
+
+    if (isRemovable) enableDragAndDrop(container);
+  }
+
+  // === Drag & Drop Desktop ===
+  function enableDragAndDrop(container) {
+    document.addEventListener('dragover', (e) => { if (isDragging) updateY(e.clientY); }, { passive: true });
+    window.addEventListener('dragover', (e) => { if (isDragging) updateY(e.clientY); }, { passive: true });
+
+    container.querySelectorAll('.item').forEach(item => {
+      item.addEventListener('dragstart', e => {
+        dragSrcEl = item;
+        isDragging = true;
+        updateY(e.clientY);
+        startAutoScroll();
+
+        e.dataTransfer.effectAllowed = 'move';
+        e.dataTransfer.setData('text/plain', 'reorder');
+        item.classList.add('opacity-50');
+      });
+
+      item.addEventListener('dragover', e => {
+        e.preventDefault();
+        updateY(e.clientY);
+
+        const target = e.target.closest('.item');
+        if (target && target !== dragSrcEl) {
+          const rect = target.getBoundingClientRect();
+          const after = e.clientY - rect.top > rect.height / 2;
+          after ? target.after(dragSrcEl) : target.before(dragSrcEl);
         }
       });
 
-    // ✅ Play on click
-    div.addEventListener('click', () => playSong(index));
-    container.appendChild(div);
+      item.addEventListener('dragend', () => {
+        isDragging = false;
+        stopAutoScroll();
+        finalizeOrder(container);
+      });
+    });
+  }
 
-    // ✅ Only hamburger enables drag
-    if (isRemovable) {
-      const handle = div.querySelector('.drag-handle');
-      if (handle) {
-        // Desktop
-        handle.addEventListener('mousedown', () => { div.draggable = true; });
-        handle.addEventListener('mouseup',   () => { div.draggable = false; });
+  // === Save Order & Refresh Playlist ===
+  function finalizeOrder(container) {
+    container.querySelectorAll('.item').forEach(it => it.classList.remove('opacity-50'));
 
-        // Mobile
-        handle.addEventListener('touchstart', e => {
-          if (e.touches.length > 1) return;
-          dragSrcEl = div;
-          isDragging = true;
-          div.draggable = true;
-          div.classList.add('opacity-50');
-          updateY(e.touches[0].clientY);
-          startAutoScroll();
-        }, { passive: true });
-
-        handle.addEventListener('touchmove', e => {
-          if (!isDragging) return;
-          e.preventDefault();
-          updateY(e.touches[0].clientY);
-
-          const el = document.elementFromPoint(e.touches[0].clientX, currentY)?.closest('.item');
-          if (el && el !== dragSrcEl) {
-            const rect = el.getBoundingClientRect();
-            const after = currentY - rect.top > rect.height / 2;
-            after ? el.after(dragSrcEl) : el.before(dragSrcEl);
-          }
-        }, { passive: false });
-
-        handle.addEventListener('touchend', () => {
-          if (isDragging) {
-            isDragging = false;
-            div.draggable = false;
-            div.classList.remove('opacity-50');
-            stopAutoScroll();
-            finalizeOrder(container);
-          }
-        }, { passive: true });
-      }
-    }
-  });
-
-  if (isRemovable) enableDragAndDrop(container);
-}
-
-// === Drag & Drop Desktop ===
-function enableDragAndDrop(container) {
-  document.addEventListener('dragover', (e) => { if (isDragging) updateY(e.clientY); }, { passive: true });
-  window.addEventListener('dragover',   (e) => { if (isDragging) updateY(e.clientY); }, { passive: true });
-
-  container.querySelectorAll('.item').forEach(item => {
-    item.addEventListener('dragstart', e => {
-      dragSrcEl = item;
-      isDragging = true;
-      updateY(e.clientY);
-      startAutoScroll();
-
-      e.dataTransfer.effectAllowed = 'move';
-      e.dataTransfer.setData('text/plain', 'reorder');
-      item.classList.add('opacity-50');
+    const newOrder = [];
+    container.querySelectorAll('.item').forEach(it => {
+      const idx = parseInt(it.dataset.index);
+      newOrder.push(playlist[idx]);
     });
 
-    item.addEventListener('dragover', e => {
-      e.preventDefault();
-      updateY(e.clientY);
+    playlist = newOrder;
+    savePlaylistToLocalStorage();
 
-      const target = e.target.closest('.item');
-      if (target && target !== dragSrcEl) {
-        const rect = target.getBoundingClientRect();
-        const after = e.clientY - rect.top > rect.height / 2;
-        after ? target.after(dragSrcEl) : target.before(dragSrcEl);
-      }
-    });
-
-    item.addEventListener('dragend', () => {
-      isDragging = false;
-      stopAutoScroll();
-      finalizeOrder(container);
-    });
-  });
-}
-
-// === Save Order & Refresh Playlist ===
-function finalizeOrder(container) {
-  container.querySelectorAll('.item').forEach(it => it.classList.remove('opacity-50'));
-
-  const newOrder = [];
-  container.querySelectorAll('.item').forEach(it => {
-    const idx = parseInt(it.dataset.index);
-    newOrder.push(playlist[idx]);
-  });
-
-  playlist = newOrder;
-  savePlaylistToLocalStorage();
-
-  renderPlaylist(playlist, container, true);
-  playlistButton.click();
-}
+    renderPlaylist(playlist, container, true);
+    playlistButton.click();
+  }
 
 
 
