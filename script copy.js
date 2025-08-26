@@ -331,11 +331,17 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </div>
       <div class="song-play flex items-center gap-x-2 mr-3 max-md:mr-2 max-md:gap-x-1">
-        <div class="visualizer hidden">${[1, 2, 3, 4, 5].map(i => `<div class="bar max-md:w-[2px] bar${i}"></div>`).join('')}</div>
-        <p class="text-5xl ${isRemovable ? 'remove-from-playlist' : 'add-to-playlist'} text-[#2b8bff] cursor-pointer hover:text-[#29ecfe] max-md:text-2xl">
-          <i class='bx bx-${isRemovable ? 'minus' : 'plus'}'></i>
-        </p>
-      </div>`;
+  <div class="visualizer hidden">${[1, 2, 3, 4, 5].map(i => `<div class="bar max-md:w-[2px] bar${i}"></div>`).join('')}</div>
+  ${isRemovable ? `
+    <p class="download-song text-4xl text-green-400 cursor-pointer hover:text-green-300 max-md:text-xl">
+      <i class='bx bx-download'></i>
+    </p>
+  ` : ""}
+  <p class="text-5xl ${isRemovable ? 'remove-from-playlist' : 'add-to-playlist'} text-[#2b8bff] cursor-pointer hover:text-[#29ecfe] max-md:text-2xl">
+    <i class='bx bx-${isRemovable ? 'minus' : 'plus'}'></i>
+  </p>
+</div>
+`;
 
       // ✅ Add/Remove
       div.querySelector(isRemovable ? '.remove-from-playlist' : '.add-to-playlist')
@@ -349,9 +355,31 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
 
+      // ✅ Download button
+      if (isRemovable) {
+        const downloadBtn = div.querySelector('.download-song');
+        if (downloadBtn) {
+          downloadBtn.addEventListener('click', e => {
+            e.stopPropagation();
+
+            // file URL ko sahi karo (thumbnail se audio nikaalna ho to modifyAndDecodeURL use karo)
+            const fileURL = song.file || modifyAndDecodeURL(song.image);
+
+            const link = document.createElement('a');
+            link.href = fileURL;
+            link.download = `${song.title} - ${song.artist}.mp3`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          });
+        }
+      }
+
       // ✅ Play on click
       div.addEventListener('click', () => playSong(index));
       container.appendChild(div);
+
+
 
       // ✅ Only hamburger enables drag
       if (isRemovable) {
@@ -451,23 +479,61 @@ document.addEventListener('DOMContentLoaded', () => {
     playlist = newOrder;
     savePlaylistToLocalStorage();
 
+    // ✅ Agar koi song chal raha hai to uska naya index dhoondo
+    if (lastPlayedSong) {
+      const newIdx = playlist.findIndex(
+        s => s.title === lastPlayedSong.title && s.artist === lastPlayedSong.artist
+      );
+      if (newIdx !== -1) {
+        currentIndex = newIdx;
+      }
+    }
+
     renderPlaylist(playlist, container, true);
     playlistButton.click();
   }
 
-
-
-
-
-
   function removeFromPlaylistByData(songToRemove) {
-    const i = playlist.findIndex(s => s.title === songToRemove.title && s.artist === songToRemove.artist && s.image === songToRemove.image);
+    const i = playlist.findIndex(s =>
+      s.title === songToRemove.title &&
+      s.artist === songToRemove.artist &&
+      s.image === songToRemove.image
+    );
+
     if (i !== -1) {
+      const wasPlaying = lastPlayedSong &&
+        songToRemove.title === lastPlayedSong.title &&
+        songToRemove.artist === lastPlayedSong.artist;
+
       playlist.splice(i, 1);
       savePlaylistToLocalStorage();
       renderPlaylist(playlist, document.querySelector('.array'), true);
+
+      // ✅ Agar remove hua song hi chal raha tha
+      if (wasPlaying) {
+        if (i < playlist.length) {
+          playSong(i); // uske baad wala bajao
+        } else if (playlist.length > 0) {
+          playSong(0); // last remove hua tha, to first bajao
+        } else {
+          audio.pause(); // sab remove ho gaya
+          currentIndex = 0;
+          lastPlayedSong = null;
+        }
+      } else {
+        // ✅ Agar koi aur remove hua hai, index re-sync karo
+        if (lastPlayedSong) {
+          const newIdx = playlist.findIndex(
+            s => s.title === lastPlayedSong.title && s.artist === lastPlayedSong.artist
+          );
+          if (newIdx !== -1) {
+            currentIndex = newIdx;
+          }
+        }
+      }
     }
   }
+
 
   function addToPlaylist(div) {
     const img = div.querySelector('img');
@@ -587,7 +653,7 @@ document.addEventListener('DOMContentLoaded', () => {
     currentIndex = index % songs.length;
 
     const song = songs[currentIndex];
-    lastPlayedSong = song; // ✅ Assign current song
+    lastPlayedSong = song;  // ✅ save reference of currently playing song
 
 
     audio.pause();
