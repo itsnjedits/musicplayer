@@ -570,36 +570,6 @@
         "image": "Thumbnails/Toh Phir Aao X Labon Ko (Synthwave Remix) _ Adbhut Chapter 15(END) _ ROHAN _ Indian Synthwave_thumbnail.jpg"
     },
     {
-        "title": "Hasi - Rain Version",
-        "artist": "Armaan Malik",
-        "file": "Audio/Hasi.mp3",
-        "image": "Thumbnails/Hasi_thumbnail.jpg"
-    },
-    {
-        "title": "Humsafar - Rain Version",
-        "artist": "Akhil Sachdeva",
-        "file": "Audio/Humsafar.mp3",
-        "image": "Thumbnails/Humsafar_thumbnail.jpg"
-    },
-    {
-        "title": "Kyon - Rain Version",
-        "artist": "Papon",
-        "file": "Audio/Kyon.mp3",
-        "image": "Thumbnails/Kyon_thumbnail.jpg"
-    },
-    {
-        "title": "Naina - Rain Version",
-        "artist": "Arijit Singh",
-        "file": "Audio/Naina.mp3",
-        "image": "Thumbnails/Naina_thumbnail.jpg"
-    },
-    {
-        "title": "Maula Mere Maula - Rain Version",
-        "artist": "Roopkumar Rathod",
-        "file": "Audio/Maula Mere Maula.mp3",
-        "image": "Thumbnails/Maula Mere Maula_thumbnail.jpg"
-    },
-    {
         "title": "Mann Mera (Slowed Reverb)",
         "artist": "Gajendra Verma",
         "file": "Audio/Aisa Bhi Kya Re Dil Ka Lagana - Mann Mera (Slowed Reverb) _ Gajendra Verma _ Selenophile.mp3",
@@ -610,174 +580,6 @@
         "artist": "Shreya Ghoshal, Tony Kakkar",
         "file": "Audio/Baarish Ke Aane Se (Slowed   Reverb) _ Shreya Ghoshal, Tony Kakkar _ Parth, Manisha Rani.mp3",
         "image": "Thumbnails/Baarish Ke Aane Se (Slowed   Reverb) _ Shreya Ghoshal, Tony Kakkar _ Parth, Manisha Rani_thumbnail.jpg"
-    },
-    {
-        "title": "Bade Ache Lagte Hain - Rain Version",
-        "artist": "Amit Kumar",
-        "file": "Audio/Bade Ache Lagte Hain.mp3",
-        "image": "Thumbnails/Bade Ache Lagte Hain_thumbnail.jpg"
-    },
-    {
-        "title": "Nazm Nazm - Rain Version",
-        "artist": "Arko, Ayushmann Khurrana",
-        "file": "Audio/Nazm Nazm.mp3",
-        "image": "Thumbnails/Nazm Nazm_thumbnail.jpg"
-    },
-    {
-        "title": "Aadat - Rain Version",
-        "artist": "Atif Aslam",
-        "file": "Audio/Aadat.mp3",
-        "image": "Thumbnails/Aadat_thumbnail.jpg"
-    },
-    {
-        "title": "Jeena Jeena - Rain Version",
-        "artist": "Atif Aslam",
-        "file": "Audio/Jeena Jeena.mp3",
-        "image": "Thumbnails/Jeena Jeena_thumbnail.jpg"
-    },
-    {
-        "title": "Tera Hone Laga Hoon - Rain Version",
-        "artist": "Atif Aslam",
-        "file": "Audio/Tera Hone Laga Hoon.mp3",
-        "image": "Thumbnails/Tera Hone Laga Hoon_thumbnail.jpg"
-    },
-    {
-        "title": "Tere Sang Yaara - Rain Version",
-        "artist": "Atif Aslam",
-        "file": "Audio/Tere Sang Yaara.mp3",
-        "image": "Thumbnails/Tere Sang Yaara_thumbnail.jpg"
-    },
-    {
-        "title": "Tu Jaane Na - Rain Version",
-        "artist": "Atif Aslam",
-        "file": "Audio/Tu Jaane Na.mp3",
-        "image": "Thumbnails/Tu Jaane Na_thumbnail.jpg"
-    },
-    {
-        "title": "Honthon Se Chulo Tum - Rain Version",
-        "artist": "Jagjit Singh",
-        "file": "Audio/Honthon Se Chulo Tum.mp3",
-        "image": "Thumbnails/Honthon Se Chulo Tum_thumbnail.jpg"
-    },
-    {
-        "title": "Allah Ke Bande - Rain Version",
-        "artist": "Kailash Kher",
-        "file": "Audio/Allah Ke Bande.mp3",
-        "image": "Thumbnails/Allah Ke Bande_thumbnail.jpg"
-    },
-    {
-        "title": "Mere Nishaan - Rain Version",
-        "artist": "Kailash Kher",
-        "file": "Audio/Mere Nishaan.mp3",
-        "image": "Thumbnails/Mere Nishaan_thumbnail.jpg"
-    },
-    {
-        "title": "Ankhon Mein Teri Ajab Si - Rain Version",
-        "artist": "KK",
-        "file": "Audio/Ankhon Mein Teri Ajab Si.mp3",
-        "image": "Thumbnails/Ankhon Mein Teri Ajab Si_thumbnail.jpg"
-    },
-    {
-        "title": "Beete Lamhe - Rain Version",
-        "artist": "KK",
-        "file": "Audio/Beete Lamhe.mp3",
-        "image": "Thumbnails/Beete Lamhe_thumbnail.jpg"
-    },
-    {
-        "title": "Dil Ibaadat - Rain Version",
-        "artist": "KK",
-        "file": "Audio/Dil Ibaadat.mp3",
-        "image": "Thumbnails/Dil Ibaadat_thumbnail.jpg"
-    },
-    {
-        "title": "Haan Tu Hain - Rain Version",
-        "artist": "KK",
-        "file": "Audio/Haan Tu Hain.mp3",
-        "image": "Thumbnails/Haan Tu Hain_thumbnail.jpg"
-    },
-    {
-        "title": "Kya Mujhe Pyaar Hai - Rain Version",
-        "artist": "KK",
-        "file": "Audio/Kya Mujhe Pyaar Hai.mp3",
-        "image": "Thumbnails/Kya Mujhe Pyaar Hai_thumbnail.jpg"
-    },
-    {
-        "title": "Labon Ko - Rain Version",
-        "artist": "KK",
-        "file": "Audio/Labon Ko.mp3",
-        "image": "Thumbnails/Labon Ko_thumbnail.jpg"
-    },
-    {
-        "title": "Tu Hi Meri Shab Hai - Rain Version",
-        "artist": "KK",
-        "file": "Audio/Tu Hi Meri Shab Hai.mp3",
-        "image": "Thumbnails/Tu Hi Meri Shab Hai_thumbnail.jpg"
-    },
-    {
-        "title": "Tu Jo Mila - Rain Version",
-        "artist": "KK",
-        "file": "Audio/Tu Jo Mila.mp3",
-        "image": "Thumbnails/Tu Jo Mila_thumbnail.jpg"
-    },
-    {
-        "title": "Zara Sa - Rain Version",
-        "artist": "KK",
-        "file": "Audio/Zara Sa.mp3",
-        "image": "Thumbnails/Zara Sa_thumbnail.jpg"
-    },
-    {
-        "title": "Chhookar Mere Mann Ko - Rain Version",
-        "artist": "Kishore Kumar",
-        "file": "Audio/Chhookar Mere Mann Ko.mp3",
-        "image": "Thumbnails/Chhookar Mere Mann Ko_thumbnail.jpg"
-    },
-    {
-        "title": "Mere Saamne Wali Khidki - Rain Version",
-        "artist": "Kishore Kumar",
-        "file": "Audio/Mere Saamne Wali Khidki.mp3",
-        "image": "Thumbnails/Mere Saamne Wali Khidki_thumbnail.jpg"
-    },
-    {
-        "title": "Lagg Ja Gale - Rain Version",
-        "artist": "Lata Mangeshkar",
-        "file": "Audio/Lagg Ja Gale.mp3",
-        "image": "Thumbnails/Lagg Ja Gale_thumbnail.jpg"
-    },
-    {
-        "title": "Ajeeb Daastan Hai Yeh - Rain Version",
-        "artist": "Lata Mangeshkar",
-        "file": "Audio/Ajeeb Daastan Hai Yeh.mp3",
-        "image": "Thumbnails/Ajeeb Daastan Hai Yeh_thumbnail.jpg"
-    },
-    {
-        "title": "Tune Jo Na Kaha - Rain Version",
-        "artist": "Mohit Chauhan",
-        "file": "Audio/Tune Jo Na Kaha.mp3",
-        "image": "Thumbnails/Tune Jo Na Kaha_thumbnail.jpg"
-    },
-    {
-        "title": "Kya Hua Tera Wada - Rain Version",
-        "artist": "Mohammed Rafi",
-        "file": "Audio/Kya Hua Tera Wada.mp3",
-        "image": "Thumbnails/Kya Hua Tera Wada_thumbnail.jpg"
-    },
-    {
-        "title": "Kahin Door Jab Din Dhal Jaye - Rain Version",
-        "artist": "Mukesh",
-        "file": "Audio/Kahin Door Jab Din Dhal Jaye.mp3",
-        "image": "Thumbnails/Kahin Door Jab Din Dhal Jaye_thumbnail.jpg"
-    },
-    {
-        "title": "Ajj Din Chadeya - Rain Version",
-        "artist": "Rahat Fateh Ali Khan",
-        "file": "Audio/Ajj Din Chadeya.mp3",
-        "image": "Thumbnails/Ajj Din Chadeya_thumbnail.jpg"
-    },
-    {
-        "title": "Tujhe Dekh Dekh - Rain Version",
-        "artist": "Rahat Fateh Ali Khan",
-        "file": "Audio/Tujhe Dekh Dekh.mp3",
-        "image": "Thumbnails/Tujhe Dekh Dekh_thumbnail.jpg"
     },
     {
         "title": "Agar Tum Saath Ho - Slowed & Reverb (The Beston Music)",
@@ -989,5 +791,83 @@
         "artist": "Atif Aslam",
         "file": "Audio/𝐓𝐞𝐫𝐚 𝐡𝐨𝐧𝐞 𝐥𝐚𝐠𝐚 𝐡𝐨𝐨𝐧  _  𝐬𝐥𝐨𝐰   𝐫𝐞𝐯𝐞𝐫𝐛  _.mp3",
         "image": "Thumbnails/𝐓𝐞𝐫𝐚 𝐡𝐨𝐧𝐞 𝐥𝐚𝐠𝐚 𝐡𝐨𝐨𝐧  _  𝐬𝐥𝐨𝐰   𝐫𝐞𝐯𝐞𝐫𝐛  __thumbnail.jpg"
+    },
+    {
+        "title": "Besabriyaan - Slowed + Reverb",
+        "artist": "Armaan Malik",
+        "file": "Audio/Besabriyaan - Armaan Malik Song _ Slowed And Reverb Lofi Mix.mp3",
+        "image": "Thumbnails/Besabriyaan - Armaan Malik Song _ Slowed And Reverb Lofi Mix_thumbnail.jpg"
+    },
+    {
+        "title": "Dekhte Dekhte - Slowed + Reverb - SR Lofi",
+        "artist": "Atif Aslam",
+        "file": "Audio/Dekhte Dekhte - Lofi (Slowed   Reverb) _ Atif Aslam _ SR Lofi.mp3",
+        "image": "Thumbnails/Dekhte Dekhte - Lofi (Slowed   Reverb) _ Atif Aslam _ SR Lofi_thumbnail.jpg"
+    },
+    {
+        "title": "Hamari Adhuri Kahani - Slowed + Reverb - SR Lofi",
+        "artist": "Arijit Singh",
+        "file": "Audio/Hamari Adhuri Kahani Title Track (Slowed   Reverb) _ Arijit Singh _ Hamari Adhuri Kahani _ SR Lofi.mp3",
+        "image": "Thumbnails/Hamari Adhuri Kahani Title Track (Slowed   Reverb) _ Arijit Singh _ Hamari Adhuri Kahani _ SR Lofi_thumbnail.jpg"
+    },
+    {
+        "title": "Ishq Sufiyana - Slowed + Reverb - SR Lofi",
+        "artist": "Kamal Khan",
+        "file": "Audio/Ishq Sufiyana (Slowed   Reverb) _ Kamal Khan _ The Dirty Picture _ SR Lofi.mp3",
+        "image": "Thumbnails/Ishq Sufiyana (Slowed   Reverb) _ Kamal Khan _ The Dirty Picture _ SR Lofi_thumbnail.jpg"
+    },
+    {
+        "title": "Jeena Jeena - Slowed + Reverb - SR Lofi",
+        "artist": "Atif Aslam",
+        "file": "Audio/Jeena Jeena (Slowed   Reverb) _ Atif Aslam _ Badlapur _ SR Lofi.mp3",
+        "image": "Thumbnails/Jeena Jeena (Slowed   Reverb) _ Atif Aslam _ Badlapur _ SR Lofi_thumbnail.jpg"
+    },
+    {
+        "title": "Kun Faya Kun - Slowed + Reverb - SR Lofi",
+        "artist": "A. R. Rahman, Javed Ali, Mohit Chauhan",
+        "file": "Audio/Kun Faya Kun (Slowed   Reverb) _ A.R. Rahman, Javed Ali, Mohit Chauhan _ Rockstar _ SR Lofi.mp3",
+        "image": "Thumbnails/Kun Faya Kun (Slowed   Reverb) _ A.R. Rahman, Javed Ali, Mohit Chauhan _ Rockstar _ SR Lofi_thumbnail.jpg"
+    },
+    {
+        "title": "Phir Bhi Tumko Chahunga - Slowed + Reverb",
+        "artist": "Arijit Singh",
+        "file": "Audio/Phir bhi Tumko Chahunga - Sad Version _ slowed   reverbed   rain _ Arijit Singh _ Lofi Version.mp3",
+        "image": "Thumbnails/Phir bhi Tumko Chahunga - Sad Version _ slowed   reverbed   rain _ Arijit Singh _ Lofi Version_thumbnail.jpg"
+    },
+    {
+        "title": "Raaz Aankhein Teri - Slowed + Reverb - SR Lofi",
+        "artist": "Arijit Singh",
+        "file": "Audio/Raaz Aankhein Teri (Slowed   Reverb) _ Arijit Singh _ Raaz Reboot _ SR Lofi.mp3",
+        "image": "Thumbnails/Raaz Aankhein Teri (Slowed   Reverb) _ Arijit Singh _ Raaz Reboot _ SR Lofi_thumbnail.jpg"
+    },
+    {
+        "title": "Tere Sang Yaara - Slowed + Reverb - SR Lofi",
+        "artist": "Atif Aslam",
+        "file": "Audio/Tere Sang Yaara (Slowed   Reverb) _ Atif Aslam _ Rustom _ SR Lofi.mp3",
+        "image": "Thumbnails/Tere Sang Yaara (Slowed   Reverb) _ Atif Aslam _ Rustom _ SR Lofi_thumbnail.jpg"
+    },
+    {
+        "title": "Teri Meri Kahaani - Slowed + Reverb",
+        "artist": "Arijit Singh, Palak Muchhal",
+        "file": "Audio/Teri Meri Kahaani - [ Slowed   Reverb ] _ Arijit Singh, Palak muchhal.mp3",
+        "image": "Thumbnails/Teri Meri Kahaani - [ Slowed   Reverb ] _ Arijit Singh, Palak muchhal_thumbnail.jpg"
+    },
+    {
+        "title": "Teri Meri Prem Kahani - Slowed + Reverb - SR Lofi",
+        "artist": "Rahat Fateh Ali Khan, Shreya Ghoshal",
+        "file": "Audio/Teri Meri Prem Kahani (Slowed   Reverb) _ Rahat Fateh Ali Khan, Shreya Ghoshal _ Bodyguard _ SR Lofi.mp3",
+        "image": "Thumbnails/Teri Meri Prem Kahani (Slowed   Reverb) _ Rahat Fateh Ali Khan, Shreya Ghoshal _ Bodyguard _ SR Lofi_thumbnail.jpg"
+    },
+    {
+        "title": "To Fir Aao - Slowed + Reverb",
+        "artist": "Mustafa Zahid",
+        "file": "Audio/To Fir Aao ( slow).mp3",
+        "image": "Thumbnails/To Fir Aao ( slow)_thumbnail.jpg"
+    },
+    {
+        "title": "Tu Jo Mila - Slowed & Reverb",
+        "artist": "KK",
+        "file": "Audio/Tu Jo Mila Lofi Bajrangi Bhaijaan - Slowed - Reverb - By - KK - Itz.partth Lofi Music.mp3",
+        "image": "Thumbnails/Tu Jo Mila Lofi Bajrangi Bhaijaan - Slowed - Reverb - By - KK - Itz.partth Lofi Music_thumbnail.jpg"
     }
 ]
