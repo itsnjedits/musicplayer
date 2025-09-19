@@ -130,5 +130,11 @@
         "artist": "Jagjit Singh",
         "file": "Audio/Yun Zindagi Ki Raah Mein Takra Gaya Koi.mp3",
         "image": "Thumbnails/Yun Zindagi Ki Raah Mein Takra Gaya Koi_thumbnail.jpg"
+    },
+    {
+        "title": "Honthon Se Chulo Tum - Rain Version",
+        "artist": "Jagjit Singh",
+        "file": "Audio/Honthon Se Chulo Tum.mp3",
+        "image": "Thumbnails/Honthon Se Chulo Tum_thumbnail.jpg"
     }
 ]

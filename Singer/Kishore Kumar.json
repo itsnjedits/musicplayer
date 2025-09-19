@@ -220,5 +220,17 @@
         "artist": "Kishore Kumar",
         "file": "Audio/saiyara.mp3",
         "image": "Thumbnails/saiyara_thumbnail.jpg"
+    },
+    {
+        "title": "Chhookar Mere Mann Ko - Rain Version",
+        "artist": "Kishore Kumar",
+        "file": "Audio/Chhookar Mere Mann Ko.mp3",
+        "image": "Thumbnails/Chhookar Mere Mann Ko_thumbnail.jpg"
+    },
+    {
+        "title": "Mere Saamne Wali Khidki - Rain Version",
+        "artist": "Kishore Kumar",
+        "file": "Audio/Mere Saamne Wali Khidki.mp3",
+        "image": "Thumbnails/Mere Saamne Wali Khidki_thumbnail.jpg"
     }
 ]

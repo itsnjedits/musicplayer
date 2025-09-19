@@ -28,5 +28,29 @@
         "artist": "Karwaan Band",
         "file": "Audio/Unke Andaz-e-Karam __ Karwaan.mp3",
         "image": "Thumbnails/Unke Andaz-e-Karam __ Karwaan_thumbnail.jpg"
+    },
+    {
+        "title": "Aankh Uthi Mohabbat Ne Angrai Li",
+        "artist": "Nusrat Fateh Ali Khan",
+        "file": "Audio/Aankh Uthi Mohabbat Ne Angrai Li - Ustad Nusrat Fateh Ali Khan - OSA Official HD Video.mp3",
+        "image": "Thumbnails/Aankh Uthi Mohabbat Ne Angrai Li - Ustad Nusrat Fateh Ali Khan - OSA Official HD Video_thumbnail.jpg"
+    },
+    {
+        "title": "MERE RASHKE QAMAR (Original Complete Version)",
+        "artist": "Nusrat Fateh Ali Khan",
+        "file": "Audio/MERE RASHKE QAMAR (Original Complete Version) - USTAD NUSRAT FATEH ALI KHAN - OFFICIAL VIDEO.mp3",
+        "image": "Thumbnails/MERE RASHKE QAMAR (Original Complete Version) - USTAD NUSRAT FATEH ALI KHAN - OFFICIAL VIDEO_thumbnail.jpg"
+    },
+    {
+        "title": "Sochta Hoon Ke Woh Kitne Masoom (Live Full)",
+        "artist": "Nusrat Fateh Ali Khan",
+        "file": "Audio/Sochta Hoon Ke Woh Kitne Masoom (Live Full) - Ustad Nusrat Fateh Ali Khan - OSA Worldwide.mp3",
+        "image": "Thumbnails/Sochta Hoon Ke Woh Kitne Masoom (Live Full) - Ustad Nusrat Fateh Ali Khan - OSA Worldwide_thumbnail.jpg"
+    },
+    {
+        "title": "Un Ke Andaz E Karam - Complete Full Version",
+        "artist": "Nusrat Fateh Ali Khan",
+        "file": "Audio/Ustad Nusrat Fateh Ali Khan _ Un Ka Andaz E Karam _ OSA Complete Full Version _ OSA Worldwide.mp3",
+        "image": "Thumbnails/Ustad Nusrat Fateh Ali Khan _ Un Ka Andaz E Karam _ OSA Complete Full Version _ OSA Worldwide_thumbnail.jpg"
     }
 ]

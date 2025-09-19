@@ -52,5 +52,11 @@
         "artist": "Papon",
         "file": "Audio/Mithoon, Papon - Humnava (Lyrics).mp3",
         "image": "Thumbnails/Mithoon, Papon - Humnava (Lyrics)_thumbnail.jpg"
+    },
+    {
+        "title": "Kyon - Rain Version",
+        "artist": "Papon",
+        "file": "Audio/Kyon.mp3",
+        "image": "Thumbnails/Kyon_thumbnail.jpg"
     }
 ]

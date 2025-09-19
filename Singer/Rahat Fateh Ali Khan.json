@@ -166,5 +166,17 @@
         "artist": "Rahat Fateh Ali Khan",
         "file": "Audio/Zaroori Tha - Lofi (Slowed   Reverb) _ Rahat Fateh Ali Khan _ SR Lofi.mp3",
         "image": "Thumbnails/Zaroori Tha - Lofi (Slowed   Reverb) _ Rahat Fateh Ali Khan _ SR Lofi_thumbnail.jpg"
+    },
+    {
+        "title": "Ajj Din Chadeya - Rain Version",
+        "artist": "Rahat Fateh Ali Khan",
+        "file": "Audio/Ajj Din Chadeya.mp3",
+        "image": "Thumbnails/Ajj Din Chadeya_thumbnail.jpg"
+    },
+    {
+        "title": "Tujhe Dekh Dekh - Rain Version",
+        "artist": "Rahat Fateh Ali Khan",
+        "file": "Audio/Tujhe Dekh Dekh.mp3",
+        "image": "Thumbnails/Tujhe Dekh Dekh_thumbnail.jpg"
     }
 ]

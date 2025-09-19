@@ -64,5 +64,17 @@
         "artist": "Kishore Kumar, Lata Mangeshkar",
         "file": "Audio/Saagar kinare (Lyrical Video) _ Kishore Kumar _ Lata Mangeshkar _ Saagar.mp3",
         "image": "Thumbnails/Saagar kinare (Lyrical Video) _ Kishore Kumar _ Lata Mangeshkar _ Saagar_thumbnail.jpg"
+    },
+    {
+        "title": "Lagg Ja Gale - Rain Version",
+        "artist": "Lata Mangeshkar",
+        "file": "Audio/Lagg Ja Gale.mp3",
+        "image": "Thumbnails/Lagg Ja Gale_thumbnail.jpg"
+    },
+    {
+        "title": "Ajeeb Daastan Hai Yeh - Rain Version",
+        "artist": "Lata Mangeshkar",
+        "file": "Audio/Ajeeb Daastan Hai Yeh.mp3",
+        "image": "Thumbnails/Ajeeb Daastan Hai Yeh_thumbnail.jpg"
     }
 ]
