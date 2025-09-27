@@ -232,5 +232,11 @@
         "artist": "Kishore Kumar",
         "file": "Audio/Mere Saamne Wali Khidki.mp3",
         "image": "Thumbnails/Mere Saamne Wali Khidki_thumbnail.jpg"
+    },
+    {
+        "title": "Yeh Jeevan Hai Is Jeevan Ka",
+        "artist": "Kishore Kumar",
+        "file": "Audio/Yeh Jeevan Hai Is Jeevan Ka _ Piya Ka Ghar _ Kishore Kumar.mp3",
+        "image": "Thumbnails/Yeh Jeevan Hai Is Jeevan Ka _ Piya Ka Ghar _ Kishore Kumar_thumbnail.jpg"
     }
 ]
