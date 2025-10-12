@@ -118,7 +118,7 @@ select option {
 }
 .playback-speed select {
   background-color: rgb(75, 85, 99);
-  border: 1px solid #444;
+  /* border: 1px solid #444; */
 }
 .playback-speed select:focus {
   outline: none;
@@ -219,4 +219,11 @@ header {
   /* Safari/Chrome */
   -ms-user-select: none;
   /* IE/Edge */
+}
+
+#loop-btn i {
+  transition: transform 0.3s ease;
+}
+#loop-btn:hover i {
+  transform: rotate(180deg);
 }

@@ -2,10 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let songs = [], currentIndex = 0;
   let playlist = [], audio = new Audio();
-  let isLooping = false, animationAllowed = true, animationInterval = null, scrollCooldown = false;
+  let animationAllowed = true, animationInterval = null, scrollCooldown = false;
   let lastPlayedSong = null;
 
-  const loopButton = document.querySelector('.loop');
+  // const loopButton = document.querySelector('.loop');
   const reqSongButton = document.querySelector(".reqSong");
   const playPauseButton = document.getElementById('play-pause');
   const prevButton = document.getElementById('prev');
@@ -25,6 +25,45 @@ document.addEventListener('DOMContentLoaded', () => {
   const playlistButton = document.querySelector(".yourPlaylist");
   musicplayer.style.animationPlayState = 'paused';
   let currentPlaybackRate = parseFloat(speedSelect.value);
+
+  let isLoopingSingle = false;
+let isLoopingPlaylist = false;
+
+// ========== LOOP BUTTONS ==========
+const loopButtonSingle = document.getElementById('loop-btn-single');
+const loopButtonPlaylist = document.getElementById('loop-btn-playlist');
+
+loopButtonSingle.addEventListener('click', () => {
+  isLoopingSingle = !isLoopingSingle;
+  audio.loop = isLoopingSingle;
+  loopButtonSingle.style.color = isLoopingSingle ? 'red' : 'white';
+    loopButtonSingle.style.backgroundColor = isLoopingSingle ? '#3c4148ff' : '#4b5563';
+
+  loopButtonSingle.title = isLoopingSingle ? "Single Loop ON" : "Single Loop OFF";
+
+  if (isLoopingSingle) {
+    isLoopingPlaylist = false;
+    loopButtonPlaylist.style.color = 'white';
+  }
+
+  console.log("🎯 Single Loop:", isLoopingSingle, "| Playlist Loop:", isLoopingPlaylist);
+});
+
+loopButtonPlaylist.addEventListener('click', () => {
+  isLoopingPlaylist = !isLoopingPlaylist;
+  loopButtonPlaylist.style.color = isLoopingPlaylist ? 'red' : 'white';
+  loopButtonPlaylist.title = isLoopingPlaylist ? "Playlist Loop ON" : "Playlist Loop OFF";
+
+  if (isLoopingPlaylist) {
+    isLoopingSingle = false;
+    audio.loop = false;
+    loopButtonSingle.style.color = 'white';
+  }
+
+  console.log("🎯 Playlist Loop:", isLoopingPlaylist, "| Single Loop:", isLoopingSingle);
+});
+
+
 
   // --------- Text Animation ---------
   const texts = ["Mood", "Genre", "Singer"];
@@ -103,10 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
   iframeContainer.appendChild(closeButton);
   document.body.appendChild(iframeContainer);
 
-  loopButton.addEventListener('click', () => {
-    isLooping = !isLooping;
-    loopButton.classList.toggle('text-red-500', isLooping);
-  });
+
   reqSongButton.addEventListener("click", () => iframeContainer.style.display = "block");
 
   document.querySelector('.randomSong').addEventListener('click', () => {
@@ -647,41 +683,69 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ========== PLAY A SONG ==========
-  function playSong(index) {
-    if (index < 0 || (index >= songs.length && !isLooping)) return;
-    currentIndex = index % songs.length;
+// ========== PLAY A SONG ==========
+function playSong(index) {
+  if (index < 0 || (index >= songs.length && !isLoopingPlaylist)) return;
+  currentIndex = index % songs.length;
 
-    const song = songs[currentIndex];
-    lastPlayedSong = song;  // ✅ save reference of currently playing song
+  const song = songs[currentIndex];
+  lastPlayedSong = song;  // ✅ Save reference of currently playing song
 
+  // Stop any previous song and reset
+  audio.pause();
+  audio.onended = null;
+  audio.src = song.file;
+  audio.load();
+  audio.playbackRate = currentPlaybackRate;
 
-    audio.pause();
-    audio.onended = null;
-    audio.src = song.file;
-    audio.load();
-    audio.playbackRate = currentPlaybackRate;
+  audio.play().then(() => {
+    musicplayer.style.animationPlayState = 'running';
+  }).catch(console.error);
 
-    audio.play().then(() => {
-      musicplayer.style.animationPlayState = 'running';
-    }).catch(console.error);
+  updatePlayer(song);
+  toggleButtons(false);
+  saveLastPlayedSong(song); // ✅ Save song when played
 
-    updatePlayer(song);
-    toggleButtons(false);
-    saveLastPlayedSong(song); // ✅ save song when played
+  // ==============================
+  // 🎧 AUDIO ENDED EVENT HANDLER
+  // ==============================
+  audio.onended = () => {
+    console.log("🎵 Song ended | Index:", currentIndex);
+    console.log("Loop States => Single:", isLoopingSingle, "| Playlist:", isLoopingPlaylist);
 
-    audio.onended = () => {
-      if (!isLooping && currentIndex === songs.length - 1) return;
+    // ✅ SINGLE LOOP MODE
+    if (isLoopingSingle) {
+      console.log("🔁 Single loop active — browser will replay same song.");
+      audio.loop = true; // handled automatically
+      return;
+    } else {
+      audio.loop = false;
+    }
+
+    // ✅ PLAYLIST LOOP MODE
+    if (currentIndex < songs.length - 1) {
+      console.log("⏭️ Playing next song...");
       playSong(currentIndex + 1);
-    };
+    } 
+    else if (isLoopingPlaylist) {
+      console.log("🔄 Restarting playlist...");
+      playSong(0);
+    } 
+    else {
+      console.log("🛑 Stopping playback...");
+      audio.pause();
+      playPauseButton.innerHTML = `<i class='bx bx-play'></i>`;
+    }
+  };
 
-    // ✅ Update playback time every 3 seconds
-    audio.ontimeupdate = () => {
-      if (!audio.paused && audio.currentTime > 0 && lastPlayedSong) {
-        saveLastPlayedSong(lastPlayedSong, audio.currentTime);
-      }
-    };
-  }
+  // ✅ Update playback time every few seconds
+  audio.ontimeupdate = () => {
+    if (!audio.paused && audio.currentTime > 0 && lastPlayedSong) {
+      saveLastPlayedSong(lastPlayedSong, audio.currentTime);
+    }
+  };
+}
+
 
   function updatePlayer(song) {
   // ✅ Update song details in UI
