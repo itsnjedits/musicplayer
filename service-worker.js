@@ -1,14 +1,46 @@
-self.addEventListener('install', (event) => {
-  console.log('Service Worker: Installed');
-  self.skipWaiting();
+const CACHE_NAME = "soundaura-v1";
+const urlsToCache = [
+  "./",
+  "./index.html",
+  "./style.css",
+  "./manifest.json",
+  "./icons/icon-192.png",
+  "./icons/icon-512.png"
+];
+
+// 🧩 Install: Cache essential files
+self.addEventListener("install", (event) => {
+  console.log("Service Worker: Installing...");
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then((cache) => cache.addAll(urlsToCache))
+      .then(() => self.skipWaiting())
+  );
 });
 
-self.addEventListener('activate', (event) => {
-  console.log('Service Worker: Activated');
+// 🌀 Activate: Cleanup old caches
+self.addEventListener("activate", (event) => {
+  console.log("Service Worker: Activated");
+  event.waitUntil(
+    caches.keys().then((cacheNames) =>
+      Promise.all(
+        cacheNames
+          .filter((name) => name !== CACHE_NAME)
+          .map((name) => caches.delete(name))
+      )
+    )
+  );
   return self.clients.claim();
 });
 
-// Optional: Cache static files for offline
-self.addEventListener('fetch', (event) => {
-  event.respondWith(fetch(event.request));
+// 🌐 Fetch: Network with cache fallback
+self.addEventListener("fetch", (event) => {
+  event.respondWith(
+    caches.match(event.request).then((cachedResponse) => {
+      if (cachedResponse) return cachedResponse;
+      return fetch(event.request).catch(() =>
+        caches.match("./index.html")
+      );
+    })
+  );
 });
