@@ -1,16 +1,17 @@
-const CACHE_NAME = "soundaura-v1";
+const CACHE_NAME = "soundaura-cache-v2";
 const urlsToCache = [
   "./",
   "./index.html",
   "./style.css",
+  "./script.js",
   "./manifest.json",
   "./icons/icon-192.png",
   "./icons/icon-512.png"
 ];
 
-// 🧩 Install: Cache essential files
+// 🧩 INSTALL - Cache all essential files
 self.addEventListener("install", (event) => {
-  console.log("Service Worker: Installing...");
+  console.log("[ServiceWorker] Installing...");
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => cache.addAll(urlsToCache))
@@ -18,29 +19,28 @@ self.addEventListener("install", (event) => {
   );
 });
 
-// 🌀 Activate: Cleanup old caches
+// 🌀 ACTIVATE - Clean old cache
 self.addEventListener("activate", (event) => {
-  console.log("Service Worker: Activated");
+  console.log("[ServiceWorker] Activated");
   event.waitUntil(
-    caches.keys().then((cacheNames) =>
-      Promise.all(
-        cacheNames
-          .filter((name) => name !== CACHE_NAME)
-          .map((name) => caches.delete(name))
-      )
+    caches.keys().then((keys) =>
+      Promise.all(keys.map((key) => {
+        if (key !== CACHE_NAME) return caches.delete(key);
+      }))
     )
   );
   return self.clients.claim();
 });
 
-// 🌐 Fetch: Network with cache fallback
+// 🌐 FETCH - Network first, fallback to cache
 self.addEventListener("fetch", (event) => {
   event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) return cachedResponse;
-      return fetch(event.request).catch(() =>
-        caches.match("./index.html")
-      );
-    })
+    fetch(event.request)
+      .then((response) => {
+        const cloned = response.clone();
+        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, cloned));
+        return response;
+      })
+      .catch(() => caches.match(event.request))
   );
 });

@@ -747,13 +747,10 @@ function playSong(index) {
 }
 
 
-  function updatePlayer(song) {
-  // ✅ Update song details in UI
+function updatePlayer(song) {
+  // ✅ Update UI
   songImage.src = song.image;
-  Object.assign(songImage.style, { 
-    objectFit: "cover", 
-    objectPosition: "center"
-  });
+  Object.assign(songImage.style, { objectFit: "cover", objectPosition: "center" });
   songTitle.textContent = song.title;
   songArtist.textContent = song.artist;
   songDescription.classList.remove('opacity-0');
@@ -764,37 +761,30 @@ function playSong(index) {
   updateVisualizers();
   highlightCurrentSong();
 
-  // ✅ Media Session metadata
+  // ✅ Media Session Metadata
   if ("mediaSession" in navigator) {
     navigator.mediaSession.metadata = new MediaMetadata({
       title: song.title,
       artist: song.artist,
-      artwork: [
-        { src: song.image, sizes: "512x512", type: "image/png" }
-      ]
+      artwork: [{ src: song.image, sizes: "512x512", type: "image/png" }]
     });
 
-    // ========== ACTION HANDLERS ==========
-    navigator.mediaSession.setActionHandler("play", () => audio.play());
-    navigator.mediaSession.setActionHandler("pause", () => audio.pause());
-    navigator.mediaSession.setActionHandler("previoustrack", () => playSong(currentIndex - 1));
-    navigator.mediaSession.setActionHandler("nexttrack", () => playSong(currentIndex + 1));
-    navigator.mediaSession.setActionHandler("seekbackward", (details) => {
-      audio.currentTime = Math.max(audio.currentTime - (details.seekOffset || 10), 0);
-    });
-    navigator.mediaSession.setActionHandler("seekforward", (details) => {
-      audio.currentTime = Math.min(audio.currentTime + (details.seekOffset || 10), audio.duration);
-    });
-    navigator.mediaSession.setActionHandler("seekto", (details) => {
-      if (details.fastSeek && "fastSeek" in audio) {
-        audio.fastSeek(details.seekTime);
-      } else {
-        audio.currentTime = details.seekTime;
-      }
-    });
+    // 🎛️ Controls
+    const actions = {
+      play: () => audio.play(),
+      pause: () => audio.pause(),
+      previoustrack: () => playSong(currentIndex - 1),
+      nexttrack: () => playSong(currentIndex + 1),
+      seekbackward: (d) => (audio.currentTime = Math.max(audio.currentTime - (d.seekOffset || 10), 0)),
+      seekforward: (d) => (audio.currentTime = Math.min(audio.currentTime + (d.seekOffset || 10), audio.duration)),
+      seekto: (d) => (audio.currentTime = d.seekTime)
+    };
+    for (const [a, fn] of Object.entries(actions)) {
+      try { navigator.mediaSession.setActionHandler(a, fn); } catch {}
+    }
 
-    // ✅ Ensure duration is ready
-    audio.onloadedmetadata = () => {
+    // 🕓 Update Position
+    const updatePosition = () => {
       if ("setPositionState" in navigator.mediaSession && !isNaN(audio.duration)) {
         navigator.mediaSession.setPositionState({
           duration: audio.duration,
@@ -803,29 +793,20 @@ function playSong(index) {
         });
       }
     };
+    audio.onloadedmetadata = updatePosition;
+    audio.ontimeupdate = updatePosition;
 
-    // ✅ Continuously update position for seek bar
-    audio.ontimeupdate = () => {
-      if ("setPositionState" in navigator.mediaSession && !isNaN(audio.duration)) {
-        navigator.mediaSession.setPositionState({
-          duration: audio.duration,
-          position: audio.currentTime,
-          playbackRate: audio.playbackRate
-        });
-      }
+    audio.onplay = () => {
+      navigator.mediaSession.playbackState = "playing";
+      playPauseButton.innerHTML = `<i class='bx bx-pause'></i>`;
+    };
+    audio.onpause = () => {
+      navigator.mediaSession.playbackState = "paused";
+      playPauseButton.innerHTML = `<i class='bx bx-play'></i>`;
     };
   }
-
-  // ✅ Keep UI & MediaSession state synced
-  audio.onplay = () => {
-    if ("mediaSession" in navigator) navigator.mediaSession.playbackState = "playing";
-    playPauseButton.innerHTML = `<i class='bx bx-pause'></i>`;
-  };
-  audio.onpause = () => {
-    if ("mediaSession" in navigator) navigator.mediaSession.playbackState = "paused";
-    playPauseButton.innerHTML = `<i class='bx bx-play'></i>`;
-  };
 }
+
 
   function updateButtons() {
     prevButton.disabled = currentIndex === 0;

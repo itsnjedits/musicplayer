@@ -30,8 +30,17 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
 
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#111827">
+<!-- 🌟 PWA Setup -->
+<link rel="manifest" href="./manifest.json">
+<meta name="theme-color" content="#111827">
+<meta name="background-color" content="#000000">
+
+<!-- 📱 iOS PWA support -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="SoundAura">
+<link rel="apple-touch-icon" href="./icons/icon-512.png">
+
 
 </head>
 <style>
@@ -432,13 +441,16 @@
         });
     </script>
     <script src="script copy.js"></script>
+<!-- 💫 PWA Registration -->
 <script>
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js')
-      .then(() => console.log('✅ Service Worker Registered'))
-      .catch(err => console.error('SW failed:', err));
+    navigator.serviceWorker.register('./service-worker.js')
+      .then(() => console.log("✅ Service Worker registered"))
+      .catch((err) => console.log("❌ Service Worker failed:", err));
   }
 </script>
+
+
 
     
 </body>
