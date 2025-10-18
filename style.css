@@ -119,6 +119,7 @@ select option {
 .playback-speed select {
   background-color: rgb(75, 85, 99);
   /* border: 1px solid #444; */
+  border-radius: 16px !important;
 }
 .playback-speed select:focus {
   outline: none;
@@ -211,6 +212,7 @@ header {
 /* #speed::-webkit-appearance: none; */
   #speed {
     background-image: none;
+    border-radius: 16px !important;
   }
 /* Sabhi elements ke liye text selection disable */
 * {

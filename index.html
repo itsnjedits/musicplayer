@@ -334,7 +334,7 @@
     <!-- Playback Speed -->
     <div class="playback-speed flex justify-center items-center">
       <select id="speed" style="font-family: 'Roboto Mono', monospace;"
-        class="text-white bg-gray-800 rounded-2xl p-2 md:p-3 tracking-normal font-semibold appearance-none text-center shadow-[0_4px_8px_rgba(0,0,0,0.5)] hover:shadow-[0_6px_10px_rgba(0,0,0,0.65)] hover:-translate-y-0.5 transition duration-150">
+        class="text-white bg-gray-800 rounded-lg p-2 md:p-3 tracking-normal font-semibold appearance-none text-center shadow-[0_4px_8px_rgba(0,0,0,0.5)] hover:shadow-[0_6px_10px_rgba(0,0,0,0.65)] hover:-translate-y-0.5 transition duration-150">
         <option class="bg-gray-700" value="0.9">0.9x</option>
         <option class="bg-gray-700" value="0.95">0.95x</option>
         <option class="bg-gray-700" value="1" selected>1x</option>
@@ -365,6 +365,8 @@
 
 
     <script>
+
+
         const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
         if (isTouchDevice) {
