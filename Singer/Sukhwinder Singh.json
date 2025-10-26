@@ -1,14 +1,16 @@
 [
     {
-        "title": "Haule Haule",
-        "artist": "Sukhwinder Singh",
-        "file": "Audio/🎤Sukhwinder Singh - Haule Haule Full Lyrics Song Rab Ne Bana Di JodiShahrukh Khan - Anushaka S .mp3",
-        "image": "Thumbnails/🎤Sukhwinder Singh - Haule Haule Full Lyrics Song Rab Ne Bana Di JodiShahrukh Khan - Anushaka S _thumbnail.jpg"
-    },
-    {
         "title": "Issaqbaazi",
         "artist": "Sukhwinder Singh",
         "file": "Audio/Zero ISSAQBAAZI Full Song Shah Rukh Khan- Salman Khan- Anushka Sharma- Katrina Kaif T-Series.mp3",
-        "image": "Thumbnails/Zero ISSAQBAAZI Full Song Shah Rukh Khan- Salman Khan- Anushka Sharma- Katrina Kaif T-Series_thumbnail.jpg"
+        "image": "Thumbnails/Zero ISSAQBAAZI Full Song Shah Rukh Khan- Salman Khan- Anushka Sharma- Katrina Kaif T-Series_thumbnail.jpg",
+        "ext": ""
+    },
+    {
+        "title": "Haule Haule",
+        "artist": "Sukhwinder Singh",
+        "file": "Audio/🎤Sukhwinder Singh - Haule Haule Full Lyrics Song Rab Ne Bana Di JodiShahrukh Khan - Anushaka S .mp3",
+        "image": "Thumbnails/🎤Sukhwinder Singh - Haule Haule Full Lyrics Song Rab Ne Bana Di JodiShahrukh Khan - Anushaka S _thumbnail.jpg",
+        "ext": ""
     }
 ]
