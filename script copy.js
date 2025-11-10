@@ -27,41 +27,41 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentPlaybackRate = parseFloat(speedSelect.value);
 
   let isLoopingSingle = false;
-let isLoopingPlaylist = false;
+  let isLoopingPlaylist = false;
 
-// ========== LOOP BUTTONS ==========
-const loopButtonSingle = document.getElementById('loop-btn-single');
-const loopButtonPlaylist = document.getElementById('loop-btn-playlist');
+  // ========== LOOP BUTTONS ==========
+  const loopButtonSingle = document.getElementById('loop-btn-single');
+  const loopButtonPlaylist = document.getElementById('loop-btn-playlist');
 
-loopButtonSingle.addEventListener('click', () => {
-  isLoopingSingle = !isLoopingSingle;
-  audio.loop = isLoopingSingle;
-  loopButtonSingle.style.color = isLoopingSingle ? 'red' : 'white';
+  loopButtonSingle.addEventListener('click', () => {
+    isLoopingSingle = !isLoopingSingle;
+    audio.loop = isLoopingSingle;
+    loopButtonSingle.style.color = isLoopingSingle ? 'red' : 'white';
     loopButtonSingle.style.backgroundColor = isLoopingSingle ? '#3c4148ff' : '#4b5563';
 
-  loopButtonSingle.title = isLoopingSingle ? "Single Loop ON" : "Single Loop OFF";
+    loopButtonSingle.title = isLoopingSingle ? "Single Loop ON" : "Single Loop OFF";
 
-  if (isLoopingSingle) {
-    isLoopingPlaylist = false;
-    loopButtonPlaylist.style.color = 'white';
-  }
+    if (isLoopingSingle) {
+      isLoopingPlaylist = false;
+      loopButtonPlaylist.style.color = 'white';
+    }
 
-  console.log("🎯 Single Loop:", isLoopingSingle, "| Playlist Loop:", isLoopingPlaylist);
-});
+    console.log("🎯 Single Loop:", isLoopingSingle, "| Playlist Loop:", isLoopingPlaylist);
+  });
 
-loopButtonPlaylist.addEventListener('click', () => {
-  isLoopingPlaylist = !isLoopingPlaylist;
-  loopButtonPlaylist.style.color = isLoopingPlaylist ? 'red' : 'white';
-  loopButtonPlaylist.title = isLoopingPlaylist ? "Playlist Loop ON" : "Playlist Loop OFF";
+  loopButtonPlaylist.addEventListener('click', () => {
+    isLoopingPlaylist = !isLoopingPlaylist;
+    loopButtonPlaylist.style.color = isLoopingPlaylist ? 'red' : 'white';
+    loopButtonPlaylist.title = isLoopingPlaylist ? "Playlist Loop ON" : "Playlist Loop OFF";
 
-  if (isLoopingPlaylist) {
-    isLoopingSingle = false;
-    audio.loop = false;
-    loopButtonSingle.style.color = 'white';
-  }
+    if (isLoopingPlaylist) {
+      isLoopingSingle = false;
+      audio.loop = false;
+      loopButtonSingle.style.color = 'white';
+    }
 
-  console.log("🎯 Playlist Loop:", isLoopingPlaylist, "| Single Loop:", isLoopingSingle);
-});
+    console.log("🎯 Playlist Loop:", isLoopingPlaylist, "| Single Loop:", isLoopingSingle);
+  });
 
 
 
@@ -290,31 +290,38 @@ loopButtonPlaylist.addEventListener('click', () => {
         Go to <b>\"Mood\"</b> or <u id="get-started-link" class="hover:text-[#29ecfe] cursor-pointer font-bold">Get Started</u>
       </div>`;
 
-// ✅ Restore last played song on reload
-const lastPlayed = JSON.parse(localStorage.getItem('lastPlayedSong'));
-if (lastPlayed) {
-  currentIndex = lastPlayed.index ?? 0; // ✅ restore index or fallback to 0
-  audio.src = lastPlayed.file;
-  audio.load();
-  audio.currentTime = lastPlayed.time || 0;
+    // ✅ Restore last played song on reload
+    const lastPlayed = JSON.parse(localStorage.getItem('lastPlayedSong'));
+    if (lastPlayed) {
+      currentIndex = lastPlayed.index ?? 0; // ✅ restore index or fallback to 0
+      audio.src = lastPlayed.file;
+      audio.load();
+      audio.currentTime = lastPlayed.time || 0;
 
-  songImage.src = lastPlayed.image;
-  Object.assign(songImage.style, { objectFit: "cover", objectPosition: "top" });
-  songTitle.textContent = lastPlayed.title;
-  songArtist.textContent = lastPlayed.artist;
-  songDescription.classList.remove('opacity-0');
-  songDescription.style.display = 'flex';
-  playPauseButton.innerHTML = `<i class='bx bx-play'></i>`;
-  lastPlayedSong = lastPlayed;
+      songImage.src = lastPlayed.image;
+      Object.assign(songImage.style, { objectFit: "cover", objectPosition: "top" });
+      songTitle.textContent = lastPlayed.title;
+      songArtist.textContent = lastPlayed.artist;
+      songDescription.classList.remove('opacity-0');
+      songDescription.style.display = 'flex';
+      playPauseButton.innerHTML = `<i class='bx bx-play'></i>`;
+      lastPlayedSong = lastPlayed;
 
-  updateTime();
+      updateTime();
 
-  audio.ontimeupdate = () => {
-    if (!audio.paused && audio.currentTime > 0 && lastPlayedSong) {
-      saveLastPlayedSong(lastPlayedSong, audio.currentTime, currentIndex);
+      let lastUpdateTime = 0;
+
+      audio.ontimeupdate = () => {
+        const now = Date.now();
+        if (now - lastUpdateTime < 500) return;  // 500ms = 2 bar per second
+        lastUpdateTime = now;
+
+        if (!audio.paused && audio.currentTime > 0 && lastPlayedSong) {
+          saveLastPlayedSong(lastPlayedSong, audio.currentTime, currentIndex);
+        }
+      };
+
     }
-  };
-}
 
   });
 
@@ -660,18 +667,18 @@ if (lastPlayed) {
   // ========== BUTTON STATE MANAGEMENT ==========
 
   // ✅ Save last played song with index and currentTime
-function saveLastPlayedSong(song, currentTime = 0, index = currentIndex) {
-  if (!song) return;
-  const lastPlayed = {
-    title: song.title,
-    artist: song.artist,
-    image: song.image,
-    file: song.file,
-    time: currentTime,
-    index: index // ✅ Save current index
-  };
-  localStorage.setItem('lastPlayedSong', JSON.stringify(lastPlayed));
-}
+  function saveLastPlayedSong(song, currentTime = 0, index = currentIndex) {
+    if (!song) return;
+    const lastPlayed = {
+      title: song.title,
+      artist: song.artist,
+      image: song.image,
+      file: song.file,
+      time: currentTime,
+      index: index // ✅ Save current index
+    };
+    localStorage.setItem('lastPlayedSong', JSON.stringify(lastPlayed));
+  }
 
 
 
@@ -689,132 +696,139 @@ function saveLastPlayedSong(song, currentTime = 0, index = currentIndex) {
     });
   }
 
-// ========== PLAY A SONG ==========
-// ✅ PLAY A SONG
-function playSong(index) {
-  if (songs.length === 0) return;
+  // ========== PLAY A SONG ==========
+  // ✅ PLAY A SONG
+  function playSong(index) {
+    if (songs.length === 0) return;
 
-  // Wrap-around (looping)
-  if (index < 0 && isLoopingPlaylist) index = songs.length - 1;
-  if (index >= songs.length && isLoopingPlaylist) index = 0;
-  if (index < 0 || index >= songs.length) return; // Out of range without loop mode
+    // Wrap-around (looping)
+    if (index < 0 && isLoopingPlaylist) index = songs.length - 1;
+    if (index >= songs.length && isLoopingPlaylist) index = 0;
+    if (index < 0 || index >= songs.length) return; // Out of range without loop mode
 
-  currentIndex = index;
-  const song = songs[currentIndex];
-  lastPlayedSong = song;
+    currentIndex = index;
+    const song = songs[currentIndex];
+    lastPlayedSong = song;
 
-  // Stop any currently playing song
-  audio.pause();
-  audio.onended = null;
-  audio.src = song.file;
-  audio.load();
-  audio.playbackRate = currentPlaybackRate;
+    // Stop any currently playing song
+    audio.pause();
+    audio.onended = null;
+    audio.src = song.file;
+    audio.load();
+    audio.playbackRate = currentPlaybackRate;
 
-  // Play song
-  audio.play().then(() => {
-    musicplayer.style.animationPlayState = 'running';
-  }).catch(console.error);
+    // Play song
+    audio.play().then(() => {
+      musicplayer.style.animationPlayState = 'running';
+    }).catch(console.error);
 
-  // ✅ Update UI and Metadata
-  updatePlayer(song);
-  toggleButtons(false);
-  saveLastPlayedSong(song, 0, currentIndex);
+    // ✅ Update UI and Metadata
+    updatePlayer(song);
+    toggleButtons(false);
+    saveLastPlayedSong(song, 0, currentIndex);
 
-  // ==============================
-  // 🎧 AUDIO ENDED EVENT HANDLER
-  // ==============================
-  audio.onended = () => {
-    console.log("🎵 Song ended | Index:", currentIndex);
-    console.log("Loop States => Single:", isLoopingSingle, "| Playlist:", isLoopingPlaylist);
+    // ==============================
+    // 🎧 AUDIO ENDED EVENT HANDLER
+    // ==============================
+    audio.onended = () => {
+      console.log("🎵 Song ended | Index:", currentIndex);
+      console.log("Loop States => Single:", isLoopingSingle, "| Playlist:", isLoopingPlaylist);
 
-    if (isLoopingSingle) {
-      // Single song loop
-      audio.loop = true;
-      return;
-    } else {
-      audio.loop = false;
-    }
+      if (isLoopingSingle) {
+        // Single song loop
+        audio.loop = true;
+        return;
+      } else {
+        audio.loop = false;
+      }
 
-    // Next song logic
-    if (currentIndex < songs.length - 1) {
-      playSong(currentIndex + 1);
-    } else if (isLoopingPlaylist) {
-      playSong(0);
-    } else {
-      audio.pause();
-      playPauseButton.innerHTML = `<i class='bx bx-play'></i>`;
-    }
-  };
-
-  // ✅ Save playback time periodically
-  audio.ontimeupdate = () => {
-    if (!audio.paused && audio.currentTime > 0 && lastPlayedSong) {
-      saveLastPlayedSong(lastPlayedSong, audio.currentTime, currentIndex);
-    }
-  };
-}
-
-
-
-function updatePlayer(song) {
-  // ✅ Update UI
-  songImage.src = song.image;
-  Object.assign(songImage.style, { objectFit: "cover", objectPosition: "center" });
-  songTitle.textContent = song.title;
-  songArtist.textContent = song.artist;
-  songDescription.classList.remove('opacity-0');
-  songDescription.style.display = 'flex';
-  playPauseButton.innerHTML = `<i class='bx bx-pause'></i>`;
-  updateButtons();
-  updateTime();
-  updateVisualizers();
-  highlightCurrentSong();
-
-  // ✅ Media Session Metadata
-  if ("mediaSession" in navigator) {
-    navigator.mediaSession.metadata = new MediaMetadata({
-      title: song.title,
-      artist: song.artist,
-      artwork: [{ src: song.image, sizes: "512x512", type: "image/png" }]
-    });
-
-    // 🎛️ Controls
-    const actions = {
-      play: () => audio.play(),
-      pause: () => audio.pause(),
-      previoustrack: () => playSong(currentIndex - 1),
-      nexttrack: () => playSong(currentIndex + 1),
-      seekbackward: (d) => (audio.currentTime = Math.max(audio.currentTime - (d.seekOffset || 10), 0)),
-      seekforward: (d) => (audio.currentTime = Math.min(audio.currentTime + (d.seekOffset || 10), audio.duration)),
-      seekto: (d) => (audio.currentTime = d.seekTime)
-    };
-    for (const [a, fn] of Object.entries(actions)) {
-      try { navigator.mediaSession.setActionHandler(a, fn); } catch {}
-    }
-
-    // 🕓 Update Position
-    const updatePosition = () => {
-      if ("setPositionState" in navigator.mediaSession && !isNaN(audio.duration)) {
-        navigator.mediaSession.setPositionState({
-          duration: audio.duration,
-          position: audio.currentTime,
-          playbackRate: audio.playbackRate
-        });
+      // Next song logic
+      if (currentIndex < songs.length - 1) {
+        playSong(currentIndex + 1);
+      } else if (isLoopingPlaylist) {
+        playSong(0);
+      } else {
+        audio.pause();
+        playPauseButton.innerHTML = `<i class='bx bx-play'></i>`;
       }
     };
-    audio.onloadedmetadata = updatePosition;
-    audio.ontimeupdate = updatePosition;
 
-    audio.onplay = () => {
-      navigator.mediaSession.playbackState = "playing";
-      playPauseButton.innerHTML = `<i class='bx bx-pause'></i>`;
+    // ✅ Save playback time periodically
+    let lastUpdateTime = 0;
+
+    audio.ontimeupdate = () => {
+      const now = Date.now();
+      if (now - lastUpdateTime < 500) return;  // 500ms = 2 bar per second
+      lastUpdateTime = now;
+
+      if (!audio.paused && audio.currentTime > 0 && lastPlayedSong) {
+        saveLastPlayedSong(lastPlayedSong, audio.currentTime, currentIndex);
+      }
     };
-    audio.onpause = () => {
-      navigator.mediaSession.playbackState = "paused";
-      playPauseButton.innerHTML = `<i class='bx bx-play'></i>`;
-    };
+
   }
-}
+
+
+
+  function updatePlayer(song) {
+    // ✅ Update UI
+    songImage.src = song.image;
+    Object.assign(songImage.style, { objectFit: "cover", objectPosition: "center" });
+    songTitle.textContent = song.title;
+    songArtist.textContent = song.artist;
+    songDescription.classList.remove('opacity-0');
+    songDescription.style.display = 'flex';
+    playPauseButton.innerHTML = `<i class='bx bx-pause'></i>`;
+    updateButtons();
+    updateTime();
+    updateVisualizers();
+    highlightCurrentSong();
+
+    // ✅ Media Session Metadata
+    if ("mediaSession" in navigator) {
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: song.title,
+        artist: song.artist,
+        artwork: [{ src: song.image, sizes: "512x512", type: "image/png" }]
+      });
+
+      // 🎛️ Controls
+      const actions = {
+        play: () => audio.play(),
+        pause: () => audio.pause(),
+        previoustrack: () => playSong(currentIndex - 1),
+        nexttrack: () => playSong(currentIndex + 1),
+        seekbackward: (d) => (audio.currentTime = Math.max(audio.currentTime - (d.seekOffset || 10), 0)),
+        seekforward: (d) => (audio.currentTime = Math.min(audio.currentTime + (d.seekOffset || 10), audio.duration)),
+        seekto: (d) => (audio.currentTime = d.seekTime)
+      };
+      for (const [a, fn] of Object.entries(actions)) {
+        try { navigator.mediaSession.setActionHandler(a, fn); } catch { }
+      }
+
+      // 🕓 Update Position
+      const updatePosition = () => {
+        if ("setPositionState" in navigator.mediaSession && !isNaN(audio.duration)) {
+          navigator.mediaSession.setPositionState({
+            duration: audio.duration,
+            position: audio.currentTime,
+            playbackRate: audio.playbackRate
+          });
+        }
+      };
+      audio.onloadedmetadata = updatePosition;
+      audio.ontimeupdate = updatePosition;
+
+      audio.onplay = () => {
+        navigator.mediaSession.playbackState = "playing";
+        playPauseButton.innerHTML = `<i class='bx bx-pause'></i>`;
+      };
+      audio.onpause = () => {
+        navigator.mediaSession.playbackState = "paused";
+        playPauseButton.innerHTML = `<i class='bx bx-play'></i>`;
+      };
+    }
+  }
 
 
   function updateButtons() {
@@ -844,11 +858,19 @@ function updatePlayer(song) {
 
   // ========== VISUALIZER & HIGHLIGHT ==========
   function updateVisualizers() {
-    document.querySelectorAll('.item').forEach(item => {
-      const isPlaying = parseInt(item.dataset.index) === currentIndex;
-      item.querySelector('.visualizer').classList.toggle('hidden', !isPlaying);
+  document.querySelectorAll('.item').forEach(item => {
+    const isPlaying = parseInt(item.dataset.index) === currentIndex;
+    const viz = item.querySelector('.visualizer');
+
+    viz.classList.toggle('hidden', !isPlaying);
+
+    viz.querySelectorAll('.bar').forEach(b => {
+      b.style.animationPlayState = isPlaying ? 'running' : 'paused';
     });
-  }
+  });
+}
+
+
 
   function highlightCurrentSong() {
     document.querySelectorAll('.item').forEach(item => {
