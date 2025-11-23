@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
   let playlist = [], audio = new Audio();
   let animationAllowed = true, animationInterval = null, scrollCooldown = false;
   let lastPlayedSong = null;
+  let allSongs = [];        // master songs.json (unchanged)
+  let currentList = [];     // currently visible list (filtered view)
+  let currentListName = "All Songs"; // optional: heading label
 
   // const loopButton = document.querySelector('.loop');
   const reqSongButton = document.querySelector(".reqSong");
@@ -28,6 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let isLoopingSingle = false;
   let isLoopingPlaylist = false;
+
+
 
   // ========== LOOP BUTTONS ==========
   const loopButtonSingle = document.getElementById('loop-btn-single');
@@ -175,51 +180,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  // --------- Category Option Selection ---------
-  document.querySelectorAll(".option-item").forEach(option => {
-    option.addEventListener("click", () => {
-      const category = option.dataset.category;
-      const value = option.dataset.value;
-      const jsonFile = `${category}/${value}.json`;
-
-      if (headingText) headingText.textContent = "Loading...";
-      if (spinner) spinner.classList.remove("hidden");
-
-      textEl.textContent = value;
-      modal.classList.add("hidden");
-      animationAllowed = false;
-
-      fetch(jsonFile)
-        .then(res => res.json())
-        .then(data => {
-          songs = data.sort((a, b) => a.title.localeCompare(b.title));
-          loadSongList();
-          setTimeout(() => {
-            headingText.textContent = `${value} Songs - Ad Free 🔥`;
-            spinner.classList.add("hidden");
-          }, 0);
-        })
-        .catch(err => {
-          console.error('Error fetching songs:', err);
-          headingText.textContent = "Something went wrong ❌";
-          spinner.classList.add("hidden");
-        });
-    });
-  });
-
-  // === URL Utility ===
-  const BASE_AUDIO = 'https://itsnjedits.github.io/soundaura/';
-  const BASE_THUMB = 'https://itsnjedits.github.io/soundaura/Thumbnails';
-
-  const trimAndDecodeURL = url =>
-    url.startsWith(BASE_AUDIO)
-      ? decodeURIComponent(url.slice(BASE_AUDIO.length))
-      : (console.error('Invalid base URL.'), url);
-
-  const modifyAndDecodeURL = url =>
-    url.startsWith(BASE_THUMB)
-      ? decodeURIComponent(url.replace(BASE_THUMB, 'Audio').replace('_thumbnail.jpg', '.mp3'))
-      : (console.error('Invalid base URL.'), url);
 
   // === Global Drag Variables (fix scope issue) ===
   let dragSrcEl = null;
@@ -272,6 +232,155 @@ document.addEventListener('DOMContentLoaded', () => {
     };
   }
 
+  async function ensureAllSongsLoaded() {
+    if (allSongs.length > 0) return true;   // already loaded
+
+    try {
+      headingText.textContent = "Loading...";
+      spinner.classList.remove("hidden");
+
+      const res = await fetch("songs.json");
+      const data = await res.json();
+      allSongs = data.sort((a, b) => a.title.localeCompare(b.title));
+
+      spinner.classList.add("hidden");
+      return true;
+
+    } catch (err) {
+      console.error("Failed to load songs.json", err);
+      spinner.classList.add("hidden");
+      headingText.textContent = "Failed to load ❌";
+      return false;
+    }
+  }
+
+
+  function loadSongsFromJSON(file, headingTextValue = null, showSpinner = false) {
+    if (showSpinner) spinner.classList.remove("hidden");
+
+    fetch(file)
+      .then(res => res.json())
+      .then(data => {
+        songs = data.sort((a, b) => a.title.localeCompare(b.title));
+        loadSongList();
+
+
+        if (headingTextValue) {
+            headingText.textContent = `${headingTextValue} - Ad Free 🔥`;
+        }
+
+        if (showSpinner) {
+            setTimeout(() => spinner.classList.add("hidden"), 0);
+        }
+      })
+      .catch(err => {
+        console.error(`Error fetching songs from ${file}:`, err);
+        headingText.textContent = "Something went wrong ❌";
+        spinner.classList.add("hidden");
+      });
+  }
+
+  // store currently selected filters (null = no selection)
+  const selectedFilters = { Mood: null, Genre: null, Singer: null };
+
+  function applyFilters() {
+    let results = allSongs.slice();
+
+    // Mood filter
+    if (selectedFilters.Mood) {
+      const v = selectedFilters.Mood.toLowerCase();
+      results = results.filter(s =>
+        (s.mood || [])
+          .map(x => x.toLowerCase())
+          .some(m => m === v || m.includes(v))
+      );
+    }
+
+    // Genre filter
+    if (selectedFilters.Genre) {
+      const v = selectedFilters.Genre.toLowerCase();
+      results = results.filter(s =>
+        (s.genre || [])
+          .map(x => x.toLowerCase())
+          .some(g => g === v || g.includes(v))
+      );
+    }
+
+    // Singer filter
+    if (selectedFilters.Singer) {
+      const v = selectedFilters.Singer.toLowerCase();
+      results = results.filter(s =>
+        (s.artist || [])
+          .map(x => x.toLowerCase())
+          .some(a => a.includes(v))
+      );
+    }
+
+    // Update UI
+    loadSongList(
+      results,
+      selectedFilters.Mood ||
+      selectedFilters.Genre ||
+      selectedFilters.Singer ||
+      "Filtered Songs"
+    );
+  }
+
+  // --------- Category Option Selection ---------
+  document.querySelectorAll(".option-item").forEach(option => {
+    option.addEventListener("click", async () => {
+      const category = option.dataset.category;
+      const value = option.dataset.value;
+
+      // UI
+      modal.classList.add("hidden");
+      headingText.textContent = "Loading...";
+      spinner.classList.remove("hidden");
+
+      const ok = await ensureAllSongsLoaded();
+      if (!ok) return;
+
+      // set selected filter
+      // Reset other filters
+      if (category === "Mood") {
+          selectedFilters.Genre = null;
+          selectedFilters.Singer = null;
+      }
+      if (category === "Genre") {
+          selectedFilters.Mood = null;
+          selectedFilters.Singer = null;
+      }
+      if (category === "Singer") {
+          selectedFilters.Mood = null;
+          selectedFilters.Genre = null;
+      }
+
+      // Set the chosen filter
+      selectedFilters[category] = value;
+
+      // apply filters
+      applyFilters();
+      headingText.textContent = `${value} Songs - Ad Free 🔥`;
+      spinner.classList.add("hidden");
+    });
+  });
+
+
+
+  // === URL Utility ===
+  const BASE_AUDIO = 'https://raw.githubusercontent.com/itsnjedits/<store>/main/<file>';
+  const BASE_THUMB = 'https://raw.githubusercontent.com/itsnjedits/<store>/main/Thumbnails/<thumbnail>';
+
+  const trimAndDecodeURL = url =>
+    url.startsWith(BASE_AUDIO)
+      ? decodeURIComponent(url.slice(BASE_AUDIO.length))
+      : (console.error('Invalid base URL.'), url);
+
+  const modifyAndDecodeURL = url =>
+    url.startsWith(BASE_THUMB)
+      ? decodeURIComponent(url.replace(BASE_THUMB, 'Audio').replace('_thumbnail.jpg', '.mp3'))
+      : (console.error('Invalid base URL.'), url);
+
   // === DOM Loaded ===
   window.addEventListener('DOMContentLoaded', () => {
     const saved = loadPlaylistFromLocalStorage();
@@ -293,77 +402,71 @@ document.addEventListener('DOMContentLoaded', () => {
     // ✅ Restore last played song on reload
     const lastPlayed = JSON.parse(localStorage.getItem('lastPlayedSong'));
     if (lastPlayed) {
-      currentIndex = lastPlayed.index ?? 0; // ✅ restore index or fallback to 0
-      audio.src = lastPlayed.file;
-      audio.load();
-      audio.currentTime = lastPlayed.time || 0;
-
-      songImage.src = lastPlayed.image;
-      Object.assign(songImage.style, { objectFit: "cover", objectPosition: "top" });
-      songTitle.textContent = lastPlayed.title;
-      songArtist.textContent = lastPlayed.artist;
-      songDescription.classList.remove('opacity-0');
-      songDescription.style.display = 'flex';
-      playPauseButton.innerHTML = `<i class='bx bx-play'></i>`;
-      lastPlayedSong = lastPlayed;
-
-      updateTime();
-
-      let lastUpdateTime = 0;
-
-      audio.ontimeupdate = () => {
-        const now = Date.now();
-        if (now - lastUpdateTime < 500) return;  // 500ms = 2 bar per second
-        lastUpdateTime = now;
-
-        if (!audio.paused && audio.currentTime > 0 && lastPlayedSong) {
-          saveLastPlayedSong(lastPlayedSong, audio.currentTime, currentIndex);
+      // find in allSongs by unique key
+      const masterIdx = allSongs.findIndex(s => s.title === lastPlayed.title && s.artist === lastPlayed.artist);
+      if (masterIdx !== -1) {
+        // Option A: show all songs and set currentList to allSongs
+        loadSongList(allSongs, "Welcome Back");
+        // find index inside currentList
+        const idxInCurrent = currentList.findIndex(s => s.title === lastPlayed.title && s.artist === lastPlayed.artist);
+        if (idxInCurrent !== -1) {
+          currentIndex = idxInCurrent;
+          audio.src = `https://raw.githubusercontent.com/itsnjedits/${currentList[currentIndex].store}/main/${currentList[currentIndex].file}`;
+          audio.currentTime = lastPlayed.time || 0;
+          updatePlayer(currentList[currentIndex]);
         }
-      };
-
+      }
     }
+
 
   });
 
   document.addEventListener('click', e => e.target?.id === 'get-started-link' && document.getElementById("feature-button")?.click());
 
-  document.getElementById("allSongsImage").addEventListener("click", () => {
-    const jsonFile = "all-songs/songs.json";
-    textEl.textContent = "All Songs";
+  document.getElementById("allSongsImage").addEventListener("click", async () => {
     modal.classList.add("hidden");
-    animationAllowed = false;
-    headingText && (headingText.textContent = "Loading...");
-    spinner && spinner.classList.remove("hidden");
+    headingText.textContent = "Loading...";
+    spinner.classList.remove("hidden");
 
-    fetch(jsonFile)
-      .then(res => res.json())
-      .then(data => {
-        songs = data.sort((a, b) => a.title.localeCompare(b.title));
-        loadSongList();
-        setTimeout(() => {
-          headingText.textContent = `All Songs - Ad Free 🔥`;
-          spinner.classList.add("hidden");
-        }, 0);
-      })
-      .catch(err => {
-        console.error('Error fetching all songs:', err);
-        headingText.textContent = "Something went wrong ❌";
-        spinner.classList.add("hidden");
-      });
+    const ok = await ensureAllSongsLoaded();
+    if (!ok) return;
+
+    loadSongList(allSongs, "All Songs");
+    spinner.classList.add("hidden");
   });
+
 
   // === LocalStorage ===
   const savePlaylistToLocalStorage = () => localStorage.setItem('userPlaylist', JSON.stringify(playlist));
   const loadPlaylistFromLocalStorage = () => JSON.parse(localStorage.getItem('userPlaylist')) || [];
 
   // === Playlist Render with Drag Support ===
+  // === Playlist Render with Drag Support (FINAL FIX) ===
   function renderPlaylist(list, container, isRemovable = false) {
     container.innerHTML = '';
+
+    // 🔥 MOST IMPORTANT FIX:
+    // Playlist khulte hi currentList = playlist bana do
+    if (isRemovable) {
+      currentList = playlist;
+    } else {
+      currentList = list; // ensure currentList reflects the visible list
+    }
+
+    // Keep reference for click handlers (so we know which list was rendered)
+    const activeList = isRemovable ? playlist : list;
+
     list.forEach((song, index) => {
       const div = document.createElement('div');
       div.className =
         'item flex justify-between items-center bg-gray-700 rounded-xl p-2 max-md:p-1 mx-4 max-md:mx-2 min-md:hover:bg-gray-600 duration-300 cursor-pointer';
+      // dataset.index used for ordering - update on every render
       div.dataset.index = index;
+      // dataset.realIndex maps to the index inside the active list (used for play)
+      div.dataset.realIndex = index;
+      // dataset.playlistIndex used when rendering playlist (matches current playlist order)
+      if (isRemovable) div.dataset.playlistIndex = index;
+
       div.draggable = false;
 
       div.innerHTML = `
@@ -374,105 +477,167 @@ document.addEventListener('DOMContentLoaded', () => {
           <h2 class="max-md:text-base song-title font-semibold text-xl max-[500px]:text-[13.5px]">${song.title}</h2>
           <p class="song-artist max-md:text-sm text-gray-300 max-[500px]:text-[12px]">${song.artist}</p>
         </div>
-      </div>
-      <div class="song-play flex items-center gap-x-2 mr-3 max-md:mr-2 max-md:gap-x-1">
-  <div class="visualizer hidden">${[1, 2, 3, 4, 5].map(i => `<div class="bar max-md:w-[2px] bar${i}"></div>`).join('')}</div>
-  ${isRemovable ? `
-    <p class="download-song text-4xl text-green-400 cursor-pointer hover:text-green-300 max-md:text-xl">
-      <i class='bx bx-download'></i>
-    </p>
-  ` : ""}
-  <p class="text-5xl ${isRemovable ? 'remove-from-playlist' : 'add-to-playlist'} text-[#2b8bff] cursor-pointer hover:text-[#29ecfe] max-md:text-2xl">
-    <i class='bx bx-${isRemovable ? 'minus' : 'plus'}'></i>
-  </p>
-</div>
-`;
 
-      // ✅ Add/Remove
-      div.querySelector(isRemovable ? '.remove-from-playlist' : '.add-to-playlist')
-        .addEventListener('click', e => {
+      </div>
+
+      <div class="song-play flex items-center gap-x-2 mr-3 max-md:mr-2 max-md:gap-x-1">
+        <div class="visualizer hidden">
+          ${[1,2,3,4,5].map(i => `<div class="bar max-md:w-[2px] bar${i}"></div>`).join('')}
+        </div>
+
+        ${isRemovable ? `
+          <p class="download-song text-4xl text-green-400 cursor-pointer hover:text-green-300 max-md:text-xl">
+            <i class='bx bx-download'></i>
+          </p>
+        ` : ""}
+
+        <p class="text-5xl ${isRemovable ? "remove-from-playlist" : "add-to-playlist"} text-[#2b8bff] cursor-pointer hover:text-[#29ecfe] max-md:text-2xl">
+          <i class='bx bx-${isRemovable ? "minus" : "plus"}'></i>
+        </p>
+      </div>
+    `;
+
+      // --- Add / Remove ---
+      const actionSelector = isRemovable ? ".remove-from-playlist" : ".add-to-playlist";
+      const actionEl = div.querySelector(actionSelector);
+      if (actionEl) {
+        actionEl.addEventListener("click", e => {
           e.stopPropagation();
           if (isRemovable) {
+            // Remove by unique fields (title + artist) — more robust
             removeFromPlaylistByData(song);
+            // Keep playlist view visible after change
             playlistButton.click();
           } else {
             addToPlaylist(div);
           }
         });
-
-      // ✅ Download button
-      if (isRemovable) {
-        const downloadBtn = div.querySelector('.download-song');
-        if (downloadBtn) {
-          downloadBtn.addEventListener('click', e => {
-            e.stopPropagation();
-
-            // file URL ko sahi karo (thumbnail se audio nikaalna ho to modifyAndDecodeURL use karo)
-            const fileURL = song.file || modifyAndDecodeURL(song.image);
-
-            const link = document.createElement('a');
-            link.href = fileURL;
-            link.download = `${song.title} - ${song.artist}.mp3`;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-          });
-        }
       }
 
-      // ✅ Play on click
-      div.addEventListener('click', () => playSong(index));
+      // --- Download helper (put this once near top of your script, e.g. after BASE_AUDIO/BASE_THUMB) ---
+function buildRawFileURLForSong(song) {
+  if (!song) return '';
+  // If file is already a full URL, return it
+  if (song.file && (song.file.startsWith('http://') || song.file.startsWith('https://'))) {
+    return song.file;
+  }
+
+  // Prefer song.file; if missing, try to derive from thumbnail using modifyAndDecodeURL (existing util)
+  let relativePath = song.file;
+  if (!relativePath && song.image && typeof modifyAndDecodeURL === 'function') {
+    try {
+      // modifyAndDecodeURL returns something like "Audio/xxx.mp3" if your BASE_THUMB pattern matched
+      relativePath = modifyAndDecodeURL(song.image);
+    } catch (e) {
+      relativePath = null;
+    }
+  }
+
+  if (!relativePath) return '';
+
+  // Build safe raw.githubusercontent URL: encode each path segment
+  const base = `https://raw.githubusercontent.com/itsnjedits/${song.store}/main/`;
+  const encoded = relativePath.split('/').map(seg => encodeURIComponent(seg)).join('/');
+  return base + encoded;
+}
+
+// --- Download button ---
+if (isRemovable) {
+  const downloadBtn = div.querySelector('.download-song');
+  if (downloadBtn) {
+    downloadBtn.addEventListener('click', async e => {
+      e.stopPropagation();
+
+      const fileURL = buildRawFileURLForSong(song);
+      if (!fileURL) {
+        console.warn('Download: unable to determine file URL for', song);
+        return;
+      }
+
+      // Create a safe filename
+      const artistText = Array.isArray(song.artist) ? song.artist.join(', ') : (song.artist || '');
+      // remove characters not allowed in filenames and trim length
+      const safeBase = `${song.title || 'track'} - ${artistText}`.replace(/[\\/:"*?<>|]+/g, '').trim().slice(0, 200);
+      const filename = `${safeBase}.mp3`;
+
+      // Try direct anchor download (works for raw.githubusercontent public files)
+      try {
+        const link = document.createElement('a');
+        link.href = fileURL;
+        link.download = filename;
+        // Some browsers ignore download for cross-origin — opening in new tab is fallback
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } catch (err) {
+        // Fallback: open in new tab
+        window.open(fileURL, '_blank', 'noopener');
+      }
+    });
+  }
+}
+
+
+      // --- PLAY FIX (Most Important) ---
+      div.addEventListener("click", () => {
+        // Use the activeList we rendered (playlist OR filtered list)
+        currentList = activeList;
+        currentIndex = index;
+        playSong(currentIndex);
+      });
+
       container.appendChild(div);
 
-
-
-      // ✅ Only hamburger enables drag
+      // --- Drag support ---
       if (isRemovable) {
         const handle = div.querySelector('.drag-handle');
-        if (handle) {
-          // Desktop
-          handle.addEventListener('mousedown', () => { div.draggable = true; });
-          handle.addEventListener('mouseup', () => { div.draggable = false; });
+        if (!handle) return;
 
-          // Mobile
-          handle.addEventListener('touchstart', e => {
-            if (e.touches.length > 1) return;
-            dragSrcEl = div;
-            isDragging = true;
-            div.draggable = true;
-            div.classList.add('opacity-50');
-            updateY(e.touches[0].clientY);
-            startAutoScroll();
-          }, { passive: true });
+        // desktop
+        handle.addEventListener('mousedown', () => { div.draggable = true; });
+        handle.addEventListener('mouseup', () => { div.draggable = false; });
 
-          handle.addEventListener('touchmove', e => {
-            if (!isDragging) return;
-            e.preventDefault();
-            updateY(e.touches[0].clientY);
+        // mobile drag start
+        handle.addEventListener('touchstart', e => {
+          if (e.touches.length > 1) return;
+          dragSrcEl = div;
+          isDragging = true;
+          div.draggable = true;
+          div.classList.add('opacity-50');
+          updateY(e.touches[0].clientY);
+          startAutoScroll();
+        }, { passive: true });
 
-            const el = document.elementFromPoint(e.touches[0].clientX, currentY)?.closest('.item');
-            if (el && el !== dragSrcEl) {
-              const rect = el.getBoundingClientRect();
-              const after = currentY - rect.top > rect.height / 2;
-              after ? el.after(dragSrcEl) : el.before(dragSrcEl);
-            }
-          }, { passive: false });
+        // mobile drag
+        handle.addEventListener('touchmove', e => {
+          if (!isDragging) return;
+          e.preventDefault();
+          updateY(e.touches[0].clientY);
 
-          handle.addEventListener('touchend', () => {
-            if (isDragging) {
-              isDragging = false;
-              div.draggable = false;
-              div.classList.remove('opacity-50');
-              stopAutoScroll();
-              finalizeOrder(container);
-            }
-          }, { passive: true });
-        }
+          const el = document.elementFromPoint(e.touches[0].clientX, currentY)?.closest('.item');
+          if (el && el !== dragSrcEl) {
+            const rect = el.getBoundingClientRect();
+            const after = currentY - rect.top > rect.height / 2;
+            after ? el.after(dragSrcEl) : el.before(dragSrcEl);
+          }
+        }, { passive: false });
+
+        // mobile drag end
+        handle.addEventListener('touchend', () => {
+          if (isDragging) {
+            isDragging = false;
+            div.draggable = false;
+            div.classList.remove('opacity-50');
+            stopAutoScroll();
+            finalizeOrder(container);
+          }
+        });
       }
     });
 
     if (isRemovable) enableDragAndDrop(container);
   }
+
 
   // === Drag & Drop Desktop ===
   function enableDragAndDrop(container) {
@@ -515,13 +680,36 @@ document.addEventListener('DOMContentLoaded', () => {
   function finalizeOrder(container) {
     container.querySelectorAll('.item').forEach(it => it.classList.remove('opacity-50'));
 
+    // Build newOrder based on DOM order (safer than relying on dataset.index)
     const newOrder = [];
     container.querySelectorAll('.item').forEach(it => {
-      const idx = parseInt(it.dataset.index);
-      newOrder.push(playlist[idx]);
+      const title = it.querySelector('.song-title')?.textContent?.trim();
+      const artist = it.querySelector('.song-artist')?.textContent?.trim();
+      const foundIdx = playlist.findIndex(s => s.title === title && s.artist === artist);
+      if (foundIdx !== -1) {
+        newOrder.push(playlist[foundIdx]);
+      }
     });
 
-    playlist = newOrder;
+    // If we couldn't reconstruct properly, fallback to old method
+    if (newOrder.length !== playlist.length) {
+      // fallback: try using dataset.playlistIndex values
+      const fallback = [];
+      container.querySelectorAll('.item').forEach(it => {
+        const idx = parseInt(it.dataset.playlistIndex);
+        if (!isNaN(idx) && playlist[idx]) fallback.push(playlist[idx]);
+      });
+      if (fallback.length === playlist.length) {
+        playlist = fallback;
+      } else {
+        // if still mismatch, keep old playlist (do nothing)
+        console.warn("finalizeOrder: unable to rebuild playlist order reliably; aborting reorder.");
+        return;
+      }
+    } else {
+      playlist = newOrder;
+    }
+
     savePlaylistToLocalStorage();
 
     // ✅ Agar koi song chal raha hai to uska naya index dhoondo
@@ -539,16 +727,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function removeFromPlaylistByData(songToRemove) {
+    // More robust: match by title + artist (artist may be array or string in JSON)
+    const normalize = v => Array.isArray(v) ? v.join(", ").toLowerCase().trim() : String(v || "").toLowerCase().trim();
+
     const i = playlist.findIndex(s =>
-      s.title === songToRemove.title &&
-      s.artist === songToRemove.artist &&
-      s.image === songToRemove.image
+      normalize(s.title) === normalize(songToRemove.title) &&
+      normalize(s.artist) === normalize(songToRemove.artist)
     );
 
     if (i !== -1) {
       const wasPlaying = lastPlayedSong &&
-        songToRemove.title === lastPlayedSong.title &&
-        songToRemove.artist === lastPlayedSong.artist;
+        normalize(songToRemove.title) === normalize(lastPlayedSong.title) &&
+        normalize(songToRemove.artist) === normalize(lastPlayedSong.artist);
 
       playlist.splice(i, 1);
       savePlaylistToLocalStorage();
@@ -576,74 +766,67 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         }
       }
+    } else {
+      console.warn("removeFromPlaylistByData: song not found in playlist", songToRemove);
     }
   }
 
+  function extractStoreFromURL(url) {
+    const parts = url.split('/');
+    // https://raw.githubusercontent.com/itsnjedits/STORE/main/filename.mp3
+    const idx = parts.indexOf('itsnjedits');
+    return idx !== -1 ? parts[idx + 1] : '';
+  }
 
   function addToPlaylist(div) {
-    const img = div.querySelector('img');
-    const title = div.querySelector('.song-title').textContent;
-    const artist = div.querySelector('.song-artist').textContent;
-    const imageURL = trimAndDecodeURL(img.src);
-    const fileURL = modifyAndDecodeURL(img.src);
 
-    const exists = playlist.some(song => song.title === title && song.artist === artist);
+    const img = div.querySelector('img');
+    const title = div.querySelector('.song-title').textContent.trim();
+    const artist = div.querySelector('.song-artist').textContent.trim();
+
+    const normalize = val =>
+      Array.isArray(val)
+        ? val.join(", ").toLowerCase().trim()
+        : String(val).toLowerCase().trim();
+
+    const masterSong = allSongs.find(s =>
+      normalize(s.title) === title.toLowerCase() &&
+      normalize(s.artist) === artist.toLowerCase()
+    );
+
+    if (!masterSong) {
+      console.error("Song not found in master list!");
+      return;
+    }
+
+    const newSong = {
+      title: masterSong.title,
+      artist: masterSong.artist,
+      image: masterSong.image,
+      file: masterSong.file,
+      thumbnail: masterSong.thumbnail,
+      store: masterSong.store
+    };
+
+    const exists = playlist.some(
+      s => normalize(s.title) === normalize(newSong.title) &&
+           normalize(s.artist) === normalize(newSong.artist)
+    );
+
     const btn = document.querySelector('.yourPlaylist');
     const text = btn.querySelector('p');
 
     if (exists) {
-      text.style.transition = 'opacity 0.3s';
-      text.style.opacity = '0';
-      setTimeout(() => {
-        Object.assign(text, {
-          textContent: "Already in Playlist ✖",
-          style: { ...text.style, opacity: '1' }
-        });
-        btn.style.backgroundColor = "#d73a49";
-        btn.style.color = "#111";
-        text.classList.add("text-sm");
-      }, 300);
-      clearTimeout(window.resetPlaylistBtnTimer);
-      window.resetPlaylistBtnTimer = setTimeout(() => {
-        text.style.opacity = '0';
-        setTimeout(() => {
-          Object.assign(text, { textContent: "My Playlist", style: { ...text.style, opacity: '1' } });
-          btn.style.backgroundColor = "";
-          btn.style.color = "";
-          text.classList.remove("text-sm");
-        }, 300);
-      }, 1000);
+      text.textContent = "Already in Playlist ✖";
       return;
     }
 
-    playlist.push({ image: imageURL, file: fileURL, title, artist });
+    playlist.push(newSong);
     savePlaylistToLocalStorage();
-
-    text.style.transition = 'opacity 0.3s';
-    btn.style.transition = 'background-color 0.3s, color 0.3s';
-    text.style.opacity = '0';
-
-    setTimeout(() => {
-      Object.assign(text, {
-        textContent: "Song Added ✔",
-        style: { ...text.style, opacity: '1' }
-      });
-      btn.style.backgroundColor = "#45da67ff";
-      btn.style.color = "#111";
-      text.classList.add("text-sm");
-    }, 300);
-
-    clearTimeout(window.resetPlaylistBtnTimer);
-    window.resetPlaylistBtnTimer = setTimeout(() => {
-      text.style.opacity = '0';
-      setTimeout(() => {
-        Object.assign(text, { textContent: "My Playlist", style: { ...text.style, opacity: '1' } });
-        btn.style.backgroundColor = "";
-        btn.style.color = "";
-        text.classList.remove("text-sm");
-      }, 300);
-    }, 1000);
+    text.textContent = "Song Added ✔";
   }
+
+
 
   playlistButton.addEventListener('click', () => {
     const saved = loadPlaylistFromLocalStorage();
@@ -652,17 +835,18 @@ document.addEventListener('DOMContentLoaded', () => {
     renderPlaylist(songs, document.querySelector('.array'), true);
   });
 
-  const loadSongList = () => renderPlaylist(songs, document.querySelector('.array'));
-
-  const fetching = filename => {
-    fetch(filename)
-      .then(res => res.json())
-      .then(data => {
-        songs = data.sort((a, b) => a.title.localeCompare(b.title));
-        loadSongList();
-      })
-      .catch(err => console.error('Error fetching songs:', err));
-  };
+  // Replace old: const loadSongList = () => renderPlaylist(songs, ...)
+  function loadSongList(list = allSongs, heading = null) {
+    currentList = list;
+    currentListName = heading || currentListName;
+    renderPlaylist(currentList, document.querySelector('.array'));
+    // optionally update headingText & spinner if used
+    if (headingText && heading) headingText.textContent = `${heading} - Ad Free 🔥`;
+    if (spinner) spinner.classList.add("hidden");
+    // update UI states
+    updateVisualizers();
+    updateButtons();
+  }
 
   // ========== BUTTON STATE MANAGEMENT ==========
 
@@ -678,9 +862,9 @@ document.addEventListener('DOMContentLoaded', () => {
       index: index // ✅ Save current index
     };
     localStorage.setItem('lastPlayedSong', JSON.stringify(lastPlayed));
+    // also track lastPlayedSong object ref
+    lastPlayedSong = song;
   }
-
-
 
   function toggleButtons(disabled) {
     const btnStates = [
@@ -697,53 +881,50 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ========== PLAY A SONG ==========
-  // ✅ PLAY A SONG
+  // ✅ FINAL FIXED playSong() — works with playlist, genre, mood, search, main list
   function playSong(index) {
-    if (songs.length === 0) return;
+    if (!currentList || currentList.length === 0) return;
 
-    // Wrap-around (looping)
-    if (index < 0 && isLoopingPlaylist) index = songs.length - 1;
-    if (index >= songs.length && isLoopingPlaylist) index = 0;
-    if (index < 0 || index >= songs.length) return; // Out of range without loop mode
+    // Clamp + Looping behavior
+    if (index < 0 && isLoopingPlaylist) index = currentList.length - 1;
+    if (index >= currentList.length && isLoopingPlaylist) index = 0;
+    if (index < 0 || index >= currentList.length) return;
 
+    // INDEX MUST match currentList
     currentIndex = index;
-    const song = songs[currentIndex];
+
+    // Pick correct song from currentList (THIS FIXES YOUR BUG)
+    const song = currentList[currentIndex];
     lastPlayedSong = song;
 
-    // Stop any currently playing song
-    audio.pause();
-    audio.onended = null;
-    audio.src = song.file;
+    // Build proper audio URL
+    const base = `https://raw.githubusercontent.com/itsnjedits/${song.store}/main/`;
+    audio.src = base + song.file;
     audio.load();
+
+    audio.pause();
     audio.playbackRate = currentPlaybackRate;
 
-    // Play song
     audio.play().then(() => {
-      musicplayer.style.animationPlayState = 'running';
+      musicplayer.style.animationPlayState = "running";
     }).catch(console.error);
 
-    // ✅ Update UI and Metadata
+    // Update UI
     updatePlayer(song);
     toggleButtons(false);
     saveLastPlayedSong(song, 0, currentIndex);
 
-    // ==============================
-    // 🎧 AUDIO ENDED EVENT HANDLER
-    // ==============================
+    // ====== SONG ENDED ======
     audio.onended = () => {
-      console.log("🎵 Song ended | Index:", currentIndex);
-      console.log("Loop States => Single:", isLoopingSingle, "| Playlist:", isLoopingPlaylist);
-
       if (isLoopingSingle) {
-        // Single song loop
         audio.loop = true;
         return;
       } else {
         audio.loop = false;
       }
 
-      // Next song logic
-      if (currentIndex < songs.length - 1) {
+      // Continue inside currentList (NOT songs array)
+      if (currentIndex < currentList.length - 1) {
         playSong(currentIndex + 1);
       } else if (isLoopingPlaylist) {
         playSong(0);
@@ -753,20 +934,21 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
 
-    // ✅ Save playback time periodically
+    // ====== SAVE TIME ======
     let lastUpdateTime = 0;
 
     audio.ontimeupdate = () => {
       const now = Date.now();
-      if (now - lastUpdateTime < 500) return;  // 500ms = 2 bar per second
-      lastUpdateTime = now;
+      if (now - lastUpdateTime < 500) return;
 
-      if (!audio.paused && audio.currentTime > 0 && lastPlayedSong) {
-        saveLastPlayedSong(lastPlayedSong, audio.currentTime, currentIndex);
+      lastUpdateTime = now;
+      if (!audio.paused && audio.currentTime > 0) {
+        saveLastPlayedSong(song, audio.currentTime, currentIndex);
       }
     };
-
   }
+
+
 
 
 
@@ -830,11 +1012,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-
-  function updateButtons() {
+  function updateButtons(){
     prevButton.disabled = currentIndex === 0;
-    nextButton.disabled = currentIndex === songs.length - 1;
+    nextButton.disabled = currentIndex === currentList.length - 1;
   }
+
 
   function updateTime() {
     const update = () => {
@@ -853,24 +1035,26 @@ document.addEventListener('DOMContentLoaded', () => {
   function changeTime(sec) { audio.currentTime = Math.max(0, Math.min(audio.currentTime + sec, audio.duration)); }
 
   // ========== NEXT & PREV ==========
-  const playNextSong = () => currentIndex < songs.length - 1 && playSong(currentIndex + 1);
-  const playPrevSong = () => currentIndex > 0 && playSong(currentIndex - 1);
+  const playNextSong = () =>
+    currentIndex < currentList.length - 1 && playSong(currentIndex + 1);
+
+  const playPrevSong = () =>
+    currentIndex > 0 && playSong(currentIndex - 1);
+
 
   // ========== VISUALIZER & HIGHLIGHT ==========
   function updateVisualizers() {
-  document.querySelectorAll('.item').forEach(item => {
-    const isPlaying = parseInt(item.dataset.index) === currentIndex;
-    const viz = item.querySelector('.visualizer');
+    document.querySelectorAll('.item').forEach(item => {
+      const isPlaying = parseInt(item.dataset.index) === currentIndex;
+      const viz = item.querySelector('.visualizer');
 
-    viz.classList.toggle('hidden', !isPlaying);
+      viz.classList.toggle('hidden', !isPlaying);
 
-    viz.querySelectorAll('.bar').forEach(b => {
-      b.style.animationPlayState = isPlaying ? 'running' : 'paused';
+      viz.querySelectorAll('.bar').forEach(b => {
+        b.style.animationPlayState = isPlaying ? 'running' : 'paused';
+      });
     });
-  });
-}
-
-
+  }
 
   function highlightCurrentSong() {
     document.querySelectorAll('.item').forEach(item => {
@@ -883,7 +1067,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ========== EVENT LISTENERS ==========
-
   playPauseButton.onclick = () => {
     const isPaused = audio.paused;
     isPaused ? audio.play() : audio.pause();
@@ -983,16 +1166,23 @@ document.addEventListener('DOMContentLoaded', () => {
       el.classList.remove('bg-gray-900');
     });
 
-    if (term) {
-      for (let i = findNext ? searchResultIndex + 1 : 0; i < items.length; i++) {
-        if (items[i].textContent.toLowerCase().includes(term)) {
-          searchResultIndex = i;
-          highlightElement(items[i]);
-          break;
-        }
+    if (!term) return;
+
+    // find first matching in currentList
+    const from = findNext ? searchResultIndex + 1 : 0;
+    const total = currentList.length;
+    for (let i = from; i < total; i++) {
+      const text = `${currentList[i].title} ${currentList[i].artist} ${currentList[i].genre} ${currentList[i].mood}`.toLowerCase();
+      if (text.includes(term)) {
+        searchResultIndex = i;
+        // highlight DOM element with data-index === i
+        const el = document.querySelector(`.item[data-index="${i}"]`);
+        if (el) highlightElement(el);
+        break;
       }
     }
   }
+
 
   function highlightElement(el) {
     el.querySelector('.song-title').style.color = 'yellow';
