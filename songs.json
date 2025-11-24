@@ -7162,7 +7162,7 @@
     {
         "title": "Aaye Kuch Abr Kuch Sharab Aaye",
         "artist": [
-            "Mehdi Hassan"
+            "Mehdi Hasan"
         ],
         "file": "Audio/Aaye Kuch Abr Kuch Sharab Aaye.mp3",
         "image": "Thumbnails/Aaye Kuch Abr Kuch Sharab Aaye_thumbnail.jpg",
@@ -7229,7 +7229,7 @@
     {
         "title": "Duniya Kisi Ke Pyar Mein",
         "artist": [
-            "Mehdi Hassan"
+            "Mehdi Hasan"
         ],
         "file": "Audio/Duniya Kisi Ke Pyar Mein.mp3",
         "image": "Thumbnails/Duniya Kisi Ke Pyar Mein_thumbnail.jpg",
@@ -7280,7 +7280,7 @@
     {
         "title": "Mohabbat Karne Wale",
         "artist": [
-            "Mehdi Hassan"
+            "Mehdi Hasan"
         ],
         "file": "Audio/Mohabbat Karne Wale.mp3",
         "image": "Thumbnails/Mohabbat Karne Wale_thumbnail.jpg",
@@ -7293,7 +7293,7 @@
     {
         "title": "Mujhe Tum Nazar Se Gira To Rahe Ho",
         "artist": [
-            "Mehdi Hassan"
+            "Mehdi Hasan"
         ],
         "file": "Audio/MUJHE TUM NAZAR SE GIRA TO RAHAY HO (GHAZAL) - MEHDI HASSAN - FILM DORAHA.mp3",
         "image": "Thumbnails/MUJHE TUM NAZAR SE GIRA TO RAHAY HO (GHAZAL) - MEHDI HASSAN - FILM DORAHA_thumbnail.jpg",
@@ -7306,7 +7306,7 @@
     {
         "title": "Ranjish Hi Sahi",
         "artist": [
-            "Mehdi Hassan"
+            "Mehdi Hasan"
         ],
         "file": "Audio/Ranjish Hi Sahi.mp3",
         "image": "Thumbnails/Ranjish Hi Sahi_thumbnail.jpg",
@@ -8146,7 +8146,7 @@
     {
         "title": "Rafta Rafta Woh Meri - Slowed & Reverb",
         "artist": [
-            "Mehdi Hassan"
+            "Mehdi Hasan"
         ],
         "file": "Audio/Rafta Rafta Woh Meri - Muhammad Ali [Slowed   Reverb].mp3",
         "image": "Thumbnails/Rafta Rafta Woh Meri - Muhammad Ali [Slowed   Reverb]_thumbnail.jpg",
@@ -10863,5 +10863,350 @@
         "store": "store2",
         "genre": [],
         "mood": []
+    },
+    {
+        "title": "Aapki Nazron Ne Samjha – Flute Version",
+        "artist": [
+            "Lata Mangeshkar"
+        ],
+        "file": "Audio/Aap Ki Nazron Ne Samjha.mp3",
+        "image": "Thumbnails/Aap Ki Nazron Ne Samjha_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Instrumental"
+        ],
+        "mood": [
+            "Instrumental", "Romantic", "Nostalgic, Romantic, Nostalgic"
+        ]
+    },
+    {
+        "title": "Aashiqui Theme (Rain Reverb)",
+        "artist": [
+            "Arijit Singh"
+        ],
+        "file": "Audio/Aashiqui Theme (𝙍𝙖𝙞𝙣   𝙧𝙚𝙫𝙚𝙧𝙗)❣️.mp3",
+        "image": "Thumbnails/Aashiqui Theme (𝙍𝙖𝙞𝙣   𝙧𝙚𝙫𝙚𝙧𝙗)❣️_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Rain"
+        ],
+        "mood": [
+            "Sad", "Romantic", "Instrumentalrumental, Sad, Romantic"
+        ]
+    },
+    {
+        "title": "AE DIL HAI MUSHKIL – Slowed Reverb",
+        "artist": [
+            "Arijit Singh"
+        ],
+        "file": "Audio/AE DIL HAI MUSHKIL - [slowed   reverb] REVERB HEAL'S.mp3",
+        "image": "Thumbnails/AE DIL HAI MUSHKIL - [slowed   reverb] REVERB HEAL'S_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Slowed-Reverb"
+        ],
+        "mood": [
+            "Sad", "Romantic"
+        ]
+    },
+    {
+        "title": "Agar Tum Saath Ho – Slowed Reverb",
+        "artist": [
+            "Arijit Singh, Alka Yagnik"
+        ],
+        "file": "Audio/Agar Tum Saath ho (Slowed Reverb) - ARIJIT SINGH.mp3",
+        "image": "Thumbnails/Agar Tum Saath ho (Slowed Reverb) - ARIJIT SINGH_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Slowed-Reverb"
+        ],
+        "mood": [
+            "Romantic", "Nostalgictalgic"
+        ]
+    },
+    {
+        "title": "Bandeya – Slowed Reverb",
+        "artist": [
+            "Arijit Singh"
+        ],
+        "file": "Audio/Bandeya - Arijit Singh [Slowed Reverb] _ Dil Juungle song _ Tunemusic.mp3",
+        "image": "Thumbnails/Bandeya - Arijit Singh [Slowed Reverb] _ Dil Juungle song _ Tunemusic_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Slowed-Reverb"
+        ],
+        "mood": [
+            "Motivational", "Inspirational Inspirational"
+        ]
+    },
+    {
+        "title": "Bol Na Halke Halke – Slowed Reverb",
+        "artist": [
+            "Rahat Fateh Ali Khan"
+        ],
+        "file": "Audio/Bol Na Halke Halke _ Slowed and Reverb.mp3",
+        "image": "Thumbnails/Bol Na Halke Halke _ Slowed and Reverb_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Slowed-Reverb"
+        ],
+        "mood": [
+            "Romantic"
+        ]
+    },
+    {
+        "title": "Bulleya – Slowed Reverb",
+        "artist": [
+            "Arijit Singh"
+        ],
+        "file": "Audio/Bulleya [Slowed   Reverb] - Arijit singh __ Tor Mond.mp3",
+        "image": "Thumbnails/Bulleya [Slowed   Reverb] - Arijit singh __ Tor Mond_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Slowed-Reverb"
+        ],
+        "mood": [
+            "Romantic"
+        ]
+    },
+    {
+        "title": "Darmiyaan – Slowed Reverb",
+        "artist": [
+            "Shafaqat Amanat Ali"
+        ],
+        "file": "Audio/Darmiyaan [Slowed  Reverb] _ Jodi Breakers _ R.Madhavan _ Bipasha Basu _ Lo Fi _ The Chillhop Cafe.mp3",
+        "image": "Thumbnails/Darmiyaan [Slowed  Reverb] _ Jodi Breakers _ R.Madhavan _ Bipasha Basu _ Lo Fi _ The Chillhop Cafe_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Slowed-Reverb"
+        ],
+        "mood": [
+            "Romantic"
+        ]
+    },
+    {
+        "title": "Hothon Se Chhu Lo Tum – Instrumental",
+        "artist": [
+            "Mohammed Irfan"
+        ],
+        "file": "Audio/Hothon Se Chhu Lo Tum (Unwind Instrumental).mp3",
+        "image": "Thumbnails/Hothon Se Chhu Lo Tum (Unwind Instrumental)_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Instrumental"
+        ],
+        "mood": [
+            "Instrumental", "Romantic", "Nostalgic, Romantic, Nostalgic"
+        ]
+    },
+    {
+        "title": "Hum Mar Jayenge – Romantic Song",
+        "artist": [
+            "Tulsi Kumar, Arijit Singh"
+        ],
+        "file": "Audio/Hum Mar Jayenge _ Lyrical Video _ Arijit Singh, Tulsi Kumar _ Aashiqui 2 _ Bollywood Romantic Song.mp3",
+        "image": "Thumbnails/Hum Mar Jayenge _ Lyrical Video _ Arijit Singh, Tulsi Kumar _ Aashiqui 2 _ Bollywood Romantic Song_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Hindi-New"
+        ],
+        "mood": [
+            "Romantic", "Nostalgic Nostalgic"
+        ]
+    },
+    {
+        "title": "Jo Bheji Thi Duaa",
+        "artist": [
+            "Arijit Singh, Nandini Srikar"
+        ],
+        "file": "Audio/Jo Bheji Thi Duaa - Arijit Singh _ Nandini Srikar, Kumaar _ Vishal-Shekhar _ Shanghai.mp3",
+        "image": "Thumbnails/Jo Bheji Thi Duaa - Arijit Singh _ Nandini Srikar, Kumaar _ Vishal-Shekhar _ Shanghai_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Hindi-New"
+        ],
+        "mood": [
+            "Nostalgic", "Sad"
+        ]
+    },
+    {
+        "title": "Main Rahoon Ya Na Rahoon – Slowed Reverb",
+        "artist": [
+            "Armaan Malik"
+        ],
+        "file": "Audio/Main Rahoon Ya Na Rahoon [Slowed   Reverb] - Arman Malik _ Lofi Songs _ Indian Lofi Song Channel.mp3",
+        "image": "Thumbnails/Main Rahoon Ya Na Rahoon [Slowed   Reverb] - Arman Malik _ Lofi Songs _ Indian Lofi Song Channel_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Slowed-Reverb"
+        ],
+        "mood": [
+            "Romantic", "Nostalgictalgic"
+        ]
+    },
+    {
+        "title": "Milne Hai Mujhse Aayi – Aashiqui 2",
+        "artist": [
+            "Arijit Singh"
+        ],
+        "file": "Audio/Milne Hai Mujhse Aayi Lyrics _ Aashiqui 2 _ Aditya Roy Kapoor, Shraddha Kapoor _.mp3",
+        "image": "Thumbnails/Milne Hai Mujhse Aayi Lyrics _ Aashiqui 2 _ Aditya Roy Kapoor, Shraddha Kapoor __thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Hindi-New"
+        ],
+        "mood": [
+            "Romantic", "Sad Sad"
+        ]
+    },
+    {
+        "title": "Nazm Nazm – Slowed Reverb",
+        "artist": [
+            "Ayushmann Khurrana"
+        ],
+        "file": "Audio/Nazm Nazm [ Slowed   Reverb ] _ Arko _ Bareilly Ki Barfi _ Lofi Version.mp3",
+        "image": "Thumbnails/Nazm Nazm [ Slowed   Reverb ] _ Arko _ Bareilly Ki Barfi _ Lofi Version_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Slowed-Reverb"
+        ],
+        "mood": [
+            "Romantic", "Nostalgictalgic"
+        ]
+    },
+    {
+        "title": "O Re Piya – Slowed Reverb",
+        "artist": [
+            "Rahat Fateh Ali Khan"
+        ],
+        "file": "Audio/O Re Piya _ Slowed   Reverb _ @ViBez_page.mp3",
+        "image": "Thumbnails/O Re Piya _ Slowed   Reverb _ @ViBez_page_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Slowed-Reverb"
+        ],
+        "mood": [
+            "Romantic", "Spiritual"
+        ]
+    },
+    {
+        "title": "Phir Le Aaya Dil – Slowed Reverb",
+        "artist": [
+            "Arijit Singh"
+        ],
+        "file": "Audio/phir le aaya dil _ arijit singh (slowed   reverb).mp3",
+        "image": "Thumbnails/phir le aaya dil _ arijit singh (slowed   reverb)_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Slowed-Reverb"
+        ],
+        "mood": [
+            "Romantic", "Nostalgic"
+        ]
+    },
+    {
+        "title": "Saagar Kinare – Instrumental",
+        "artist": [
+            "Shomu Seal"
+        ],
+        "file": "Audio/Saagar Kinare (Unwind Instrumental).mp3",
+        "image": "Thumbnails/Saagar Kinare (Unwind Instrumental)_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Instrumental"
+        ],
+        "mood": [
+            "Instrumental", "Romantic", "Nostalgic, Romantic, Nostalgic"
+        ]
+    },
+    {
+        "title": "Soch Na Sake – Slowed Reverb",
+        "artist": [
+            "Tulsi Kumar, Arijit Singh"
+        ],
+        "file": "Audio/Soch Na Sake [Slowed Reverb] Song Lyrics _ Arijit Singh, Tulsi Kumar.mp3",
+        "image": "Thumbnails/Soch Na Sake [Slowed Reverb] Song Lyrics _ Arijit Singh, Tulsi Kumar_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Slowed-Reverb"
+        ],
+        "mood": [
+            "Romantic"
+        ]
+    },
+    {
+        "title": "Suno Na Sangemarmar – Slowed Reverb",
+        "artist": [
+            "Arijit Singh"
+        ],
+        "file": "Audio/Suno Na Sangemarmar [ slowed and reverb ] _ Youngistaan _ Arjit Singh __ Nexus Music.mp3",
+        "image": "Thumbnails/Suno Na Sangemarmar [ slowed and reverb ] _ Youngistaan _ Arjit Singh __ Nexus Music_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Slowed-Reverb"
+        ],
+        "mood": [
+            "Romantic"
+        ]
+    },
+    {
+        "title": "Thodi Jagah – Slowed Reverb",
+        "artist": [
+            "Arijit Singh"
+        ],
+        "file": "Audio/Thodi Jagah [Slowed Reverb]- Arijit Singh _ Marjaavaan _ Textaudio.mp3",
+        "image": "Thumbnails/Thodi Jagah [Slowed Reverb]- Arijit Singh _ Marjaavaan _ Textaudio_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Slowed-Reverb"
+        ],
+        "mood": [
+            "Romantic", "Sad"
+        ]
+    },
+    {
+        "title": "Tose Naina Lage – Lyrical Song",
+        "artist": [
+            "Shilpa Rao, "
+        ],
+        "file": "Audio/Tose Naina Lage Piya Sawre- lyrical song _ Anwar _ Kshitij _ Shilpa Rao _ Mithoon _.mp3",
+        "image": "Thumbnails/Tose Naina Lage Piya Sawre- lyrical song _ Anwar _ Kshitij _ Shilpa Rao _ Mithoon __thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Hindi-Old"
+        ],
+        "mood": [
+            "Romantic"
+        ]
+    },
+    {
+        "title": "Tum Ho - Slowed And  Reverb",
+        "artist": [
+            "Mohit Chauhan"
+        ],
+        "file": "Audio/TUM HO - MOHIT CHAUHAN [SLOWED].mp3",
+        "image": "Thumbnails/TUM HO - MOHIT CHAUHAN [SLOWED]_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Slowed-Reverb"
+        ],
+        "mood": [
+            "Romantic"
+        ]
+    },
+    {
+        "title": "Ye Tu Ne Kya Kiya – Slowed Reverb",
+        "artist": [
+            "Javed Bashir"
+        ],
+        "file": "Audio/YE TU NE KYA KIYA _ Slowed & Reverb.mp3",
+        "image": "Thumbnails/YE TU NE KYA KIYA _ Slowed & Reverb_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Slowed-Reverb"
+        ],
+        "mood": [
+            "Romantic"
+        ]
     }
 ]
