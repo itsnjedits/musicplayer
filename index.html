@@ -5,44 +5,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <title>SoundAura - The only Ad-free music player</title>
-    <meta name="Listen songs without ads" content="This is a music player which is totally Ad-free.">
 
-    <link rel="icon" href="favicon.ico" sizes="64x64" type="image/x-icon">
+    <!-- Correct SEO description -->
+    <meta name="description" content="Listen songs without ads. A clean, smooth, ad-free music player with offline PWA support.">
 
+    <link rel="icon" href="./favicon.ico" sizes="64x64" type="image/x-icon">
 
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6HNPX9LKNJ"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+        function gtag(){ dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-6HNPX9LKNJ');
     </script>
 
-    <!-- Poppins font link --->
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS CDN link -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Boxicons link -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="style.css?v=4">
 
     <!-- 🌟 PWA Setup -->
     <link rel="manifest" href="./manifest.json">
     <meta name="theme-color" content="#111827">
     <meta name="background-color" content="#000000">
 
-    <!-- 📱 iOS PWA support -->
+    <!-- 📱 iOS PWA Support -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="SoundAura">
     <link rel="apple-touch-icon" href="./icons/icon-512.png">
-
-
 </head>
+
 
 <body class="bg-black ">
 

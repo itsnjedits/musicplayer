@@ -29,6 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
   musicplayer.style.animationPlayState = 'paused';
   let currentPlaybackRate = parseFloat(speedSelect.value);
 
+  // store original text of playlist button (used to restore after "Song Added" messages)
+  const playlistButtonTextOriginal = playlistButton?.querySelector('p')?.textContent || 'My Playlist';
+
   let isLoopingSingle = false;
   let isLoopingPlaylist = false;
 
@@ -355,6 +358,10 @@ document.addEventListener('DOMContentLoaded', () => {
           selectedFilters.Genre = null;
       }
 
+      currentIndex = -1;
+// updateVisualizer();
+
+
       // Set the chosen filter
       selectedFilters[category] = value;
 
@@ -515,68 +522,67 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // --- Download helper (put this once near top of your script, e.g. after BASE_AUDIO/BASE_THUMB) ---
-function buildRawFileURLForSong(song) {
-  if (!song) return '';
-  // If file is already a full URL, return it
-  if (song.file && (song.file.startsWith('http://') || song.file.startsWith('https://'))) {
-    return song.file;
-  }
+      function buildRawFileURLForSong(song) {
+        if (!song) return '';
+        // If file is already a full URL, return it
+        if (song.file && (song.file.startsWith('http://') || song.file.startsWith('https://'))) {
+          return song.file;
+        }
 
-  // Prefer song.file; if missing, try to derive from thumbnail using modifyAndDecodeURL (existing util)
-  let relativePath = song.file;
-  if (!relativePath && song.image && typeof modifyAndDecodeURL === 'function') {
-    try {
-      // modifyAndDecodeURL returns something like "Audio/xxx.mp3" if your BASE_THUMB pattern matched
-      relativePath = modifyAndDecodeURL(song.image);
-    } catch (e) {
-      relativePath = null;
-    }
-  }
+        // Prefer song.file; if missing, try to derive from thumbnail using modifyAndDecodeURL (existing util)
+        let relativePath = song.file;
+        if (!relativePath && song.image && typeof modifyAndDecodeURL === 'function') {
+          try {
+            // modifyAndDecodeURL returns something like "Audio/xxx.mp3" if your BASE_THUMB pattern matched
+            relativePath = modifyAndDecodeURL(song.image);
+          } catch (e) {
+            relativePath = null;
+          }
+        }
 
-  if (!relativePath) return '';
+        if (!relativePath) return '';
 
-  // Build safe raw.githubusercontent URL: encode each path segment
-  const base = `https://raw.githubusercontent.com/itsnjedits/${song.store}/main/`;
-  const encoded = relativePath.split('/').map(seg => encodeURIComponent(seg)).join('/');
-  return base + encoded;
-}
-
-// --- Download button ---
-if (isRemovable) {
-  const downloadBtn = div.querySelector('.download-song');
-  if (downloadBtn) {
-    downloadBtn.addEventListener('click', async e => {
-      e.stopPropagation();
-
-      const fileURL = buildRawFileURLForSong(song);
-      if (!fileURL) {
-        console.warn('Download: unable to determine file URL for', song);
-        return;
+        // Build safe raw.githubusercontent URL: encode each path segment
+        const base = `https://raw.githubusercontent.com/itsnjedits/${song.store}/main/`;
+        const encoded = relativePath.split('/').map(seg => encodeURIComponent(seg)).join('/');
+        return base + encoded;
       }
 
-      // Create a safe filename
-      const artistText = Array.isArray(song.artist) ? song.artist.join(', ') : (song.artist || '');
-      // remove characters not allowed in filenames and trim length
-      const safeBase = `${song.title || 'track'} - ${artistText}`.replace(/[\\/:"*?<>|]+/g, '').trim().slice(0, 200);
-      const filename = `${safeBase}.mp3`;
+      // --- Download button ---
+      if (isRemovable) {
+        const downloadBtn = div.querySelector('.download-song');
+        if (downloadBtn) {
+          downloadBtn.addEventListener('click', async e => {
+            e.stopPropagation();
 
-      // Try direct anchor download (works for raw.githubusercontent public files)
-      try {
-        const link = document.createElement('a');
-        link.href = fileURL;
-        link.download = filename;
-        // Some browsers ignore download for cross-origin — opening in new tab is fallback
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      } catch (err) {
-        // Fallback: open in new tab
-        window.open(fileURL, '_blank', 'noopener');
+            const fileURL = buildRawFileURLForSong(song);
+            if (!fileURL) {
+              console.warn('Download: unable to determine file URL for', song);
+              return;
+            }
+
+            // Create a safe filename
+            const artistText = Array.isArray(song.artist) ? song.artist.join(', ') : (song.artist || '');
+            // remove characters not allowed in filenames and trim length
+            const safeBase = `${song.title || 'track'} - ${artistText}`.replace(/[\\/:"*?<>|]+/g, '').trim().slice(0, 200);
+            const filename = `${safeBase}.mp3`;
+
+            // Try direct anchor download (works for raw.githubusercontent public files)
+            try {
+              const link = document.createElement('a');
+              link.href = fileURL;
+              link.download = filename;
+              // Some browsers ignore download for cross-origin — opening in new tab is fallback
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            } catch (err) {
+              // Fallback: open in new tab
+              window.open(fileURL, '_blank', 'noopener');
+            }
+          });
+        }
       }
-    });
-  }
-}
-
 
       // --- PLAY FIX (Most Important) ---
       div.addEventListener("click", () => {
@@ -754,6 +760,8 @@ if (isRemovable) {
           audio.pause(); // sab remove ho gaya
           currentIndex = 0;
           lastPlayedSong = null;
+          // stop visualizers now
+          updateVisualizers();
         }
       } else {
         // ✅ Agar koi aur remove hua hai, index re-sync karo
@@ -780,51 +788,92 @@ if (isRemovable) {
 
   function addToPlaylist(div) {
 
-    const img = div.querySelector('img');
-    const title = div.querySelector('.song-title').textContent.trim();
-    const artist = div.querySelector('.song-artist').textContent.trim();
+  const img = div.querySelector('img');
+  const title = div.querySelector('.song-title').textContent.trim();
+  const artist = div.querySelector('.song-artist').textContent.trim();
 
-    const normalize = val =>
-      Array.isArray(val)
-        ? val.join(", ").toLowerCase().trim()
-        : String(val).toLowerCase().trim();
+  const normalize = val =>
+    Array.isArray(val)
+      ? val.join(", ").toLowerCase().trim()
+      : String(val).toLowerCase().trim();
 
-    const masterSong = allSongs.find(s =>
-      normalize(s.title) === title.toLowerCase() &&
-      normalize(s.artist) === artist.toLowerCase()
-    );
+  const masterSong = allSongs.find(s =>
+    normalize(s.title) === title.toLowerCase() &&
+    normalize(s.artist) === artist.toLowerCase()
+  );
 
-    if (!masterSong) {
-      console.error("Song not found in master list!");
-      return;
-    }
-
-    const newSong = {
-      title: masterSong.title,
-      artist: masterSong.artist,
-      image: masterSong.image,
-      file: masterSong.file,
-      thumbnail: masterSong.thumbnail,
-      store: masterSong.store
-    };
-
-    const exists = playlist.some(
-      s => normalize(s.title) === normalize(newSong.title) &&
-           normalize(s.artist) === normalize(newSong.artist)
-    );
-
-    const btn = document.querySelector('.yourPlaylist');
-    const text = btn.querySelector('p');
-
-    if (exists) {
-      text.textContent = "Already in Playlist ✖";
-      return;
-    }
-
-    playlist.push(newSong);
-    savePlaylistToLocalStorage();
-    text.textContent = "Song Added ✔";
+  if (!masterSong) {
+    console.error("Song not found in master list!");
+    return;
   }
+
+  const newSong = {
+    title: masterSong.title,
+    artist: masterSong.artist,
+    image: masterSong.image,
+    file: masterSong.file,
+    thumbnail: masterSong.thumbnail,
+    store: masterSong.store
+  };
+
+  const exists = playlist.some(
+    s => normalize(s.title) === normalize(newSong.title) &&
+         normalize(s.artist) === normalize(newSong.artist)
+  );
+
+  const btn = document.querySelector('.yourPlaylist');
+  const textEl = btn?.querySelector('p');
+
+  // ====== ALREADY IN PLAYLIST ======
+  if (exists) {
+    if (textEl) {
+      textEl.textContent = "Already in Playlist ✖";
+      btn.style.backgroundColor = "#7f1d1d";   // 🔴 dark red
+      btn.style.border = "#7f1d1d"
+      textEl.style.color = "white";
+    }
+
+    setTimeout(() => {
+      const safeBtn = document.querySelector('.yourPlaylist');
+      const safeP = safeBtn?.querySelector('p');
+
+      // Reset to original text
+      if (safeP) safeP.textContent = playlistButtonTextOriginal;
+
+      // Reset styling
+      if (safeBtn) safeBtn.style.backgroundColor = "";
+      if (safeBtn) safeBtn.style.border = "";
+      if (safeP) safeP.style.color = "";
+    }, 1500);
+
+    return;
+  }
+
+  // ====== SONG ADDED ======
+  playlist.push(newSong);
+  savePlaylistToLocalStorage();
+
+  if (textEl) {
+    textEl.textContent = "Song Added ✔";
+    btn.style.backgroundColor = "#065f46";   // 🟢 green
+    btn.style.border = "#065f46";
+    textEl.style.color = "white";
+  }
+
+  // revert after short delay 
+  setTimeout(() => {
+    const safeBtn = document.querySelector('.yourPlaylist');
+    const safeP = safeBtn?.querySelector('p');
+
+    if (safeP) safeP.textContent = playlistButtonTextOriginal;
+
+    // Reset styling
+    if (safeBtn) safeBtn.style.backgroundColor = "";
+    if (safeBtn) safeBtn.style.border = "";
+    if (safeP) safeP.style.color = "";
+  }, 1500);
+}
+
 
 
 
@@ -915,6 +964,7 @@ if (isRemovable) {
     saveLastPlayedSong(song, 0, currentIndex);
 
     // ====== SONG ENDED ======
+    // use audio.onended (single handler). Avoid adding global ended listeners elsewhere.
     audio.onended = () => {
       if (isLoopingSingle) {
         audio.loop = true;
@@ -925,12 +975,16 @@ if (isRemovable) {
 
       // Continue inside currentList (NOT songs array)
       if (currentIndex < currentList.length - 1) {
-        playSong(currentIndex + 1);
+        // ensure index alignment before calling next
+        currentIndex = Math.min(currentIndex + 1, currentList.length - 1);
+        playSong(currentIndex);
       } else if (isLoopingPlaylist) {
         playSong(0);
       } else {
         audio.pause();
         playPauseButton.innerHTML = `<i class='bx bx-play'></i>`;
+        // stop visualizers when done
+        updateVisualizers();
       }
     };
 
@@ -946,6 +1000,11 @@ if (isRemovable) {
         saveLastPlayedSong(song, audio.currentTime, currentIndex);
       }
     };
+
+    // When a song starts playing, ensure visualizers update
+    updateVisualizers();
+    // updateVisualizer();
+
   }
 
 
@@ -1026,6 +1085,8 @@ if (isRemovable) {
       progress.max = dur;
       progress.value = ct;
     };
+    // remove previous listener if any to avoid duplicate handlers
+    try { audio.removeEventListener('timeupdate', update); } catch(e){/* ignore */ }
     audio.addEventListener('timeupdate', update);
   }
 
@@ -1036,25 +1097,31 @@ if (isRemovable) {
 
   // ========== NEXT & PREV ==========
   const playNextSong = () =>
-    currentIndex < currentList.length - 1 && playSong(currentIndex + 1);
-
+    (currentList && currentIndex < currentList.length - 1) && playSong(currentIndex + 1);
+  
   const playPrevSong = () =>
-    currentIndex > 0 && playSong(currentIndex - 1);
+    (currentList && currentIndex > 0) && playSong(currentIndex - 1);
+
+  
 
 
   // ========== VISUALIZER & HIGHLIGHT ==========
   function updateVisualizers() {
+    const playing = !audio.paused && currentList && currentList.length > 0;
     document.querySelectorAll('.item').forEach(item => {
-      const isPlaying = parseInt(item.dataset.index) === currentIndex;
+      const itemIndex = parseInt(item.dataset.index);
       const viz = item.querySelector('.visualizer');
-
-      viz.classList.toggle('hidden', !isPlaying);
-
-      viz.querySelectorAll('.bar').forEach(b => {
-        b.style.animationPlayState = isPlaying ? 'running' : 'paused';
-      });
+      const isPlaying = playing && (itemIndex === currentIndex);
+      if (viz) {
+        viz.classList.toggle('hidden', !isPlaying);
+        viz.querySelectorAll('.bar').forEach(b => {
+          b.style.animationPlayState = isPlaying ? 'running' : 'paused';
+        });
+      }
     });
   }
+
+
 
   function highlightCurrentSong() {
     document.querySelectorAll('.item').forEach(item => {
@@ -1072,6 +1139,8 @@ if (isRemovable) {
     isPaused ? audio.play() : audio.pause();
     playPauseButton.innerHTML = `<i class='bx ${isPaused ? 'bx-pause' : 'bx-play'}'></i>`;
     musicplayer.style.animationPlayState = isPaused ? 'running' : 'paused';
+    // update visualizer state whenever play/pause toggles
+    setTimeout(updateVisualizers, 50);
   };
 
   prevButton.onclick = playPrevSong;
@@ -1146,7 +1215,8 @@ if (isRemovable) {
     }
   });
 
-  audio.addEventListener('ended', playNextSong);
+  // NOTE: removed global audio.addEventListener('ended', playNextSong);
+  // playSong sets audio.onended directly to avoid double-calls (prevents skip-1 bug).
 
   // ========== SEARCH ==========
   const searchInput = document.getElementById('search-input');
