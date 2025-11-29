@@ -242,7 +242,10 @@ document.addEventListener('DOMContentLoaded', () => {
       headingText.textContent = "Loading...";
       spinner.classList.remove("hidden");
 
-      const res = await fetch("songs.json");
+      const res = await fetch("songs.json", {
+  cache: "no-cache",
+});
+
       const data = await res.json();
       allSongs = data.sort((a, b) => a.title.localeCompare(b.title));
 
@@ -257,31 +260,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-
-  function loadSongsFromJSON(file, headingTextValue = null, showSpinner = false) {
-    if (showSpinner) spinner.classList.remove("hidden");
-
-    fetch(file)
-      .then(res => res.json())
-      .then(data => {
-        songs = data.sort((a, b) => a.title.localeCompare(b.title));
-        loadSongList();
-
-
-        if (headingTextValue) {
-            headingText.textContent = `${headingTextValue} - Ad Free 🔥`;
-        }
-
-        if (showSpinner) {
-            setTimeout(() => spinner.classList.add("hidden"), 0);
-        }
-      })
-      .catch(err => {
-        console.error(`Error fetching songs from ${file}:`, err);
-        headingText.textContent = "Something went wrong ❌";
-        spinner.classList.add("hidden");
-      });
-  }
 
   // store currently selected filters (null = no selection)
   const selectedFilters = { Mood: null, Genre: null, Singer: null };
