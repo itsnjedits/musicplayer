@@ -906,84 +906,147 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.classList[disabled ? 'remove' : 'add'](cls);
     });
   }
+// ======= HELPER: Clamp value =======
+function clamp(v) { return Math.max(0, Math.min(255, v)); }
+function rgbToCss(c) { return `rgb(${clamp(c.r)}, ${clamp(c.g)}, ${clamp(c.b)})`; }
 
-  // ========== PLAY A SONG ==========
-  // ✅ FINAL FIXED playSong() — works with playlist, genre, mood, search, main list
-  function playSong(index) {
-    if (!currentList || currentList.length === 0) return;
+// ======= HELPER: Brightness clamp (eye-friendly) =======
+function clampBrightness(c, maxBright = 210) {
+  return {
+    r: Math.min(c.r, maxBright),
+    g: Math.min(c.g, maxBright),
+    b: Math.min(c.b, maxBright)
+  };
+}
 
-    // Clamp + Looping behavior
-    if (index < 0 && isLoopingPlaylist) index = currentList.length - 1;
-    if (index >= currentList.length && isLoopingPlaylist) index = 0;
-    if (index < 0 || index >= currentList.length) return;
+// ======= HELPER: Extract colors from image =======
+function extractColorsFromImage(imageUrl) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.crossOrigin = "anonymous"; 
+    img.src = imageUrl + (imageUrl.includes('?') ? '&' : '?') + 'cachebust=' + Date.now();
 
-    // INDEX MUST match currentList
-    currentIndex = index;
+    img.onload = () => {
+      try {
+        const w = 40, h = Math.round((img.height / img.width) * 40) || 40;
+        const canvas = document.createElement('canvas');
+        canvas.width = w; canvas.height = h;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, w, h);
+        const data = ctx.getImageData(0, 0, w, h).data;
 
-    // Pick correct song from currentList (THIS FIXES YOUR BUG)
-    const song = currentList[currentIndex];
-    lastPlayedSong = song;
+        let rSum = 0, gSum = 0, bSum = 0, count = 0;
+        let bestSat = -1, accent = { r: 0, g: 0, b: 0 };
 
-    // Build proper audio URL
-    const base = `https://raw.githubusercontent.com/itsnjedits/${song.store}/main/`;
-    audio.src = base + song.file;
-    audio.load();
+        for (let i = 0; i < data.length; i += 4) {
+          const r = data[i], g = data[i+1], b = data[i+2], a = data[i+3];
+          if (a === 0) continue;
+          rSum += r; gSum += g; bSum += b; count++;
 
-    audio.pause();
-    audio.playbackRate = currentPlaybackRate;
+          const max = Math.max(r,g,b), min = Math.min(r,g,b);
+          const sat = max === 0 ? 0 : (max - min)/max;
+          if (sat > bestSat) { bestSat = sat; accent = {r,g,b}; }
+        }
 
-    audio.play().then(() => {
-      musicplayer.style.animationPlayState = "running";
-    }).catch(console.error);
+        if (count === 0) return reject(new Error('No pixels read'));
 
-    // Update UI
-    updatePlayer(song);
-    toggleButtons(false);
-    saveLastPlayedSong(song, 0, currentIndex);
+        const avg = clampBrightness({
+          r: Math.round(rSum / count),
+          g: Math.round(gSum / count),
+          b: Math.round(bSum / count)
+        });
 
-    // ====== SONG ENDED ======
-    // use audio.onended (single handler). Avoid adding global ended listeners elsewhere.
-    audio.onended = () => {
-      if (isLoopingSingle) {
-        audio.loop = true;
-        return;
-      } else {
-        audio.loop = false;
-      }
+        const acc = clampBrightness(accent);
 
-      // Continue inside currentList (NOT songs array)
-      if (currentIndex < currentList.length - 1) {
-        // ensure index alignment before calling next
-        currentIndex = Math.min(currentIndex + 1, currentList.length - 1);
-        playSong(currentIndex);
-      } else if (isLoopingPlaylist) {
-        playSong(0);
-      } else {
-        audio.pause();
-        playPauseButton.innerHTML = `<i class='bx bx-play'></i>`;
-        // stop visualizers when done
-        updateVisualizers();
-      }
+        resolve({ avg, accent: acc });
+      } catch (err) { reject(err); }
     };
 
-    // ====== SAVE TIME ======
-    let lastUpdateTime = 0;
+    img.onerror = () => reject(new Error('Image load failed'));
+  });
+}
 
-    audio.ontimeupdate = () => {
-      const now = Date.now();
-      if (now - lastUpdateTime < 500) return;
+// ======= HELPER: Apply dynamic gradient =======
+function applyDynamicGradient(colors, options = {}) {
+  const dur = options.durationSec || 12;
+  const angle = options.angle || "135deg";
 
-      lastUpdateTime = now;
-      if (!audio.paused && audio.currentTime > 0) {
-        saveLastPlayedSong(song, audio.currentTime, currentIndex);
-      }
-    };
+  // subtle mix for eye comfort
+  const avg = colors.avg;
+  const accent = colors.accent;
+  const stops = [
+    rgbToCss(avg),
+    rgbToCss({
+      r: Math.round(avg.r*0.75 + accent.r*0.25),
+      g: Math.round(avg.g*0.75 + accent.g*0.25),
+      b: Math.round(avg.b*0.75 + accent.b*0.25)
+    }),
+    rgbToCss(accent)
+  ];
 
-    // When a song starts playing, ensure visualizers update
-    updateVisualizers();
-    // updateVisualizer();
+  musicplayer.style.transition = "background 600ms ease, box-shadow 600ms ease";
+  musicplayer.style.boxShadow = `0px -8px 30px rgba(${accent.r}, ${accent.g}, ${accent.b}, 0.45)`;
 
-  }
+  const gradient = `linear-gradient(${angle}, ${stops.join(", ")})`;
+  musicplayer.style.background = gradient;
+  musicplayer.style.backgroundSize = "300% 300%";
+  musicplayer.style.animation = `gradientShift ${dur}s ease infinite`;
+  void musicplayer.offsetWidth; // force repaint to restart animation
+}
+
+// ======= FINAL playSong =======
+function playSong(index) {
+  if (!currentList || currentList.length === 0) return;
+
+  if (index < 0 && isLoopingPlaylist) index = currentList.length-1;
+  if (index >= currentList.length && isLoopingPlaylist) index = 0;
+  if (index < 0 || index >= currentList.length) return;
+
+  currentIndex = index;
+  const song = currentList[currentIndex];
+  lastPlayedSong = song;
+
+  const base = `https://raw.githubusercontent.com/itsnjedits/${song.store}/main/`;
+  audio.src = base + song.file;
+  audio.load();
+  audio.pause();
+  audio.playbackRate = currentPlaybackRate;
+
+  audio.play().then(()=> { musicplayer.style.animationPlayState = "running"; }).catch(console.error);
+
+  updatePlayer(song);
+  toggleButtons(false);
+  saveLastPlayedSong(song, 0, currentIndex);
+
+  // ===== DYNAMIC GRADIENT =====
+  extractColorsFromImage(song.image).then(({avg, accent})=>{
+    applyDynamicGradient({avg, accent}, {durationSec:12, angle:"135deg"});
+  }).catch(()=> {
+    // fallback gradient
+    applyDynamicGradient({ avg: { r:8,g:90,b:110 }, accent:{r:41,g:236,b:254} }, {durationSec:12, angle:"to right"});
+  });
+
+  // ===== SONG END HANDLING =====
+  audio.onended = () => {
+    if (isLoopingSingle) { audio.loop = true; return; }
+    audio.loop = false;
+
+    if (currentIndex < currentList.length-1) playSong(currentIndex+1);
+    else if (isLoopingPlaylist) playSong(0);
+    else { audio.pause(); playPauseButton.innerHTML=`<i class='bx bx-play'></i>`; updateVisualizers(); }
+  };
+
+  // ===== SAVE TIME =====
+  let lastUpdateTime = 0;
+  audio.ontimeupdate = () => {
+    const now = Date.now();
+    if (now - lastUpdateTime < 500) return;
+    lastUpdateTime = now;
+    if (!audio.paused && audio.currentTime>0) saveLastPlayedSong(song,audio.currentTime,currentIndex);
+  };
+
+  updateVisualizers();
+}
 
 
 

@@ -1,13 +1,12 @@
-const CACHE_NAME = "musicplayer-cache-v5"; // updated version
+const CACHE_NAME = "musicplayer-cache-v6"; // updated version
 
 const urlsToCache = [
   "./",
   "./index.html",
-  "./style.css?v=5",
-  "./script.js?v=5",
   "./manifest.json",
   "./icons/icon-192.png",
   "./icons/icon-512.png"
+  // NOTE: script.js & style.css will be network-first
 ];
 
 // 🧩 INSTALL
@@ -35,7 +34,7 @@ self.addEventListener("activate", (event) => {
   self.clients.claim();
 });
 
-// 🌐 FETCH HANDLER — fully fixed
+// 🌐 FETCH HANDLER
 self.addEventListener("fetch", (event) => {
   const request = event.request;
 
@@ -44,12 +43,16 @@ self.addEventListener("fetch", (event) => {
     return event.respondWith(fetch(request));
   }
 
-  // ❌ Do NOT cache songs.json — ALWAYS fetch fresh
-  if (request.url.endsWith("songs.json")) {
+  // ❌ Always fetch fresh for songs.json, script.js & style.css
+  if (
+    request.url.endsWith("songs.json") ||
+    request.url.endsWith("script.js?v=5") ||
+    request.url.endsWith("style.css?v=5")
+  ) {
     return event.respondWith(fetch(request));
   }
 
-  // For all other requests → cache-first strategy
+  // ✅ Cache-first strategy for everything else
   event.respondWith(
     caches.match(request).then((cachedResponse) => {
       if (cachedResponse) return cachedResponse;
@@ -65,7 +68,7 @@ self.addEventListener("fetch", (event) => {
 
           return networkResponse;
         })
-        .catch(() => caches.match("./index.html"));
+        .catch(() => caches.match("./index.html")) // fallback for offline
     })
   );
 });
