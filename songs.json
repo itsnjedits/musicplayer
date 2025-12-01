@@ -8977,7 +8977,7 @@
     {
         "title": "Main Yahaan Hoon",
         "artist": [
-            "Javed Akhtar"
+            "Udit Narayan"
         ],
         "file": "Audio/Lyrical_ Main Yahaan Hoon Song with Lyrics _ Veer-Zaara _ Shah Rukh Khan, Preity Zinta, Javed Akhtar.mp3",
         "image": "Thumbnails/Lyrical_ Main Yahaan Hoon Song with Lyrics _ Veer-Zaara _ Shah Rukh Khan, Preity Zinta, Javed Akhtar_thumbnail.jpg",
@@ -10875,6 +10875,231 @@
             "Instrumental",
             "Romantic",
             "Nostalgic, Romantic, Nostalgic"
+        ]
+    },
+    {
+        "title": "Aadat (Slowed & Reverb)",
+        "artist": [
+            "Atif Aslam"
+        ],
+        "file": "Audio/Aadat _(Slowed & Reverb) - Atif Aslam.mp3",
+        "image": "Thumbnails/Aadat _(Slowed & Reverb) - Atif Aslam_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Slowed-Reverb"
+        ],
+        "mood": [
+            "Sad",
+            "Nostalgic"
+        ]
+    },
+    {
+        "title": "Aankhein Teri, Kitni Haseen - Lofi",
+        "artist": [
+            "Roopkumar Rathod"
+        ],
+        "file": "Audio/Aankhein Teri - Lofi.mp3",
+        "image": "Thumbnails/Aankhein Teri - Lofi_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Slowed-Reverb"
+        ],
+        "mood": [
+            "Romantic"
+        ]
+    },
+    {
+        "title": "Chand Sifarish (Slowed And Reverb)",
+        "artist": [
+            "Shaan",
+            "Kailash Kher"
+        ],
+        "file": "Audio/Chand Sifarish (Slowed   Reverbed).mp3",
+        "image": "Thumbnails/Chand Sifarish (Slowed   Reverbed)_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Slowed-Reverb"
+        ],
+        "mood": [
+            "Romantic",
+            "Party"
+        ]
+    },
+    {
+        "title": "Main Yahaan Hoon - Slowed & Reverb",
+        "artist": [
+            "Udit Narayan"
+        ],
+        "file": "Audio/Main Yahaan Hoon _ Slowed & Reverb _ Lofi Song's Shir Sunny.mp3",
+        "image": "Thumbnails/Main Yahaan Hoon _ Slowed & Reverb _ Lofi Song's Shir Sunny_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Slowed-Reverb"
+        ],
+        "mood": [
+            "Romantic"
+        ]
+    },
+    {
+        "title": "Mere Haath Mein - Slowed & Reverb",
+        "artist": [
+            "Sonu Nigam"
+        ],
+        "file": "Audio/Mere Haath Mein  { Slowed & Reverb }.mp3",
+        "image": "Thumbnails/Mere Haath Mein  { Slowed & Reverb }_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Slowed-Reverb"
+        ],
+        "mood": [
+            "Romantic"
+        ]
+    },
+    {
+        "title": "Milne Hai Mujhse Aayi",
+        "artist": [
+            "Arijit Singh"
+        ],
+        "file": "Audio/Milne Hai Mujhse Aayi Lyrics _ Aashiqui 2 _ Aditya Roy Kapoor, Shraddha Kapoor _.mp3",
+        "image": "Thumbnails/Milne Hai Mujhse Aayi Lyrics _ Aashiqui 2 _ Aditya Roy Kapoor, Shraddha Kapoor __thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Hindi-New"
+        ],
+        "mood": [
+            "Sad",
+            "Motivational"
+        ]
+    },
+    {
+        "title": "Raabta (slowed with rain)",
+        "artist": [
+            "Arijit Singh"
+        ],
+        "file": "Audio/raabta (slowed w rain).mp3",
+        "image": "Thumbnails/raabta (slowed w rain)_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Rain",
+            "Slowed-Reverb"
+        ],
+        "mood": [
+            "Romantic",
+            "Nostalgic"
+        ]
+    },
+    {
+        "title": "Subhanallah (slowed and reverb)",
+        "artist": [
+            "Shilpa Rao",
+            "Sreerama Chandra"
+        ],
+        "file": "Audio/subhanallah (slowed   reverb) [YJHD].mp3",
+        "image": "Thumbnails/subhanallah (slowed   reverb) [YJHD]_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Slowed-Reverb"
+        ],
+        "mood": [
+            "Romantic",
+            "Inspirational"
+        ]
+    },
+    {
+        "title": "Tera Mera Pyaar Amar - Slowed x Reverb",
+        "artist": [
+            "Lata Mangeshkar"
+        ],
+        "file": "Audio/Tera Mera Pyaar Amar - Slowed x Reverb _ Old Hindi Song Slowed _ Another Sad Night.mp3",
+        "image": "Thumbnails/Tera Mera Pyaar Amar - Slowed x Reverb _ Old Hindi Song Slowed _ Another Sad Night_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Hindi-Old",
+            "Slowed-Reverb"
+        ],
+        "mood": [
+            "Nostalgic",
+            "Sad"
+        ]
+    },
+    {
+        "title": "Toh Phir Aao (Slowed And Reverb)",
+        "artist": [
+            "Mustafa Zahid"
+        ],
+        "file": "Audio/Toh Phir Aao - Lofi (Slowed   Reverb).mp3",
+        "image": "Thumbnails/Toh Phir Aao - Lofi (Slowed   Reverb)_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Slowed-Reverb"
+        ],
+        "mood": [
+            "Sad",
+            "Nostalgic"
+        ]
+    },
+    {
+        "title": "Tose Naina Lage Piya Sawre",
+        "artist": [
+            "Shilpa Rao"
+        ],
+        "file": "Audio/Tose Naina Lage Piya Sawre- lyrical song _ Anwar _ Kshitij _ Shilpa Rao _ Mithoon _.mp3",
+        "image": "Thumbnails/Tose Naina Lage Piya Sawre- lyrical song _ Anwar _ Kshitij _ Shilpa Rao _ Mithoon __thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Hindi-New"
+        ],
+        "mood": [
+            "Romantic",
+            "Spiritual"
+        ]
+    },
+    {
+        "title": "Tumhi Meri Mandir (Slowed Reverb)",
+        "artist": [
+            "Lata Mangeshkar"
+        ],
+        "file": "Audio/Tumhi Meri Mandir (Slowed Reverb) - Bazel Awan.mp3",
+        "image": "Thumbnails/Tumhi Meri Mandir (Slowed Reverb) - Bazel Awan_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Slowed-Reverb",
+            "Hindi-Old"
+        ],
+        "mood": [
+            "Spiritual",
+            "Nostalgic"
+        ]
+    },
+    {
+        "title": "Tumhin Meri Mandir",
+        "artist": [
+            "Lata Mangeshkar"
+        ],
+        "file": "Audio/Tumhin Meri Mandir with lyrics _ तुम्हीं मेरे मंदिर _ Lata Mangeshkar _ Khandan.mp3",
+        "image": "Thumbnails/Tumhin Meri Mandir with lyrics _ तुम्हीं मेरे मंदिर _ Lata Mangeshkar _ Khandan_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Hindi-Old"
+        ],
+        "mood": [
+            "Spiritual"
+        ]
+    },
+    {
+        "title": "Tera Mera Pyar Amar",
+        "artist": [
+            "Lata Mangeshkar"
+        ],
+        "file": "Audio/तेरा मेरा प्यार अमर _ Tera Mera Pyar Amar _ Asli Naqli _ Lata Mangeshkar _ Evergreen Hindi Songs.mp3",
+        "image": "Thumbnails/तेरा मेरा प्यार अमर _ Tera Mera Pyar Amar _ Asli Naqli _ Lata Mangeshkar _ Evergreen Hindi Songs_thumbnail.jpg",
+        "store": "store4",
+        "genre": [
+            "Hindi-Old"
+        ],
+        "mood": [
+            "Romantic",
+            "Nostalgic"
         ]
     }
 ]
