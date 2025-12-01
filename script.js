@@ -1048,10 +1048,6 @@ function playSong(index) {
   updateVisualizers();
 }
 
-
-
-
-
   function updatePlayer(song) {
     // ✅ Update UI
     songImage.src = song.image;
