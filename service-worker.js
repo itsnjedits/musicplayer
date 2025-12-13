@@ -1,74 +1,67 @@
-const CACHE_NAME = "musicplayer-cache-v6"; // updated version
+const CACHE_NAME = "musicplayer-cache-v7"; // 🔥 bump version
 
-const urlsToCache = [
+const STATIC_ASSETS = [
   "./",
   "./index.html",
   "./manifest.json",
   "./icons/icon-192.png",
   "./icons/icon-512.png"
-  // NOTE: script.js & style.css will be network-first
 ];
 
 // 🧩 INSTALL
-self.addEventListener("install", (event) => {
-  console.log("[ServiceWorker] Installing...");
+self.addEventListener("install", event => {
+  console.log("[SW] Installing...");
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then((cache) => cache.addAll(urlsToCache))
-      .then(() => self.skipWaiting())
+    caches.open(CACHE_NAME).then(cache => cache.addAll(STATIC_ASSETS))
   );
+  self.skipWaiting();
 });
 
 // 🌀 ACTIVATE
-self.addEventListener("activate", (event) => {
-  console.log("[ServiceWorker] Activated");
+self.addEventListener("activate", event => {
+  console.log("[SW] Activated");
   event.waitUntil(
-    caches.keys().then((keys) =>
+    caches.keys().then(keys =>
       Promise.all(
-        keys.map((key) => {
-          if (key !== CACHE_NAME) return caches.delete(key);
-        })
+        keys.map(k => k !== CACHE_NAME && caches.delete(k))
       )
     )
   );
   self.clients.claim();
 });
 
-// 🌐 FETCH HANDLER
-self.addEventListener("fetch", (event) => {
-  const request = event.request;
+// 🌐 FETCH
+self.addEventListener("fetch", event => {
+  const req = event.request;
+  const url = new URL(req.url);
 
-  // ❌ Do NOT cache audio files
-  if (request.destination === "audio") {
-    return event.respondWith(fetch(request));
-  }
-
-  // ❌ Always fetch fresh for songs.json, script.js & style.css
+  // ❌ NEVER cache JS / CSS / JSON (DEV SAFE)
   if (
-    request.url.endsWith("songs.json") ||
-    request.url.endsWith("script.js?v=5") ||
-    request.url.endsWith("style.css?v=5")
+    req.destination === "script" ||
+    req.destination === "style" ||
+    url.pathname.endsWith(".js") ||
+    url.pathname.endsWith(".css") ||
+    url.pathname.endsWith(".json")
   ) {
-    return event.respondWith(fetch(request));
+    return event.respondWith(fetch(req));
   }
 
-  // ✅ Cache-first strategy for everything else
+  // ❌ NEVER cache audio
+  if (req.destination === "audio") {
+    return event.respondWith(fetch(req));
+  }
+
+  // ✅ Cache-first only for static assets
   event.respondWith(
-    caches.match(request).then((cachedResponse) => {
-      if (cachedResponse) return cachedResponse;
+    caches.match(req).then(cached => {
+      if (cached) return cached;
 
-      return fetch(request)
-        .then((networkResponse) => {
-          if (!networkResponse || networkResponse.status !== 200) {
-            return networkResponse;
-          }
-
-          const cloned = networkResponse.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(request, cloned));
-
-          return networkResponse;
-        })
-        .catch(() => caches.match("./index.html")) // fallback for offline
+      return fetch(req).then(res => {
+        if (!res || res.status !== 200) return res;
+        const clone = res.clone();
+        caches.open(CACHE_NAME).then(cache => cache.put(req, clone));
+        return res;
+      });
     })
   );
 });
