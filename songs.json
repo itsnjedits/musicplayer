@@ -7315,5 +7315,41 @@
     "store": "store1",
     "genre": ["Hindi-Old"],
     "mood": ["Romantic", "Nostalgic"]
+  },
+  {
+    "title": "Antent - hope to see you again",
+    "artist": "Antent",
+    "file": "Audio/Antent - hope to see you again [1 Hour Loop].mp3",
+    "image": "Thumbnails/Antent - hope to see you again [1 Hour Loop]_thumbnail.jpg",
+    "store": "store4",
+    "genre": ["Meditation"],
+    "mood": []
+  },
+  {
+    "title": "Ehsan Tera Hoga Mujh Par",
+    "artist": ["Mohammed Rafi"],
+    "file": "Audio/Ehsan Tera Hoga Mujh Par with Lyrics _ एहसान तेरा होगा मुझ पर के बोल _ Mohammed Rafi.mp3",
+    "image": "Thumbnails/Ehsan Tera Hoga Mujh Par with Lyrics _ एहसान तेरा होगा मुझ पर के बोल _ Mohammed Rafi_thumbnail.jpg",
+    "store": "store4",
+    "genre": ["Hindi-Old"],
+    "mood": ["Romantic"]
+  },
+  {
+    "title": "Gibran Alcocer - Idea 7",
+    "artist": ["Gibran Alocer"],
+    "file": "Audio/Gibran Alcocer - Idea 7 [1 Hour Loop].mp3",
+    "image": "Thumbnails/Gibran Alcocer - Idea 7 [1 Hour Loop]_thumbnail.jpg",
+    "store": "store4",
+    "genre": ["Meditation"],
+    "mood": []
+  },
+  {
+    "title": "Tujhko Dariya Dili Ki Kasam",
+    "artist": ["Jagjit Singh"],
+    "file": "Audio/Tujhko Dariya Dili Ki Kasam - Jagjit Singh & Chitra Singh _ (Lyrics) _ Gazal _ 1999.mp3",
+    "image": "Thumbnails/Tujhko Dariya Dili Ki Kasam - Jagjit Singh & Chitra Singh _ (Lyrics) _ Gazal _ 1999_thumbnail.jpg",
+    "store": "store4",
+    "genre": ["Hindi-Old"],
+    "mood": ["Romantic"]
   }
 ]
