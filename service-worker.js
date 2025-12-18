@@ -1,8 +1,6 @@
-const CACHE_NAME = "musicplayer-cache-v7"; // 🔥 bump version
-
+const CACHE_NAME = "musicplayer-cache-v8"; // bump version
 const STATIC_ASSETS = [
   "./",
-  "./index.html",
   "./manifest.json",
   "./icons/icon-192.png",
   "./icons/icon-512.png"
@@ -35,7 +33,12 @@ self.addEventListener("fetch", event => {
   const req = event.request;
   const url = new URL(req.url);
 
-  // ❌ NEVER cache JS / CSS / JSON (DEV SAFE)
+  // 1️⃣ Always network for index.html / root
+  if (url.pathname === "/" || url.pathname.endsWith("index.html")) {
+    return event.respondWith(fetch(req));
+  }
+
+  // 2️⃣ Never cache JS / CSS / JSON (DEV safe)
   if (
     req.destination === "script" ||
     req.destination === "style" ||
@@ -46,12 +49,28 @@ self.addEventListener("fetch", event => {
     return event.respondWith(fetch(req));
   }
 
-  // ❌ NEVER cache audio
+  // 3️⃣ Never cache audio
   if (req.destination === "audio") {
     return event.respondWith(fetch(req));
   }
 
-  // ✅ Cache-first only for static assets
+  // 4️⃣ Cache images (thumbnails / playlist images)
+  if (req.destination === "image") {
+    event.respondWith(
+      caches.match(req).then(cached => {
+        if (cached) return cached;
+        return fetch(req).then(res => {
+          if (!res || res.status !== 200) return res;
+          const clone = res.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(req, clone));
+          return res;
+        });
+      })
+    );
+    return; // exit fetch
+  }
+
+  // 5️⃣ Default cache-first for other static assets
   event.respondWith(
     caches.match(req).then(cached => {
       if (cached) return cached;

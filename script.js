@@ -35,6 +35,15 @@ document.addEventListener('DOMContentLoaded', () => {
   let isLoopingSingle = false;
   let isLoopingPlaylist = false;
 
+function openPlaylist(skipScroll = false) {
+  // logic to render playlist modal / toggle playlist
+  if (!skipScroll) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+
+playlistButton.addEventListener('click', () => openPlaylist(false));
+
 
 
   // ========== LOOP BUTTONS ==========
@@ -153,34 +162,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
   reqSongButton.addEventListener("click", () => iframeContainer.style.display = "block");
 
-  document.querySelector('.randomSong').addEventListener('click', () => {
-    const items = document.querySelectorAll('.item');
-    const randomIndex = Math.floor(Math.random() * items.length);
-    const randomSong = items[randomIndex];
+const randomBtn = document.querySelector('.randomSong');
 
-    // 🔹 Sab songs ka reset
-    items.forEach(song => {
-      song.classList.remove('bg-gray-900');
-      const title = song.querySelector('.song-title');
-      const artist = song.querySelector('.song-artist');
-      if (title) title.style.color = '';
-      if (artist) artist.style.color = '';
-    });
+randomBtn.addEventListener('click', function () {
+  const diceIcon = this.querySelector('i');
 
-    // 🔹 Sirf selected song highlight
-    highlightElement(randomSong);
+  // 🎲 Dice random
+  const randomNumber = Math.floor(Math.random() * 6) + 1;
+  diceIcon.className = `bx bxs-dice-${randomNumber}`;
 
-    const songTitle = randomSong.querySelector('.song-title').textContent;
-    console.log(`Randomly selected song: ${songTitle}`);
+  // 🔹 Rolling start
+  this.classList.remove('rolling'); // reset if already rolling
+  void this.offsetWidth; // reflow to allow retrigger
+  this.classList.add('rolling');
+
+  // 🔹 Rolling duration
+  setTimeout(() => {
+    this.classList.remove('rolling'); // fade out hover effect
+  }, 200); // match animation duration
+
+  // 🎵 Random song selection
+  const items = document.querySelectorAll('.item');
+  const randomSong = items[Math.floor(Math.random() * items.length)];
+
+  items.forEach(song => {
+    song.classList.remove('bg-gray-900');
+    song.querySelector('.song-title')?.style.removeProperty('color');
+    song.querySelector('.song-artist')?.style.removeProperty('color');
   });
 
-  document.querySelector('.randomSong').addEventListener('click', function () {
-    const randomNumber = Math.floor(Math.random() * 6) + 1;
-    const diceIcon = this.querySelector('i');
-    diceIcon.className = `bx bxs-dice-${randomNumber}`;
-    this.classList.add('rolling');
-    setTimeout(() => this.classList.remove('rolling'), 200);
-  });
+  highlightElement(randomSong);
+});
+
 
 
 
@@ -288,14 +301,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Singer filter
-    if (selectedFilters.Singer) {
-      const v = selectedFilters.Singer.toLowerCase();
-      results = results.filter(s =>
-        (s.artist || [])
-          .map(x => x.toLowerCase())
-          .some(a => a.includes(v))
-      );
-    }
+if (selectedFilters.Singer) {
+  const v = selectedFilters.Singer.toLowerCase();
+
+  results = results.filter(s => {
+    const artists = Array.isArray(s.artist)
+      ? s.artist.join(",")   // ["A, B"] → "A, B"
+      : s.artist || "";
+
+    return artists
+      .toLowerCase()
+      .split(",")            // "A, B" → ["A", " B"]
+      .map(a => a.trim())    // extra spaces hatao
+      .some(a => a.includes(v));
+  });
+}
+
 
     // Update UI
     loadSongList(
@@ -309,46 +330,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --------- Category Option Selection ---------
   document.querySelectorAll(".option-item").forEach(option => {
-    option.addEventListener("click", async () => {
-      const category = option.dataset.category;
-      const value = option.dataset.value;
+  option.addEventListener("click", async () => {
+    const category = option.dataset.category;
+    const value = option.dataset.value;
 
-      // UI
-      modal.classList.add("hidden");
-      headingText.textContent = "Loading...";
-      spinner.classList.remove("hidden");
+    // Scroll page to top smoothly
+    window.scrollTo({ top: 0, behavior: "smooth" });
 
-      const ok = await ensureAllSongsLoaded();
-      if (!ok) return;
+    // UI
+    modal.classList.add("hidden");
+    headingText.textContent = "Loading...";
+    spinner.classList.remove("hidden");
 
-      // set selected filter
-      // Reset other filters
-      if (category === "Mood") {
-          selectedFilters.Genre = null;
-          selectedFilters.Singer = null;
-      }
-      if (category === "Genre") {
-          selectedFilters.Mood = null;
-          selectedFilters.Singer = null;
-      }
-      if (category === "Singer") {
-          selectedFilters.Mood = null;
-          selectedFilters.Genre = null;
-      }
+    const ok = await ensureAllSongsLoaded();
+    if (!ok) return;
 
-      currentIndex = -1;
-// updateVisualizer();
+    // Reset other filters
+    if (category === "Mood") {
+      selectedFilters.Genre = null;
+      selectedFilters.Singer = null;
+    }
+    if (category === "Genre") {
+      selectedFilters.Mood = null;
+      selectedFilters.Singer = null;
+    }
+    if (category === "Singer") {
+      selectedFilters.Mood = null;
+      selectedFilters.Genre = null;
+    }
 
+    currentIndex = -1;
+    // updateVisualizer();
 
-      // Set the chosen filter
-      selectedFilters[category] = value;
+    // Set the chosen filter
+    selectedFilters[category] = value;
 
-      // apply filters
-      applyFilters();
-      headingText.textContent = `${value} Songs - Ad Free 🔥`;
-      spinner.classList.add("hidden");
-    });
+    // Apply filters
+    applyFilters();
+    headingText.textContent = `${value} Songs - Ad Free 🔥`;
+    spinner.classList.add("hidden");
   });
+});
+
 
 
 
@@ -408,24 +431,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('click', e => e.target?.id === 'get-started-link' && document.getElementById("feature-button")?.click());
 
-  document.getElementById("allSongsImage").addEventListener("click", async () => {
-    modal.classList.add("hidden");
-    headingText.textContent = "Loading...";
-    spinner.classList.remove("hidden");
+document.getElementById("allSongsImage").addEventListener("click", async () => {
+  // Scroll page to top smoothly
+  window.scrollTo({ top: 0, behavior: "smooth" });
 
-    const ok = await ensureAllSongsLoaded();
-    if (!ok) return;
+  // UI update
+  modal.classList.add("hidden");
+  headingText.textContent = "Loading...";
+  spinner.classList.remove("hidden");
 
-    loadSongList(allSongs, "All Songs");
-    spinner.classList.add("hidden");
-  });
+  const ok = await ensureAllSongsLoaded();
+  if (!ok) return;
+
+  loadSongList(allSongs, "All Songs");
+  spinner.classList.add("hidden");
+});
+
 
 
   // === LocalStorage ===
   const savePlaylistToLocalStorage = () => localStorage.setItem('userPlaylist', JSON.stringify(playlist));
   const loadPlaylistFromLocalStorage = () => JSON.parse(localStorage.getItem('userPlaylist')) || [];
 
-  // === Playlist Render with Drag Support ===
+
   // === Playlist Render with Drag Support (FINAL FIX) ===
   function renderPlaylist(list, container, isRemovable = false) {
     container.innerHTML = '';
@@ -492,7 +520,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // Remove by unique fields (title + artist) — more robust
             removeFromPlaylistByData(song);
             // Keep playlist view visible after change
-            playlistButton.click();
+            openPlaylist(true); // skip scroll
+
           } else {
             addToPlaylist(div);
           }
@@ -707,7 +736,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     renderPlaylist(playlist, container, true);
-    playlistButton.click();
+    openPlaylist(true); // skip scroll
+
   }
 
   function removeFromPlaylistByData(songToRemove) {

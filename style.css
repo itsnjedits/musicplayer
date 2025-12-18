@@ -8,6 +8,46 @@
   transition: box-shadow 0.3s ease-in-out;
 }
 
+/* Disable default mobile tap highlight */
+.randomSong {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Focus/active cleanup */
+.randomSong:focus,
+.randomSong:active {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Rolling animation */
+.randomSong.rolling {
+  animation: roll 0.2s linear;
+}
+
+/* Keyframes for roll */
+@keyframes roll {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Mobile hover during rolling */
+@media (hover: none) and (pointer: coarse) {
+  .randomSong.rolling {
+    /* temporary highlight effect during rolling */
+    background-color: #4b5563; /* gray-700 Tailwind approx */
+    border-color: #22d3ee;    /* cyan-400 approx */
+    color: #29ecfe;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  }
+
+  /* Smooth fade after rolling ends */
+  .randomSong {
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  }
+}
+
+
 
     /* ===== Gradient Background Animation ===== */
     @keyframes gradientShift {

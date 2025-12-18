@@ -9,7 +9,8 @@
     <title>SoundAura - The only Ad-free music player</title>
 
     <!-- Correct SEO description -->
-    <meta name="description" content="Listen songs without ads. A clean, smooth, ad-free music player with offline PWA support.">
+    <meta name="description"
+        content="Listen songs without ads. A clean, smooth, ad-free music player with offline PWA support.">
 
     <link rel="icon" href="./favicon.ico" sizes="64x64" type="image/x-icon">
 
@@ -17,7 +18,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6HNPX9LKNJ"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){ dataLayer.push(arguments); }
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-6HNPX9LKNJ');
     </script>
@@ -65,8 +66,11 @@
                                 class="text-[#29ecfe] text-sm font-semibold tracking-widest heading2 max-md:text-[10px]">
                                 AD-FREE MUSIC PLAYER</h3>
                         </div>
-                        <button
-                            class="flex items-center justify-center randomSong ml-1 p-2 text-xl bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] rounded sm:hover:bg-gray-600 sm:hover:border-gray-900 sm:hover:text-[#29ecfe] duration-150 active:scale-95 active:brightness-90">
+                        <button class="flex items-center justify-center randomSong ml-1 p-2 text-xl
+         bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] rounded
+         sm:hover:bg-gray-600 sm:hover:border-gray-900 sm:hover:text-[#29ecfe]
+         sm:active:scale-95 sm:active:brightness-90
+         duration-150">
                             <i class='bx bxs-dice-6'></i>
                         </button>
 
@@ -310,49 +314,49 @@
     </div>
     </div>
     <script>
-const isTouchDevice = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
+        const isTouchDevice = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
 
-if (isTouchDevice) {
-    const buttons = document.querySelectorAll('.btn-control');
-    buttons.forEach(btn => {
-        btn.addEventListener('touchstart', () => btn.classList.add('bg-gray-700','text-[#29ecfe]'));
-        btn.addEventListener('touchend', () => btn.classList.remove('bg-gray-700','text-[#29ecfe]'));
-        btn.addEventListener('touchcancel', () => btn.classList.remove('bg-gray-700','text-[#29ecfe]'));
-    });
-}
+        if (isTouchDevice) {
+            const buttons = document.querySelectorAll('.btn-control');
+            buttons.forEach(btn => {
+                btn.addEventListener('touchstart', () => btn.classList.add('bg-gray-700', 'text-[#29ecfe]'));
+                btn.addEventListener('touchend', () => btn.classList.remove('bg-gray-700', 'text-[#29ecfe]'));
+                btn.addEventListener('touchcancel', () => btn.classList.remove('bg-gray-700', 'text-[#29ecfe]'));
+            });
+        }
 
-function logohover() {
-    document.querySelector(".heading").style.color = "#29ecfe";
-    document.querySelector(".heading2").style.color = "#2b8bff";
-}
-function resetHover() {
-    document.querySelector(".heading").style.color = "#2b8bff";
-    document.querySelector(".heading2").style.color = "#29ecfe";
-}
+        function logohover() {
+            document.querySelector(".heading").style.color = "#29ecfe";
+            document.querySelector(".heading2").style.color = "#2b8bff";
+        }
+        function resetHover() {
+            document.querySelector(".heading").style.color = "#2b8bff";
+            document.querySelector(".heading2").style.color = "#29ecfe";
+        }
 
-const categories = {
-    "Mood": [
-        "Sad","Ghazal","Party","Inspirational","Instrumental","Mashup",
-        "Motivational","Nostalgic","Patriotic","Punjabi","Rap","Romantic","Spiritual","Mix"
-    ],
-    "Genre": [
-        "Hindi-Old","Hindi-New","Slowed-Reverb","Meditation","Rain","Without-Music"
-    ],
-    "Singer": [
-        'Akhil Sachdeva','Alka Yagnik','Amit Trivedi','Ankit Tiwari','AP Dhillon','AR Rahman','Arijit Singh','Arko','Armaan Malik',
-        'Asha Bhosle','Atif Aslam','Ayushmann Khurrana','B Praak','Bhupinder Singh','Chandan Daas','Gajendra Verma','Ghulam Ali',
-        'Himesh Reshammiya','Jagjit Singh','Javed Ali','Javed Bashir','Jubin Nautiyal','Kailash Kher','Kishore Kumar','KK',
-        'Kumar Sanu','Lata Mangeshkar','Mehdi Hasan','Mohammed Irfan','Mohammed Rafi','Mohit Chauhan','Monali Thakur','Mukesh','Nusrat Fateh Ali Khan',
-        'Palak Muchhal','Papon','Rahat Fateh Ali Khan','Raj Barman','Roopkumar Rathod','Shaan','Shabbir Kumar',
-        'Shafaqat Amanat Ali','Shankar Mahadevan','Shreya Ghoshal','Sonu Nigam','Sukhwinder Singh','Udit Narayan','Vishal Dadlani'
-    ]
-};
+        const categories = {
+            "Mood": [
+                "Sad", "Ghazal", "Party", "Inspirational", "Instrumental", "Mashup",
+                "Motivational", "Nostalgic", "Patriotic", "Punjabi", "Rap", "Romantic", "Spiritual", "Mix"
+            ],
+            "Genre": [
+                "Hindi-Old", "Hindi-New", "Slowed-Reverb", "Meditation", "Rain", "Without-Music"
+            ],
+            "Singer": [
+                'Akhil Sachdeva', 'Alka Yagnik', 'Amit Trivedi', 'Ankit Tiwari', 'AP Dhillon', 'AR Rahman', 'Arijit Singh', 'Arko', 'Armaan Malik',
+                'Asha Bhosle', 'Atif Aslam', 'Ayushmann Khurrana', 'B Praak', 'Bhupinder Singh', 'Chandan Daas', 'Gajendra Verma', 'Ghulam Ali',
+                'Himesh Reshammiya', 'Jagjit Singh', 'Javed Ali', 'Javed Bashir', 'Jubin Nautiyal', 'Kailash Kher', 'Kishore Kumar', 'KK',
+                'Kumar Sanu', 'Lata Mangeshkar', 'Mehdi Hasan', 'Mohammed Irfan', 'Mohammed Rafi', 'Mohit Chauhan', 'Monali Thakur', 'Mukesh', 'Nusrat Fateh Ali Khan',
+                'Palak Muchhal', 'Papon', 'Rahat Fateh Ali Khan', 'Raj Barman', 'Roopkumar Rathod', 'Shaan', 'Shabbir Kumar',
+                'Shafaqat Amanat Ali', 'Shankar Mahadevan', 'Shreya Ghoshal', 'Sonu Nigam', 'Sukhwinder Singh', 'Udit Narayan', 'Vishal Dadlani'
+            ]
+        };
 
-function renderOptions(containerId, items, category) {
-    const container = document.getElementById(containerId);
-    let html = '';
-    items.forEach(item => {
-        html += `
+        function renderOptions(containerId, items, category) {
+            const container = document.getElementById(containerId);
+            let html = '';
+            items.forEach(item => {
+                html += `
         <div class="option-item flex flex-col items-center cursor-pointer transition hover:scale-105"
              data-category="${category}" data-value="${item}">
             <img src="Khazana/${item}.jpg"
@@ -360,23 +364,23 @@ function renderOptions(containerId, items, category) {
                  class="w-24 h-24 object-cover rounded-full" style="box-shadow:0px 5px 15px rgba(41, 236, 254, 0.55);" />
             <p class="mt-2 text-sm font-medium text-white text-center">${item}</p>
         </div>`;
-    });
-    container.innerHTML = html; // single DOM write ✅
-}
+            });
+            container.innerHTML = html; // single DOM write ✅
+        }
 
-// init render
-for (const [category, items] of Object.entries(categories)) {
-    renderOptions(category.toLowerCase()+"-options", items, category);
-}
+        // init render
+        for (const [category, items] of Object.entries(categories)) {
+            renderOptions(category.toLowerCase() + "-options", items, category);
+        }
 
-// throttle random click
-window.addEventListener('load', () => {
-  setTimeout(() => {
-     const btn = document.querySelector('.randomSong');
-     btn && btn.click();
-  }, 400);
-});
-</script>
+        // throttle random click
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const btn = document.querySelector('.randomSong');
+                btn && btn.click();
+            }, 400);
+        });
+    </script>
 
     <script src="script.js"></script>
     <!-- 💫 PWA Registration -->
