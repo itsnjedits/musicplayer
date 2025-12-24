@@ -1,0 +1,45 @@
+🚩 ho sake to saari style.css to tailwind mein badalna hai
+
+🚩 user jab neeche ja rha ho tab down arrow aaye jispe click karne se thet neeche tak scrolol ho jaaye, similary upar ke sath ho, jab user ikuch na kar rha ho, scroll nahi kar rha ho, tab jo bhi active hai, down ya up arrow wo fade ho jaaye
+
+proper syncing nahi hai play pause, gradient, visualizer, animation wagera ke beech mein, chrome mein jab apne aap band hota hai song tab player, visualizer wagera update nahi hote hain
+
+lagging hoti hai jab song playlist mein rearrange karta hu, aur koi aur song baj rha hi to...
+
+visualisation bar ki bhi dikkat hai, kuch der baad atakta hai
+
+aur gradient bhi atakta hai kuch der baad
+
+aur ek baat jaan ni hai, ki mera system ek single process hai, iski wajah se lagging ki problem ho rahi hai kya, kuch multithreading jaisa ho sakta hai kya, ek thread song bajaye, ek network req handle kare, ek scroll, ek rearrangement handle kare, etc...
+
+jab user jisi bhi button pe daba kar rakhe phone mein tab use us button ka naam pata chale, aur agar laptop mein hai to hover karne par naam dikhe, chhote se dabbe ke andar jese dice, loop, etc
+
+aur agar new user hai to use player nahi dikhe, kyunki usne abhi tak koi song suna hi nahi hai
+
+aur haan ek resume playing ka bhi feature daalna hai, jo song hai, jis time par hai, jis index pe hai, sab local storage me save ho aur agli baar wo dikhe
+
+❌ landscape orientation bhi sahi karna hai
+
+
+
+glass morphism karna hai player mein
+
+
+
+
+multiple playlist ka feature daalna hai
+
+
+fuzzy search lagana hai, aur search karein to Pehle jis array mein hai wahan dhoonde, phir agar wahan na mile to poori website yaani all songs mein dhoondhe aur scroll karke wahan tak le aaye, aur haan jab search pe click kare, tab hi searching ho, ese hi letter by letter searching na ho, agar ho to bohot badhiya hai, is searching ko improve karne ke liye main json mein ek desc naam ka field add kar sakta hu, jismein song ka description hoga, jisse searching mein madad mile, aur khaaskar, uske lyrics honge, jisse agar user gaane ki koi bhi line search kare, wo use seedha song ki or le jaaye
+lyrics add karne se json file bohot badi ho jayegi na, to lyrics ka alag storage mechanism banayenge...
+
+
+thodi responsiveness bhi thik karni hai website ki, circle jo hai unko Chhota karna hai, laptop mein zoom out karke thik dikhta hai jabki by default hi sahi dikhna chahiye, ui bhi sahi karni hai, jo songs ke alag alag dabbe aate hain na, unki jagah bas ek separation bana hua aaye, taaki thoda clean lage, aur jo song baj raha ho na, uspe ek shade aa jaaye, uske image se related jaisa youtube playlist mein aata hai, aur jab playlist mein rearrangement kar rahe ho tab bhi wo shade aur visualization bar rahe, abhi kya hai na wo sab hat jaata hai rearrange karne par
+
+
+
+
+random song jab generate ho tab kuch highlight hota hua effect dikhe jaise line goomti hui dikhe ya kuch aur tarha ka...
+
+
+aur image pe daba kar rakhne par download image ka option na aaye phone mein, aur  agar laptop mein ho to image utha kar kahin na le ja sakein
