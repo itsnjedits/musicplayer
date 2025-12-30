@@ -7342,5 +7342,194 @@
     "store": "store4",
     "genre": ["Hindi-Old"],
     "mood": ["Romantic"]
+  },
+  {
+    "title": "Pal Pal Lofi (Slowed Reverb)",
+    "artist": ["Afusic"],
+    "file": "Audio/Afusic_Pal_Pal_Lofi_version_Slowed_Reverb_New_sad_song_Solo_artist.mp3",
+    "image": "Thumbnails/Afusic_Pal_Pal_Lofi_version_Slowed_Reverb_New_sad_song_Solo_artist_thumbnail.jpg",
+    "store": "store1",
+    "genre": ["Slowed-Reverb", "Meditation"],
+    "mood": ["Sad"]
+  },
+  {
+    "title": "Beanie (Over Slowed + Reverb)",
+    "artist": ["Chezile"],
+    "file": "Audio/Chezile_-_Beanie_{over_slowed_+_reverb}.mp3",
+    "image": "Thumbnails/Chezile_-_Beanie_{over_slowed_+_reverb}_thumbnail.jpg",
+    "store": "store1",
+    "genre": ["Slowed-Reverb", "Meditation"],
+    "mood": ["Sad"]
+  },
+  {
+    "title": "Cigarettes After Sex",
+    "artist": ["Cigarettes After Sex"],
+    "file": "Audio/Cigarettes_After_Sex_-_Cigarettes_After_Sex.mp3",
+    "image": "Thumbnails/Cigarettes_After_Sex_-_Cigarettes_After_Sex_thumbnail.jpg",
+    "store": "store1",
+    "genre": ["Meditation"],
+    "mood": ["Romantic"]
+  },
+  {
+    "title": "Cinnamon Girl (Slowed n Reverb)",
+    "artist": ["Lana Del Rey"],
+    "file": "Audio/cinnamon_girl_-_lana_del_rey_(slowed_n_reverb).mp3",
+    "image": "Thumbnails/cinnamon_girl_-_lana_del_rey_(slowed_n_reverb)_thumbnail.jpg",
+    "store": "store1",
+    "genre": ["Slowed-Reverb", "Meditation"],
+    "mood": ["Romantic", "Sad"]
+  },
+  {
+    "title": "Cinnamon Girl X Cinnamon Girl",
+    "artist": ["Lana Del Rey"],
+    "file": "Audio/Cinnamon_Girl_X_Cinnamon_Girl_Slowed_Reverb_Tiktok_version_AI_Lyrics.mp3",
+    "image": "Thumbnails/Cinnamon_Girl_X_Cinnamon_Girl_Slowed_Reverb_Tiktok_version_AI_Lyrics_thumbnail.jpg",
+    "store": "store1",
+    "genre": ["Slowed-Reverb"],
+    "mood": ["Mashup"]
+  },
+  {
+    "title": "Experience",
+    "artist": ["Ludovico Einaudi"],
+    "file": "Audio/experience.mp3",
+    "image": "Thumbnails/experience_thumbnail.jpg",
+    "store": "store1",
+    "genre": ["Meditation", "Without-Music"],
+    "mood": ["Instrumental", "Spiritual"]
+  },
+  {
+    "title": "Falling",
+    "artist": ["Trevor Daniel"],
+    "file": "Audio/falling.mp3",
+    "image": "Thumbnails/falling_thumbnail.jpg",
+    "store": "store1",
+    "genre": ["Hindi-New"],
+    "mood": ["Sad"]
+  },
+  {
+    "title": "All Ideas (Slowed Reverb Relax)",
+    "artist": ["Gibran Alcocer"],
+    "file": "Audio/Gibran_Alcocer_All_ideas_playlist_Slowed_Reverb_Relax_Playlist_YtAravat.mp3",
+    "image": "Thumbnails/Gibran_Alcocer_All_ideas_playlist_Slowed_Reverb_Relax_Playlist_YtAravat_thumbnail.jpg",
+    "store": "store1",
+    "genre": ["Slowed-Reverb", "Meditation", "Without-Music"],
+    "mood": ["Instrumental", "Spiritual"]
+  },
+  {
+    "title": "Golden Brown (Ending Loop)",
+    "artist": ["The Stranglers"],
+    "file": "Audio/golden_brown_ending_part_looped_slowed_&_reverb_𝚊3𝚝_𝚟3𝚋𝚎𝚜_1.mp3",
+    "image": "Thumbnails/golden_brown_ending_part_looped_slowed_&_reverb_𝚊3𝚝_𝚟3𝚋𝚎𝚜_1_thumbnail.jpg",
+    "store": "store1",
+    "genre": ["Slowed-Reverb", "Meditation"],
+    "mood": ["Nostalgic"]
+  },
+  {
+    "title": "Goth (Slowed + Reverb)",
+    "artist": ["Sidewalks and Skeletons"],
+    "file": "Audio/Goth_(Slowed_+_Reverb).mp3",
+    "image": "Thumbnails/Goth_(Slowed_+_Reverb)_thumbnail.jpg",
+    "store": "store1",
+    "genre": ["Slowed-Reverb"],
+    "mood": ["Sad"]
+  },
+  {
+    "title": "I Wanna Be Yours",
+    "artist": ["Arctic Monkeys"],
+    "file": "Audio/I wanna be yours - Arctic monkeys [super slowed] - fher..mp3",
+    "image": "Thumbnails/I wanna be yours - Arctic monkeys [super slowed] - fher._thumbnail.jpg",
+    "store": "store1",
+    "genre": ["Slowed-Reverb"],
+    "mood": ["Romantic"]
+  },
+  {
+    "title": "Summertime Sadness",
+    "artist": ["Lana Del Rey"],
+    "file": "Audio/lana_del_rey_summertime_sadness_𝘴𝘭𝘰𝘸𝘦𝘥_+_𝘳𝘦𝘷𝘦𝘳𝘣.mp3",
+    "image": "Thumbnails/lana_del_rey_summertime_sadness_𝘴𝘭𝘰𝘸𝘦𝘥_+_𝘳𝘦𝘷𝘦𝘳𝘣_thumbnail.jpg",
+    "store": "store1",
+    "genre": ["Slowed-Reverb"],
+    "mood": ["Sad"]
+  },
+  {
+    "title": "Experience (Ultra Slowed)",
+    "artist": ["Ludovico Einaudi"],
+    "file": "Audio/Ludovico-Einaudi-Experience-Ultra-Slowed-Reverb.mp3",
+    "image": "Thumbnails/Ludovico-Einaudi-Experience-Ultra-Slowed-Reverb_thumbnail.jpg",
+    "store": "store1",
+    "genre": ["Slowed-Reverb", "Meditation", "Without-Music"],
+    "mood": ["Instrumental", "Spiritual"]
+  },
+  {
+    "title": "Music To Watch Boys To X I Wanna Be Yours",
+    "artist": ["Lana Del Rey, Arctic Monkeys"],
+    "file": "Audio/music_to_watch_boys_to_lana_x_arctic_monkeys_“I_like_you_a_lot”.mp3",
+    "image": "Thumbnails/music_to_watch_boys_to_lana_x_arctic_monkeys_“I_like_you_a_lot”_thumbnail.jpg",
+    "store": "store1",
+    "genre": ["Slowed-Reverb"],
+    "mood": ["Mashup", "Romantic"]
+  },
+  {
+    "title": "Je Te Laisserai Des Mots",
+    "artist": ["Patrick Watson"],
+    "file": "Audio/patrick_watson_je_te_laisserai_des_mots_slowed_&_reverb_with_lyrics.mp3",
+    "image": "Thumbnails/patrick_watson_je_te_laisserai_des_mots_slowed_&_reverb_with_lyrics_thumbnail.jpg",
+    "store": "store1",
+    "genre": ["Slowed-Reverb", "Meditation"],
+    "mood": ["Sad"]
+  },
+  {
+    "title": "Pigstep",
+    "artist": ["Lena Raine"],
+    "file": "Audio/pigstep.mp3",
+    "image": "Thumbnails/pigstep_thumbnail.jpg",
+    "store": "store1",
+    "genre": [],
+    "mood": ["Party"]
+  },
+  {
+    "title": "Unforgettable",
+    "artist": ["PnB Rock"],
+    "file": "Audio/PnB_Rock_-_Unforgettable_(SLOWED_+_REVERB)_-_DRLLN_SLOWED.mp3",
+    "image": "Thumbnails/PnB_Rock_-_Unforgettable_(SLOWED_+_REVERB)_-_DRLLN_SLOWED_thumbnail.jpg",
+    "store": "store1",
+    "genre": ["Slowed-Reverb"],
+    "mood": ["Romantic"]
+  },
+  {
+    "title": "No Surprises",
+    "artist": ["Radiohead"],
+    "file": "Audio/Radiohead_-_No_Surprises_(Lyrics)_-_Chilled_Sad.mp3",
+    "image": "Thumbnails/Radiohead_-_No_Surprises_(Lyrics)_-_Chilled_Sad_thumbnail.jpg",
+    "store": "store1",
+    "genre": ["Meditation"],
+    "mood": ["Sad"]
+  },
+  {
+    "title": "Infected",
+    "artist": ["Sickick"],
+    "file": "Audio/Sickick_-_Infected_(8D_Audio_-_Slowed)_-_wolfx.mp3",
+    "image": "Thumbnails/Sickick_-_Infected_(8D_Audio_-_Slowed)_-_wolfx_thumbnail.jpg",
+    "store": "store1",
+    "genre": ["Slowed-Reverb"],
+    "mood": ["Rap"]
+  },
+  {
+    "title": "Mind Games",
+    "artist": ["Sickick"],
+    "file": "Audio/sickick_-_mind_games_(8d_+_slowed_+_reverb)_-_Deimos..mp3",
+    "image": "Thumbnails/sickick_-_mind_games_(8d_+_slowed_+_reverb)_-_Deimos._thumbnail.jpg",
+    "store": "store1",
+    "genre": ["Slowed-Reverb"],
+    "mood": ["Rap"]
+  },
+  {
+    "title": "Snowfall",
+    "artist": ["Øneheart, Reidenshi"],
+    "file": "Audio/Øneheart_x_reidenshi_snowfall_Slowed_+_Reverb_1_Hour_Loop.mp3",
+    "image": "Thumbnails/Øneheart_x_reidenshi_snowfall_Slowed_+_Reverb_1_Hour_Loop_thumbnail.jpg",
+    "store": "store1",
+    "genre": ["Slowed-Reverb", "Meditation", "Without-Music"],
+    "mood": ["Instrumental", "Spiritual"]
   }
 ]
