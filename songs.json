@@ -7531,5 +7531,167 @@
     "store": "store1",
     "genre": ["Slowed-Reverb", "Meditation", "Without-Music"],
     "mood": ["Instrumental", "Spiritual"]
+  },
+  {
+    "title": "Bol Na Halke Halke (Slowed Reverb)",
+    "artist": ["Rahat Fateh Ali Khan, Mahalaxmi Iyer"],
+    "file": "Audio/bol na halke halke (slowed   reverb).mp3",
+    "image": "Thumbnails/bol na halke halke (slowed   reverb)_thumbnail.jpg",
+    "store": "store3",
+    "genre": ["Slowed-Reverb", "Hindi-New"],
+    "mood": ["Romantic", "Nostalgic"]
+  },
+  {
+    "title": "Ek Din Teri Raahon Mein",
+    "artist": ["Javed Ali"],
+    "file": "Audio/Ek Din Teri Raahon Lyrics - Pritam, Javed Ali • ye dil toh na keh saka.mp3",
+    "image": "Thumbnails/Ek Din Teri Raahon Lyrics - Pritam, Javed Ali • ye dil toh na keh saka_thumbnail.jpg",
+    "store": "store3",
+    "genre": ["Hindi-New"],
+    "mood": ["Romantic", "Sad"]
+  },
+  {
+    "title": "Idea 7",
+    "artist": ["Gibran Alcocer"],
+    "file": "Audio/Gibran Alcocer - Idea 7 (Official Visualizer).mp3",
+    "image": "Thumbnails/Gibran Alcocer - Idea 7 (Official Visualizer)_thumbnail.jpg",
+    "store": "store3",
+    "genre": ["Meditation"],
+    "mood": ["Instrumental"]
+  },
+  {
+    "title": "Hotline Bling",
+    "artist": ["Drake"],
+    "file": "Audio/Hotline Bling.mp3",
+    "image": "Thumbnails/Hotline Bling_thumbnail.jpg",
+    "store": "store3",
+    "genre": ["Meditation"],
+    "mood": []
+  },
+  {
+    "title": "Idea 1",
+    "artist": ["Gibran Alcocer"],
+    "file": "Audio/Idea 1.mp3",
+    "image": "Thumbnails/Idea 1_thumbnail.jpg",
+    "store": "store3",
+    "genre": ["Meditation"],
+    "mood": ["Instrumental"]
+  },
+  {
+    "title": "Idea 22",
+    "artist": ["Gibran Alcocer"],
+    "file": "Audio/Idea 22.mp3",
+    "image": "Thumbnails/Idea 22_thumbnail.jpg",
+    "store": "store3",
+    "genre": ["Meditation"],
+    "mood": ["Instrumental"]
+  },
+  {
+    "title": "Idea 25 (Piano Version)",
+    "artist": ["Gibran Alcocer"],
+    "file": "Audio/Idea 25 (Piano Version).mp3",
+    "image": "Thumbnails/Idea 25 (Piano Version)_thumbnail.jpg",
+    "store": "store3",
+    "genre": ["Meditation"],
+    "mood": ["Instrumental"]
+  },
+  {
+    "title": "Kaun Mera",
+    "artist": ["Papon"],
+    "file": "Audio/Kaun Mera Full Song with Lyrics _ Special 26 _ Akshay Kumar, Kajal Agarwal.mp3",
+    "image": "Thumbnails/Kaun Mera Full Song with Lyrics _ Special 26 _ Akshay Kumar, Kajal Agarwal_thumbnail.jpg",
+    "store": "store3",
+    "genre": ["Hindi-New"],
+    "mood": ["Sad", "Romantic"]
+  },
+  {
+    "title": "Musafir (Slowed Reverb)",
+    "artist": ["Atif Aslam"],
+    "file": "Audio/Musafir(Slowed and reverb) _ lyrics _ Atif Aslam _ zozo.mp3",
+    "image": "Thumbnails/Musafir(Slowed and reverb) _ lyrics _ Atif Aslam _ zozo_thumbnail.jpg",
+    "store": "store3",
+    "genre": ["Slowed-Reverb", "Hindi-New"],
+    "mood": ["Sad", "Nostalgic"]
+  },
+  {
+    "title": "Saathiya",
+    "artist": ["Shreya Ghoshal"],
+    "file": "Audio/Saathiya - Shreya Ghoshal (Lyrics) _ Lyrical Bam Hindi.mp3",
+    "image": "Thumbnails/Saathiya - Shreya Ghoshal (Lyrics) _ Lyrical Bam Hindi_thumbnail.jpg",
+    "store": "store3",
+    "genre": ["Hindi-New"],
+    "mood": ["Romantic", "Nostalgic"]
+  },
+  {
+    "title": "Sanun Nahar Wale Pool",
+    "artist": ["Nusrat Fateh Ali Khan"],
+    "file": "Audio/Sanun Nahar Wale Pool.mp3",
+    "image": "Thumbnails/Sanun Nahar Wale Pool_thumbnail.jpg",
+    "store": "store3",
+    "genre": ["Hindi-Old"],
+    "mood": ["Punjabi", "Spiritual"]
+  },
+  {
+    "title": "Solas",
+    "artist": ["Jamie Duffy"],
+    "file": "Audio/Solas.mp3",
+    "image": "Thumbnails/Solas_thumbnail.jpg",
+    "store": "store3",
+    "genre": ["Meditation"],
+    "mood": ["Instrumental"]
+  },
+  {
+    "title": "Musafir",
+    "artist": ["Atif Aslam"],
+    "file": "Audio/Tera Mera Jahan Le Chalu _Atif Aslam _lyrics _A.S.L.mp3",
+    "image": "Thumbnails/Tera Mera Jahan Le Chalu _Atif Aslam _lyrics _A.S.L_thumbnail.jpg",
+    "store": "store3",
+    "genre": ["Hindi-New"],
+    "mood": ["Romantic"]
+  },
+  {
+    "title": "Woh Lamhe Woh (Lofi Flip)",
+    "artist": ["Atif Aslam"],
+    "file": "Audio/Woh lamhe woh baatein (Lofi Flip) VIBIE _ Atif Aslam.mp3",
+    "image": "Thumbnails/Woh lamhe woh baatein (Lofi Flip) VIBIE _ Atif Aslam_thumbnail.jpg",
+    "store": "store3",
+    "genre": ["Slowed-Reverb"],
+    "mood": ["Nostalgic", "Sad"]
+  },
+  {
+    "title": "Ye Jo Halka Halka Suroor Hai",
+    "artist": ["Rahat Fateh Ali Khan"],
+    "file": "Audio/Ye Jo Halka Halka Suroor Hai Song With Lyrics _ Rahat Fateh Ali Khan _ Lyrics Jukebox.mp3",
+    "image": "Thumbnails/Ye Jo Halka Halka Suroor Hai Song With Lyrics _ Rahat Fateh Ali Khan _ Lyrics Jukebox_thumbnail.jpg",
+    "store": "store3",
+    "genre": ["Hindi-Old"],
+    "mood": ["Ghazal", "Spiritual"]
+  },
+  {
+    "title": "Ek Din Teri Raahon Mein (Slowed + Reverb)",
+    "artist": ["Javed Ali"],
+    "file": "Audio/Ek Din Teri Raahon Mein (Slowed   Reverb) _ Javed Ali _ Naqaab _ SR Lofi.mp3",
+    "image": "Thumbnails/Ek Din Teri Raahon Mein (Slowed   Reverb) _ Javed Ali _ Naqaab _ SR Lofi_thumbnail.jpg",
+    "store": "store3",
+    "genre": ["Slowed-Reverb", "Hindi-New"],
+    "mood": ["Romantic"]
+  },
+  {
+    "title": "Tera Mera Hai Pyar Amar",
+    "artist": ["Ahmed Jahanzeb"],
+    "file": "Audio/Tera Mera Hai Pyar Amar (from _Ishq Murshid_).mp3",
+    "image": "Thumbnails/Tera Mera Hai Pyar Amar (from _Ishq Murshid_)_thumbnail.jpg",
+    "store": "store3",
+    "genre": ["Hindi-New"],
+    "mood": ["Romantic", "Nostalgic"]
+  },
+  {
+    "title": "Tera Mera Hai Pyar Amar - Slowed & Reverb",
+    "artist": ["Ahmed Jahanzeb"],
+    "file": "Audio/tera Mera Hai Pyar Amar - Slowed & Reverb.mp3",
+    "image": "Thumbnails/tera Mera Hai Pyar Amar - Slowed & Reverb_thumbnail.jpg",
+    "store": "store3",
+    "genre": ["Slowed-Reverb", "Hindi-New"],
+    "mood": ["Romantic", "Nostalgic"]
   }
 ]
