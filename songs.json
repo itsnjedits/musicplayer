@@ -7694,175 +7694,175 @@
     "genre": ["Slowed-Reverb", "Hindi-New"],
     "mood": ["Romantic", "Nostalgic"]
   },
-  {
-    "title": "Aaye Ho Meri Zindagi Mein (Male)",
-    "artist": ["Udit Narayan"],
-    "file": "Audio/Aaye Ho Meri Zindagi Mein (Male).mp3",
-    "image": "Thumbnails/Aaye Ho Meri Zindagi Mein (Male)_thumbnail.jpg",
-    "store": "store3",
-    "genre": ["Hindi-Old"],
-    "mood": ["Romantic", "Nostalgic"]
-  },
-  {
-    "title": "Dheere Dheere Se Meri Zindagi Mein Aana",
-    "artist": ["Kumar Sanu, Anuradha Paudwal"],
-    "file": "Audio/Dheere Dheere Se Meri Zindagi Mein Aana.mp3",
-    "image": "Thumbnails/Dheere Dheere Se Meri Zindagi Mein Aana_thumbnail.jpg",
-    "store": "store3",
-    "genre": ["Hindi-Old"],
-    "mood": ["Romantic", "Nostalgic"]
-  },
-  {
-    "title": "Dil Ka Aalam",
-    "artist": ["Kumar Sanu"],
-    "file": "Audio/Dil Ka Aalam.mp3",
-    "image": "Thumbnails/Dil Ka Aalam_thumbnail.jpg",
-    "store": "store3",
-    "genre": ["Hindi-Old"],
-    "mood": ["Romantic", "Nostalgic"]
-  },
-  {
-    "title": "Nazar Ke Samne",
-    "artist": ["Kumar Sanu, Anuradha Paudwal"],
-    "file": "Audio/Dulhe ka sehra - Nusrat Fateh Ali Khan.mp3",
-    "image": "Thumbnails/Dulhe ka sehra - Nusrat Fateh Ali Khan_thumbnail.jpg",
-    "store": "store3",
-    "genre": ["Hindi-Old"],
-    "mood": ["Romantic"]
-  },
-  {
-    "title": "Dulhe ka sehra - Nusrat Fateh Ali Khan",
-    "artist": ["Nusrat Fateh Ali Khan"],
-    "file": "Audio/Dulhe Ka Sehra [Slowed   Reverb] Mood 90's.mp3",
-    "image": "Thumbnails/Dulhe Ka Sehra [Slowed   Reverb] Mood 90's_thumbnail.jpg",
-    "store": "store3",
-    "genre": ["Hindi-Old"],
-    "mood": ["Spiritual", "Nostalgic"]
-  },
-  {
-    "title": "Dulhe Ka Sehra [Slowed   Reverb] Mood 90's",
-    "artist": ["Nusrat Fateh Ali Khan"],
-    "file": "Audio/Ek Sanam Chahiye Aashiqui Ke Liye.mp3",
-    "image": "Thumbnails/Ek Sanam Chahiye Aashiqui Ke Liye_thumbnail.jpg",
-    "store": "store3",
-    "genre": ["Slowed-Reverb"],
-    "mood": ["Nostalgic", "Spiritual"]
-  },
-  {
-    "title": "Ek Sanam Chahiye Aashiqui Ke Liye",
-    "artist": ["Kumar Sanu"],
-    "file": "Audio/Kabhi To Nazar Milao.mp3",
-    "image": "Thumbnails/Kabhi To Nazar Milao_thumbnail.jpg",
-    "store": "store3",
-    "genre": ["Hindi-Old"],
-    "mood": ["Romantic"]
-  },
-  {
-    "title": "Kabhi To Nazar Milao",
-    "artist": ["Kumar Sanu, Anuradha Paudwal"],
-    "file": "Audio/Main Duniya Bhula Doonga.mp3",
-    "image": "Thumbnails/Main Duniya Bhula Doonga_thumbnail.jpg",
-    "store": "store3",
-    "genre": ["Hindi-Old"],
-    "mood": ["Romantic"]
-  },
-  {
-    "title": "Main Duniya Bhula Doonga",
-    "artist": ["Anuradha Paudwal, Kumar Sanu"],
-    "file": "Audio/Mere Rang Mein Rangne Wali.mp3",
-    "image": "Thumbnails/Mere Rang Mein Rangne Wali_thumbnail.jpg",
-    "store": "store3",
-    "genre": ["Hindi-Old"],
-    "mood": ["Romantic"]
-  },
-  {
-    "title": "Mere Rang Mein Rangne Wali",
-    "artist": ["Kumar Sanu, Anuradha Paudwal"],
-    "file": "Audio/Mujhse Mohabbat Ka.mp3",
-    "image": "Thumbnails/Mujhse Mohabbat Ka_thumbnail.jpg",
-    "store": "store3",
-    "genre": ["Hindi-Old"],
-    "mood": ["Romantic"]
-  },
-  {
-    "title": "Mujhse Mohabbat Ka",
-    "artist": ["Kumar Sanu"],
-    "file": "Audio/Nazar Ke Samne.mp3",
-    "image": "Thumbnails/Nazar Ke Samne_thumbnail.jpg",
-    "store": "store3",
-    "genre": ["Hindi-Old"],
-    "mood": ["Romantic"]
-  },
-  {
-    "title": "Raat Kali Ek Khwab Men Aai",
-    "artist": ["Kishore Kumar"],
-    "file": "Audio/Raat Kali Ek Khwab Men Aai with lyrics _ रात कली एक ख़्वाब में आई _ Kishore Kumar _ Buddha Mil Gaya.mp3",
-    "image": "Thumbnails/Raat Kali Ek Khwab Men Aai with lyrics _ रात कली एक ख़्वाब में आई _ Kishore Kumar _ Buddha Mil Gaya_thumbnail.jpg",
-    "store": "store3",
-    "genre": ["Hindi-Old"],
-    "mood": ["Romantic", "Nostalgic"]
-  },
-  {
-    "title": "SOCHTA HOON (SLOWED x REVERB)",
-    "artist": ["Nusrat Fateh Ali Khan"],
-    "file": "Audio/SOCHTA HOON (SLOWED x REVERB) __ USTAD NUSRAT FATEH ALI KHAN __.mp3",
-    "image": "Thumbnails/SOCHTA HOON (SLOWED x REVERB) __ USTAD NUSRAT FATEH ALI KHAN ___thumbnail.jpg",
-    "store": "store3",
-    "genre": ["Slowed-Reverb"],
-    "mood": ["Nostalgic", "Spiritual"]
-  },
-  {
-    "title": "Tu Jo Nahi Hai To Kuch Bhi Nahi Hai",
-    "artist": ["Kumar Sanu"],
-    "file": "Audio/Tu Jo Nahi Hai To Kuch Bhi Nahi Hai    तू जो नहीं है तो कुछ भी नहीं है.mp3",
-    "image": "Thumbnails/Tu Jo Nahi Hai To Kuch Bhi Nahi Hai    तू जो नहीं है तो कुछ भी नहीं है_thumbnail.jpg",
-    "store": "store3",
-    "genre": ["Hindi-Old"],
-    "mood": ["Romantic"]
-  },
-  {
-    "title": "Tu Pyar Hai Kisi Aur Ka",
-    "artist": ["Kumar Sanu"],
-    "file": "Audio/Tu Pyar Hai Kisi Aur Ka.mp3",
-    "image": "Thumbnails/Tu Pyar Hai Kisi Aur Ka_thumbnail.jpg",
-    "store": "store3",
-    "genre": ["Hindi-Old"],
-    "mood": ["Romantic"]
-  },
-  {
-    "title": "Tum Karuna Ke Sagar Ho",
-    "artist": ["Anuradha Paudwal"],
-    "file": "Audio/Tum Karuna Ke Sagar Ho.mp3",
-    "image": "Thumbnails/Tum Karuna Ke Sagar Ho_thumbnail.jpg",
-    "store": "store3",
-    "genre": ["Hindi-Old"],
-    "mood": ["Spiritual"]
-  },
-  {
-    "title": "Tumhari Nazron Mein Humne Dekha",
-    "artist": ["Kumar Sanu, Anuradha Paudwal"],
-    "file": "Audio/Tumhari Nazron Mein Humne Dekha.mp3",
-    "image": "Thumbnails/Tumhari Nazron Mein Humne Dekha_thumbnail.jpg",
-    "store": "store3",
-    "genre": ["Hindi-Old"],
-    "mood": ["Romantic"]
-  },
-  {
-    "title": "Tumse Milne Ko Dil (Jhankar)",
-    "artist": ["Alka Yagnik, Kumar Sanu"],
-    "file": "Audio/Tumse Milne Ko Dil (Jhankar).mp3",
-    "image": "Thumbnails/Tumse Milne Ko Dil (Jhankar)_thumbnail.jpg",
-    "store": "store3",
-    "genre": ["Hindi-Old"],
-    "mood": ["Romantic"]
-  },
-  {
-    "title": "Yeh Dua Hai Meri",
-    "artist": ["Kumar Sanu, Anuradha Paudwal"],
-    "file": "Audio/Yeh Dua Hai Meri.mp3",
-    "image": "Thumbnails/Yeh Dua Hai Meri_thumbnail.jpg",
-    "store": "store3",
-    "genre": ["Hindi-Old"],
-    "mood": ["Romantic", "Spiritual"]
-  }
+    {
+        "title": "Aaye Ho Meri Zindagi Mein",
+        "artist": ["Udit Narayan"],
+        "file": "Audio/Aaye Ho Meri Zindagi Mein (Male).mp3",
+        "image": "Thumbnails/Aaye Ho Meri Zindagi Mein (Male)_thumbnail.jpg",
+        "store": "store3",
+        "genre": ["Hindi-Old"],
+        "mood": ["Romantic", "Nostalgic"]
+    },
+    {
+        "title": "Dheere Dheere Se Meri Zindagi Mein Aana",
+        "artist": ["Kumar Sanu, Anuradha Paudwal"],
+        "file": "Audio/Dheere Dheere Se Meri Zindagi Mein Aana.mp3",
+        "image": "Thumbnails/Dheere Dheere Se Meri Zindagi Mein Aana_thumbnail.jpg",
+        "store": "store3",
+        "genre": ["Hindi-Old"],
+        "mood": ["Romantic", "Nostalgic"]
+    },
+    {
+        "title": "Dil Ka Aalam",
+        "artist": ["Kumar Sanu"],
+        "file": "Audio/Dil Ka Aalam.mp3",
+        "image": "Thumbnails/Dil Ka Aalam_thumbnail.jpg",
+        "store": "store3",
+        "genre": ["Hindi-Old"],
+        "mood": ["Sad", "Romantic"]
+    },
+    {
+        "title": "Dulhe Ka Sehra",
+        "artist": ["Nusrat Fateh Ali Khan"],
+        "file": "Audio/Dulhe ka sehra - Nusrat Fateh Ali Khan.mp3",
+        "image": "Thumbnails/Dulhe ka sehra - Nusrat Fateh Ali Khan_thumbnail.jpg",
+        "store": "store3",
+        "genre": ["Hindi-Old"],
+        "mood": ["Ghazal", "Spiritual"]
+    },
+    {
+        "title": "Dulhe Ka Sehra (Slowed & Reverb)",
+        "artist": ["Nusrat Fateh Ali Khan"],
+        "file": "Audio/Dulhe Ka Sehra [Slowed   Reverb] Mood 90's.mp3",
+        "image": "Thumbnails/Dulhe Ka Sehra [Slowed   Reverb] Mood 90's_thumbnail.jpg",
+        "store": "store3",
+        "genre": ["Slowed-Reverb"],
+        "mood": ["Ghazal", "Spiritual", "Nostalgic"]
+    },
+    {
+        "title": "Ek Sanam Chahiye Aashiqui Ke Liye",
+        "artist": ["Kumar Sanu"],
+        "file": "Audio/Ek Sanam Chahiye Aashiqui Ke Liye.mp3",
+        "image": "Thumbnails/Ek Sanam Chahiye Aashiqui Ke Liye_thumbnail.jpg",
+        "store": "store3",
+        "genre": ["Hindi-Old"],
+        "mood": ["Romantic", "Sad"]
+    },
+    {
+        "title": "Kabhi To Nazar Milao",
+        "artist": ["Adnan Sami"],
+        "file": "Audio/Kabhi To Nazar Milao.mp3",
+        "image": "Thumbnails/Kabhi To Nazar Milao_thumbnail.jpg",
+        "store": "store3",
+        "genre": ["Hindi-Old"],
+        "mood": ["Romantic", "Nostalgic"]
+    },
+    {
+        "title": "Main Duniya Bhula Doonga",
+        "artist": ["Kumar Sanu, Anuradha Paudwal"],
+        "file": "Audio/Main Duniya Bhula Doonga.mp3",
+        "image": "Thumbnails/Main Duniya Bhula Doonga_thumbnail.jpg",
+        "store": "store3",
+        "genre": ["Hindi-Old"],
+        "mood": ["Romantic", "Sad"]
+    },
+    {
+        "title": "Mere Rang Mein Rangne Wali",
+        "artist": ["S. P. Balasubrahmanyam"],
+        "file": "Audio/Mere Rang Mein Rangne Wali.mp3",
+        "image": "Thumbnails/Mere Rang Mein Rangne Wali_thumbnail.jpg",
+        "store": "store3",
+        "genre": ["Hindi-Old"],
+        "mood": ["Romantic", "Nostalgic"]
+    },
+    {
+        "title": "Mujhse Mohabbat Ka",
+        "artist": ["Kumar Sanu, Alka Yagnik"],
+        "file": "Audio/Mujhse Mohabbat Ka.mp3",
+        "image": "Thumbnails/Mujhse Mohabbat Ka_thumbnail.jpg",
+        "store": "store3",
+        "genre": ["Hindi-Old"],
+        "mood": ["Romantic", "Sad"]
+    },
+    {
+        "title": "Nazar Ke Samne",
+        "artist": ["Kumar Sanu, Anuradha Paudwal"],
+        "file": "Audio/Nazar Ke Samne.mp3",
+        "image": "Thumbnails/Nazar Ke Samne_thumbnail.jpg",
+        "store": "store3",
+        "genre": ["Hindi-Old"],
+        "mood": ["Romantic", "Nostalgic"]
+    },
+    {
+        "title": "Raat Kali Ek Khwab Mein Aayi",
+        "artist": ["Kishore Kumar"],
+        "file": "Audio/Raat Kali Ek Khwab Men Aai with lyrics _ रात कली एक ख़्वाब में आई _ Kishore Kumar _ Buddha Mil Gaya.mp3",
+        "image": "Thumbnails/Raat Kali Ek Khwab Men Aai with lyrics _ रात कली एक ख़्वाब में आई _ Kishore Kumar _ Buddha Mil Gaya_thumbnail.jpg",
+        "store": "store3",
+        "genre": ["Hindi-Old"],
+        "mood": ["Romantic", "Nostalgic"]
+    },
+    {
+        "title": "Sochta Hoon (Slowed & Reverb)",
+        "artist": ["Nusrat Fateh Ali Khan"],
+        "file": "Audio/SOCHTA HOON (SLOWED x REVERB) __ USTAD NUSRAT FATEH ALI KHAN __.mp3",
+        "image": "Thumbnails/SOCHTA HOON (SLOWED x REVERB) __ USTAD NUSRAT FATEH ALI KHAN ___thumbnail.jpg",
+        "store": "store3",
+        "genre": ["Slowed-Reverb"],
+        "mood": ["Ghazal", "Sad", "Spiritual"]
+    },
+    {
+        "title": "Tu Jo Nahi Hai To Kuch Bhi Nahi Hai",
+        "artist": ["Glenn John"],
+        "file": "Audio/Tu Jo Nahi Hai To Kuch Bhi Nahi Hai    तू जो नहीं है तो कुछ भी नहीं है.mp3",
+        "image": "Thumbnails/Tu Jo Nahi Hai To Kuch Bhi Nahi Hai    तू जो नहीं है तो कुछ भी नहीं है_thumbnail.jpg",
+        "store": "store3",
+        "genre": ["Hindi-Old"],
+        "mood": ["Sad", "Romantic"]
+    },
+    {
+        "title": "Tu Pyar Hai Kisi Aur Ka",
+        "artist": ["Kumar Sanu, Anuradha Paudwal"],
+        "file": "Audio/Tu Pyar Hai Kisi Aur Ka.mp3",
+        "image": "Thumbnails/Tu Pyar Hai Kisi Aur Ka_thumbnail.jpg",
+        "store": "store3",
+        "genre": ["Hindi-Old"],
+        "mood": ["Sad", "Nostalgic"]
+    },
+    {
+        "title": "Tum Karuna Ke Sagar Ho",
+        "artist": ["Anuradha Paudwal"],
+        "file": "Audio/Tum Karuna Ke Sagar Ho.mp3",
+        "image": "Thumbnails/Tum Karuna Ke Sagar Ho_thumbnail.jpg",
+        "store": "store3",
+        "genre": ["Meditation"],
+        "mood": ["Spiritual"]
+    },
+    {
+        "title": "Tumhari Nazron Mein Humne Dekha",
+        "artist": ["Asha Bhosle, Kishore Kumar"],
+        "file": "Audio/Tumhari Nazron Mein Humne Dekha.mp3",
+        "image": "Thumbnails/Tumhari Nazron Mein Humne Dekha_thumbnail.jpg",
+        "store": "store3",
+        "genre": ["Hindi-Old"],
+        "mood": ["Romantic", "Nostalgic"]
+    },
+    {
+        "title": "Tumse Milne Ko Dil (Jhankar)",
+        "artist": ["Kumar Sanu"],
+        "file": "Audio/Tumse Milne Ko Dil (Jhankar).mp3",
+        "image": "Thumbnails/Tumse Milne Ko Dil (Jhankar)_thumbnail.jpg",
+        "store": "store3",
+        "genre": ["Hindi-Old"],
+        "mood": ["Romantic", "Nostalgic"]
+    },
+    {
+        "title": "Yeh Dua Hai Meri",
+        "artist": ["Kumar Sanu"],
+        "file": "Audio/Yeh Dua Hai Meri.mp3",
+        "image": "Thumbnails/Yeh Dua Hai Meri_thumbnail.jpg",
+        "store": "store3",
+        "genre": ["Hindi-Old"],
+        "mood": ["Sad", "Romantic"]
+    }
 ]
