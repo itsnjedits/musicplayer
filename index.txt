@@ -1,0 +1,116 @@
+[
+    {
+        "title": "Aaye Ho Meri Zindagi Mein (Male)",
+        "artist": ["Udit Narayan"],
+        "genre": ["Hindi-Old"],
+        "mood": ["Romantic", "Nostalgic"]
+    },
+    {
+        "title": "Dheere Dheere Se Meri Zindagi Mein Aana",
+        "artist": ["Kumar Sanu", "Anuradha Paudwal"],
+        "genre": ["Hindi-Old"],
+        "mood": ["Romantic", "Nostalgic"]
+    },
+    {
+        "title": "Dil Ka Aalam",
+        "artist": ["Kumar Sanu"],
+        "genre": ["Hindi-Old"],
+        "mood": ["Romantic", "Nostalgic"]
+    },
+    {
+        "title": "Nazar Ke Samne",
+        "artist": ["Kumar Sanu", "Anuradha Paudwal"],
+        "genre": ["Hindi-Old"],
+        "mood": ["Romantic"]
+    },
+    {
+        "title": "Dulhe ka sehra - Nusrat Fateh Ali Khan",
+        "artist": ["Nusrat Fateh Ali Khan"],
+        "genre": ["Hindi-Old"],
+        "mood": ["Spiritual", "Nostalgic"]
+    },
+    {
+        "title": "Dulhe Ka Sehra [Slowed   Reverb] Mood 90's",
+        "artist": ["Nusrat Fateh Ali Khan"],
+        "genre": ["Slowed-Reverb"],
+        "mood": ["Nostalgic", "Spiritual"]
+    },
+    {
+        "title": "Ek Sanam Chahiye Aashiqui Ke Liye",
+        "artist": ["Kumar Sanu"],
+        "genre": ["Hindi-Old"],
+        "mood": ["Romantic"]
+    },
+    {
+        "title": "Kabhi To Nazar Milao",
+        "artist": ["Kumar Sanu", "Anuradha Paudwal"],
+        "genre": ["Hindi-Old"],
+        "mood": ["Romantic"]
+    },
+    {
+        "title": "Main Duniya Bhula Doonga",
+        "artist": ["Anuradha Paudwal", "Kumar Sanu"],
+        "genre": ["Hindi-Old"],
+        "mood": ["Romantic"]
+    },
+    {
+        "title": "Mere Rang Mein Rangne Wali",
+        "artist": ["Kumar Sanu", "Anuradha Paudwal"],
+        "genre": ["Hindi-Old"],
+        "mood": ["Romantic"]
+    },
+    {
+        "title": "Mujhse Mohabbat Ka",
+        "artist": ["Kumar Sanu"],
+        "genre": ["Hindi-Old"],
+        "mood": ["Romantic"]
+    },
+    {
+        "title": "Raat Kali Ek Khwab Men Aai",
+        "artist": ["Kishore Kumar"],
+        "genre": ["Hindi-Old"],
+        "mood": ["Romantic", "Nostalgic"]
+    },
+    {
+        "title": "SOCHTA HOON (SLOWED x REVERB)",
+        "artist": ["Nusrat Fateh Ali Khan"],
+        "genre": ["Slowed-Reverb"],
+        "mood": ["Nostalgic", "Spiritual"]
+    },
+    {
+        "title": "Tu Jo Nahi Hai To Kuch Bhi Nahi Hai",
+        "artist": ["Kumar Sanu"],
+        "genre": ["Hindi-Old"],
+        "mood": ["Romantic"]
+    },
+    {
+        "title": "Tu Pyar Hai Kisi Aur Ka",
+        "artist": ["Kumar Sanu"],
+        "genre": ["Hindi-Old"],
+        "mood": ["Romantic"]
+    },
+    {
+        "title": "Tum Karuna Ke Sagar Ho",
+        "artist": ["Anuradha Paudwal"],
+        "genre": ["Meditation", "Hindi-Old"],
+        "mood": ["Spiritual"]
+    },
+    {
+        "title": "Tumhari Nazron Mein Humne Dekha",
+        "artist": ["Kumar Sanu", "Anuradha Paudwal"],
+        "genre": ["Hindi-Old"],
+        "mood": ["Romantic"]
+    },
+    {
+        "title": "Tumse Milne Ko Dil (Jhankar)",
+        "artist": ["Various / Orchestra"],
+        "genre": ["Hindi-Old"],
+        "mood": ["Romantic"]
+    },
+    {
+        "title": "Yeh Dua Hai Meri",
+        "artist": ["Kumar Sanu", "Anuradha Paudwal"],
+        "genre": ["Hindi-Old"],
+        "mood": ["Romantic", "Spiritual"]
+    }
+]
