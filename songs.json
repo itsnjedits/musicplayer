@@ -7891,5 +7891,41 @@
     "store": "store4",
     "genre": ["Hindi-Old"],
     "mood": ["Romantic"]
+  },
+  {
+    "title": "Aapke Pyaar Mein",
+    "artist": ["Alka Yagnik"],
+    "file": "Audio/Aapke Pyaar Mein _ Alka Yagnik _ Evergreen Love Song _ Raaz _ 2002.mp3",
+    "image": "Thumbnails/Aapke Pyaar Mein _ Alka Yagnik _ Evergreen Love Song _ Raaz _ 2002_thumbnail.jpg",
+    "store": "store4",
+    "genre": ["Hindi-Old"],
+    "mood": ["Romantic"]
+  },
+  {
+    "title": "Bahut Jatate Ho Pyar",
+    "artist": ["Alka Yagnik, Mohammed Aziz"],
+    "file": "Audio/Bahut Jatate Ho Pyar.mp3",
+    "image": "Thumbnails/Bahut Jatate Ho Pyar_thumbnail.jpg",
+    "store": "store4",
+    "genre": ["Hindi-Old"],
+    "mood": ["Romantic"]
+  },
+  {
+    "title": "Tumse Milne Ko Dil (Jhankar)",
+    "artist": ["Alka Yagnik, Kumar Sanu"],
+    "file": "Audio/Tumse Milne Ko Dil (Jhankar).mp3",
+    "image": "Thumbnails/Tumse Milne Ko Dil (Jhankar)_thumbnail.jpg",
+    "store": "store4",
+    "genre": ["Hindi-Old"],
+    "mood": ["Romantic"]
+  },
+  {
+    "title": "जीता था जिसके लिये HD - दिलवाले - अजय देवगन, रवीना टंडन, सुनील शेट्टी - कुमार सानु, अलका याग्निक",
+    "artist": ["Kumar Sanu, Alka Yagnik"],
+    "file": "Audio/जीता था जिसके लिये HD - दिलवाले - अजय देवगन, रवीना टंडन, सुनील शेट्टी - कुमार सानु, अलका याग्निक.mp3",
+    "image": "Thumbnails/जीता था जिसके लिये HD - दिलवाले - अजय देवगन, रवीना टंडन, सुनील शेट्टी - कुमार सानु, अलका याग्निक_thumbnail.jpg",
+    "store": "store4",
+    "genre": ["Hindi-Old"],
+    "mood": ["Romantic"]
   }
 ]

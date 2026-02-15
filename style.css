@@ -168,8 +168,6 @@
 
     .playback-speed select {
         background-color: rgb(75, 85, 99);
-        /* border: 1px solid #444; */
-        border-radius: 16px !important;
     }
 
     .playback-speed select:focus {
@@ -272,7 +270,7 @@
     /* #speed::-webkit-appearance: none; */
     #speed {
         background-image: none;
-        border-radius: 16px !important;
+        /* border-radius: 16px !important; */
     }
 
     /* Sabhi elements ke liye text selection disable */
@@ -291,3 +289,83 @@
     #loop-btn:hover i {
         transform: rotate(180deg);
     }
+    /* ===== Premium Scroll Arrows ===== */
+
+.scroll-arrow {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 48px;
+  height: 48px;
+
+  /* Background: Gray–Black */
+  background: linear-gradient(45deg, #000000, #313131);
+
+  /* Text Gradient */
+  background-image: linear-gradient(135deg, #2b8bff, #29ecfe);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  font-size: 26px;
+  font-weight: bold;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  z-index: 9999;
+
+  /* Black Shadow */
+  box-shadow: 0 0 12px rgba(0,0,0,0.9);
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.35s ease;
+}
+
+
+/* Top Arrow */
+.top-arrow {
+  top: 90px;
+  transform: translateX(-50%) rotate(-90deg);
+}
+
+/* Bottom Arrow */
+.bottom-arrow {
+  bottom: 120px;
+  transform: translateX(-50%) rotate(90deg);
+}
+
+.scroll-arrow.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Hover (No Rotate / No Jump) */
+.scroll-arrow:hover {
+  box-shadow: 0 0 16px rgba(0,0,0,1);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .scroll-arrow {
+    width: 42px;
+    height: 42px;
+    font-size: 22px;
+  }
+
+  .top-arrow {
+    top: 75px;
+  }
+
+  .bottom-arrow {
+    bottom: 105px;
+  }
+}

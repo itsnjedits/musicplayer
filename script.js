@@ -25,9 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const rewind = document.getElementById('rewind');
   const volumeSlider = document.querySelector('.volume-slider');
   const musicplayer = document.querySelector('.musicplayer');
+  const player = document.querySelector('.player');
   const playlistButton = document.querySelector(".yourPlaylist");
   musicplayer.style.animationPlayState = 'paused';
   let currentPlaybackRate = parseFloat(speedSelect.value);
+  
 
   // store original text of playlist button (used to restore after "Song Added" messages)
   const playlistButtonTextOriginal = playlistButton?.querySelector('p')?.textContent || 'My Playlist';
@@ -48,7 +50,6 @@ playlistButton.addEventListener('click', () => openPlaylist(false));
 
   // ========== LOOP BUTTONS ==========
   const loopButtonSingle = document.getElementById('loop-btn-single');
-  const loopButtonPlaylist = document.getElementById('loop-btn-playlist');
 
   loopButtonSingle.addEventListener('click', () => {
     isLoopingSingle = !isLoopingSingle;
@@ -60,73 +61,34 @@ playlistButton.addEventListener('click', () => openPlaylist(false));
 
     if (isLoopingSingle) {
       isLoopingPlaylist = false;
-      loopButtonPlaylist.style.color = 'white';
     }
 
     console.log("🎯 Single Loop:", isLoopingSingle, "| Playlist Loop:", isLoopingPlaylist);
   });
 
-  loopButtonPlaylist.addEventListener('click', () => {
-    isLoopingPlaylist = !isLoopingPlaylist;
-    loopButtonPlaylist.style.color = isLoopingPlaylist ? 'red' : 'white';
-    loopButtonPlaylist.title = isLoopingPlaylist ? "Playlist Loop ON" : "Playlist Loop OFF";
 
-    if (isLoopingPlaylist) {
-      isLoopingSingle = false;
-      audio.loop = false;
-      loopButtonSingle.style.color = 'white';
-    }
+// --------- Fixed Text (No Animation) ---------
 
-    console.log("🎯 Playlist Loop:", isLoopingPlaylist, "| Single Loop:", isLoopingSingle);
-  });
+const textEl = document.getElementById("feature-text");
+const featureBtn = document.getElementById("feature-button");
+const modal = document.getElementById("selectionModal");
+const closeModalBtn = document.getElementById("closeModalBtn");
+const headingText = document.getElementById("heading-text");
+const spinner = document.getElementById("loading-spinner");
 
+// Set text permanently
+textEl.textContent = "Mood";
 
+// Open Modal
+featureBtn.addEventListener("click", () => {
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
+});
 
-  // --------- Text Animation ---------
-  const texts = ["Mood", "Genre", "Singer"];
-  let textIndex = 0;
-
-  const textEl = document.getElementById("feature-text");
-  const featureBtn = document.getElementById("feature-button");
-  const modal = document.getElementById("selectionModal");
-  const closeModalBtn = document.getElementById("closeModalBtn");
-  const headingText = document.getElementById("heading-text");
-  const spinner = document.getElementById("loading-spinner");
-
-  function animateText() {
-    textIndex = (textIndex + 1) % texts.length;
-    textEl.classList.add("opacity-0");
-    setTimeout(() => {
-      textEl.textContent = texts[textIndex];
-      textEl.classList.remove("opacity-0");
-      textEl.classList.add("blur-slide");
-      setTimeout(() => textEl.classList.remove("blur-slide"), 400);
-    }, 200);
-  }
-
-  window.addEventListener("scroll", () => {
-    if (animationAllowed && !scrollCooldown) {
-      animateText();
-      if (!animationInterval) {
-        animationInterval = setInterval(() => {
-          if (animationAllowed) animateText();
-          else clearInterval(animationInterval);
-        }, 3000);
-      }
-      scrollCooldown = true;
-      setTimeout(() => scrollCooldown = false, 3000);
-    }
-  });
-
-  featureBtn.addEventListener("click", () => {
-    modal.classList.remove("hidden");
-    modal.classList.add("flex");
-    animationAllowed = false;
-    clearInterval(animationInterval);
-    animationInterval = null;
-  });
-
-  closeModalBtn.addEventListener("click", () => modal.classList.add("hidden"));
+// Close Modal
+closeModalBtn.addEventListener("click", () => {
+  modal.classList.add("hidden");
+});
 
 
   const iframeContainer = document.createElement("div");
@@ -1026,6 +988,9 @@ function applyDynamicGradient(colors, options = {}) {
 
 // ======= FINAL playSong =======
 function playSong(index) {
+
+  player.classList.remove('hidden');
+
   if (!currentList || currentList.length === 0) return;
 
   if (index < 0 && isLoopingPlaylist) index = currentList.length-1;
@@ -1174,18 +1139,7 @@ function playSong(index) {
 
   // ========== VISUALIZER & HIGHLIGHT ==========
   function updateVisualizers() {
-    const playing = !audio.paused && currentList && currentList.length > 0;
-    document.querySelectorAll('.item').forEach(item => {
-      const itemIndex = parseInt(item.dataset.index);
-      const viz = item.querySelector('.visualizer');
-      const isPlaying = playing && (itemIndex === currentIndex);
-      if (viz) {
-        viz.classList.toggle('hidden', !isPlaying);
-        viz.querySelectorAll('.bar').forEach(b => {
-          b.style.animationPlayState = isPlaying ? 'running' : 'paused';
-        });
-      }
-    });
+    
   }
 
 
@@ -1327,5 +1281,103 @@ function playSong(index) {
     el.classList.add('bg-gray-900');
     window.scrollTo({ top: el.offsetTop + el.offsetHeight / 2 - window.innerHeight / 2, behavior: 'smooth' });
   }
+
+  // ===== Smart Scroll Arrows (Final) =====
+
+const upBtn = document.getElementById("scrollUpBtn");
+const downBtn = document.getElementById("scrollDownBtn");
+
+let lastScroll = window.scrollY;
+let hideTimer = null;
+let isHovering = false;
+
+
+// Hide arrows safely
+function hideArrows() {
+
+  if (isHovering) return; // hover pe hide nahi
+
+  upBtn.classList.remove("show");
+  downBtn.classList.remove("show");
+}
+
+
+// Reset hide timer
+function resetTimer(delay) {
+
+  clearTimeout(hideTimer);
+
+  hideTimer = setTimeout(() => {
+    hideArrows();
+  }, delay);
+
+}
+
+
+// Scroll detection
+window.addEventListener("scroll", () => {
+
+  const current = window.scrollY;
+
+  if (current > lastScroll + 5) {
+    // Down
+    downBtn.classList.add("show");
+    upBtn.classList.remove("show");
+  }
+
+  else if (current < lastScroll - 5) {
+    // Up
+    upBtn.classList.add("show");
+    downBtn.classList.remove("show");
+  }
+
+  lastScroll = current;
+
+  // Normal hide: 1.5s
+  resetTimer(1500);
+
+});
+
+
+// Hover handling
+[upBtn, downBtn].forEach(btn => {
+
+  btn.addEventListener("mouseenter", () => {
+    isHovering = true;
+    clearTimeout(hideTimer);
+  });
+
+  btn.addEventListener("mouseleave", () => {
+    isHovering = false;
+    resetTimer(2000); // after leaving → 2s
+  });
+
+});
+
+
+// Scroll to TOP
+upBtn.addEventListener("click", () => {
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+  hideArrows();
+
+});
+
+
+// Scroll to BOTTOM
+downBtn.addEventListener("click", () => {
+
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: "smooth"
+  });
+
+  hideArrows();
+
+});
 
 });

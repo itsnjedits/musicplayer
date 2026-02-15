@@ -74,10 +74,7 @@
                             <i class='bx bxs-dice-6'></i>
                         </button>
 
-                        <button id="loop-btn-playlist"
-                            class="flex items-center justify-center loop ml-1 p-2 text-xl bg-gray-800 border-[1px] text-[#2b8bff] border-[#29ecfe] rounded sm:hover:bg-gray-600 sm:hover:border-gray-900 sm:hover:text-[#29ecfe] duration-150 active:scale-95 active:brightness-90">
-                            <i class='bx bx-repeat'></i>
-                        </button>
+                        
                     </div>
                 </div>
             </div>
@@ -226,7 +223,7 @@
         </div>
     </main>
 
-    <div class="player flex justify-center fixed bottom-0 w-full">
+    <div class="player hidden flex justify-center fixed bottom-0 w-full">
         <div
             class="musicplayer bg-gray-900 text-white rounded-lg shadow-lg p-4 flex flex-col max-w-6xl w-[90%] max-md:w-[100%] max-md:rounded-none max-md:p-2">
             <!-- Song Description -->
@@ -312,7 +309,7 @@
 
         </div>
     </div>
-    </div>
+    
     <script>
         const isTouchDevice = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
 
@@ -391,6 +388,11 @@
                 .catch((err) => console.log("❌ Service Worker failed:", err));
         }
     </script>
+
+    <!-- Scroll Helper Arrows -->
+<div id="scrollUpBtn" class="scroll-arrow top-arrow">></div>
+<div id="scrollDownBtn" class="scroll-arrow bottom-arrow">></div>
+
 </body>
 
 </html>
