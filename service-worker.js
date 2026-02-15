@@ -1,10 +1,14 @@
-const CACHE_NAME = "musicplayer-cache-v8"; // bump version
+const CACHE_NAME = "musicplayer-cache-v9"; // bump version
 const STATIC_ASSETS = [
   "./",
+  "./index.html",
+  "./style.css",
+  "./script.js",
   "./manifest.json",
   "./icons/icon-192.png",
   "./icons/icon-512.png"
 ];
+
 
 // 🧩 INSTALL
 self.addEventListener("install", event => {
